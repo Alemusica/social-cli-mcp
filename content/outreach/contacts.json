@@ -1,0 +1,130 @@
+{
+  "contacts": [
+    {
+      "id": "alperen-sumeroglu",
+      "name": "Alperen Sümeroğlu",
+      "vertical": "both",
+      "type": "podcast",
+      "priority": "high",
+      "status": "to_contact",
+      "reason": "Weekly Rewind Podcast - AI, tech, building globally. Perfect fit for M-shaped mind story",
+      "angle": "Greece's Got Talent + coding + viaggi + jsOM = building globally narrative",
+      "platforms": {
+        "github": "https://github.com/alperensumeroglu",
+        "email": "alperensumeroglu@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/alperensumeroglu",
+        "instagram": "https://instagram.com/alperen_sumeroglu/",
+        "youtube": "https://www.youtube.com/@alperen_sumeroglu",
+        "website": "https://www.alpbebe.com/",
+        "medium": "https://medium.com/@alperensumeroglu"
+      },
+      "pitchFile": "content/outreach/alperen-pitch.md",
+      "notes": "Creator of ai-clips-maker. Computer Engineering student. Hosts 'Weekly Rewind' podcast about coding breakthroughs, innovation insights, startup stories",
+      "addedDate": "2026-01-20",
+      "lastContact": null,
+      "nextAction": "Find Twitter/LinkedIn and send personalized DM",
+      "timeline": "This week"
+    },
+    {
+      "id": "mctrinh",
+      "name": "@_mctrinh",
+      "vertical": "software",
+      "type": "engagement",
+      "priority": "medium",
+      "status": "engaged",
+      "reason": "Liked jsOM tweet. Research Professor with 8K followers",
+      "angle": "Academic angle - design systems, research applications",
+      "platforms": {
+        "twitter": "https://twitter.com/_mctrinh"
+      },
+      "pitchFile": null,
+      "notes": "Had 'What are you building?' post with 12K views. User replied manually",
+      "addedDate": "2026-01-20",
+      "lastContact": "2026-01-20",
+      "nextAction": "Monitor for further engagement, reply to his future posts",
+      "timeline": "Ongoing"
+    },
+    {
+      "id": "levelsio",
+      "name": "@levelsio (Pieter Levels)",
+      "vertical": "software",
+      "type": "engagement",
+      "priority": "high",
+      "status": "replied",
+      "reason": "Viral tweet about 'humans writing code is over' - 478K views",
+      "angle": "jsOM empowers designers in AI age - relevant to his 'vibe coding' posts",
+      "platforms": {
+        "twitter": "https://twitter.com/levelsio"
+      },
+      "pitchFile": null,
+      "notes": "Posted reply about jsOM giving designers their place back. Link in reply thread",
+      "addedDate": "2026-01-20",
+      "lastContact": "2026-01-20",
+      "nextAction": "Monitor for reply, engage with his future AI/design posts",
+      "timeline": "Ongoing"
+    },
+    {
+      "id": "ravvast-official",
+      "name": "RAV Vast Official",
+      "vertical": "music",
+      "type": "collaboration",
+      "priority": "medium",
+      "status": "to_contact",
+      "reason": "Official brand - potential artist spotlight, feature, or collaboration",
+      "angle": "Greece's Got Talent performer, multi-instrumentalist using RAV Vast in live looping",
+      "platforms": {
+        "instagram": "https://instagram.com/ravvastdrum",
+        "youtube": "https://youtube.com/@RAVVast",
+        "website": "https://ravvast.com"
+      },
+      "pitchFile": null,
+      "notes": "They feature artists on their channels. Need to create highlight reel first",
+      "addedDate": "2026-01-20",
+      "lastContact": null,
+      "nextAction": "Create 60s highlight reel with RAV Vast, then contact for artist feature",
+      "timeline": "After content is ready"
+    },
+    {
+      "id": "mengto",
+      "name": "@mengto (Meng To)",
+      "vertical": "software",
+      "type": "engagement",
+      "priority": "medium",
+      "status": "mentioned",
+      "reason": "Design/code educator with large following. Mentioned in jsOM designer post",
+      "angle": "Design to code tools - his audience is perfect for jsOM",
+      "platforms": {
+        "twitter": "https://twitter.com/mengto"
+      },
+      "pitchFile": null,
+      "notes": "Creator of Design+Code. Mentioned in our designer-focused tweet",
+      "addedDate": "2026-01-20",
+      "lastContact": "2026-01-20",
+      "nextAction": "Monitor if he engages, prepare deeper pitch if interested",
+      "timeline": "Watch for engagement"
+    }
+  ],
+  "statusOptions": [
+    "to_contact",
+    "contacted",
+    "replied",
+    "engaged",
+    "in_conversation",
+    "collaboration_active",
+    "declined",
+    "no_response"
+  ],
+  "priorityLevels": [
+    "high",
+    "medium",
+    "low"
+  ],
+  "contactTypes": [
+    "podcast",
+    "collaboration",
+    "engagement",
+    "press",
+    "influencer",
+    "brand"
+  ]
+}

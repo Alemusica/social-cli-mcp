@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "lastUpdated": "2026-01-20",
+    "purpose": "Decision makers and insider contacts for Tier 1 venues"
+  },
+  "venues": {
+    "cafe_del_mar_ibiza": {
+      "venue": "Café del Mar Ibiza",
+      "status": "RESEARCH IN PROGRESS",
+      "contacts": {
+        "generic": "via website cafedelmar.com",
+        "label": "Café del Mar Music (record label)"
+      },
+      "keyPeople": {
+        "historical": "José Padilla (deceased 2020) - original DJ who made the venue famous",
+        "current": "Pig&Dan - released 'Journey Within' album (June 2025) - 45th anniversary collaboration"
+      },
+      "bookingApproach": "Contact through Café del Mar Music label for artist collaborations",
+      "similarArtists": ["Pig&Dan", "various chillout artists"],
+      "notes": "45 years in 2025. New look, refreshed sound. Artist-led album is new approach.",
+      "sources": ["cafedelmar.com", "Wikipedia"]
+    },
+    "phi_beach_sardinia": {
+      "venue": "Phi Beach Club",
+      "status": "GOOD CONTACTS FOUND",
+      "contacts": {
+        "booking": "booking@phibeach.com",
+        "tender": "+39 331 3814831 (boat arrival)",
+        "whatsapp": "+39 345 2884254"
+      },
+      "keyPeople": {
+        "saxophonist": "Jimmy Sax - headline performer, manager: Livio Giovannucci",
+        "note": "They have regular sunset saxophonists - your RAV Vast is similar positioning"
+      },
+      "similarArtists": {
+        "headline": ["Jimmy Sax", "Black Coffee", "Peggy Gou", "Jamie Jones", "Bob Sinclar", "Claptone"],
+        "live": ["Jimmy Sax (saxophone)", "unnamed sunset saxophonists"]
+      },
+      "bookingApproach": "Email booking@phibeach.com positioning as 'live sunset musician like your saxophone tradition, but RAV Vast'",
+      "ranking": "#1 Italian club in DJ Mag Top 100",
+      "sources": ["phibeach.com", "Mixmag", "TripAdvisor"]
+    },
+    "sublime_comporta": {
+      "venue": "Sublime Comporta Beach Club",
+      "status": "EXCELLENT CONTACTS FOUND",
+      "contacts": {
+        "beach_club_reservations": "reservations@sublimecomportabeachclub.pt",
+        "beach_club_phone": "+351 966 006 552",
+        "groups_events": "groups@sublimehotels.pt",
+        "sales": "sales@sublimehotels.pt",
+        "marketing": "marketing@sublimehotels.pt",
+        "general": "info@sublimecomporta.pt"
+      },
+      "instagram": "@sublimecomportabeachclub (37K followers)",
+      "keyPeople": {
+        "note": "Part of Sublime Hotels group - contact groups@sublimehotels.pt for music programming"
+      },
+      "bookingApproach": "Email groups@sublimehotels.pt for DJ/music events, or DM Instagram for beach club specific",
+      "capacity": "Up to 250 people",
+      "features": "Beach Bar with DJ and dance area, sunset events",
+      "sources": ["sublimecomporta.pt", "sublimecomportabeachclub.com"]
+    },
+    "scorpios_mykonos": {
+      "venue": "Scorpios Mykonos",
+      "status": "DIRECT BOOKING FORM FOUND",
+      "contacts": {
+        "music_booking": "https://scorpios.com/scorpios-music-booking-request",
+        "phone": "+30 22890 29251",
+        "address": "P.O. Box 384, 84600 Mykonos, Greece"
+      },
+      "musicSchedule": {
+        "rituals": "Mon, Wed, Fri, Sat - experimental live performances from 7pm",
+        "dj_nights": "Tue, Thu, Sun - resident + guest DJs"
+      },
+      "similarArtists": ["Black Coffee (regular)", "Keinemusik", "Dixon", "Bedouin"],
+      "bookingApproach": "SUBMIT DIRECTLY at scorpios.com/scorpios-music-booking-request",
+      "notes": "They have dedicated experimental live performance nights - PERFECT for hybrid RAV Vast set",
+      "sources": ["scorpios.com"]
+    }
+  },
+  "similarArtists": {
+    "rocky_on_percussion": {
+      "name": "Rocky on Percussion",
+      "instrument": "Handpan + DJ hybrid",
+      "website": "rockypercussion.com",
+      "ibiza_experience": "15+ years on Ibiza scene",
+      "residencies": ["Hed Kandi", "Cotton Club", "Nikki Beach", "Amàre Beach"],
+      "past_venues": ["Es Paradis", "O Beach", "Privilege", "Space"],
+      "note": "DIRECT COMPETITOR - same format as Flutur. Study his positioning."
+    },
+    "jimmy_sax": {
+      "name": "Jimmy Sax",
+      "instrument": "Saxophone",
+      "manager": "Livio Giovannucci",
+      "booking": "bookingagentinfo.com/celebrity/jimmy-sax",
+      "phi_beach": "Headline performer, multiple dates",
+      "note": "Saxophone + DJ is accepted format at luxury venues - RAV Vast can fit same slot"
+    }
+  },
+  "bookingAgencies": {
+    "mn2s": {
+      "name": "MN2S",
+      "website": "mn2s.com",
+      "type": "DJ booking, live roster",
+      "note": "Started as DJ agency, now global music management. Check if they rep organic house live acts."
+    },
+    "talentbanq": {
+      "name": "TALENTBANQ",
+      "location": "London",
+      "website": "talentbanq.com",
+      "roster": "150+ artists",
+      "venues": "Festivals, clubs, hotels, restaurants"
+    },
+    "elastic_lounge": {
+      "name": "Elastic Lounge",
+      "website": "elasticlounge.com",
+      "specialty": "Hotel entertainment",
+      "past_clients": ["Karma St Martins", "Claridge's", "Burj Al Arab"]
+    }
+  },
+  "actionItems": [
+    "1. SUBMIT to Scorpios via their booking form (scorpios.com/scorpios-music-booking-request)",
+    "2. Email Phi Beach booking@phibeach.com - position as 'sunset live musician like Jimmy Sax'",
+    "3. Email Sublime groups@sublimehotels.pt for music programming",
+    "4. Study Rocky on Percussion (rockypercussion.com) - same format, see his positioning",
+    "5. Contact MN2S to see if they rep organic house live acts",
+    "6. DM @sublimecomportabeachclub on Instagram"
+  ]
+}

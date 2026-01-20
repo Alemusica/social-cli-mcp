@@ -1,0 +1,86 @@
+{
+  "concept": "M-Shaped Mind",
+  "tagline": "Deep expertise in multiple domains, connected by creativity",
+  "description": "The M-shaped mind represents mastery in multiple verticals - like the letter M with two peaks of expertise connected by a creative foundation. For Alessio, these peaks are Music (Flutur) and Software (jsOM), both driven by the same core values of innovation, human connection, and empowering creators.",
+
+  "verticals": {
+    "music": {
+      "peak": "Flutur - Multi-instrumentalist & Live Looper",
+      "expertise": ["RAV Vast", "Live Looping", "Performance", "Sound Design"],
+      "values": ["Authenticity", "Human Connection", "Creative Expression"]
+    },
+    "software": {
+      "peak": "jsOM - AI-Powered Design Tools",
+      "expertise": ["LLM Integration", "UI/UX", "Developer Tools", "Design Systems"],
+      "values": ["Designer Empowerment", "Human-AI Collaboration", "Innovation"]
+    }
+  },
+
+  "connections": {
+    "theme": "Empowering Creators Through Technology",
+    "sharedValues": [
+      "Creativity as the core driver",
+      "Democratizing tools and knowledge",
+      "Bridging human expression with technology",
+      "Building in public / performing in public",
+      "Authentic connection with audience"
+    ],
+    "crossoverContent": [
+      "Using AI to generate music visualizations",
+      "Live coding while playing music (ambient coding)",
+      "RAV Vast sounds in software demos",
+      "Behind-the-scenes of a creator who builds AND performs",
+      "The creative process: coding vs composing",
+      "How musical thinking influences software architecture",
+      "Improvisation in music vs iterative development"
+    ]
+  },
+
+  "personalBrand": {
+    "name": "Alessio Ivoy Cazzaniga",
+    "handles": {
+      "music": "@flutur_8",
+      "software": "@AlessioIan",
+      "unified": "Consider creating @AlessioCreates or similar"
+    },
+    "bio": "M-Shaped Creator | Building jsOM (AI for Designers) | Performing as Flutur (RAV Vast & Live Looping) | Greece's Got Talent Alumni",
+    "uniqueAngle": "Rare combination of deep technical skills AND artistic performance - relatable to both engineers and artists"
+  },
+
+  "contentStrategy": {
+    "separate": {
+      "when": "Platform-specific content that serves one audience deeply",
+      "music": ["Performance videos", "Tutorials", "Behind-the-scenes practice"],
+      "software": ["Technical threads", "Product updates", "Build logs"]
+    },
+    "crossover": {
+      "when": "Content that showcases the M-shaped mind uniquely",
+      "ideas": [
+        "Code with RAV Vast ambient background",
+        "Time-lapse: morning coding, evening performing",
+        "Creative parallels: loops in music vs loops in code",
+        "The discipline of practice: instrument vs programming",
+        "How being a musician makes me a better developer",
+        "Using jsOM to design Flutur's website/EPK"
+      ]
+    }
+  },
+
+  "audienceOverlap": {
+    "shared": [
+      "Creative professionals",
+      "People interested in productivity/craft",
+      "Tech-savvy music lovers",
+      "Indie hackers with artistic hobbies",
+      "Content creators"
+    ],
+    "potential": "The crossover audience is small but highly engaged - they're fascinated by polymaths"
+  },
+
+  "longTermVision": {
+    "year1": "Build both verticals independently, occasional crossover content",
+    "year2": "Create unified 'creator journey' content series",
+    "year3": "Speaking/consulting on creative multi-disciplinary careers",
+    "ultimate": "Become known as a model for the 'M-shaped mind' approach to career building"
+  }
+}

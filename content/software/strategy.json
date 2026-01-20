@@ -1,0 +1,116 @@
+{
+  "vertical": "software",
+  "brand": {
+    "name": "jsOM",
+    "tagline": "UI Designer for LLM-Readable Specs",
+    "story": "Bridging the gap between designers and AI - giving UI designers their rightful place in the LLM era",
+    "values": ["Designer Empowerment", "Human-AI Collaboration", "Open Source", "Innovation"]
+  },
+  "targetAudience": [
+    "UI/UX Designers",
+    "Product Designers",
+    "Frontend Developers",
+    "Tech leads and CTOs",
+    "Indie hackers and solopreneurs",
+    "Design system maintainers",
+    "AI/LLM tool builders",
+    "No-code/low-code enthusiasts"
+  ],
+  "contentPillars": [
+    "Product Updates & Features",
+    "Technical Deep-dives",
+    "Industry Commentary (Design + AI)",
+    "User Stories & Case Studies",
+    "Building in Public",
+    "Educational Content"
+  ],
+  "postingFrequency": [
+    {
+      "platform": "twitter",
+      "postsPerWeek": 14,
+      "bestTimes": ["09:00", "12:00", "17:00", "21:00"],
+      "contentMix": {
+        "updates": 4,
+        "threads": 2,
+        "engagement": 5,
+        "commentary": 3
+      }
+    },
+    {
+      "platform": "linkedin",
+      "postsPerWeek": 3,
+      "bestTimes": ["08:00", "12:00", "17:00"],
+      "contentMix": {
+        "thoughtLeadership": 1,
+        "updates": 1,
+        "caseStudies": 1
+      }
+    },
+    {
+      "platform": "youtube",
+      "postsPerWeek": 1,
+      "bestTimes": ["14:00", "16:00"],
+      "contentMix": {
+        "tutorials": 2,
+        "deepDives": 1,
+        "shorts": 2
+      }
+    },
+    {
+      "platform": "reddit",
+      "postsPerWeek": 2,
+      "bestTimes": ["10:00", "20:00"],
+      "subreddits": ["r/webdev", "r/programming", "r/UI_Design", "r/LocalLLaMA", "r/ChatGPT"]
+    }
+  ],
+  "hashtags": {
+    "primary": ["#jsOM", "#buildinpublic", "#AI", "#LLM", "#devtools"],
+    "secondary": ["#UIdesign", "#webdev", "#opensource", "#indiehacker", "#startup"],
+    "trending": ["#AItools", "#Claude", "#GPT", "#Figma", "#designsystems"],
+    "byPlatform": {
+      "twitter": ["#TechTwitter", "#DevRel", "#buildinpublic"],
+      "linkedin": ["#artificialintelligence", "#softwareengineering", "#productdesign"]
+    }
+  },
+  "competitors": {
+    "twitter": ["@v0_dev", "@figma", "@linear", "@rayaborsk", "@mengto"],
+    "producthunt": ["v0.dev", "Framer AI", "Galileo AI"],
+    "github": ["shadcn/ui", "radix-ui", "chakra-ui"]
+  },
+  "contentIdeas": {
+    "weekly": [
+      "Monday: Week goals / build log start (Twitter thread)",
+      "Tuesday: Technical deep-dive or tutorial (Twitter/LinkedIn)",
+      "Wednesday: Industry commentary / hot take (Twitter)",
+      "Thursday: Feature demo or sneak peek (Twitter video)",
+      "Friday: Week recap / build log end (Twitter thread)",
+      "Weekend: Community engagement / support"
+    ],
+    "series": [
+      "Build Log - Weekly development updates",
+      "Designer vs AI - Exploring the collaboration",
+      "jsOM Tutorials - Getting started guides",
+      "Case Studies - Real world usage"
+    ]
+  },
+  "kpis": [
+    { "metric": "Twitter Followers", "target": 5000, "current": 5 },
+    { "metric": "GitHub Stars", "target": 1000, "current": 0 },
+    { "metric": "Product Hunt Launch", "target": 500, "current": 0 },
+    { "metric": "Weekly Active Users", "target": 100, "current": 0 },
+    { "metric": "Tweet Impressions (weekly)", "target": 50000, "current": 0 },
+    { "metric": "LinkedIn Post Views", "target": 10000, "current": 0 }
+  ],
+  "links": {
+    "github": "https://github.com/AlessioIan/jsom",
+    "demo": "https://jsom.dev",
+    "twitter": "https://twitter.com/AlessioIan",
+    "linkedin": "https://linkedin.com/in/alessioian"
+  },
+  "launchStrategy": {
+    "phase1": "Build awareness on Twitter/X through viral posts and engagement",
+    "phase2": "Create tutorial content on YouTube",
+    "phase3": "Product Hunt launch with coordinated social push",
+    "phase4": "LinkedIn thought leadership for B2B reach"
+  }
+}

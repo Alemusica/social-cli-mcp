@@ -37,6 +37,21 @@ export function loadConfig(): Config {
       facebookPageId: process.env.FACEBOOK_PAGE_ID || '',
     } : undefined,
 
+    tiktok: process.env.TIKTOK_ACCESS_TOKEN ? {
+      clientKey: process.env.TIKTOK_CLIENT_KEY || '',
+      clientSecret: process.env.TIKTOK_CLIENT_SECRET || '',
+      accessToken: process.env.TIKTOK_ACCESS_TOKEN,
+      openId: process.env.TIKTOK_OPEN_ID || '',
+    } : undefined,
+
+    youtube: process.env.YOUTUBE_ACCESS_TOKEN ? {
+      clientId: process.env.YOUTUBE_CLIENT_ID || '',
+      clientSecret: process.env.YOUTUBE_CLIENT_SECRET || '',
+      accessToken: process.env.YOUTUBE_ACCESS_TOKEN,
+      refreshToken: process.env.YOUTUBE_REFRESH_TOKEN || '',
+      channelId: process.env.YOUTUBE_CHANNEL_ID || '',
+    } : undefined,
+
     xai: process.env.XAI_API_KEY ? {
       apiKey: process.env.XAI_API_KEY,
     } : undefined,
@@ -50,6 +65,8 @@ export function getConfiguredPlatforms(config: Config): string[] {
   if (config.reddit?.clientId) platforms.push('reddit');
   if (config.linkedin?.accessToken) platforms.push('linkedin');
   if (config.instagram?.accessToken) platforms.push('instagram');
+  if (config.tiktok?.accessToken) platforms.push('tiktok');
+  if (config.youtube?.accessToken) platforms.push('youtube');
 
   return platforms;
 }

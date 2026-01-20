@@ -91,23 +91,28 @@ export class InstagramClient implements SocialClient {
         caption += '\n\n' + options.hashtags.map(h => h.startsWith('#') ? h : `#${h}`).join(' ');
       }
 
-      // Determine if single image, carousel, or video
-      const isVideo = options.mediaUrls.some(url =>
-        url.endsWith('.mp4') || url.endsWith('.mov') || url.includes('video')
-      );
-      const isCarousel = options.mediaUrls.length > 1;
-
+      const postType = options.postType || 'feed';
       let containerId: string;
 
-      if (isCarousel) {
-        // Create carousel container
-        containerId = await this.createCarouselContainer(options.mediaUrls, caption);
-      } else if (isVideo) {
-        // Create video container
-        containerId = await this.createVideoContainer(options.mediaUrls[0], caption);
+      // Handle different post types
+      if (postType === 'reels') {
+        containerId = await this.createReelsContainer(options.mediaUrls[0], caption, options);
+      } else if (postType === 'stories') {
+        containerId = await this.createStoriesContainer(options.mediaUrls[0], caption);
       } else {
-        // Create single image container
-        containerId = await this.createImageContainer(options.mediaUrls[0], caption);
+        // Regular feed post
+        const isVideo = options.mediaUrls.some(url =>
+          url.endsWith('.mp4') || url.endsWith('.mov') || url.includes('video')
+        );
+        const isCarousel = options.mediaUrls.length > 1;
+
+        if (isCarousel) {
+          containerId = await this.createCarouselContainer(options.mediaUrls, caption);
+        } else if (isVideo) {
+          containerId = await this.createVideoContainer(options.mediaUrls[0], caption);
+        } else {
+          containerId = await this.createImageContainer(options.mediaUrls[0], caption);
+        }
       }
 
       // Publish the container
@@ -154,6 +159,45 @@ export class InstagramClient implements SocialClient {
     }
   }
 
+  /**
+   * Post a Reel (video up to 90 seconds)
+   * Perfect for music clips, live looping snippets
+   */
+  async postReel(videoUrl: string, caption: string, options?: {
+    coverUrl?: string;
+    shareToFeed?: boolean;
+    audioName?: string;
+    hashtags?: string[];
+  }): Promise<PostResult> {
+    let fullCaption = caption;
+    if (options?.hashtags?.length) {
+      fullCaption += '\n\n' + options.hashtags.map(h => h.startsWith('#') ? h : `#${h}`).join(' ');
+    }
+
+    return this.post({
+      text: caption,
+      caption: fullCaption,
+      mediaUrls: [videoUrl],
+      postType: 'reels',
+      coverUrl: options?.coverUrl,
+      shareToFeed: options?.shareToFeed ?? true,
+      audioName: options?.audioName,
+    });
+  }
+
+  /**
+   * Post a Story (image or video up to 60 seconds)
+   * Great for behind-the-scenes, daily updates
+   */
+  async postStory(mediaUrl: string, caption?: string): Promise<PostResult> {
+    return this.post({
+      text: caption || '',
+      caption: caption || '',
+      mediaUrls: [mediaUrl],
+      postType: 'stories',
+    });
+  }
+
   private async createImageContainer(imageUrl: string, caption: string): Promise<string> {
     const response = await fetch(
       `${GRAPH_API_BASE}/${this.config!.businessAccountId}/media`,
@@ -193,6 +237,88 @@ export class InstagramClient implements SocialClient {
 
     // Wait for video processing
     await this.waitForMediaProcessing(data.id!);
+
+    return data.id!;
+  }
+
+  /**
+   * Create a Reels container
+   * Reels support videos up to 90 seconds, 9:16 aspect ratio recommended
+   */
+  private async createReelsContainer(
+    videoUrl: string,
+    caption: string,
+    options?: InstagramPostOptions
+  ): Promise<string> {
+    const body: Record<string, any> = {
+      media_type: 'REELS',
+      video_url: videoUrl,
+      caption: caption,
+      access_token: this.config!.accessToken,
+      share_to_feed: options?.shareToFeed ?? true,
+    };
+
+    // Optional cover image for the Reel
+    if (options?.coverUrl) {
+      body.cover_url = options.coverUrl;
+    }
+
+    // Optional audio name (for music)
+    if (options?.audioName) {
+      body.audio_name = options.audioName;
+    }
+
+    const response = await fetch(
+      `${GRAPH_API_BASE}/${this.config!.businessAccountId}/media`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      }
+    );
+
+    const data = await response.json() as IGApiResponse;
+    if (data.error) throw new Error(data.error.message);
+
+    // Wait for video processing (Reels can take longer)
+    await this.waitForMediaProcessing(data.id!, 60);
+
+    return data.id!;
+  }
+
+  /**
+   * Create a Stories container
+   * Stories support images and videos up to 60 seconds
+   */
+  private async createStoriesContainer(mediaUrl: string, caption: string): Promise<string> {
+    const isVideo = mediaUrl.endsWith('.mp4') || mediaUrl.endsWith('.mov') || mediaUrl.includes('video');
+
+    const body: Record<string, any> = {
+      media_type: 'STORIES',
+      access_token: this.config!.accessToken,
+    };
+
+    if (isVideo) {
+      body.video_url = mediaUrl;
+    } else {
+      body.image_url = mediaUrl;
+    }
+
+    const response = await fetch(
+      `${GRAPH_API_BASE}/${this.config!.businessAccountId}/media`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      }
+    );
+
+    const data = await response.json() as IGApiResponse;
+    if (data.error) throw new Error(data.error.message);
+
+    if (isVideo) {
+      await this.waitForMediaProcessing(data.id!, 30);
+    }
 
     return data.id!;
   }

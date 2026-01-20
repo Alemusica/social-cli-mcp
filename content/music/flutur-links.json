@@ -1,0 +1,180 @@
+{
+  "artist": "Flutur",
+  "realName": "Alessio Ivoy Cazzaniga",
+
+  "mainLinks": {
+    "linktree": "https://linktr.ee/flutur",
+    "instagram": "https://instagram.com/flutur_8",
+    "spotify": "https://open.spotify.com/artist/3GzIadwrlZW8GjMVRROoE9",
+    "youtube": "https://youtube.com/@flutur8i8",
+    "facebook": "https://www.facebook.com/flutur8",
+    "soundcloud": "https://soundcloud.com/realscape",
+    "bandcamp": "https://fluturbandcamp.bandcamp.com",
+    "shopify": "https://flutur8i8.myshopify.com"
+  },
+
+  "websites": {
+    "8i8art": "https://8i8.art",
+    "8i8io": "https://8i8.io",
+    "wixSite": "https://alessiocazzaniga87.wixsite.com/website-3"
+  },
+
+  "contact": {
+    "whatsappBusiness": "https://wa.me/message/BT7I47SK2I6FK1",
+    "telegram": "t.me/FluturBot"
+  },
+
+  "spotifyURIs": {
+    "artistURI": "3GzIadwrlZW8GjMVRROoE9",
+    "appleMusicURI": "1608366738"
+  },
+
+  "videos": {
+    "greecesGotTalent": {
+      "url": "https://youtu.be/NI23tAP0c8U",
+      "description": "Greece's Got Talent - 4 yes votes",
+      "useFor": "Showing busker-to-TV journey, big stage credibility",
+      "period": "2022"
+    },
+    "efthymia": {
+      "url": "https://youtu.be/I-lpfRHTSG4",
+      "description": "Efthymia - RAV Vast solo meditation",
+      "useFor": "Wellness retreats, sound healing, meditation venues",
+      "period": "2022"
+    },
+    "roccaDiArona": {
+      "url": "https://youtu.be/K7oROUjuLGQ",
+      "description": "Rocca di Arona - RAV + live looping evocativo",
+      "useFor": "Sunset sessions, beach clubs, organic house venues"
+    },
+    "deepHouseBenBohmer": {
+      "url": "https://youtu.be/FkBwJJS2ZxQ",
+      "description": "Deep house Ben Böhmer style - RAV on text, Rocchetta di Arona",
+      "useFor": "Club venues, daytime beach parties, melodic house"
+    },
+    "portaRomanaMilano": {
+      "url": "https://youtu.be/Xw8hItxK80w",
+      "description": "Porta Romana Milano - busking puro, yoga freak style, tecnico",
+      "useFor": "Technical showcase, raw talent, Colorado yoga vibe"
+    },
+    "childrenBreakthrough": {
+      "url": "https://youtu.be/t4qoX6AHANk",
+      "description": "Children breakthrough"
+    },
+    "childrenFull": {
+      "url": "https://youtu.be/E1sri_qvZCk",
+      "description": "Children full video"
+    },
+    "binauralVillaPorta": {
+      "url": "https://soundcloud.com/realscape/binaural-sunset-listening-experience-villa-porta/s-DyeUuw06qhm",
+      "description": "3D audio binaural experience at Villa Porta"
+    },
+    "whoIsFlutur": {
+      "url": "https://youtu.be/rmnShcDsBBY",
+      "description": "Who Is Flutur - Full journey from busking to stages",
+      "duration": "2:53",
+      "useFor": "EPK, linktree, follow-up emails, booking agents, about page",
+      "content": "Arona pandrum intro → Greece busking → Denver stages → emotional journey",
+      "funnelPosition": "Email 2-3, NOT cold outreach"
+    }
+  },
+
+  "instagramReels": {
+    "reel1": "https://www.instagram.com/reel/CiU_hvsDYMf/",
+    "reel2": "https://www.instagram.com/reel/CkB7YIOLS6Z/",
+    "reel3": "https://www.instagram.com/p/CksmYmxvK-U/",
+    "equanimous": "https://www.instagram.com/reel/CvvEdCNu00D/",
+    "drishtiBeatsDillon": "https://www.instagram.com/p/CtHO3g3LmPX/",
+    "drishtiAspen": "https://www.instagram.com/p/CusWjR1SPmy/"
+  },
+
+  "press": [
+    {
+      "outlet": "Varese News",
+      "title": "Flutur a Materia - un sorprendente viaggio musicale",
+      "date": "2025-03",
+      "url": "https://www.varesenews.it/2025/03/flutur-a-materia-un-sorprendente-viaggio-musicale-tra-suono-e-anima/2180487/"
+    },
+    {
+      "outlet": "Varese News",
+      "title": "Flutur a Materia - incontro con il RAV",
+      "date": "2025-03",
+      "url": "https://www.varesenews.it/2025/03/flutur-a-materia-un-incontro-con-il-rav-e-la-percussione-intonata/2190786/"
+    },
+    {
+      "outlet": "Varese News",
+      "title": "Suoni vibrazioni ascolto - Agora di Materia",
+      "date": "2025-03",
+      "url": "https://www.varesenews.it/2025/03/suoni-vibrazioni-ascolto-e-condivisione-la-musica-di-flutur-connette-lagora-di-materia/2194245/"
+    },
+    {
+      "outlet": "Varese News",
+      "title": "Dalla musica di strada sul Lago Maggiore ai concerti di Denver",
+      "date": "2023-05",
+      "url": "https://www.varesenews.it/2023/05/flutur-dalla-musica-di-strada-sul-lago-maggiore-ai-concerti-nelle-venue-di-denver/1607555/"
+    },
+    {
+      "outlet": "Varese News",
+      "title": "Greece's Got Talent - Dal Lago Maggiore al Mediterraneo",
+      "date": "2022-02",
+      "url": "https://www.varesenews.it/2022/02/dal-lago-maggiore-al-mediterraneo-la-musica-flutur-stupisce-giudici-greeces-got-talent/1433491/"
+    },
+    {
+      "outlet": "Varese News",
+      "title": "Flutur emozionato - viaggio musicale spirituale",
+      "date": "2022-03",
+      "url": "https://www.varesenews.it/2022/03/flutur-emozionato-la-tv-greca-un-viaggio-musicale-spirituale-partito-dal-maggiore/1444727/"
+    }
+  ],
+
+  "spotifyTracks": {
+    "efthymia": "https://open.spotify.com/track/2DvJHBJfMZSZ4mXZHxgRlm",
+    "kailash": "https://spoti.fi/3N08u85"
+  },
+
+  "collaborations": {
+    "equanimous": "https://www.instagram.com/reel/CvvEdCNu00D/",
+    "drishtiBeats": "https://www.instagram.com/p/CusWjR1SPmy/"
+  },
+
+  "toContact": {
+    "rebeccaSadr": "https://www.instagram.com/rebecca.sadr"
+  },
+
+  "driveFiles": {
+    "renatoFolder": "https://drive.google.com/file/d/1HZANiGbPtsxudQsnMIDviqoS_El7M4Lb/view",
+    "irFolder": "https://drive.google.com/drive/folders/1-2FDBIM8AK9osN_368UWeH1pqQllFoWy"
+  },
+
+  "shop": {
+    "samplePack": "https://flutur8i8.myshopify.com/products/f-utur-rav-pan-edm-sample-pack-1"
+  },
+
+  "residencies": {
+    "villaPorta": {
+      "venue": "Relais Villa Porta",
+      "location": "Lake Maggiore, Italy",
+      "type": "4-star boutique hotel",
+      "format": "Buddha Bar-style sunset sessions",
+      "schedule": "Every Friday, July-August",
+      "years": "2022-2025 (4 years)",
+      "website": "https://www.villaporta.style/en",
+      "booking": "https://www.booking.com/hotel/it/camin-colmegna.html"
+    }
+  },
+
+  "newVenueContacts": {
+    "scorpios": {
+      "venue": "Scorpios Mykonos",
+      "website": "https://www.scorpios.com",
+      "contact": "via website contact form",
+      "fit": "perfect for sunset organic house"
+    },
+    "principote": {
+      "venue": "Principote Mykonos",
+      "email": "info@principote.com",
+      "phone": "+30 2289 077184",
+      "fit": "luxury beach club, sunset dining"
+    }
+  }
+}

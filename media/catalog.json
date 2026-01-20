@@ -1,0 +1,465 @@
+{
+  "generated": "2026-01-20T11:35:47.715315",
+  "stats": {
+    "total_files": 19,
+    "total_images": 17,
+    "total_videos": 2,
+    "total_size_mb": 315.04999999999995
+  },
+  "files": [
+    {
+      "name": "2022-09-04_morocco_nikon_portrait_01.jpg",
+      "path": "media/music/videos/2022-09-04_morocco_nikon_portrait_01.jpg",
+      "size_mb": 2.25,
+      "created": "2026-01-20T11:34:58.222247",
+      "modified": "2022-09-04T21:50:53",
+      "extension": ".jpg",
+      "vertical": "music",
+      "type": "image",
+      "width": 2853,
+      "height": 4275,
+      "format": "JPEG",
+      "mode": "RGB",
+      "aspect_ratio": "2853:4275",
+      "is_vertical": true,
+      "make": "NIKON CORPORATION",
+      "model": "NIKON D5200",
+      "datetime": "2022:09:04 20:50:53",
+      "datetimeoriginal": "2022:09:04 20:50:53",
+      "subjects": [],
+      "suggested_usage": [
+        "instagram_story",
+        "twitter_image",
+        "instagram_post"
+      ]
+    },
+    {
+      "name": "2022-09-04_morocco_nikon_landscape_01.jpg",
+      "path": "media/music/videos/2022-09-04_morocco_nikon_landscape_01.jpg",
+      "size_mb": 1.19,
+      "created": "2026-01-20T11:34:58.220097",
+      "modified": "2022-09-04T21:45:26",
+      "extension": ".jpg",
+      "vertical": "music",
+      "type": "image",
+      "width": 4496,
+      "height": 3000,
+      "format": "JPEG",
+      "mode": "RGB",
+      "aspect_ratio": "4496:3000",
+      "is_vertical": false,
+      "make": "NIKON CORPORATION",
+      "model": "NIKON D5200",
+      "datetime": "2022:09:04 20:45:26",
+      "datetimeoriginal": "2022:09:04 20:45:26",
+      "subjects": [],
+      "suggested_usage": [
+        "twitter_image",
+        "instagram_post"
+      ]
+    },
+    {
+      "name": "2022-08-27_ravvast_rocca_performance_01.m4v",
+      "path": "media/music/videos/2022-08-27_ravvast_rocca_performance_01.m4v",
+      "size_mb": 142.71,
+      "created": "2026-01-20T11:34:58.222558",
+      "modified": "2022-08-27T15:00:14",
+      "extension": ".m4v",
+      "vertical": "music",
+      "type": "video",
+      "duration": 59.233333,
+      "width": 2160,
+      "height": 3840,
+      "fps": 30.0,
+      "codec": "h264",
+      "aspect_ratio": "2160:3840",
+      "is_vertical": true,
+      "subjects": [],
+      "suggested_usage": [
+        "youtube_short",
+        "tiktok",
+        "instagram_reel"
+      ]
+    },
+    {
+      "name": "2022-08-30_morocco_reflection_sitting_01.jpg",
+      "path": "media/music/videos/2022-08-30_morocco_reflection_sitting_01.jpg",
+      "size_mb": 0.13,
+      "created": "2026-01-20T11:34:58.221153",
+      "modified": "2022-08-30T22:59:37",
+      "extension": ".jpg",
+      "vertical": "music",
+      "type": "image",
+      "width": 827,
+      "height": 1301,
+      "format": "JPEG",
+      "mode": "RGB",
+      "aspect_ratio": "827:1301",
+      "is_vertical": true,
+      "datetime": "2022:08:30 21:59:37",
+      "datetimeoriginal": "2022:08:30 21:59:37",
+      "subjects": [],
+      "suggested_usage": [
+        "instagram_story",
+        "twitter_image",
+        "instagram_post"
+      ]
+    },
+    {
+      "name": "2022-09-01_morocco_landscape_wide_01.heic",
+      "path": "media/music/videos/2022-09-01_morocco_landscape_wide_01.heic",
+      "size_mb": 0.83,
+      "created": "2026-01-20T11:34:58.223378",
+      "modified": "2022-09-01T11:37:16",
+      "extension": ".heic",
+      "vertical": "music",
+      "type": "image",
+      "width": 3691,
+      "height": 2076,
+      "aspect_ratio": "3691:2076",
+      "is_vertical": false,
+      "subjects": [],
+      "suggested_usage": [
+        "twitter_image",
+        "instagram_post"
+      ]
+    },
+    {
+      "name": "2022-08-27_morocco_travel_06.heic",
+      "path": "media/music/videos/2022-08-27_morocco_travel_06.heic",
+      "size_mb": 1.81,
+      "created": "2026-01-20T11:34:58.223014",
+      "modified": "2022-08-27T18:24:00",
+      "extension": ".heic",
+      "vertical": "music",
+      "type": "image",
+      "width": 4032,
+      "height": 3024,
+      "aspect_ratio": "4032:3024",
+      "is_vertical": false,
+      "subjects": [],
+      "suggested_usage": [
+        "twitter_image",
+        "instagram_post"
+      ]
+    },
+    {
+      "name": "2022-08-27_ravvast_rocca_performance_02.m4v",
+      "path": "media/music/videos/2022-08-27_ravvast_rocca_performance_02.m4v",
+      "size_mb": 142.71,
+      "created": "2026-01-20T11:34:58.223124",
+      "modified": "2022-08-27T15:00:14",
+      "extension": ".m4v",
+      "vertical": "music",
+      "type": "video",
+      "duration": 59.233333,
+      "width": 2160,
+      "height": 3840,
+      "fps": 30.0,
+      "codec": "h264",
+      "aspect_ratio": "2160:3840",
+      "is_vertical": true,
+      "subjects": [],
+      "suggested_usage": [
+        "youtube_short",
+        "tiktok",
+        "instagram_reel"
+      ]
+    },
+    {
+      "name": "2022-08-28_morocco_travel_01.heic",
+      "path": "media/music/videos/2022-08-28_morocco_travel_01.heic",
+      "size_mb": 2.17,
+      "created": "2026-01-20T11:34:58.220390",
+      "modified": "2022-08-28T17:19:22",
+      "extension": ".heic",
+      "vertical": "music",
+      "type": "image",
+      "width": 4032,
+      "height": 3024,
+      "aspect_ratio": "4032:3024",
+      "is_vertical": false,
+      "subjects": [],
+      "suggested_usage": [
+        "twitter_image",
+        "instagram_post"
+      ]
+    },
+    {
+      "name": "2022-09-05_morocco_beach_evening_02.heic",
+      "path": "media/music/videos/2022-09-05_morocco_beach_evening_02.heic",
+      "size_mb": 1.32,
+      "created": "2026-01-20T11:34:58.223263",
+      "modified": "2022-09-05T21:22:34",
+      "extension": ".heic",
+      "vertical": "music",
+      "type": "image",
+      "width": 4032,
+      "height": 3024,
+      "aspect_ratio": "4032:3024",
+      "is_vertical": false,
+      "subjects": [],
+      "suggested_usage": [
+        "twitter_image",
+        "instagram_post"
+      ]
+    },
+    {
+      "name": "2022-10-15_sport_vertical_01.heic",
+      "path": "media/music/videos/2022-10-15_sport_vertical_01.heic",
+      "size_mb": 0.74,
+      "created": "2026-01-20T11:34:58.223470",
+      "modified": "2022-10-15T10:11:32",
+      "extension": ".heic",
+      "vertical": "music",
+      "type": "image",
+      "width": 3024,
+      "height": 4032,
+      "aspect_ratio": "3024:4032",
+      "is_vertical": true,
+      "subjects": [],
+      "suggested_usage": [
+        "instagram_story",
+        "twitter_image",
+        "instagram_post"
+      ]
+    },
+    {
+      "name": "2022-09-03_morocco_travel_07.heic",
+      "path": "media/music/videos/2022-09-03_morocco_travel_07.heic",
+      "size_mb": 1.63,
+      "created": "2026-01-20T11:34:58.223746",
+      "modified": "2022-09-03T13:25:53",
+      "extension": ".heic",
+      "vertical": "music",
+      "type": "image",
+      "width": 4032,
+      "height": 3024,
+      "aspect_ratio": "4032:3024",
+      "is_vertical": false,
+      "subjects": [],
+      "suggested_usage": [
+        "twitter_image",
+        "instagram_post"
+      ]
+    },
+    {
+      "name": "2022-09-05_morocco_beach_evening_01.heic",
+      "path": "media/music/videos/2022-09-05_morocco_beach_evening_01.heic",
+      "size_mb": 1.83,
+      "created": "2026-01-20T11:34:58.221773",
+      "modified": "2022-09-05T21:24:10",
+      "extension": ".heic",
+      "vertical": "music",
+      "type": "image",
+      "width": 4032,
+      "height": 3024,
+      "aspect_ratio": "4032:3024",
+      "is_vertical": false,
+      "subjects": [],
+      "suggested_usage": [
+        "twitter_image",
+        "instagram_post"
+      ]
+    },
+    {
+      "name": "2022-09-01_morocco_travel_02.heic",
+      "path": "media/music/videos/2022-09-01_morocco_travel_02.heic",
+      "size_mb": 2.02,
+      "created": "2026-01-20T11:34:58.220630",
+      "modified": "2022-09-01T11:24:49",
+      "extension": ".heic",
+      "vertical": "music",
+      "type": "image",
+      "width": 4032,
+      "height": 3024,
+      "aspect_ratio": "4032:3024",
+      "is_vertical": false,
+      "subjects": [],
+      "suggested_usage": [
+        "twitter_image",
+        "instagram_post"
+      ]
+    },
+    {
+      "name": "2022-09-02_morocco_vertical_01.heic",
+      "path": "media/music/videos/2022-09-02_morocco_vertical_01.heic",
+      "size_mb": 1.61,
+      "created": "2026-01-20T11:34:58.223872",
+      "modified": "2022-09-02T17:06:14",
+      "extension": ".heic",
+      "vertical": "music",
+      "type": "image",
+      "width": 3024,
+      "height": 4032,
+      "aspect_ratio": "3024:4032",
+      "is_vertical": true,
+      "subjects": [],
+      "suggested_usage": [
+        "instagram_story",
+        "twitter_image",
+        "instagram_post"
+      ]
+    },
+    {
+      "name": "2022-09-05_morocco_beach_panorama_01.heic",
+      "path": "media/music/videos/2022-09-05_morocco_beach_panorama_01.heic",
+      "size_mb": 4.3,
+      "created": "2026-01-20T11:34:58.222781",
+      "modified": "2022-09-05T21:22:56",
+      "extension": ".heic",
+      "vertical": "music",
+      "type": "image",
+      "width": 6660,
+      "height": 3848,
+      "aspect_ratio": "6660:3848",
+      "is_vertical": false,
+      "subjects": [],
+      "suggested_usage": [
+        "twitter_image",
+        "instagram_post"
+      ]
+    },
+    {
+      "name": "2022-09-06_morocco_nikon_landscape_02.jpg",
+      "path": "media/music/videos/2022-09-06_morocco_nikon_landscape_02.jpg",
+      "size_mb": 1.84,
+      "created": "2026-01-20T11:34:58.222683",
+      "modified": "2022-09-06T19:27:12",
+      "extension": ".jpg",
+      "vertical": "music",
+      "type": "image",
+      "width": 4496,
+      "height": 3000,
+      "format": "JPEG",
+      "mode": "RGB",
+      "aspect_ratio": "4496:3000",
+      "is_vertical": false,
+      "make": "NIKON CORPORATION",
+      "model": "NIKON D5200",
+      "datetime": "2022:09:06 18:27:12",
+      "datetimeoriginal": "2022:09:06 18:27:12",
+      "subjects": [],
+      "suggested_usage": [
+        "twitter_image",
+        "instagram_post"
+      ]
+    },
+    {
+      "name": "2022-08-28_morocco_travel_04.heic",
+      "path": "media/music/videos/2022-08-28_morocco_travel_04.heic",
+      "size_mb": 2.03,
+      "created": "2026-01-20T11:34:58.221526",
+      "modified": "2022-08-28T17:19:07",
+      "extension": ".heic",
+      "vertical": "music",
+      "type": "image",
+      "width": 4032,
+      "height": 3024,
+      "aspect_ratio": "4032:3024",
+      "is_vertical": false,
+      "subjects": [],
+      "suggested_usage": [
+        "twitter_image",
+        "instagram_post"
+      ]
+    },
+    {
+      "name": "2022-08-27_morocco_travel_03.heic",
+      "path": "media/music/videos/2022-08-27_morocco_travel_03.heic",
+      "size_mb": 1.81,
+      "created": "2026-01-20T11:34:58.220840",
+      "modified": "2022-08-27T18:24:01",
+      "extension": ".heic",
+      "vertical": "music",
+      "type": "image",
+      "width": 4032,
+      "height": 3024,
+      "aspect_ratio": "4032:3024",
+      "is_vertical": false,
+      "subjects": [],
+      "suggested_usage": [
+        "twitter_image",
+        "instagram_post"
+      ]
+    },
+    {
+      "name": "2022-08-28_morocco_travel_05.heic",
+      "path": "media/music/videos/2022-08-28_morocco_travel_05.heic",
+      "size_mb": 2.12,
+      "created": "2026-01-20T11:34:58.222047",
+      "modified": "2022-08-28T17:18:56",
+      "extension": ".heic",
+      "vertical": "music",
+      "type": "image",
+      "width": 4032,
+      "height": 3024,
+      "aspect_ratio": "4032:3024",
+      "is_vertical": false,
+      "subjects": [],
+      "suggested_usage": [
+        "twitter_image",
+        "instagram_post"
+      ]
+    }
+  ],
+  "by_subject": {},
+  "by_suggestion": {
+    "instagram_story": [
+      "2022-09-04_morocco_nikon_portrait_01.jpg",
+      "2022-08-30_morocco_reflection_sitting_01.jpg",
+      "2022-10-15_sport_vertical_01.heic",
+      "2022-09-02_morocco_vertical_01.heic"
+    ],
+    "twitter_image": [
+      "2022-09-04_morocco_nikon_portrait_01.jpg",
+      "2022-09-04_morocco_nikon_landscape_01.jpg",
+      "2022-08-30_morocco_reflection_sitting_01.jpg",
+      "2022-09-01_morocco_landscape_wide_01.heic",
+      "2022-08-27_morocco_travel_06.heic",
+      "2022-08-28_morocco_travel_01.heic",
+      "2022-09-05_morocco_beach_evening_02.heic",
+      "2022-10-15_sport_vertical_01.heic",
+      "2022-09-03_morocco_travel_07.heic",
+      "2022-09-05_morocco_beach_evening_01.heic",
+      "2022-09-01_morocco_travel_02.heic",
+      "2022-09-02_morocco_vertical_01.heic",
+      "2022-09-05_morocco_beach_panorama_01.heic",
+      "2022-09-06_morocco_nikon_landscape_02.jpg",
+      "2022-08-28_morocco_travel_04.heic",
+      "2022-08-27_morocco_travel_03.heic",
+      "2022-08-28_morocco_travel_05.heic"
+    ],
+    "instagram_post": [
+      "2022-09-04_morocco_nikon_portrait_01.jpg",
+      "2022-09-04_morocco_nikon_landscape_01.jpg",
+      "2022-08-30_morocco_reflection_sitting_01.jpg",
+      "2022-09-01_morocco_landscape_wide_01.heic",
+      "2022-08-27_morocco_travel_06.heic",
+      "2022-08-28_morocco_travel_01.heic",
+      "2022-09-05_morocco_beach_evening_02.heic",
+      "2022-10-15_sport_vertical_01.heic",
+      "2022-09-03_morocco_travel_07.heic",
+      "2022-09-05_morocco_beach_evening_01.heic",
+      "2022-09-01_morocco_travel_02.heic",
+      "2022-09-02_morocco_vertical_01.heic",
+      "2022-09-05_morocco_beach_panorama_01.heic",
+      "2022-09-06_morocco_nikon_landscape_02.jpg",
+      "2022-08-28_morocco_travel_04.heic",
+      "2022-08-27_morocco_travel_03.heic",
+      "2022-08-28_morocco_travel_05.heic"
+    ],
+    "youtube_short": [
+      "2022-08-27_ravvast_rocca_performance_01.m4v",
+      "2022-08-27_ravvast_rocca_performance_02.m4v"
+    ],
+    "tiktok": [
+      "2022-08-27_ravvast_rocca_performance_01.m4v",
+      "2022-08-27_ravvast_rocca_performance_02.m4v"
+    ],
+    "instagram_reel": [
+      "2022-08-27_ravvast_rocca_performance_01.m4v",
+      "2022-08-27_ravvast_rocca_performance_02.m4v"
+    ]
+  }
+}

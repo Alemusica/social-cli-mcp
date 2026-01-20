@@ -9,6 +9,16 @@ dist/
 .env.local
 .env.*.local
 
+# Gmail OAuth credentials (NEVER commit!)
+gmail-credentials.json
+gmail-token.json
+
+# Large media files
+media/music/videos/
+
+# External tools (submodules)
+tools/ai-clips-maker/
+
 # IDE
 .vscode/
 .idea/

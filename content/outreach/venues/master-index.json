@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "lastUpdated": "2026-01-20",
+    "totalVenues": 64,
+    "regions": ["Italy", "Greece", "Portugal", "Canary Islands", "Balearics"]
+  },
+  "summary": {
+    "byRegion": {
+      "italy": 16,
+      "greece": 12,
+      "portugal": 12,
+      "canary_islands": 12,
+      "balearics": 12
+    },
+    "bySegment": {
+      "beach_club": 48,
+      "boutique_hotel": 12,
+      "wellness": 4
+    },
+    "byGgtAppropriate": {
+      "yes": 52,
+      "no": 12
+    }
+  },
+  "tierOneVenues": [
+    {
+      "id": "balearics_cafe_del_mar_ibiza",
+      "name": "Café del Mar Ibiza",
+      "region": "Ibiza",
+      "priority": "HIGHEST",
+      "reason": "Legendary sunset venue since 1980, perfect credibility builder"
+    },
+    {
+      "id": "balearics_7pines_ibiza",
+      "name": "7Pines Resort Ibiza",
+      "region": "Ibiza",
+      "priority": "HIGH",
+      "reason": "Luxury resort with dedicated sunset ritual programming"
+    },
+    {
+      "id": "sardinia_phi_beach",
+      "name": "Phi Beach Club",
+      "region": "Sardinia",
+      "priority": "HIGH",
+      "reason": "Live saxophone tradition, perfect for hybrid sets"
+    },
+    {
+      "id": "portugal_sublime_comporta",
+      "name": "Sublime Comporta Beach Club",
+      "region": "Portugal",
+      "priority": "HIGH",
+      "reason": "THE premier sunset venue in Comporta"
+    },
+    {
+      "id": "greece_zamana_crete",
+      "name": "Zamana Beach Club",
+      "region": "Crete",
+      "priority": "HIGH",
+      "reason": "International DJ lineup, ethnic house focus"
+    },
+    {
+      "id": "balearics_cova_den_xoroi_menorca",
+      "name": "Cova d'en Xoroi",
+      "region": "Menorca",
+      "priority": "HIGH",
+      "reason": "Unique natural cave venue, one of Europe's most distinctive"
+    },
+    {
+      "id": "canary_papagayo_tenerife",
+      "name": "Papagayo Beach Club",
+      "region": "Tenerife",
+      "priority": "HIGH",
+      "reason": "Legendary Sunday sunset sessions"
+    },
+    {
+      "id": "balearics_gecko_formentera",
+      "name": "Gecko Hotel & Beach Club",
+      "region": "Formentera",
+      "priority": "HIGH",
+      "reason": "Artist residency potential, boutique property"
+    }
+  ],
+  "videoRecommendations": {
+    "roccaDiArona": {
+      "url": "https://youtu.be/K7oROUjuLGQ",
+      "bestFor": ["sunset sessions", "organic house", "beach clubs"],
+      "venueCount": 32
+    },
+    "benBohmer": {
+      "url": "https://youtu.be/FkBwJJS2ZxQ",
+      "bestFor": ["club venues", "daytime parties", "high-energy"],
+      "venueCount": 16
+    },
+    "efthymia": {
+      "url": "https://youtu.be/I-lpfRHTSG4",
+      "bestFor": ["wellness", "meditation", "boutique hotels", "jazz clubs"],
+      "venueCount": 12
+    },
+    "ggt": {
+      "url": "https://youtu.be/NI23tAP0c8U",
+      "bestFor": ["festivals", "unique venues", "credibility"],
+      "venueCount": 4
+    }
+  },
+  "outreachPriority": [
+    "Balearics (April-October season, book now for 2026)",
+    "Greece (May-September, strong Mykonos alternatives)",
+    "Portugal (Comporta is hot, year-round Lisbon)",
+    "Italy (Costa Smeralda June-Sept, Amalfi April-Oct)",
+    "Canary Islands (year-round, good for off-season)"
+  ]
+}

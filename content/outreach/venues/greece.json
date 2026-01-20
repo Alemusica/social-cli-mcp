@@ -1,0 +1,289 @@
+[
+  {
+    "id": 1,
+    "venue_name": "Attic Urban Rooftop",
+    "location": "Athens",
+    "type": "Rooftop Bar",
+    "address": "86 Ermou Street, 10554, Athens",
+    "contact": {
+      "email": "info@atticurbanrooftop.com",
+      "phone": "+30 210.32.34.162",
+      "reservations_phone": "+30 6940.88.99.88"
+    },
+    "music_style": "Ambient, electronic, curated background music, sunset DJ sets",
+    "opening_hours": "Afternoon to late evening (sunset-focused)",
+    "fit_for_acoustic_electronic": "Exceptional rooftop venue with direct Acropolis views, perfect sunset backdrop for hybrid live+DJ sets. Sophisticated audience, intimate rooftop setting ideal for acoustic-electronic transition during golden hour. Evening transition into full DJ sets.",
+    "website": "https://atticurbanrooftop.com",
+    "capacity_estimate": "150-200",
+    "highlights": [
+      "Breathtaking Acropolis views",
+      "Sunset views over historic Athens",
+      "Modern minimalist design",
+      "Upscale clientele",
+      "Cocktail bar excellence"
+    ]
+  },
+  {
+    "id": 2,
+    "venue_name": "360 Cocktail Bar",
+    "location": "Athens",
+    "type": "Rooftop Bar",
+    "address": "Ifaistou 2, Monastiraki, Athens",
+    "contact": {
+      "email": "info@360.gr",
+      "phone": "+30 210 32 100 06"
+    },
+    "opening_hours": "Sun-Thu: 10:00-01:30, Fri-Sat: 10:00-02:30",
+    "music_style": "Handpicked electronic, ambient, DJ sets",
+    "fit_for_acoustic_electronic": "Three-quarter panoramic views of Parthenon and Athens skyline from Monastiraki Square rooftop. Lively nightlife spot with signature cocktails and curated music atmosphere. Perfect for hybrid sunset sets transitioning into evening DJ performances.",
+    "website": "https://three-sixty.gr",
+    "capacity_estimate": "100-150",
+    "highlights": [
+      "Panoramic Parthenon views",
+      "Iconic Monastiraki location",
+      "Lively atmosphere",
+      "Signature cocktails",
+      "Ideal for sunset events"
+    ]
+  },
+  {
+    "id": 3,
+    "venue_name": "Bolivar Beach Bar",
+    "location": "Athens Riviera (Alimos)",
+    "type": "Beach Club",
+    "address": "Leoforos Poseidonos, Akti tou Hliou Beach, Alimos 17455, Athens",
+    "contact": {
+      "email": "info@bolivar.gr",
+      "phone": "+30 210 9 831018"
+    },
+    "opening_hours": "Mon-Fri: 08:00-05:00, Seasonal variations",
+    "music_style": "Electronic, house, deep house, live DJ sets, live concerts",
+    "fit_for_acoustic_electronic": "Premium beach club on Athens Riviera with wooden dancefloor directly on sand. Hosts well-known local and international DJ sets and live concerts. Perfect transition from daytime acoustic performances to electronic DJ sets. Mediterranean sunset atmosphere with excellent infrastructure.",
+    "website": "https://www.bolivar.gr",
+    "capacity_estimate": "500+",
+    "highlights": [
+      "Direct beach access",
+      "International DJ lineup",
+      "Live concert hosting",
+      "Wooden dancefloor on sand",
+      "Year-round operation",
+      "Miami beach vibe"
+    ]
+  },
+  {
+    "id": 4,
+    "venue_name": "Tulum Beach Bar",
+    "location": "Faliraki, Rhodes",
+    "type": "Beach Club",
+    "address": "Beach, Athinodorou, Faliraki 851 05, Rhodes",
+    "contact": {
+      "email": "info@tulumbeachbar.gr",
+      "phone": "+30 694 945 1416"
+    },
+    "music_style": "Bohemian-chic atmosphere, chill-out, deep house, electronic, daily DJ sets",
+    "fit_for_acoustic_electronic": "Soulful beach club carved between sun, sea, and music inspired by Tulum aesthetics. Daily DJ performances create perfect backdrop for hybrid sets. Bohemian vibe complements acoustic-electronic fusion perfectly. Spectacular Rhodes sunset views over Aegean Sea.",
+    "website": "https://tulumbeachbar.gr",
+    "capacity_estimate": "300-400",
+    "highlights": [
+      "Bohemian-chic design",
+      "Wooden cabanas",
+      "Tropical cocktails",
+      "Daily DJ performances",
+      "Earthy Tulum inspiration",
+      "Sand beach setting"
+    ]
+  },
+  {
+    "id": 5,
+    "venue_name": "Paradise Disco Bar",
+    "location": "Kalithea, Rhodes",
+    "type": "Beach Club / Nightclub",
+    "address": "Kalithea Beach, Rhodes",
+    "contact": {
+      "email": "Contact via website or social media",
+      "phone": "Available via local Rhodes tourist info"
+    },
+    "music_style": "Electronic, house, world-famous DJs (David Guetta, Bob Sinclair), international acts",
+    "fit_for_acoustic_electronic": "Most famous club on Rhodes island with international DJ caliber performances. Beach location provides sunset opportunities. High-energy venue perfect for full electronic DJ sets after acoustic opener. Attracts sophisticated crowd of tourists and locals.",
+    "capacity_estimate": "800+",
+    "highlights": [
+      "World-renowned DJs",
+      "Beach location",
+      "International clientele",
+      "High-energy atmosphere",
+      "Famous Rhodes landmark"
+    ]
+  },
+  {
+    "id": 6,
+    "venue_name": "Liokalyvo Beach Bar",
+    "location": "Falasarna, Crete",
+    "type": "Beach Club",
+    "address": "Falassarna Big Beach, Chania, Crete 73400",
+    "contact": {
+      "email": "liokalyvo@gmail.com",
+      "phone": "+30 28220 41759",
+      "mobile": "+30 6945297345"
+    },
+    "opening_hours": "10:00-18:00 (seasonal adjustments)",
+    "music_style": "House, electronic, DJ sets, live music events, music rituals",
+    "fit_for_acoustic_electronic": "Located on one of Crete's largest and most spectacular beaches with sunset hours among the island's best. Hosts summer 'music rituals' and events. Private cabanas available for VIP intimate acoustic performances transitioning to DJ sets. Mediterranean fusion cuisine complements musical vibe.",
+    "website": "https://www.liokalyvo.gr",
+    "capacity_estimate": "400-500",
+    "highlights": [
+      "Largest beach in Crete",
+      "Spectacular sunset views",
+      "Private cabanas",
+      "Summer music rituals",
+      "Fusion cuisine",
+      "Full service beach club"
+    ]
+  },
+  {
+    "id": 7,
+    "venue_name": "Zamana Beach Club",
+    "location": "Chania, Crete (Aptera Beach)",
+    "type": "Beach Club",
+    "address": "Aptera Beach, Chania, Crete",
+    "contact": {
+      "email": "Contact via website",
+      "phone": "+30 693 472 2000"
+    },
+    "music_style": "International DJ lineup, ethnic house, afro house, electronic, remixed entertainment",
+    "fit_for_acoustic_electronic": "Luxury beachfront venue with curated sunsets and blue hour programming. Strong international DJ lineup perfectly suited for hybrid acoustic-electronic sets. Mediterranean cuisine and exotic cocktails enhance sunset experience. Modern sophistication meets bohemian beach atmosphere.",
+    "website": "https://thezamana.com",
+    "capacity_estimate": "400-600",
+    "highlights": [
+      "International DJ lineup",
+      "Remixed entertainment",
+      "Curated sunsets",
+      "Blue hour focus",
+      "Exotic cocktails",
+      "Mediterranean cuisine",
+      "Luxury beachfront"
+    ]
+  },
+  {
+    "id": 8,
+    "venue_name": "Cabana Mare Beach Club",
+    "location": "Agia Marina, Crete",
+    "type": "Beach Club / Hotel",
+    "address": "Agia Marina, Chania, Crete 73014",
+    "contact": {
+      "email": "info@cabanamarechania.gr",
+      "reservations_email": "reservations@cabanamarechania.gr",
+      "phone": "+30 6986995095"
+    },
+    "opening_hours": "09:00-17:00 main hours (events extend)",
+    "music_style": "Electronic, house, celebrity DJs, international artists, event hosting",
+    "fit_for_acoustic_electronic": "Luxury beach club resort featuring famous international artists and celebrity DJs. VIP cabanas provide intimate settings for acoustic opener, transitions smoothly to high-energy DJ sets. Sophisticated international clientele. Full hotel infrastructure supports multi-hour events and artist accommodations.",
+    "website": "https://www.cabanamarechania.gr",
+    "capacity_estimate": "600+",
+    "highlights": [
+      "VIP cabanas",
+      "Celebrity DJ hosting",
+      "Exotic cocktails",
+      "Luxury atmosphere",
+      "Hotel integration",
+      "International artists",
+      "Special events hosting"
+    ]
+  },
+  {
+    "id": 9,
+    "venue_name": "Edem Club",
+    "location": "Dassia, Corfu",
+    "type": "Beach Club / Nightclub",
+    "address": "Dassia Beach, Corfu",
+    "contact": {
+      "email": "info@edemclub.com",
+      "phone": "+30 2661093013"
+    },
+    "opening_hours": "13:00+ (Summer: opens daily, transitions to evening chill-out to DJ)",
+    "music_style": "Chill-out, electronic, international DJs, house, deep house",
+    "fit_for_acoustic_electronic": "Top-ten ranked beach bar/club in Greece. Daytime lounge transitioning to evening chill-out and electronic DJ sets. Direct beach location on Dassia's golden sand. Perfect venue for acoustic sunset performance segueing into full DJ production. International DJs nightly from 23:00.",
+    "website": "https://edemclub.com",
+    "capacity_estimate": "500+",
+    "highlights": [
+      "Top 10 Greece beach bars",
+      "Daily DJ performances",
+      "Direct beach access",
+      "Chill-out to party transition",
+      "Golden sand beach",
+      "International DJs nightly",
+      "Full day to night programming"
+    ]
+  },
+  {
+    "id": 10,
+    "venue_name": "Callao Beach Club",
+    "location": "Kalami, Corfu",
+    "type": "Beach Club / Restaurant",
+    "address": "Kalami Beach, Corfu",
+    "contact": {
+      "email": "info@callaocorfu.com",
+      "phone": "+30 26630 91800"
+    },
+    "music_style": "Mediterranean mix, electronic, house, curated music",
+    "fit_for_acoustic_electronic": "Day-to-night beach bar concept perfectly suited for hybrid sets. Mediterranean-Greek cuisine, inventive cocktails. Tripadvisor Travelers' Choice award winner. Intimate cove setting ideal for acoustic elements during golden hour, transitions to electronic DJ performance. Stunning Corfu coastline backdrop.",
+    "website": "https://callaocorfu.com",
+    "capacity_estimate": "200-300",
+    "highlights": [
+      "Tripadvisor award winner",
+      "Day-to-night concept",
+      "Mediterranean cuisine",
+      "Inventive cocktails",
+      "Intimate cove setting",
+      "Beautiful coastline",
+      "Award-winning venue"
+    ]
+  },
+  {
+    "id": 11,
+    "venue_name": "Crios Beach Bar",
+    "location": "Krotiri, Paros",
+    "type": "Beach Club",
+    "address": "Krios Beach, Paros 84400",
+    "contact": {
+      "email": "reservations@criosparos.com, sales@criosparos.com, marketing@criosparos.com",
+      "phone": "+30 2284 300 836, +30 6989 000 555, +30 6974788782"
+    },
+    "music_style": "Electronic, house, DJ sets, live music, themed parties",
+    "fit_for_acoustic_electronic": "Exciting DJ lineup with themed parties and live music events. Beautiful beach location with excellent sunset views over Aegean. Multiple contact channels indicate professional event management. Perfect for hybrid acoustic-electronic sets with established DJ infrastructure and crowd expectation.",
+    "website": "https://www.criosparos.com",
+    "capacity_estimate": "400-500",
+    "highlights": [
+      "DJ-focused programming",
+      "Themed parties",
+      "Live music events",
+      "Professional management",
+      "Aegean sunset views",
+      "Multiple contact channels",
+      "Established event venue"
+    ]
+  },
+  {
+    "id": 12,
+    "venue_name": "Cabana Beach Club",
+    "location": "Parikia, Paros",
+    "type": "Beach Club",
+    "address": "Parikia Bay, Paros 84400",
+    "contact": {
+      "email": "reservations@cabanaparos.gr",
+      "phone": "+30 6976408836, +30 6948332724, +30 6947871818"
+    },
+    "music_style": "Electronic, house, DJ sets, lounge music, upbeat atmosphere",
+    "fit_for_acoustic_electronic": "One of newest beach clubs on Paros with upbeat atmosphere and amazing sunset views. Lounge bar restaurant concept allows for intimate acoustic sections before transitioning to energetic DJ sets. Bay location provides magical Aegean backdrop for sunset performances.",
+    "website": "https://cabanaparos.gr",
+    "capacity_estimate": "300-400",
+    "highlights": [
+      "Newest beach club",
+      "Amazing sunset views",
+      "Lounge bar restaurant",
+      "Upbeat atmosphere",
+      "Bay location",
+      "Full service venue",
+      "Event hosting"
+    ]
+  }
+]

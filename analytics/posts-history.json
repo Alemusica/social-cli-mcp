@@ -1,0 +1,201 @@
+{
+  "posts": [
+    {
+      "id": "tw-2026-01-19-001",
+      "date": "2026-01-19",
+      "platform": "twitter",
+      "vertical": "software",
+      "type": "thread",
+      "tweetId": "2013394567891005623",
+      "content": "1/4 Designers shouldn't just hand off pixels. They should define the UI logic that LLMs can actually understand. Introducing jsOM - UI Designer for LLM-Readable Specs",
+      "url": "https://twitter.com/FluturArt/status/2013394567891005623",
+      "stats": {
+        "impressions": 24,
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "engagementRate": 4.17,
+        "lastChecked": "2026-01-20T15:00:00Z"
+      },
+      "hashtags": [],
+      "mentions": [],
+      "notes": "First jsOM thread - 4 tweets total"
+    },
+    {
+      "id": "tw-2026-01-19-002",
+      "date": "2026-01-19",
+      "platform": "twitter",
+      "vertical": "software",
+      "type": "thread",
+      "tweetId": "2013394574635311121",
+      "content": "2/4 Draw on infinite canvas, Export to universal JSON spec, Load directly into any LLM",
+      "url": "https://twitter.com/FluturArt/status/2013394574635311121",
+      "stats": {
+        "impressions": 9,
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "engagementRate": 11.1,
+        "lastChecked": "2026-01-20T15:00:00Z"
+      },
+      "hashtags": [],
+      "mentions": [],
+      "notes": "Thread part 2"
+    },
+    {
+      "id": "tw-2026-01-19-003",
+      "date": "2026-01-19",
+      "platform": "twitter",
+      "vertical": "software",
+      "type": "thread",
+      "tweetId": "2013394580264083908",
+      "content": "3/4 Watch the 2-min demo - It's like Figma but the output is AI-native",
+      "url": "https://twitter.com/FluturArt/status/2013394580264083908",
+      "stats": {
+        "impressions": 25,
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "engagementRate": 4.0,
+        "lastChecked": "2026-01-20T15:00:00Z"
+      },
+      "hashtags": [],
+      "mentions": [],
+      "notes": "Thread part 3 - demo link"
+    },
+    {
+      "id": "tw-2026-01-19-004",
+      "date": "2026-01-19",
+      "platform": "twitter",
+      "vertical": "software",
+      "type": "thread",
+      "tweetId": "2013394587339940233",
+      "content": "4/4 Star on GitHub - Built with MCP protocol. 100% open source",
+      "url": "https://twitter.com/FluturArt/status/2013394587339940233",
+      "stats": {
+        "impressions": 13,
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "engagementRate": 15.4,
+        "lastChecked": "2026-01-20T15:00:00Z"
+      },
+      "hashtags": [],
+      "mentions": [],
+      "notes": "Thread finale - 1 LIKE! Best engagement"
+    },
+    {
+      "id": "tw-2026-01-19-005",
+      "date": "2026-01-19",
+      "platform": "twitter",
+      "vertical": "software",
+      "type": "reply",
+      "tweetId": "2013399339385622963",
+      "content": "Reply to @claudeai @AnthropicAI - Been using Claude Code for doing those tasks already! Cowork is cool",
+      "url": "https://twitter.com/FluturArt/status/2013399339385622963",
+      "replyTo": {
+        "user": "@claudeai",
+        "topic": "Cowork announcement"
+      },
+      "stats": {
+        "impressions": 12,
+        "likes": 0,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "engagementRate": 16.7,
+        "lastChecked": "2026-01-20T15:00:00Z"
+      },
+      "hashtags": [],
+      "mentions": ["@claudeai", "@AnthropicAI"],
+      "notes": "Engagement on Anthropic post - got 2 replies!"
+    },
+    {
+      "id": "tw-2026-01-20-001",
+      "date": "2026-01-20",
+      "platform": "twitter",
+      "vertical": "software",
+      "type": "post",
+      "tweetId": "2013402435587326305",
+      "content": "Designers: you don't need to code to stay relevant in the AI era. jsOM lets you define UI in a way LLMs understand",
+      "url": "https://twitter.com/FluturArt/status/2013402435587326305",
+      "stats": {
+        "impressions": 22,
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "engagementRate": 0,
+        "lastChecked": "2026-01-20T15:00:00Z"
+      },
+      "hashtags": [],
+      "mentions": [],
+      "notes": "Standalone designer-focused post"
+    },
+    {
+      "id": "tw-2026-01-20-002",
+      "date": "2026-01-20",
+      "platform": "twitter",
+      "vertical": "software",
+      "type": "reply",
+      "tweetId": "2013534319952691382",
+      "content": "Reply to @levelsio - That's why designers need tools that speak AI's language. jsOM does this",
+      "url": "https://twitter.com/FluturArt/status/2013534319952691382",
+      "replyTo": {
+        "user": "@levelsio",
+        "topic": "AI coding post",
+        "originalViews": 478000
+      },
+      "stats": {
+        "impressions": 22,
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "engagementRate": 4.5,
+        "lastChecked": "2026-01-20T15:00:00Z"
+      },
+      "hashtags": [],
+      "mentions": ["@levelsio", "@nodejs"],
+      "notes": "Reply to viral post (478K views original)"
+    }
+  ],
+  "statsHistory": [
+    {
+      "date": "2026-01-20T15:00:00Z",
+      "snapshot": {
+        "totalImpressions": 127,
+        "totalLikes": 1,
+        "totalReplies": 7,
+        "avgEngagementRate": 7.98
+      }
+    }
+  ],
+  "summary": {
+    "totalPosts": 7,
+    "totalImpressions": 127,
+    "totalLikes": 1,
+    "totalReplies": 7,
+    "avgEngagementRate": 7.98,
+    "byPlatform": {
+      "twitter": 7,
+      "instagram": 0,
+      "tiktok": 0,
+      "youtube": 0,
+      "linkedin": 0
+    },
+    "byVertical": {
+      "software": 7,
+      "music": 0
+    },
+    "topPost": {
+      "id": "tw-2026-01-19-004",
+      "reason": "Only post with a like + highest engagement rate (15.4%)"
+    },
+    "lastUpdated": "2026-01-20T15:00:00Z"
+  }
+}

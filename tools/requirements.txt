@@ -1,0 +1,15 @@
+# Video Processor Dependencies
+# Install with: pip install -r tools/requirements.txt
+
+# Core
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# Face/Hand Tracking
+mediapipe>=0.10.0
+
+# Optional: Advanced object detection
+# ultralytics>=8.0.0  # For YOLOv8
+
+# Audio analysis (optional, ffmpeg handles most)
+# librosa>=0.10.0

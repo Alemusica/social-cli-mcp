@@ -1,0 +1,114 @@
+{
+  "vertical": "music",
+  "brand": {
+    "name": "Flutur",
+    "tagline": "Multi-instrumentalist | RAV Vast | Live Looping",
+    "story": "From Greece's Got Talent to Denver streets - crafting sonic experiences with RAV Vast, guitar, piano, and live looping",
+    "values": ["Authenticity", "Musical Innovation", "Human Connection", "Creative Freedom"]
+  },
+  "targetAudience": [
+    "Music lovers seeking unique sounds",
+    "RAV Vast and handpan enthusiasts",
+    "Live looping community",
+    "Ambient/world music fans",
+    "Musicians exploring new instruments",
+    "Festival and event organizers",
+    "Sound healing practitioners",
+    "Meditation and yoga communities"
+  ],
+  "contentPillars": [
+    "Performance & Live Shows",
+    "Behind the Scenes & Practice",
+    "Tutorials & Education",
+    "Personal Story & Journey",
+    "Collaborations",
+    "Fan Engagement"
+  ],
+  "postingFrequency": [
+    {
+      "platform": "instagram",
+      "postsPerWeek": 5,
+      "bestTimes": ["11:00", "14:00", "19:00"],
+      "contentMix": {
+        "reels": 3,
+        "carousel": 1,
+        "stories": 7
+      }
+    },
+    {
+      "platform": "tiktok",
+      "postsPerWeek": 7,
+      "bestTimes": ["07:00", "12:00", "19:00", "22:00"],
+      "contentMix": {
+        "performance": 4,
+        "tutorial": 2,
+        "trending": 1
+      }
+    },
+    {
+      "platform": "youtube",
+      "postsPerWeek": 2,
+      "bestTimes": ["14:00", "16:00"],
+      "contentMix": {
+        "longForm": 1,
+        "shorts": 4
+      }
+    },
+    {
+      "platform": "twitter",
+      "postsPerWeek": 5,
+      "bestTimes": ["09:00", "12:00", "18:00"],
+      "contentMix": {
+        "updates": 3,
+        "engagement": 2
+      }
+    }
+  ],
+  "hashtags": {
+    "primary": ["#Flutur", "#RAVVast", "#livelooping", "#multiinstrumentalist"],
+    "secondary": ["#handpan", "#percussion", "#ambient", "#worldmusic", "#streetmusician", "#livemusic"],
+    "trending": ["#musictok", "#fyp", "#reelsmusic", "#shorts"],
+    "byPlatform": {
+      "instagram": ["#reelsmusic", "#musicianlife", "#instrumentcover", "#italianmusician"],
+      "tiktok": ["#musictok", "#fyp", "#viral", "#livemusic", "#coversong"],
+      "youtube": ["#shorts", "#music", "#liveperformance", "#tutorial"]
+    }
+  },
+  "competitors": {
+    "instagram": ["@ravvastdrum", "@handpan_world", "@loopersunite", "@maloyaroslav"],
+    "tiktok": ["@ravvast", "@handpanmusic", "@livelooping"],
+    "youtube": ["@RAVVast", "@LoopStationArtists", "@AcousticTrench"]
+  },
+  "contentIdeas": {
+    "weekly": [
+      "Monday: Practice session snippet (Story/Reel)",
+      "Tuesday: Tutorial or technique tip (TikTok/YouTube Short)",
+      "Wednesday: Cover or original piece (Reel/TikTok)",
+      "Thursday: Behind the scenes or gear talk (Story)",
+      "Friday: Performance highlight (Reel/TikTok)",
+      "Saturday: Fan engagement/Q&A (Story)",
+      "Sunday: Long-form content or reflection (YouTube)"
+    ],
+    "series": [
+      "RAV Vast Rhythms - Weekly tutorial series",
+      "Loop Lab - Live looping experiments",
+      "Street Sessions - Performance highlights",
+      "Instrument Stories - Journey with each instrument"
+    ]
+  },
+  "kpis": [
+    { "metric": "Instagram Followers", "target": 10000, "current": 0 },
+    { "metric": "TikTok Followers", "target": 50000, "current": 0 },
+    { "metric": "YouTube Subscribers", "target": 5000, "current": 0 },
+    { "metric": "Spotify Monthly Listeners", "target": 10000, "current": 0 },
+    { "metric": "Average Reel Views", "target": 10000, "current": 0 },
+    { "metric": "Engagement Rate", "target": 5, "current": 0 }
+  ],
+  "links": {
+    "instagram": "https://instagram.com/flutur_8",
+    "youtube": "https://www.youtube.com/@Flutur_official",
+    "spotify": "https://open.spotify.com/artist/5GCDFKwjgznPBJj8NFlLGD",
+    "linktree": "https://linktr.ee/flutur",
+    "appleMusic": "https://music.apple.com/artist/flutur/1476932785"
+  }
+}
