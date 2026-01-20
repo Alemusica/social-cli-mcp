@@ -1,11 +1,14 @@
 /**
  * Configuration loader
+ * Loads secrets from macOS Keychain first, then falls back to .env
  */
 
 import { config as dotenvConfig } from 'dotenv';
+import { loadSecretsToEnv } from '../keychain.js';
 import type { Config } from '../types.js';
 
-// Load .env file
+// Load secrets from Keychain first (priority), then .env as fallback
+loadSecretsToEnv();
 dotenvConfig();
 
 export function loadConfig(): Config {

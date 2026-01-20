@@ -8,12 +8,16 @@
 import { Telegraf, Context, Markup } from 'telegraf';
 import Anthropic from '@anthropic-ai/sdk';
 import { TwitterClient } from './clients/twitter.js';
+import { InstagramClient } from './clients/instagram.js';
+import { loadSecretsToEnv } from './keychain.js';
 import * as nodemailer from 'nodemailer';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as dotenv from 'dotenv';
 import * as crypto from 'crypto';
 
+// Load secrets from Keychain first (priority), then .env as fallback
+loadSecretsToEnv();
 dotenv.config();
 
 // ============================================
@@ -58,7 +62,7 @@ async function sendEmail(to: string, subject: string, html: string): Promise<{ s
 // ============================================
 interface PendingAction {
   id: string;
-  type: 'tweet' | 'email' | 'thread';
+  type: 'tweet' | 'email' | 'thread' | 'instagram';
   data: any;
   preview: string;
   createdAt: Date;
@@ -104,6 +108,13 @@ const twitterClient = new TwitterClient({
   apiSecret: process.env.TWITTER_API_SECRET || '',
   accessToken: process.env.TWITTER_ACCESS_TOKEN || '',
   accessSecret: process.env.TWITTER_ACCESS_SECRET || '',
+});
+
+// Initialize Instagram client
+const instagramClient = new InstagramClient({
+  accessToken: process.env.INSTAGRAM_ACCESS_TOKEN || '',
+  businessAccountId: process.env.INSTAGRAM_BUSINESS_ACCOUNT_ID || '',
+  facebookPageId: process.env.FACEBOOK_PAGE_ID || '',
 });
 
 // Config
@@ -287,6 +298,8 @@ bot.command('start', async (ctx) => {
 
 🔐 **Azioni Sicure (richiedono conferma):**
 /tweet <testo> - Pubblica tweet
+/instagram <url> <caption> - Post Instagram
+/reel <url> <caption> - Pubblica Reel
 /email to|subj|body - Invia email
 /pending - Azioni in attesa
 
@@ -305,6 +318,9 @@ bot.command('help', async (ctx) => {
 
 🔐 **Azioni Sicure (con conferma):**
 /tweet <testo> - Pubblica tweet
+/instagram <url> <caption> - Post Instagram (foto)
+/reel <url> <caption> - Pubblica Reel (video)
+/story <url> - Pubblica Story
 /email to|subj|body - Invia email
 /pending - Vedi azioni in attesa
 
@@ -538,6 +554,36 @@ bot.action(/^confirm_(.+)$/, async (ctx) => {
       } else {
         await ctx.editMessageText(`❌ Errore: ${result.error}`);
       }
+    } else if (action.type === 'instagram') {
+      const postType = action.data.postType || 'feed';
+      const typeLabel = postType === 'reels' ? 'Reel' : postType === 'stories' ? 'Story' : 'post';
+      await ctx.editMessageText(`📸 Pubblicando ${typeLabel} su Instagram...`);
+
+      let result;
+      if (postType === 'reels') {
+        result = await instagramClient.postReel(action.data.mediaUrl, action.data.caption, {
+          hashtags: action.data.hashtags,
+          shareToFeed: true,
+        });
+      } else if (postType === 'stories') {
+        result = await instagramClient.postStory(action.data.mediaUrl, action.data.caption);
+      } else {
+        result = await instagramClient.post({
+          text: action.data.caption,
+          caption: action.data.caption,
+          mediaUrls: [action.data.mediaUrl],
+          hashtags: action.data.hashtags,
+        });
+      }
+
+      if (result.success) {
+        await ctx.editMessageText(
+          `✅ **Instagram ${typeLabel} pubblicato!**\n\n"${action.data.caption.substring(0, 100)}..."\n\n🔗 ${result.url || result.postId}`,
+          { parse_mode: 'Markdown' }
+        );
+      } else {
+        await ctx.editMessageText(`❌ Errore Instagram: ${result.error}`);
+      }
     }
 
     await ctx.answerCbQuery('✅ Azione eseguita');
@@ -641,6 +687,172 @@ Separa con | (pipe)`);
       ...Markup.inlineKeyboard([
         [
           Markup.button.callback('✅ Invia', `confirm_${actionId}`),
+          Markup.button.callback('❌ Annulla', `cancel_${actionId}`),
+        ],
+      ]),
+    }
+  );
+});
+
+// ============================================
+// INSTAGRAM COMMAND with Confirmation
+// ============================================
+bot.command('instagram', async (ctx) => {
+  // Format: /instagram <media-url> <caption>
+  const args = ctx.message.text.replace('/instagram ', '').trim();
+
+  if (!args || args === '/instagram') {
+    await ctx.reply(`📸 **Uso:**
+/instagram <url-immagine> <caption>
+
+**Esempio:**
+/instagram https://example.com/image.jpg Ecco la mia foto! #flutur
+
+Nota: L'URL deve essere pubblicamente accessibile`);
+    return;
+  }
+
+  if (!instagramClient.isConfigured()) {
+    await ctx.reply('❌ Instagram non configurato. Aggiungi INSTAGRAM_ACCESS_TOKEN e INSTAGRAM_BUSINESS_ACCOUNT_ID al .env');
+    return;
+  }
+
+  const parts = args.split(' ');
+  const mediaUrl = parts[0];
+  const caption = parts.slice(1).join(' ') || '';
+
+  if (!mediaUrl.startsWith('http')) {
+    await ctx.reply('❌ URL media non valido. Deve iniziare con http:// o https://');
+    return;
+  }
+
+  // Extract hashtags from caption
+  const hashtagMatch = caption.match(/#\w+/g);
+  const hashtags = hashtagMatch || [];
+
+  // Queue for confirmation
+  const actionId = queueAction('instagram', {
+    mediaUrl,
+    caption,
+    hashtags,
+    postType: 'feed',
+  }, caption || mediaUrl);
+
+  const preview = caption.length > 150 ? caption.substring(0, 150) + '...' : caption || '(nessuna caption)';
+
+  await ctx.reply(
+    `🔐 **Conferma Post Instagram**\n\n📸 **Media:** ${mediaUrl.substring(0, 50)}...\n📝 **Caption:** "${preview}"\n${hashtags.length > 0 ? `#️⃣ **Hashtags:** ${hashtags.length}\n` : ''}⏰ Scade in 5 minuti`,
+    {
+      parse_mode: 'Markdown',
+      ...Markup.inlineKeyboard([
+        [
+          Markup.button.callback('✅ Pubblica', `confirm_${actionId}`),
+          Markup.button.callback('❌ Annulla', `cancel_${actionId}`),
+        ],
+      ]),
+    }
+  );
+});
+
+// ============================================
+// REEL COMMAND with Confirmation
+// ============================================
+bot.command('reel', async (ctx) => {
+  const args = ctx.message.text.replace('/reel ', '').trim();
+
+  if (!args || args === '/reel') {
+    await ctx.reply(`🎬 **Uso:**
+/reel <url-video> <caption>
+
+**Esempio:**
+/reel https://example.com/video.mp4 Il mio nuovo Reel! #flutur #music
+
+Nota: Video max 90 secondi, formato 9:16 consigliato`);
+    return;
+  }
+
+  if (!instagramClient.isConfigured()) {
+    await ctx.reply('❌ Instagram non configurato');
+    return;
+  }
+
+  const parts = args.split(' ');
+  const mediaUrl = parts[0];
+  const caption = parts.slice(1).join(' ') || '';
+
+  if (!mediaUrl.startsWith('http')) {
+    await ctx.reply('❌ URL video non valido');
+    return;
+  }
+
+  const hashtagMatch = caption.match(/#\w+/g);
+  const hashtags = hashtagMatch || [];
+
+  const actionId = queueAction('instagram', {
+    mediaUrl,
+    caption,
+    hashtags,
+    postType: 'reels',
+  }, caption || mediaUrl);
+
+  const preview = caption.length > 150 ? caption.substring(0, 150) + '...' : caption || '(nessuna caption)';
+
+  await ctx.reply(
+    `🔐 **Conferma Reel Instagram**\n\n🎬 **Video:** ${mediaUrl.substring(0, 50)}...\n📝 **Caption:** "${preview}"\n${hashtags.length > 0 ? `#️⃣ **Hashtags:** ${hashtags.length}\n` : ''}⏰ Scade in 5 minuti`,
+    {
+      parse_mode: 'Markdown',
+      ...Markup.inlineKeyboard([
+        [
+          Markup.button.callback('✅ Pubblica', `confirm_${actionId}`),
+          Markup.button.callback('❌ Annulla', `cancel_${actionId}`),
+        ],
+      ]),
+    }
+  );
+});
+
+// ============================================
+// STORY COMMAND with Confirmation
+// ============================================
+bot.command('story', async (ctx) => {
+  const args = ctx.message.text.replace('/story ', '').trim();
+
+  if (!args || args === '/story') {
+    await ctx.reply(`📖 **Uso:**
+/story <url-media>
+
+**Esempio:**
+/story https://example.com/image.jpg
+
+Nota: Le storie durano 24 ore. Video max 60 secondi.`);
+    return;
+  }
+
+  if (!instagramClient.isConfigured()) {
+    await ctx.reply('❌ Instagram non configurato');
+    return;
+  }
+
+  const mediaUrl = args.split(' ')[0];
+
+  if (!mediaUrl.startsWith('http')) {
+    await ctx.reply('❌ URL media non valido');
+    return;
+  }
+
+  const actionId = queueAction('instagram', {
+    mediaUrl,
+    caption: '',
+    postType: 'stories',
+  }, mediaUrl);
+
+  await ctx.reply(
+    `🔐 **Conferma Story Instagram**\n\n📖 **Media:** ${mediaUrl.substring(0, 60)}...\n⏰ Scade in 5 minuti`,
+    {
+      parse_mode: 'Markdown',
+      ...Markup.inlineKeyboard([
+        [
+          Markup.button.callback('✅ Pubblica', `confirm_${actionId}`),
           Markup.button.callback('❌ Annulla', `cancel_${actionId}`),
         ],
       ]),

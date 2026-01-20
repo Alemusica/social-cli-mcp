@@ -7,7 +7,10 @@
 
 import * as crypto from 'crypto';
 import * as dotenv from 'dotenv';
+import { loadSecretsToEnv } from './keychain.js';
 
+// Load secrets from Keychain first (priority), then .env as fallback
+loadSecretsToEnv();
 dotenv.config();
 
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
@@ -15,7 +18,7 @@ const USER_ID = process.env.TELEGRAM_USER_ID;
 
 interface PendingAction {
   id: string;
-  type: 'tweet' | 'email';
+  type: 'tweet' | 'email' | 'instagram';
   data: any;
   resolve: (confirmed: boolean) => void;
   expiresAt: Date;
@@ -28,7 +31,7 @@ export const pendingConfirmations = new Map<string, PendingAction>();
  * Send a confirmation request to Telegram and wait for user response
  */
 export async function requestConfirmation(
-  type: 'tweet' | 'email',
+  type: 'tweet' | 'email' | 'instagram',
   data: any,
   preview: string,
   timeoutMs: number = 300000 // 5 minutes
@@ -55,6 +58,10 @@ export async function requestConfirmation(
     message = `🔐 **Conferma Tweet (da CLI)**\n\n"${preview}"\n\n📊 ${preview.length}/280 caratteri\n⏰ Scade in 5 minuti`;
   } else if (type === 'email') {
     message = `🔐 **Conferma Email (da CLI)**\n\n📧 **A:** ${data.to}\n📝 **Oggetto:** ${data.subject}\n\n**Anteprima:**\n${preview.substring(0, 200)}...\n\n⏰ Scade in 5 minuti`;
+  } else if (type === 'instagram') {
+    const postType = data.postType || 'feed';
+    const typeEmoji = postType === 'reels' ? '🎬' : postType === 'stories' ? '📖' : '📸';
+    message = `🔐 **Conferma Instagram ${typeEmoji} (da CLI)**\n\n**Tipo:** ${postType}\n**Caption:** "${preview.substring(0, 150)}..."\n**Media:** ${data.mediaUrls?.length || 0} file\n\n⏰ Scade in 5 minuti`;
   }
 
   // Send message via Telegram API
@@ -254,6 +261,78 @@ export async function postTweetWithConfirmation(
   }
 }
 
+/**
+ * Post to Instagram with Telegram confirmation
+ */
+export async function postInstagramWithConfirmation(
+  caption: string,
+  mediaUrls: string[],
+  options?: {
+    postType?: 'feed' | 'reels' | 'stories';
+    hashtags?: string[];
+    coverUrl?: string;
+    shareToFeed?: boolean;
+  }
+): Promise<{ success: boolean; url?: string; postId?: string; error?: string; cancelled?: boolean }> {
+  const postType = options?.postType || 'feed';
+  const confirmed = await requestConfirmation('instagram', { caption, mediaUrls, postType, ...options }, caption);
+
+  if (!confirmed) {
+    return { success: false, cancelled: true, error: 'User cancelled or timeout' };
+  }
+
+  // Import Instagram client
+  const { InstagramClient } = await import('./clients/instagram.js');
+
+  const client = new InstagramClient({
+    accessToken: process.env.INSTAGRAM_ACCESS_TOKEN!,
+    businessAccountId: process.env.INSTAGRAM_BUSINESS_ACCOUNT_ID!,
+    facebookPageId: process.env.FACEBOOK_PAGE_ID || '',
+  });
+
+  if (!client.isConfigured()) {
+    return { success: false, error: 'Instagram not configured' };
+  }
+
+  try {
+    let result;
+
+    if (postType === 'reels') {
+      result = await client.postReel(mediaUrls[0], caption, {
+        hashtags: options?.hashtags,
+        coverUrl: options?.coverUrl,
+        shareToFeed: options?.shareToFeed ?? true,
+      });
+    } else if (postType === 'stories') {
+      result = await client.postStory(mediaUrls[0], caption);
+    } else {
+      result = await client.post({
+        text: caption,
+        caption,
+        mediaUrls,
+        hashtags: options?.hashtags,
+        postType: 'feed',
+      });
+    }
+
+    if (result.success) {
+      // Notify success via Telegram
+      await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: USER_ID,
+          text: `✅ Instagram ${postType} pubblicato!\n\n"${caption.substring(0, 100)}..."\n\n🔗 ${result.url || result.postId}`,
+        }),
+      });
+    }
+
+    return result;
+  } catch (error: any) {
+    return { success: false, error: error.message };
+  }
+}
+
 // CLI test
 if (import.meta.url === `file://${process.argv[1]}`) {
   const args = process.argv.slice(2);
@@ -272,6 +351,30 @@ if (import.meta.url === `file://${process.argv[1]}`) {
         console.log('Result:', result);
         process.exit(result.success ? 0 : 1);
       });
+  } else if (args[0] === 'test-instagram') {
+    const mediaUrl = args[1];
+    const caption = args.slice(2).join(' ') || 'Test Instagram post';
+    if (!mediaUrl) {
+      console.log('Usage: npx tsx src/security-gate.ts test-instagram <media-url> [caption]');
+      process.exit(1);
+    }
+    postInstagramWithConfirmation(caption, [mediaUrl])
+      .then(result => {
+        console.log('Result:', result);
+        process.exit(result.success ? 0 : 1);
+      });
+  } else if (args[0] === 'test-reel') {
+    const videoUrl = args[1];
+    const caption = args.slice(2).join(' ') || 'Test Instagram Reel';
+    if (!videoUrl) {
+      console.log('Usage: npx tsx src/security-gate.ts test-reel <video-url> [caption]');
+      process.exit(1);
+    }
+    postInstagramWithConfirmation(caption, [videoUrl], { postType: 'reels' })
+      .then(result => {
+        console.log('Result:', result);
+        process.exit(result.success ? 0 : 1);
+      });
   } else {
     console.log(`
 Security Gate - CLI Test
@@ -279,10 +382,14 @@ Security Gate - CLI Test
 Usage:
   npx tsx src/security-gate.ts test-email [email]
   npx tsx src/security-gate.ts test-tweet [text]
+  npx tsx src/security-gate.ts test-instagram <media-url> [caption]
+  npx tsx src/security-gate.ts test-reel <video-url> [caption]
 
 Examples:
   npx tsx src/security-gate.ts test-email alessio@example.com
   npx tsx src/security-gate.ts test-tweet "Hello world!"
+  npx tsx src/security-gate.ts test-instagram "https://example.com/image.jpg" "My photo"
+  npx tsx src/security-gate.ts test-reel "https://example.com/video.mp4" "My Reel"
     `);
   }
 }

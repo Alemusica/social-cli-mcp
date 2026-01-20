@@ -13,8 +13,13 @@ dist/
 gmail-credentials.json
 gmail-token.json
 
-# Large media files
+# Large media files (keep in local, not in repo)
 media/music/videos/
+media/music/images/
+media/music/thumbnails/
+
+# SurrealDB local data
+data/
 
 # External tools (submodules)
 tools/ai-clips-maker/

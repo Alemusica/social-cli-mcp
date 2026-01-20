@@ -1,18 +1,101 @@
 # Social CLI MCP - Agent Guide
 
-Quick-start guide for AI agents working on this project.
+> **AGENT-AGNOSTIC DOCUMENTATION** - Complete context for any AI agent working on this project.
+> Read this first. No need to ask for background info.
+
+---
 
 ## Project Overview
 
-**Owner:** Alessio Ivoy Cazzaniga (@FluturArt)
+**Owner:** Alessio Ivoy Cazzaniga (34)
+**Origin:** Dormelletto / Sesto Calende, Lake Maggiore, Italy
+**Grandfather:** From Rhodes, Greece (Greek connection in blood)
+
 **Concept:** "M-Shaped Mind" - Deep expertise in Music + Software connected by creativity
 
 ### Two Verticals
 
-| Vertical | Brand | Focus |
-|----------|-------|-------|
-| **Music** | Flutur | RAV Vast, live looping, Greece's Got Talent, street performance |
-| **Software** | jsOM | UI Designer for LLM-readable specs |
+| Vertical | Brand | Handles | Focus |
+|----------|-------|---------|-------|
+| **Music** | Flutur | @flutur_8, @FluturArt | RAV Vast, live looping, Greece's Got Talent, field recording |
+| **Software** | jsOM | @AlessioIan | UI Designer for LLM-readable specs, AI tools |
+
+---
+
+## 🦋 The Flutur Story (IMPORTANT CONTEXT)
+
+> **Flutur** = "Butterfly" in Albanian/Romanian - a delicate creature that touches lives momentarily but can create storms elsewhere
+
+### The Journey (2021-2022)
+1. **Summer 2021**: Left with only **€30**, guitar, and RAV Vast for what was supposed to be an 8-day trip
+2. **5-month odyssey**: Busking across Greek islands (Astypalea, Dodecanese, and more)
+3. **Viral moments**: Passersby filmed performances → videos circulated among locals → caught production attention
+4. **Got robbed**: Lost everything, but...
+5. **Alexandra**: A hostel concierge believed in both his music AND story → connected him with Greece's Got Talent producers
+6. **October 2021**: Audition recorded → **4 "Ναί" (yes)** from all judges
+7. **2022**: Greece's Got Talent broadcast → VareseNews coverage → national attention
+
+### Key Achievements
+- 🏆 **Greece's Got Talent** - 4 yes votes (2022)
+- 🏨 **Villa Porta Residency** - 4 years (2022-2025), every Friday July-August, Buddha Bar-style sunset sessions
+- 🎸 **Denver Tour** - Multiple venue performances (2023)
+- 🎙️ **KU100 Binaural Recording** - Professional Neumann field recording setup
+- 📰 **6 VareseNews Articles** - Regional press coverage (2022-2025)
+
+### Press Coverage Links
+- [Greece's Got Talent - Dal Lago Maggiore al Mediterraneo](https://www.varesenews.it/2022/02/dal-lago-maggiore-al-mediterraneo-la-musica-flutur-stupisce-giudici-greeces-got-talent/1433491/) (Feb 2022)
+- [Dalla musica di strada ai concerti di Denver](https://www.varesenews.it/2023/05/flutur-dalla-musica-di-strada-sul-lago-maggiore-ai-concerti-nelle-venue-di-denver/1607555/) (May 2023)
+- [Flutur a Materia - viaggio musicale](https://www.varesenews.it/2025/03/flutur-a-materia-un-sorprendente-viaggio-musicale-tra-suono-e-anima/2180487/) (Mar 2025)
+
+### GGT Strategy (When to Use/Not Use)
+| Context | Use GGT? | Why |
+|---------|----------|-----|
+| Beach clubs, festivals | ✅ YES | Shows crowd appeal, entertainment value |
+| Wellness retreats, sound healing | ❌ NO | "Entertainment" undermines healing credibility |
+| Boutique hotels | ⚠️ Optional | Mention briefly or skip |
+| Developer outreach | ✅ YES | Shows unique multi-disciplinary story |
+
+---
+
+## 💻 Software Background
+
+### Key Projects
+- **[jsOM](https://github.com/Alemusica/jsOM)** - UI canvas that exports LLM-readable JSON specs (bridging designers and AI agents)
+- **[Rememberance](https://github.com/Alemusica/Rememberance)** - DML plate optimizer for vibroacoustic therapy (genetic algo + JAX FEM + modal analysis)
+- **[nico](https://github.com/Alemusica/nico)** - Satellite altimetry + AI causal discovery (PCMCI + LLM interpretation)
+- **[hierarchical-cognitive-stack](https://github.com/Alemusica/hierarchical-cognitive-stack)** - 4-layer memory architecture for LLMs
+- **MCP tools** - Content automation (this project)
+- **121 repos** - Mostly solo deep-dives
+
+### Developer Journey
+- Started scripting Ableton with ClyphX Pro
+- Brought scripted set to Denver tour
+- Building AI-enhanced audio tools
+- The two paths (music + code) kept intersecting → stopped treating them as separate
+
+---
+
+## 🎯 Current Outreach Status
+
+### Email Sent (2026-01-20)
+**To:** Alperen Sümeroğlu (ai-clips-maker dev, Weekly Rewind podcast)
+**Subject:** "M-shaped dev: jsOM + MCP + live looping musician — Weekly Rewind?"
+**Status:** ✅ SENT
+**Message ID:** `<1a05d13d-4de4-2d9d-ef15-90663b07b658@gmail.com>`
+
+### Venue Emails Sent (2026-01-20)
+| Venue | Region | Status |
+|-------|--------|--------|
+| OKU Kos | Greece | Sent |
+| OKU Ibiza | Spain | Sent |
+| Domes Resorts | Greece | Sent |
+| Casa Cook Rhodes | Greece | Sent |
+| Lindian Village | Greece | Sent |
+| Nikki Beach Santorini | Greece | Sent |
+| SantAnna Mykonos | Greece | Sent |
+| Stella Island Crete | Greece | Sent |
+
+---
 
 ## Quick Status
 
@@ -20,10 +103,12 @@ Quick-start guide for AI agents working on this project.
 - **Twitter API**: OAuth 1.0a configured and posting works
 - **Gmail**: SMTP sending configured (flutur8i8@gmail.com)
 - **Gmail OAuth**: Inbox reading configured
-- **Media Catalog**: 19 files cataloged (17 images, 2 videos, 315 MB)
+- **SurrealDB**: Knowledge graph for content/analytics (71/191 photos categorized)
+- **Media Catalog**: 191 photos from travels (Lanzarote, Greece, Morocco, Denver, Italy)
 - **Analytics**: Post tracking with stats history
 - **ai-clips-maker**: Installed for video processing
 - **Venue Database**: 64 venues across 5 regions researched
+- **Telegram Bot**: Ready for deploy to Render
 
 ### Needs Configuration
 - **HuggingFace**: Add `HUGGINGFACE_TOKEN` for speaker diarization
@@ -77,11 +162,25 @@ social-cli-mcp/
 
 ## Key Files to Read First
 
-1. **[.env](.env)** - All credentials (copy from `.env.example`)
-2. **[analytics/posts-history.json](analytics/posts-history.json)** - Current campaign stats
-3. **[content/outreach/contacts.json](content/outreach/contacts.json)** - People to contact
-4. **[media/catalog.json](media/catalog.json)** - Available media files
-5. **[content/m-shaped-mind.json](content/m-shaped-mind.json)** - Brand concept
+### 🔑 Essential Context (READ THESE)
+1. **[content/m-shaped-mind.json](content/m-shaped-mind.json)** - M-shaped brand concept
+2. **[content/music/flutur-links.json](content/music/flutur-links.json)** - ALL Flutur links, videos, press, residencies
+3. **[content/outreach/funnel-strategy.md](content/outreach/funnel-strategy.md)** - When to use GGT, video matching
+4. **[content/EDITORIAL_PLAN_v3.md](content/EDITORIAL_PLAN_v3.md)** - Current editorial plan with full story
+
+### 📊 Operational Files
+5. **[analytics/posts-history.json](analytics/posts-history.json)** - Current campaign stats
+6. **[content/outreach/contacts.json](content/outreach/contacts.json)** - People to contact
+7. **[.env](.env)** - All credentials (copy from `.env.example`)
+
+### 🎥 Video Assets (use strategically)
+| Video | URL | Best For |
+|-------|-----|----------|
+| **Greece's Got Talent** | https://youtu.be/NI23tAP0c8U | Festivals, unique venues |
+| **Efthymia** | https://youtu.be/I-lpfRHTSG4 | Wellness, meditation, hotels |
+| **Rocca di Arona** | https://youtu.be/K7oROUjuLGQ | Sunset clubs, organic house |
+| **Ben Böhmer style** | https://youtu.be/FkBwJJS2ZxQ | Club venues, beach parties |
+| **Who Is Flutur** | https://youtu.be/rmnShcDsBBY | EPK, booking agents (NOT cold outreach) |
 
 ## Current Campaign Stats (2026-01-20)
 
