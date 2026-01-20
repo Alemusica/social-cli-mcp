@@ -10,12 +10,15 @@ Post to **Twitter/X**, **Reddit**, **LinkedIn**, and **Instagram** from your ter
 
 ## Features
 
-- 🐦 **Twitter/X** - Posts, threads, media uploads
+- 🐦 **Twitter/X** - Posts, threads, media uploads, analytics
 - 🤖 **Reddit** - Text posts, link posts, cross-posting
 - 💼 **LinkedIn** - Updates with links and images
 - 📸 **Instagram** - Photo/video posts, carousels (Creator/Business accounts)
+- 📧 **Email** - Gmail SMTP for outreach campaigns
 - 🤖 **MCP Server** - AI agent integration
 - 🎨 **Interactive mode** - Guided posting experience
+- 📱 **Telegram Bot** - Remote control + Claude AI chat
+- 🔐 **Security Gate** - All sensitive actions require Telegram confirmation
 
 ---
 
@@ -189,6 +192,61 @@ Add to your MCP config:
 
 ---
 
+## Telegram Bot 📱
+
+Control your social media from Telegram with security confirmations.
+
+### Setup
+
+1. Create bot with [@BotFather](https://t.me/BotFather)
+2. Get your user ID from [@userinfobot](https://t.me/userinfobot)
+3. Add to `.env`:
+   ```
+   TELEGRAM_BOT_TOKEN=your_bot_token
+   TELEGRAM_USER_ID=your_user_id
+   ANTHROPIC_API_KEY=sk-ant-xxx  # Optional, for Claude AI
+   ```
+
+### Run
+
+```bash
+npm run bot
+```
+
+### Commands
+
+| Command | Description |
+|---------|-------------|
+| `/tweet <text>` | Post tweet (with confirmation) |
+| `/email to\|subj\|body` | Send email (with confirmation) |
+| `/pending` | View pending actions |
+| `/twitter` | View recent tweets + metrics |
+| `/status` | Outreach status |
+| `/venues` | List contacted venues |
+| Free text | Chat with Claude AI |
+
+### Security
+
+All sensitive actions (tweets, emails) require confirmation via inline buttons. Actions expire after 5 minutes.
+
+See [docs/TELEGRAM_BOT_SETUP.md](docs/TELEGRAM_BOT_SETUP.md) for detailed setup.
+
+---
+
+## Security Gate 🔐
+
+When using Claude Code or other CLI tools, sensitive actions are routed through Telegram for confirmation:
+
+```bash
+# Test email with confirmation
+npx tsx src/security-gate.ts test-email your@email.com
+
+# Test tweet with confirmation
+npx tsx src/security-gate.ts test-tweet "Hello world"
+```
+
+---
+
 ## Development
 
 ```bash
@@ -197,6 +255,9 @@ npm run cli <command>
 
 # Run MCP server
 npm run mcp
+
+# Run Telegram bot
+npm run bot
 
 # Build
 npm run build
