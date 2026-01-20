@@ -1,0 +1,15 @@
+# Don't upload these to Railway
+.env
+.env.*
+*.log
+node_modules/
+dist/
+.git/
+.vscode/
+.idea/
+content/
+docs/
+tools/
+media/
+gmail-*.json
+*.md

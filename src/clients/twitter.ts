@@ -128,4 +128,70 @@ export class TwitterClient implements SocialClient {
 
     return results;
   }
+
+  /**
+   * Get recent tweets from authenticated user
+   */
+  async getMyRecentTweets(count: number = 10): Promise<{
+    success: boolean;
+    tweets?: Array<{
+      id: string;
+      text: string;
+      created_at: string;
+      metrics?: {
+        likes: number;
+        retweets: number;
+        replies: number;
+        impressions: number;
+      };
+    }>;
+    error?: string;
+  }> {
+    if (!this.client) {
+      return { success: false, error: 'Twitter client not configured' };
+    }
+
+    try {
+      const me = await this.client.v2.me();
+      const userId = me.data.id;
+
+      const timeline = await this.client.v2.userTimeline(userId, {
+        max_results: count,
+        'tweet.fields': ['created_at', 'public_metrics'],
+      });
+
+      const tweets = timeline.data.data?.map(tweet => ({
+        id: tweet.id,
+        text: tweet.text,
+        created_at: tweet.created_at || '',
+        metrics: tweet.public_metrics ? {
+          likes: tweet.public_metrics.like_count,
+          retweets: tweet.public_metrics.retweet_count,
+          replies: tweet.public_metrics.reply_count,
+          impressions: tweet.public_metrics.impression_count || 0,
+        } : undefined,
+      })) || [];
+
+      return { success: true, tweets };
+    } catch (error: any) {
+      return { success: false, error: error.message };
+    }
+  }
+
+  /**
+   * Get user info
+   */
+  async getMe(): Promise<{ username: string; name: string; followers: number } | null> {
+    if (!this.client) return null;
+    try {
+      const me = await this.client.v2.me({ 'user.fields': ['public_metrics', 'name'] });
+      return {
+        username: me.data.username,
+        name: me.data.name,
+        followers: me.data.public_metrics?.followers_count || 0,
+      };
+    } catch {
+      return null;
+    }
+  }
 }

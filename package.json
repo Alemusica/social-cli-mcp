@@ -12,6 +12,8 @@
     "dev": "tsx watch src/cli.ts",
     "cli": "tsx src/cli.ts",
     "mcp": "tsx src/mcp-server.ts",
+    "bot": "tsx src/telegram-bot.ts",
+    "start": "node dist/telegram-bot.js",
     "test": "vitest"
   },
   "keywords": [
@@ -27,6 +29,7 @@
   "author": "Alessio Ivoy Cazzaniga (@FluturArt)",
   "license": "MIT",
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.71.2",
     "@modelcontextprotocol/sdk": "^1.0.0",
     "@types/nodemailer": "^7.0.5",
     "chalk": "^5.3.0",
@@ -36,6 +39,7 @@
     "inquirer": "^9.2.0",
     "nodemailer": "^7.0.12",
     "snoowrap": "^1.23.0",
+    "telegraf": "^4.16.3",
     "twitter-api-v2": "^1.15.0"
   },
   "devDependencies": {
