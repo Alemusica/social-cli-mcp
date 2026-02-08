@@ -7,11 +7,24 @@
  * 2. Add Instagram Graph API product
  * 3. Link Facebook Page to Instagram Business/Creator account
  * 4. Get long-lived access token
+ *
+ * Features:
+ * - Duplicate detection before posting
+ * - Automatic post recording for future duplicate checks
  */
 
-import type { PostResult, InstagramPostOptions, SocialClient, Config } from '../types.js';
+import type {
+  PostResult,
+  InstagramPostOptions,
+  SocialClient,
+  Config,
+  InstagramAccountInsights,
+  InstagramMediaInsights,
+  InstagramAudienceInsights
+} from '../types.js';
+import { checkDuplicate, recordPost } from '../core/duplicate-checker.js';
 
-const GRAPH_API_VERSION = 'v18.0';
+const GRAPH_API_VERSION = 'v24.0';
 const GRAPH_API_BASE = `https://graph.facebook.com/${GRAPH_API_VERSION}`;
 
 // Instagram API Response types
@@ -67,7 +80,11 @@ export class InstagramClient implements SocialClient {
     }
   }
 
-  async post(options: InstagramPostOptions): Promise<PostResult> {
+  async post(options: InstagramPostOptions & {
+    skipDuplicateCheck?: boolean;
+    topic?: string;
+    topicKeywords?: string[];
+  }): Promise<PostResult> {
     if (!this.config?.accessToken || !this.config?.businessAccountId) {
       return {
         success: false,
@@ -91,7 +108,21 @@ export class InstagramClient implements SocialClient {
         caption += '\n\n' + options.hashtags.map(h => h.startsWith('#') ? h : `#${h}`).join(' ');
       }
 
+      // Check for duplicates (unless explicitly skipped or it's a story)
       const postType = options.postType || 'feed';
+      if (!options.skipDuplicateCheck && postType !== 'stories') {
+        const duplicateCheck = await checkDuplicate('instagram', caption, {
+          topic: options.topic,
+        });
+
+        if (duplicateCheck.isDuplicate) {
+          return {
+            success: false,
+            platform: 'instagram',
+            error: `Duplicate detected: ${duplicateCheck.reason}`,
+          };
+        }
+      }
       let containerId: string;
 
       // Handle different post types
@@ -143,6 +174,16 @@ export class InstagramClient implements SocialClient {
         `${GRAPH_API_BASE}/${publishData.id}?fields=permalink&access_token=${this.config.accessToken}`
       );
       const mediaData = await mediaResponse.json() as IGApiResponse;
+
+      // Record the post for future duplicate checking (unless it's a story)
+      if (postType !== 'stories') {
+        await recordPost('instagram', {
+          id: publishData.id!,
+          text: caption,
+          topic: options.topic,
+          keywords: options.topicKeywords,
+        });
+      }
 
       return {
         success: true,
@@ -290,7 +331,7 @@ export class InstagramClient implements SocialClient {
    * Create a Stories container
    * Stories support images and videos up to 60 seconds
    */
-  private async createStoriesContainer(mediaUrl: string, caption: string): Promise<string> {
+  private async createStoriesContainer(mediaUrl: string, _caption: string): Promise<string> {
     const isVideo = mediaUrl.endsWith('.mp4') || mediaUrl.endsWith('.mov') || mediaUrl.includes('video');
 
     const body: Record<string, any> = {
@@ -393,5 +434,439 @@ export class InstagramClient implements SocialClient {
     }
 
     throw new Error('Media processing timeout');
+  }
+
+  // ─────────────────────────────────────────
+  // Instagram Insights API
+  // ─────────────────────────────────────────
+
+  /**
+   * Get account-level insights
+   * Requires: instagram_manage_insights permission
+   */
+  async getAccountInsights(period: 'day' | 'week' | 'days_28' = 'days_28'): Promise<InstagramAccountInsights | null> {
+    if (!this.config?.accessToken || !this.config?.businessAccountId) {
+      console.error('❌ Instagram client not configured');
+      return null;
+    }
+
+    try {
+      // Get basic account info
+      const accountResponse = await fetch(
+        `${GRAPH_API_BASE}/${this.config.businessAccountId}?fields=followers_count,media_count,username&access_token=${this.config.accessToken}`
+      );
+      const accountData = await accountResponse.json() as any;
+
+      if (accountData.error) {
+        console.error('❌ Failed to get account info:', accountData.error.message);
+        return null;
+      }
+
+      const insights: InstagramAccountInsights = {
+        followerCount: accountData.followers_count || 0,
+        mediaCount: accountData.media_count || 0,
+        period,
+      };
+
+      // Fetch metrics separately (v24+ requires separate calls for different metric_types)
+      const fetchMetric = async (metric: string, needsTotalValue: boolean = true) => {
+        const url = needsTotalValue
+          ? `${GRAPH_API_BASE}/${this.config!.businessAccountId}/insights?metric=${metric}&period=${period}&metric_type=total_value&access_token=${this.config!.accessToken}`
+          : `${GRAPH_API_BASE}/${this.config!.businessAccountId}/insights?metric=${metric}&period=${period}&access_token=${this.config!.accessToken}`;
+        const res = await fetch(url);
+        const data = await res.json() as any;
+        if (data.data?.[0]) {
+          return data.data[0].total_value?.value ?? data.data[0].values?.[0]?.value ?? 0;
+        }
+        return 0;
+      };
+
+      // Fetch each metric
+      insights.reach = await fetchMetric('reach');
+      insights.profileViews = await fetchMetric('profile_views');
+      insights.websiteClicks = await fetchMetric('website_clicks');
+
+      return insights;
+    } catch (error: any) {
+      console.error('❌ Failed to get account insights:', error.message);
+      return null;
+    }
+  }
+
+  /**
+   * Get insights for a specific media post
+   * Requires: instagram_manage_insights permission
+   */
+  async getMediaInsights(mediaId: string): Promise<InstagramMediaInsights | null> {
+    if (!this.config?.accessToken) {
+      console.error('❌ Instagram client not configured');
+      return null;
+    }
+
+    try {
+      // Get media info and insights in one call
+      const response = await fetch(
+        `${GRAPH_API_BASE}/${mediaId}?fields=id,media_type,timestamp,permalink,like_count,comments_count,insights.metric(impressions,reach,saved,shares,plays,total_interactions)&access_token=${this.config.accessToken}`
+      );
+      const data = await response.json() as any;
+
+      if (data.error) {
+        console.error('❌ Failed to get media insights:', data.error.message);
+        return null;
+      }
+
+      const insights: InstagramMediaInsights = {
+        mediaId: data.id,
+        mediaType: data.media_type,
+        timestamp: data.timestamp,
+        permalink: data.permalink,
+        likes: data.like_count,
+        comments: data.comments_count,
+      };
+
+      // Parse insights data
+      if (data.insights?.data) {
+        for (const metric of data.insights.data) {
+          const value = metric.values?.[0]?.value || 0;
+          switch (metric.name) {
+            case 'impressions':
+              insights.impressions = value;
+              break;
+            case 'reach':
+              insights.reach = value;
+              break;
+            case 'saved':
+              insights.saved = value;
+              break;
+            case 'shares':
+              insights.shares = value;
+              break;
+            case 'plays':
+              insights.plays = value;
+              break;
+            case 'total_interactions':
+              insights.totalInteractions = value;
+              break;
+          }
+        }
+      }
+
+      return insights;
+    } catch (error: any) {
+      console.error('❌ Failed to get media insights:', error.message);
+      return null;
+    }
+  }
+
+  /**
+   * Get insights for all recent media posts
+   * Returns array sorted by most recent first
+   */
+  async getRecentMediaInsights(limit: number = 10): Promise<InstagramMediaInsights[]> {
+    if (!this.config?.accessToken || !this.config?.businessAccountId) {
+      console.error('❌ Instagram client not configured');
+      return [];
+    }
+
+    try {
+      // Get recent media IDs
+      const mediaResponse = await fetch(
+        `${GRAPH_API_BASE}/${this.config.businessAccountId}/media?fields=id&limit=${limit}&access_token=${this.config.accessToken}`
+      );
+      const mediaData = await mediaResponse.json() as any;
+
+      if (mediaData.error || !mediaData.data) {
+        console.error('❌ Failed to get media list:', mediaData.error?.message);
+        return [];
+      }
+
+      // Get insights for each media
+      const insights: InstagramMediaInsights[] = [];
+      for (const media of mediaData.data) {
+        const mediaInsight = await this.getMediaInsights(media.id);
+        if (mediaInsight) {
+          insights.push(mediaInsight);
+        }
+      }
+
+      return insights;
+    } catch (error: any) {
+      console.error('❌ Failed to get recent media insights:', error.message);
+      return [];
+    }
+  }
+
+  /**
+   * Get audience demographics insights
+   * Requires: instagram_manage_insights permission
+   * Note: Only available for accounts with 100+ followers
+   */
+  async getAudienceInsights(): Promise<InstagramAudienceInsights | null> {
+    if (!this.config?.accessToken || !this.config?.businessAccountId) {
+      console.error('❌ Instagram client not configured');
+      return null;
+    }
+
+    try {
+      const insights: InstagramAudienceInsights = {
+        ageGender: [],
+        topCities: [],
+        topCountries: [],
+      };
+
+      // Get follower demographics (new API - requires metric_type=total_value)
+      const demographicsResponse = await fetch(
+        `${GRAPH_API_BASE}/${this.config.businessAccountId}/insights?metric=follower_demographics&period=lifetime&metric_type=total_value&breakdown=age,gender&access_token=${this.config.accessToken}`
+      );
+      const demographicsData = await demographicsResponse.json() as any;
+
+      if (demographicsData.data?.[0]?.total_value?.breakdowns?.[0]?.results) {
+        const results = demographicsData.data[0].total_value.breakdowns[0].results;
+        const ageGroups: { [key: string]: { male: number; female: number } } = {};
+
+        for (const item of results) {
+          const dims = item.dimension_values || [];
+          const age = dims[0];
+          const gender = dims[1];
+          const value = item.value || 0;
+
+          if (age && gender) {
+            if (!ageGroups[age]) {
+              ageGroups[age] = { male: 0, female: 0 };
+            }
+            if (gender === 'M') {
+              ageGroups[age].male = value;
+            } else if (gender === 'F') {
+              ageGroups[age].female = value;
+            }
+          }
+        }
+
+        insights.ageGender = Object.entries(ageGroups)
+          .map(([ageRange, counts]) => ({ ageRange, ...counts }))
+          .sort((a, b) => a.ageRange.localeCompare(b.ageRange));
+      }
+
+      // Get city breakdown
+      const cityResponse = await fetch(
+        `${GRAPH_API_BASE}/${this.config.businessAccountId}/insights?metric=follower_demographics&period=lifetime&metric_type=total_value&breakdown=city&access_token=${this.config.accessToken}`
+      );
+      const cityData = await cityResponse.json() as any;
+
+      if (cityData.data?.[0]?.total_value?.breakdowns?.[0]?.results) {
+        insights.topCities = cityData.data[0].total_value.breakdowns[0].results
+          .map((item: any) => ({
+            city: item.dimension_values?.[0] || 'Unknown',
+            count: item.value || 0,
+          }))
+          .sort((a: any, b: any) => b.count - a.count)
+          .slice(0, 10);
+      }
+
+      // Get country breakdown
+      const countryResponse = await fetch(
+        `${GRAPH_API_BASE}/${this.config.businessAccountId}/insights?metric=follower_demographics&period=lifetime&metric_type=total_value&breakdown=country&access_token=${this.config.accessToken}`
+      );
+      const countryData = await countryResponse.json() as any;
+
+      if (countryData.data?.[0]?.total_value?.breakdowns?.[0]?.results) {
+        insights.topCountries = countryData.data[0].total_value.breakdowns[0].results
+          .map((item: any) => ({
+            country: item.dimension_values?.[0] || 'Unknown',
+            count: item.value || 0,
+          }))
+          .sort((a: any, b: any) => b.count - a.count)
+          .slice(0, 10);
+      }
+
+      // Get online followers (when are they active)
+      const onlineResponse = await fetch(
+        `${GRAPH_API_BASE}/${this.config.businessAccountId}/insights?metric=online_followers&period=lifetime&access_token=${this.config.accessToken}`
+      );
+      const onlineData = await onlineResponse.json() as any;
+
+      if (onlineData.data?.[0]?.values?.[0]?.value) {
+        const value = onlineData.data[0].values[0].value;
+        insights.onlineFollowers = [];
+        for (const [day, hours] of Object.entries(value)) {
+          const dayNum = parseInt(day);
+          for (const [hour, count] of Object.entries(hours as object)) {
+            insights.onlineFollowers.push({
+              day: dayNum,
+              hour: parseInt(hour),
+              count: count as number,
+            });
+          }
+        }
+        insights.onlineFollowers.sort((a, b) => b.count - a.count);
+      }
+
+      return insights;
+    } catch (error: any) {
+      console.error('❌ Failed to get audience insights:', error.message);
+      return null;
+    }
+  }
+
+  /**
+   * Get best times to post based on when followers are online
+   * Returns top 5 time slots
+   */
+  async getBestPostingTimes(): Promise<{ day: string; hour: string; followers: number }[]> {
+    const audience = await this.getAudienceInsights();
+    if (!audience?.onlineFollowers?.length) {
+      return [];
+    }
+
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+    return audience.onlineFollowers
+      .slice(0, 5)
+      .map(slot => ({
+        day: days[slot.day],
+        hour: `${slot.hour.toString().padStart(2, '0')}:00`,
+        followers: slot.count,
+      }));
+  }
+
+  /**
+   * Search for hashtag ID by name
+   * Note: Rate limited to 30 unique hashtags per 7-day period
+   */
+  async searchHashtag(hashtagName: string): Promise<{ id: string; name: string } | null> {
+    if (!this.config?.accessToken || !this.config?.businessAccountId) {
+      console.error('❌ Instagram client not configured');
+      return null;
+    }
+
+    try {
+      // Remove # if present
+      const cleanTag = hashtagName.replace(/^#/, '');
+
+      const response = await fetch(
+        `${GRAPH_API_BASE}/ig_hashtag_search?user_id=${this.config.businessAccountId}&q=${encodeURIComponent(cleanTag)}&access_token=${this.config.accessToken}`
+      );
+      const data = await response.json() as any;
+
+      if (data.error) {
+        console.error('❌ Hashtag search error:', data.error.message);
+        return null;
+      }
+
+      if (data.data?.[0]) {
+        return {
+          id: data.data[0].id,
+          name: cleanTag,
+        };
+      }
+
+      return null;
+    } catch (error: any) {
+      console.error('❌ Failed to search hashtag:', error.message);
+      return null;
+    }
+  }
+
+  /**
+   * Get top media for a hashtag
+   * Returns top posts (most engagement) for the hashtag
+   */
+  async getHashtagTopMedia(hashtagId: string, limit: number = 10): Promise<any[]> {
+    if (!this.config?.accessToken || !this.config?.businessAccountId) {
+      console.error('❌ Instagram client not configured');
+      return [];
+    }
+
+    try {
+      const response = await fetch(
+        `${GRAPH_API_BASE}/${hashtagId}/top_media?user_id=${this.config.businessAccountId}&fields=id,caption,media_type,permalink,like_count,comments_count,timestamp&limit=${limit}&access_token=${this.config.accessToken}`
+      );
+      const data = await response.json() as any;
+
+      if (data.error) {
+        console.error('❌ Hashtag top media error:', data.error.message);
+        return [];
+      }
+
+      return data.data || [];
+    } catch (error: any) {
+      console.error('❌ Failed to get hashtag top media:', error.message);
+      return [];
+    }
+  }
+
+  /**
+   * Get recent media for a hashtag
+   * Returns most recent posts using the hashtag
+   */
+  async getHashtagRecentMedia(hashtagId: string, limit: number = 10): Promise<any[]> {
+    if (!this.config?.accessToken || !this.config?.businessAccountId) {
+      console.error('❌ Instagram client not configured');
+      return [];
+    }
+
+    try {
+      const response = await fetch(
+        `${GRAPH_API_BASE}/${hashtagId}/recent_media?user_id=${this.config.businessAccountId}&fields=id,caption,media_type,permalink,like_count,comments_count,timestamp&limit=${limit}&access_token=${this.config.accessToken}`
+      );
+      const data = await response.json() as any;
+
+      if (data.error) {
+        console.error('❌ Hashtag recent media error:', data.error.message);
+        return [];
+      }
+
+      return data.data || [];
+    } catch (error: any) {
+      console.error('❌ Failed to get hashtag recent media:', error.message);
+      return [];
+    }
+  }
+
+  /**
+   * Analyze hashtag performance
+   * Searches for hashtag and gets engagement stats from top media
+   */
+  async analyzeHashtag(hashtagName: string): Promise<{
+    name: string;
+    id: string;
+    topMediaCount: number;
+    avgLikes: number;
+    avgComments: number;
+    topPosts: { permalink: string; likes: number; comments: number }[];
+  } | null> {
+    const hashtag = await this.searchHashtag(hashtagName);
+    if (!hashtag) {
+      return null;
+    }
+
+    const topMedia = await this.getHashtagTopMedia(hashtag.id, 25);
+
+    if (!topMedia.length) {
+      return {
+        name: hashtag.name,
+        id: hashtag.id,
+        topMediaCount: 0,
+        avgLikes: 0,
+        avgComments: 0,
+        topPosts: [],
+      };
+    }
+
+    const totalLikes = topMedia.reduce((sum, m) => sum + (m.like_count || 0), 0);
+    const totalComments = topMedia.reduce((sum, m) => sum + (m.comments_count || 0), 0);
+
+    return {
+      name: hashtag.name,
+      id: hashtag.id,
+      topMediaCount: topMedia.length,
+      avgLikes: Math.round(totalLikes / topMedia.length),
+      avgComments: Math.round(totalComments / topMedia.length),
+      topPosts: topMedia.slice(0, 5).map(m => ({
+        permalink: m.permalink,
+        likes: m.like_count || 0,
+        comments: m.comments_count || 0,
+      })),
+    };
   }
 }

@@ -104,27 +104,35 @@ async function main() {
     const isVideo = filePath.endsWith('.mp4') || filePath.endsWith('.mov');
 
     try {
-      await db.query(`
+      // Build the query dynamically to handle optional fields properly
+      let query = `
         CREATE content SET
           type = $type,
           file_path = $file_path,
           file_name = $file_name,
-          location = $location,
-          location_lat = $lat,
-          location_lng = $lng,
-          taken_at = $taken_at,
-          camera = $camera,
           tags = []
-      `, {
+      `;
+
+      // Add optional fields only if they have values
+      if (location) query = query.replace('tags = []', `location = $location, tags = []`);
+      if (lat !== null) query = query.replace('tags = []', `location_lat = $lat, tags = []`);
+      if (lng !== null) query = query.replace('tags = []', `location_lng = $lng, tags = []`);
+      if (takenAt) query = query.replace('tags = []', `taken_at = <datetime>$taken_at, tags = []`);
+      if (photo.Model) query = query.replace('tags = []', `camera = $camera, tags = []`);
+
+      const params: Record<string, any> = {
         type: isVideo ? 'video' : 'image',
         file_path: filePath,
         file_name: fileName,
-        location: location,
-        lat: lat,
-        lng: lng,
-        taken_at: takenAt?.toISOString() || null,
-        camera: photo.Model || null,
-      });
+      };
+
+      if (location) params.location = location;
+      if (lat !== null) params.lat = lat;
+      if (lng !== null) params.lng = lng;
+      if (takenAt) params.taken_at = takenAt.toISOString();
+      if (photo.Model) params.camera = photo.Model;
+
+      await db.query(query, params);
       imported++;
 
       if (imported % 50 === 0) {

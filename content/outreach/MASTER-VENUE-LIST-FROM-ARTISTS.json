@@ -1,0 +1,791 @@
+{
+  "metadata": {
+    "generated": "2026-01-21",
+    "source": "Handpan/RAV artist performance history analysis",
+    "artists_researched": [
+      "Malte Marten",
+      "Yatao",
+      "Hang Massive",
+      "Manu Delago",
+      "Kabeção",
+      "Sam Maher",
+      "David Kuckhermann"
+    ],
+    "purpose": "Venue targets for FLUTUR outreach based on where similar artists perform"
+  },
+  "festivals": {
+    "handpan_specialist": [
+      {
+        "name": "Pangonia Handpan Festival",
+        "location": "Near Berlin, Germany",
+        "country": "Germany",
+        "type": "handpan_festival",
+        "when": "July",
+        "contact": "info@pangonia.de",
+        "artists_who_played": ["Malte Marten", "various RAV artists"],
+        "fit_score": 10,
+        "notes": "PERFECT - RAV Vast endorsed artist match"
+      },
+      {
+        "name": "GRIASDI Gathering",
+        "location": "Austria",
+        "country": "Austria",
+        "type": "handpan_festival",
+        "when": "Summer",
+        "contact": "griasdi-gathering.org (form)",
+        "artists_who_played": ["Malte Marten", "EU handpan community"],
+        "fit_score": 10,
+        "notes": "European handpan community gathering"
+      },
+      {
+        "name": "Sound Sculpture Festival",
+        "location": "Germany",
+        "country": "Germany",
+        "type": "handpan_festival",
+        "when": "TBD",
+        "contact": "handpan-festival.de",
+        "artists_who_played": ["Malte Marten"],
+        "fit_score": 10,
+        "notes": "Performance + workshop opportunities"
+      },
+      {
+        "name": "Canarias Handpan Festival",
+        "location": "Fuerteventura",
+        "country": "Spain",
+        "type": "handpan_festival",
+        "when": "TBD",
+        "contact": "canariashandpanfestival.com",
+        "artists_who_played": ["Various"],
+        "fit_score": 9,
+        "notes": "Island setting - great visuals"
+      }
+    ],
+    "conscious_transformational": [
+      {
+        "name": "Evolve Festival",
+        "location": "Helenesee (Near Berlin)",
+        "country": "Germany",
+        "type": "conscious_festival",
+        "when": "Summer",
+        "contact": "info@evolve-festival.de",
+        "artists_who_played": ["Rob Ginero (handpan)", "healing artists"],
+        "fit_score": 10,
+        "notes": "100% sober, healing stages - PERFECT for sound healing"
+      },
+      {
+        "name": "Boom Festival",
+        "location": "Idanha-a-Nova",
+        "country": "Portugal",
+        "type": "transformational",
+        "when": "August (biennial)",
+        "contact": "boomfestival.org (application)",
+        "artists_who_played": ["Yatao", "Kabeção"],
+        "fit_score": 9,
+        "notes": "Chill-out and healing stages"
+      },
+      {
+        "name": "Ozora Festival",
+        "location": "Ozora",
+        "country": "Hungary",
+        "type": "transformational",
+        "when": "August",
+        "contact": "ozorafestival.eu (Dragon Nest application)",
+        "artists_who_played": ["Yatao"],
+        "fit_score": 9,
+        "notes": "Dragon Nest stage for ambient/chill"
+      },
+      {
+        "name": "Envision Festival",
+        "location": "Uvita",
+        "country": "Costa Rica",
+        "type": "conscious_festival",
+        "when": "February",
+        "contact": "envisionfestival.com (application)",
+        "artists_who_played": ["Kabeção", "Yatao"],
+        "fit_score": 9,
+        "notes": "Village stages, conscious community"
+      },
+      {
+        "name": "Waking Life Festival",
+        "location": "Alentejo",
+        "country": "Portugal",
+        "type": "transformational",
+        "when": "August",
+        "contact": "wakinglife.pt (application)",
+        "artists_who_played": ["Kabeção"],
+        "fit_score": 9,
+        "notes": "Portugal-based, transformational"
+      },
+      {
+        "name": "BaliSpirit Festival",
+        "location": "Ubud",
+        "country": "Indonesia",
+        "type": "yoga_festival",
+        "when": "April",
+        "contact": "artists@balispiritfestival.com",
+        "artists_who_played": ["Kabeção", "Various"],
+        "fit_score": 9,
+        "notes": "Spirit Pools stage for sound healing"
+      },
+      {
+        "name": "Lightning in a Bottle",
+        "location": "California",
+        "country": "USA",
+        "type": "transformational",
+        "when": "May",
+        "contact": "dolab.com (application)",
+        "artists_who_played": ["Yatao"],
+        "fit_score": 7,
+        "notes": "Waking Dreams stage"
+      },
+      {
+        "name": "Fusion Festival",
+        "location": "Lärz",
+        "country": "Germany",
+        "type": "cultural_festival",
+        "when": "June",
+        "contact": "fusion-festival.de (lottery)",
+        "artists_who_played": ["Yatao"],
+        "fit_score": 6,
+        "notes": "Very competitive, lottery-based"
+      },
+      {
+        "name": "Rainbow Serpent",
+        "location": "Victoria",
+        "country": "Australia",
+        "type": "transformational",
+        "when": "January",
+        "contact": "rainbowserpent.net",
+        "artists_who_played": ["Yatao"],
+        "fit_score": 7,
+        "notes": "Australia - distant but prestigious"
+      },
+      {
+        "name": "Wanderlust Festival",
+        "location": "Multiple",
+        "country": "Global",
+        "type": "yoga_festival",
+        "when": "Various",
+        "contact": "wanderlust.com (application)",
+        "artists_who_played": ["Kabeção"],
+        "fit_score": 8,
+        "notes": "Global yoga circuit"
+      },
+      {
+        "name": "Tribal Gathering",
+        "location": "Panama",
+        "country": "Panama",
+        "type": "transformational",
+        "when": "February-March",
+        "contact": "tribalgathering.com",
+        "artists_who_played": ["Kabeção"],
+        "fit_score": 8,
+        "notes": "Multi-week gathering"
+      }
+    ],
+    "world_music": [
+      {
+        "name": "WOMAD",
+        "location": "Multiple (Charlton Park UK main)",
+        "country": "UK/Global",
+        "type": "world_music",
+        "when": "July",
+        "contact": "womad.org (application)",
+        "artists_who_played": ["Hang Massive"],
+        "fit_score": 8,
+        "notes": "Prestigious world music festival"
+      },
+      {
+        "name": "Rudolstadt Festival",
+        "location": "Rudolstadt",
+        "country": "Germany",
+        "type": "world_music",
+        "when": "July",
+        "contact": "rudolstadt-festival.de",
+        "artists_who_played": ["David Kuckhermann"],
+        "fit_score": 7,
+        "notes": "Major German world music fest"
+      },
+      {
+        "name": "Fes Festival of World Sacred Music",
+        "location": "Fes",
+        "country": "Morocco",
+        "type": "sacred_music",
+        "when": "June",
+        "contact": "fesfestival.com",
+        "artists_who_played": ["David Kuckhermann"],
+        "fit_score": 8,
+        "notes": "Spiritual context perfect for sound healing"
+      },
+      {
+        "name": "Celtic Connections",
+        "location": "Glasgow",
+        "country": "UK",
+        "type": "world_folk",
+        "when": "January",
+        "contact": "celticconnections.com",
+        "artists_who_played": ["David Kuckhermann"],
+        "fit_score": 6,
+        "notes": "World music stage"
+      },
+      {
+        "name": "Rainforest World Music Festival",
+        "location": "Sarawak",
+        "country": "Malaysia",
+        "type": "world_music",
+        "when": "July",
+        "contact": "rwmf.net",
+        "artists_who_played": ["David Kuckhermann"],
+        "fit_score": 7,
+        "notes": "Asia world music circuit"
+      },
+      {
+        "name": "Montreux Jazz Festival",
+        "location": "Montreux",
+        "country": "Switzerland",
+        "type": "jazz",
+        "when": "July",
+        "contact": "montreuxjazz.com",
+        "artists_who_played": ["Manu Delago"],
+        "fit_score": 5,
+        "notes": "ASPIRATIONAL - very prestigious"
+      }
+    ],
+    "mainstream_boutique": [
+      {
+        "name": "Wilderness Festival",
+        "location": "Cornbury Park",
+        "country": "UK",
+        "type": "boutique_festival",
+        "when": "August",
+        "contact": "wildernessfestival.com",
+        "artists_who_played": ["Hang Massive"],
+        "fit_score": 7,
+        "notes": "Boutique, affluent audience"
+      },
+      {
+        "name": "Green Man Festival",
+        "location": "Brecon Beacons, Wales",
+        "country": "UK",
+        "type": "indie_festival",
+        "when": "August",
+        "contact": "greenman.net",
+        "artists_who_played": ["Hang Massive"],
+        "fit_score": 7,
+        "notes": "Indie/folk with ambient stages"
+      },
+      {
+        "name": "Bestival",
+        "location": "Various UK",
+        "country": "UK",
+        "type": "music_festival",
+        "when": "September",
+        "contact": "bestival.net",
+        "artists_who_played": ["Hang Massive"],
+        "fit_score": 6,
+        "notes": "Ambient/chill stages"
+      },
+      {
+        "name": "Edinburgh Fringe",
+        "location": "Edinburgh",
+        "country": "UK",
+        "type": "arts_festival",
+        "when": "August",
+        "contact": "edfringe.com",
+        "artists_who_played": ["Hang Massive"],
+        "fit_score": 6,
+        "notes": "Self-produced shows possible"
+      }
+    ]
+  },
+  "ecstatic_dance_venues": {
+    "europe": [
+      {
+        "name": "Ecstatic Dance Berlin",
+        "city": "Berlin",
+        "country": "Germany",
+        "type": "ecstatic_dance",
+        "contact": "ecstaticdance.berlin",
+        "artists_who_played": ["Yatao", "Kabeção"],
+        "fit_score": 9,
+        "notes": "Major EU ecstatic dance hub"
+      },
+      {
+        "name": "Ecstatic Dance Amsterdam",
+        "city": "Amsterdam",
+        "country": "Netherlands",
+        "type": "ecstatic_dance",
+        "contact": "ecstaticdance.amsterdam",
+        "artists_who_played": ["Kabeção", "Yatao"],
+        "fit_score": 9,
+        "notes": "NL ecstatic dance circuit"
+      },
+      {
+        "name": "Ecstatic Dance Lisbon/Portugal",
+        "city": "Lisbon",
+        "country": "Portugal",
+        "type": "ecstatic_dance",
+        "contact": "ecstaticdance.pt",
+        "artists_who_played": ["Kabeção"],
+        "fit_score": 9,
+        "notes": "Kabeção home base"
+      },
+      {
+        "name": "The Shanti Space",
+        "city": "Near Lisbon",
+        "country": "Portugal",
+        "type": "wellness_center",
+        "contact": "Website contact form",
+        "artists_who_played": ["Various"],
+        "fit_score": 9,
+        "notes": "Monthly Kirtans & Ecstatic Dance"
+      },
+      {
+        "name": "Morning Gloryville",
+        "city": "Multiple EU cities",
+        "country": "Various",
+        "type": "morning_dance",
+        "contact": "mg@morninggloryville.com",
+        "artists_who_played": ["Kabeção", "Yatao"],
+        "fit_score": 8,
+        "notes": "Sober morning rave brand"
+      }
+    ],
+    "asia": [
+      {
+        "name": "The Yoga Barn",
+        "city": "Ubud",
+        "country": "Indonesia",
+        "type": "yoga_center",
+        "contact": "events@theyogabarn.com",
+        "artists_who_played": ["Kabeção"],
+        "fit_score": 9,
+        "notes": "Bali's main yoga/ED venue"
+      },
+      {
+        "name": "Ecstatic Dance Bali",
+        "city": "Ubud",
+        "country": "Indonesia",
+        "type": "ecstatic_dance",
+        "contact": "ecstaticdancebali.com",
+        "artists_who_played": ["Kabeção"],
+        "fit_score": 9,
+        "notes": "Major Asia ED community"
+      },
+      {
+        "name": "The Sanctuary",
+        "city": "Koh Phangan",
+        "country": "Thailand",
+        "type": "wellness_resort",
+        "contact": "thesanctuarythailand.com",
+        "artists_who_played": ["Various"],
+        "fit_score": 9,
+        "notes": "Detox/wellness + sound healing"
+      },
+      {
+        "name": "Sunset Hill Resort",
+        "city": "Koh Phangan",
+        "country": "Thailand",
+        "type": "resort_venue",
+        "contact": "info@sunsetphangan.com",
+        "artists_who_played": ["Sunset Concert Fusion series"],
+        "fit_score": 9,
+        "notes": "Classical/ambient electronic + sunset"
+      }
+    ],
+    "americas": [
+      {
+        "name": "Ecstatic Dance NYC",
+        "city": "New York",
+        "country": "USA",
+        "type": "ecstatic_dance",
+        "contact": "ecstaticdancenyc.com",
+        "artists_who_played": ["Various"],
+        "fit_score": 7,
+        "notes": "NYC scene"
+      },
+      {
+        "name": "Papaya Playa Project",
+        "city": "Tulum",
+        "country": "Mexico",
+        "type": "beach_club",
+        "contact": "events@papayaplayaproject.com",
+        "artists_who_played": ["Yatao"],
+        "fit_score": 8,
+        "notes": "Full moon events, bohemian"
+      },
+      {
+        "name": "Rythmia Life Advancement",
+        "city": "Guanacaste",
+        "country": "Costa Rica",
+        "type": "retreat_center",
+        "contact": "Artist inquiry",
+        "artists_who_played": ["Kabeção"],
+        "fit_score": 8,
+        "notes": "Ceremony music - plant medicine"
+      },
+      {
+        "name": "Nosara Yoga Institute",
+        "city": "Nosara",
+        "country": "Costa Rica",
+        "type": "yoga_retreat",
+        "contact": "Events contact",
+        "artists_who_played": ["Kabeção"],
+        "fit_score": 8,
+        "notes": "Teacher trainings, sound journeys"
+      }
+    ]
+  },
+  "beach_clubs_sunset": {
+    "mediterranean": [
+      {
+        "name": "Scorpios Mykonos",
+        "city": "Mykonos",
+        "country": "Greece",
+        "type": "beach_club",
+        "contact": "hello@scorpios.com",
+        "artists_who_played": ["Yatao"],
+        "fit_score": 10,
+        "notes": "DREAM venue - organic sunset rituals"
+      },
+      {
+        "name": "Woomoon / Cova Santa",
+        "city": "Sant Josep",
+        "country": "Spain (Ibiza)",
+        "type": "conscious_club",
+        "contact": "LunArts agency via IG",
+        "artists_who_played": ["Kabeção"],
+        "fit_score": 10,
+        "notes": "Conscious clubbing - LunArts books"
+      },
+      {
+        "name": "Sunset Ashram",
+        "city": "Cala Conta",
+        "country": "Spain (Ibiza)",
+        "type": "beach_club",
+        "contact": "+34 661 347 222",
+        "artists_who_played": ["Spiritual ceremony artists"],
+        "fit_score": 9,
+        "notes": "Spiritual ceremonies"
+      },
+      {
+        "name": "Kumharas",
+        "city": "San Antonio",
+        "country": "Spain (Ibiza)",
+        "type": "beach_club",
+        "contact": "Website form",
+        "artists_who_played": ["Various organic artists"],
+        "fit_score": 9,
+        "notes": "Legendary since 1999"
+      },
+      {
+        "name": "Babylon Beach",
+        "city": "Santa Eulalia",
+        "country": "Spain (Ibiza)",
+        "type": "beach_club",
+        "contact": "IG @babylonbeach",
+        "artists_who_played": ["Various"],
+        "fit_score": 8,
+        "notes": "Bohemian conscious vibe"
+      }
+    ],
+    "global": [
+      {
+        "name": "La Brisa",
+        "city": "Canggu",
+        "country": "Indonesia",
+        "type": "beach_club",
+        "contact": "events@labrisa.com",
+        "artists_who_played": ["Yatao"],
+        "fit_score": 9,
+        "notes": "Bali sunset sessions"
+      },
+      {
+        "name": "The Lawn",
+        "city": "Canggu",
+        "country": "Indonesia",
+        "type": "beach_club",
+        "contact": "Direct contact",
+        "artists_who_played": ["Various"],
+        "fit_score": 8,
+        "notes": "Sunset vibes"
+      }
+    ]
+  },
+  "concert_venues": {
+    "uk_church_halls": [
+      {
+        "name": "Union Chapel",
+        "city": "London",
+        "country": "UK",
+        "capacity": 900,
+        "type": "church_venue",
+        "contact": "unionchapel.org.uk",
+        "artists_who_played": ["Hang Massive"],
+        "fit_score": 8,
+        "notes": "Hang Massive sold out - atmospheric"
+      },
+      {
+        "name": "St John-at-Hackney",
+        "city": "London",
+        "country": "UK",
+        "capacity": 700,
+        "type": "church_venue",
+        "contact": "Direct",
+        "artists_who_played": ["Hang Massive"],
+        "fit_score": 8,
+        "notes": "Alternative church venue"
+      },
+      {
+        "name": "Cadogan Hall",
+        "city": "London",
+        "country": "UK",
+        "capacity": 900,
+        "type": "concert_hall",
+        "contact": "cadoganhall.com",
+        "artists_who_played": ["Hang Massive"],
+        "fit_score": 7,
+        "notes": "Classical crossover"
+      },
+      {
+        "name": "Sage Gateshead",
+        "city": "Newcastle",
+        "country": "UK",
+        "capacity": 1700,
+        "type": "concert_hall",
+        "contact": "sagegateshead.com",
+        "artists_who_played": ["Hang Massive"],
+        "fit_score": 6,
+        "notes": "Larger capacity - need following"
+      }
+    ],
+    "usa_nyc": [
+      {
+        "name": "Joe's Pub",
+        "city": "New York",
+        "country": "USA",
+        "capacity": 184,
+        "type": "club",
+        "contact": "joespub.publictheater.org",
+        "artists_who_played": ["Sam Maher"],
+        "fit_score": 8,
+        "notes": "Intimate, prestigious"
+      },
+      {
+        "name": "Rockwood Music Hall",
+        "city": "New York",
+        "country": "USA",
+        "capacity": 200,
+        "type": "club",
+        "contact": "rockwoodmusichall.com",
+        "artists_who_played": ["Sam Maher"],
+        "fit_score": 8,
+        "notes": "Intimate showcase venue"
+      },
+      {
+        "name": "Le Poisson Rouge",
+        "city": "New York",
+        "country": "USA",
+        "capacity": 700,
+        "type": "club",
+        "contact": "lpr.com",
+        "artists_who_played": ["Sam Maher"],
+        "fit_score": 7,
+        "notes": "Larger capacity"
+      },
+      {
+        "name": "City Winery NYC",
+        "city": "New York",
+        "country": "USA",
+        "capacity": 300,
+        "type": "concert_hall",
+        "contact": "citywinery.com",
+        "artists_who_played": ["Sam Maher"],
+        "fit_score": 7,
+        "notes": "Wine bar + music - mature audience"
+      },
+      {
+        "name": "National Sawdust",
+        "city": "Brooklyn",
+        "country": "USA",
+        "capacity": 300,
+        "type": "arts_venue",
+        "contact": "nationalsawdust.org",
+        "artists_who_played": ["Sam Maher"],
+        "fit_score": 7,
+        "notes": "Experimental/artistic"
+      }
+    ],
+    "europe": [
+      {
+        "name": "Ronnie Scott's Jazz Club",
+        "city": "London",
+        "country": "UK",
+        "capacity": 250,
+        "type": "jazz_club",
+        "contact": "ronniescotts.co.uk",
+        "artists_who_played": ["Manu Delago"],
+        "fit_score": 6,
+        "notes": "Prestigious jazz venue"
+      },
+      {
+        "name": "Passionskirche",
+        "city": "Berlin",
+        "country": "Germany",
+        "capacity": 500,
+        "type": "church_venue",
+        "contact": "Direct",
+        "artists_who_played": ["Various"],
+        "fit_score": 8,
+        "notes": "Atmospheric Berlin church"
+      }
+    ]
+  },
+  "retreat_centers": {
+    "europe": [
+      {
+        "name": "Mandali Retreat Center",
+        "city": "Quarna Sopra (Italian Alps)",
+        "country": "Italy",
+        "type": "wellness_retreat",
+        "contact": "info@mandali.org",
+        "artists_who_played": ["Malte Marten"],
+        "fit_score": 10,
+        "notes": "PERFECT - silence retreats, sound healing"
+      },
+      {
+        "name": "Finca Argayall",
+        "city": "La Gomera (Canary Islands)",
+        "country": "Spain",
+        "type": "wellness_retreat",
+        "contact": "Website contact",
+        "artists_who_played": ["Various"],
+        "fit_score": 9,
+        "notes": "Chakra work, boat-access-only"
+      },
+      {
+        "name": "Quinta da Calma",
+        "city": "Algarve",
+        "country": "Portugal",
+        "type": "retreat_center",
+        "contact": "Website contact",
+        "artists_who_played": ["Kabeção network"],
+        "fit_score": 9,
+        "notes": "Sound healing programs"
+      }
+    ],
+    "global": [
+      {
+        "name": "Aro Ha",
+        "city": "Glenorchy",
+        "country": "New Zealand",
+        "type": "luxury_wellness",
+        "contact": "Direct",
+        "artists_who_played": ["High-end practitioners"],
+        "fit_score": 7,
+        "notes": "Very high-end, remote"
+      }
+    ]
+  },
+  "agencies": [
+    {
+      "name": "LunArts",
+      "artists_represented": ["Woomoon artists", "conscious electronic"],
+      "contact": "Via IG / Resident Advisor",
+      "fit_score": 9,
+      "notes": "Books Woomoon/Cova Santa - Kabeção circuit"
+    },
+    {
+      "name": "Cavalli Ibiza",
+      "artists_represented": ["Organic/downtempo artists"],
+      "contact": "cavalli-ibiza.com",
+      "fit_score": 9,
+      "notes": "Perfect fit for FLUTUR sound"
+    },
+    {
+      "name": "Warung Agency",
+      "artists_represented": ["Asia/Middle East circuit"],
+      "contact": "warungagency.com",
+      "fit_score": 7,
+      "notes": "International expansion"
+    }
+  ],
+  "priority_outreach_list": {
+    "immediate": [
+      {
+        "venue": "Pangonia Handpan Festival",
+        "contact": "info@pangonia.de",
+        "reason": "RAV Vast endorsed artist perfect fit"
+      },
+      {
+        "venue": "Evolve Festival",
+        "contact": "info@evolve-festival.de",
+        "reason": "Conscious, 100% sober, healing stages"
+      },
+      {
+        "venue": "BaliSpirit Festival",
+        "contact": "artists@balispiritfestival.com",
+        "reason": "Sound healing focus, Spirit Pools stage"
+      },
+      {
+        "venue": "Mandali Retreat Center",
+        "contact": "info@mandali.org",
+        "reason": "Near Lake Maggiore, silence retreat, Malte Marten connection"
+      },
+      {
+        "venue": "Ecstatic Dance Berlin",
+        "contact": "ecstaticdance.berlin",
+        "reason": "Major EU ecstatic dance hub"
+      }
+    ],
+    "short_term": [
+      {
+        "venue": "GRIASDI Gathering",
+        "contact": "Application form",
+        "reason": "European handpan community"
+      },
+      {
+        "venue": "The Yoga Barn Bali",
+        "contact": "events@theyogabarn.com",
+        "reason": "Kabeção played here, main Bali venue"
+      },
+      {
+        "venue": "Woomoon/Cova Santa",
+        "contact": "LunArts agency",
+        "reason": "Conscious clubbing, perfect sound match"
+      },
+      {
+        "venue": "Waking Life Festival",
+        "contact": "wakinglife.pt",
+        "reason": "Portugal transformational"
+      },
+      {
+        "venue": "Sunset Hill Resort Koh Phangan",
+        "contact": "info@sunsetphangan.com",
+        "reason": "Sunset Concert Fusion series"
+      }
+    ],
+    "medium_term": [
+      {
+        "venue": "Boom Festival",
+        "contact": "Application",
+        "reason": "Biennial - check if 2026"
+      },
+      {
+        "venue": "Envision Festival",
+        "contact": "Application",
+        "reason": "February Costa Rica"
+      },
+      {
+        "venue": "Ozora Festival",
+        "contact": "Dragon Nest application",
+        "reason": "Dragon Nest ambient stage"
+      },
+      {
+        "venue": "WOMAD",
+        "contact": "Application",
+        "reason": "World music prestige"
+      }
+    ]
+  }
+}

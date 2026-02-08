@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "surrealdb": {
+      "command": "surrealdb-mcp-server",
+      "env": {
+        "SURREALDB_URL": "http://localhost:8000",
+        "SURREALDB_NS": "social",
+        "SURREALDB_DB": "analytics",
+        "SURREALDB_USER": "root",
+        "SURREALDB_PASS": "root"
+      }
+    }
+  }
+}

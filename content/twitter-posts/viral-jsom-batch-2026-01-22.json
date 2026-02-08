@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "type": "hot_take",
+    "text": "Hot take:\n\nDesigners who can't code will be more valuable than designers who code in 2 years.\n\nWhy? AI writes code now.\n\nBut AI can't see what you envision.\n\nYour taste becomes the bottleneck, not your technical skills.\n\nBuilding tools for this future.",
+    "replyWithLink": true,
+    "linkText": "That's why I built jsOM - your design becomes THE spec, not a reference.\n\nhttps://github.com/AleMusica/jsom\n\n⭐ if you believe design > code"
+  },
+  {
+    "id": 2,
+    "type": "controversy",
+    "text": "Unpopular opinion:\n\nFigma is becoming irrelevant.\n\nNot because it's bad - it's excellent.\n\nBut it exports pixels.\nAI needs structure.\n\nThe gap between \"what you designed\" and \"what AI builds\" is growing.\n\nSomeone needs to bridge it.",
+    "replyWithLink": true,
+    "linkText": "I'm building that bridge.\n\njsOM: draw UI → export LLM-readable spec → AI builds exactly what you designed.\n\nhttps://github.com/AleMusica/jsom ⭐"
+  },
+  {
+    "id": 3,
+    "type": "story",
+    "text": "I spent 3 days building something no one asked for.\n\nZero stars. Zero sponsors.\n\nBut every time I use Claude to build UI, I think:\n\n\"Why am I describing what I can see in my head?\"\n\nSo I built a way to SHOW it instead.\n\nOpen source. MIT. Yours.",
+    "replyWithLink": true,
+    "linkText": "jsOM - the design tool that speaks LLM\n\nhttps://github.com/AleMusica/jsom\n\n⭐ if you've felt this frustration"
+  },
+  {
+    "id": 4,
+    "type": "question",
+    "text": "Genuine question for designers:\n\nHow do you communicate with AI coding agents?\n\na) Screenshots\nb) Text descriptions\nc) Figma links\nd) Something else?\n\nI built a tool based on option (d).\n\nCurious what you're using.",
+    "replyWithLink": true,
+    "linkText": "Option d = draw directly, export structured spec LLMs understand.\n\nhttps://github.com/AleMusica/jsom\n\nWould love your feedback."
+  },
+  {
+    "id": 5,
+    "type": "thread_hook",
+    "text": "The AI coding workflow is broken.\n\nHere's what I mean 🧵",
+    "thread": [
+      "1/ You have an idea. Crystal clear in your head.\n\nYou open Claude/GPT. Start typing.\n\n\"Make a dashboard with...\" and suddenly you're writing 500 words describing something you could draw in 30 seconds.",
+      "2/ Or worse - you screenshot Figma.\n\nAI sees pixels. Guesses structure. Hallucinates components.\n\nYou spend more time fixing than building.",
+      "3/ The problem isn't AI. AI is brilliant.\n\nThe problem is INPUT.\n\nWe're giving AI the wrong format.",
+      "4/ What if your design WAS the spec?\n\nNot a reference. Not \"inspiration.\"\n\nTHE actual specification AI executes.",
+      "5/ That's what I built.\n\njsOM: infinite canvas → LLM-readable export → any AI builds exactly what you designed.\n\nOpen source. Works offline with Ollama.\n\nhttps://github.com/AleMusica/jsom\n\n⭐ if this resonates"
+    ]
+  },
+  {
+    "id": 6,
+    "type": "relatability",
+    "text": "POV: You're a solo founder\n\nDesign tool: $15/mo\nAI coding: $20/mo\nHosting: $20/mo\nDomain: $12/yr\n\n...still copying screenshots into ChatGPT and praying it understands your layout.\n\nThere has to be a better way.",
+    "replyWithLink": true,
+    "linkText": "Built the better way.\n\nFree. Open source. Works offline.\n\nhttps://github.com/AleMusica/jsom ⭐"
+  },
+  {
+    "id": 7,
+    "type": "target_v0",
+    "text": "Respect to @v0 for prompt → code.\n\nBut sometimes I know exactly what I want.\n\nI don't want AI to interpret my words.\nI want AI to execute my vision.\n\nDifferent problem. Different tool.\n\nComplement, not compete.",
+    "replyWithLink": true,
+    "linkText": "jsOM handles the step before:\n\nvisual design → structured spec → v0/Claude/any AI\n\nhttps://github.com/AleMusica/jsom"
+  }
+]

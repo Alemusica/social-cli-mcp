@@ -1,0 +1,304 @@
+{
+  "meta": {
+    "lastUpdated": "2026-01-21",
+    "category": "Conscious/Transformational Festivals",
+    "purpose": "Booking contacts and gatekeepers for transformational festival circuit",
+    "status": "NEEDS_VERIFICATION",
+    "note": "Web access unavailable - data based on publicly known information. Verify current contacts before outreach."
+  },
+  "festivals": [
+    {
+      "id": "festival_waking_life_portugal",
+      "name": "Waking Life Festival",
+      "country": "Portugal",
+      "region": "Alentejo",
+      "type": "festival",
+      "segment": "transformational",
+      "vibe": ["conscious", "art", "music", "nature", "community"],
+      "website": "https://wakinglife.pt",
+      "instagram": "@wakinglifefestival",
+      "typical_dates": "Late July / Early August",
+      "capacity": "~3000",
+      "booking_info": {
+        "application_url": "CHECK: wakinglife.pt/apply or similar",
+        "general_contact": "info@wakinglife.pt",
+        "music_booking": "RESEARCH NEEDED - typically opens Dec/Jan for summer festival",
+        "deadline_typical": "February-March for summer edition",
+        "decision_makers": "RESEARCH NEEDED - curated by artistic collective"
+      },
+      "stages_relevant": [
+        {
+          "name": "Main Stage",
+          "style": "Electronic, live acts, organic house"
+        },
+        {
+          "name": "Healing Area",
+          "style": "Sound healing, meditation, workshops"
+        },
+        {
+          "name": "Workshop Tent",
+          "style": "Music workshops, instrument sharing"
+        }
+      ],
+      "why_perfect_fit": "Transformational festival focused on consciousness + creativity. RAV Vast meditation sets ideal for healing area. Live looping + journey format matches festival ethos.",
+      "similar_artists_booked": ["Handpan players", "Sound healers", "Organic house DJs", "Live electronic acts"],
+      "approach_strategy": "Apply for healing/workshop area first. Emphasize journey narrative (busking to GGT to residency). Sound healing credentials key.",
+      "recommended_video": "Who Is Flutur (2:52) - story arc matches transformational ethos",
+      "ggt_appropriate": true,
+      "tier": 1,
+      "status": "prospect"
+    },
+    {
+      "id": "festival_boom_liminal_village",
+      "name": "Boom Festival - Liminal Village",
+      "country": "Portugal",
+      "region": "Idanha-a-Nova (Castelo Branco)",
+      "type": "festival",
+      "segment": "transformational",
+      "vibe": ["psychedelic", "art", "sustainability", "consciousness", "healing"],
+      "website": "https://boomfestival.org",
+      "instagram": "@boomfestivalofficial",
+      "typical_dates": "August (biennial - even years)",
+      "next_edition": "2026 (next after 2024)",
+      "capacity": "~40000",
+      "booking_info": {
+        "application_url": "https://boomfestival.org/boom2024/participate/apply/",
+        "general_contact": "info@boomfestival.org",
+        "liminal_village_contact": "liminalvillage@boomfestival.org",
+        "music_booking": "Different curators for each stage - Liminal Village has dedicated team",
+        "deadline_typical": "Applications typically open ~6-8 months before festival",
+        "decision_makers": "Liminal Village: dedicated healing/workshop programming team"
+      },
+      "stages_relevant": [
+        {
+          "name": "Liminal Village",
+          "style": "Healing arts, sound healing, workshops, transformational practices",
+          "notes": "PERFECT for RAV Vast meditation sets and sound healing"
+        },
+        {
+          "name": "Chillout Gardens",
+          "style": "Ambient, downtempo, organic",
+          "notes": "Good for sunset live looping sets"
+        }
+      ],
+      "why_perfect_fit": "Liminal Village is THE premier healing/transformational space at Boom. RAV Vast sound healing sessions, meditation journeys, and workshops all fit perfectly. Biennial festival means more exclusive but higher impact.",
+      "similar_artists_booked": ["Sound healers", "Handpan players", "Meditation facilitators", "Breathwork + music"],
+      "approach_strategy": "Focus application SPECIFICALLY on Liminal Village, NOT main dance stages. Emphasize: sound healing experience, meditation facilitation, workshop capacity. Include vibroacoustic therapy software background as unique angle.",
+      "recommended_video": "Efthymia (meditation focus) for healing area application",
+      "ggt_appropriate": false,
+      "tier": 1,
+      "status": "prospect",
+      "notes": "2026 is next edition. Start application process late 2025 / early 2026."
+    },
+    {
+      "id": "festival_evolve_berlin",
+      "name": "Evolve Festival",
+      "country": "Germany",
+      "region": "Berlin area",
+      "type": "festival",
+      "segment": "transformational",
+      "vibe": ["consciousness", "music", "art", "community", "yoga"],
+      "website": "https://www.evolvefestival.de",
+      "instagram": "@evolvefestival",
+      "typical_dates": "Summer (typically June/July)",
+      "capacity": "~2000-3000",
+      "booking_info": {
+        "application_url": "CHECK: evolvefestival.de - artist submission section",
+        "general_contact": "info@evolvefestival.de",
+        "music_booking": "RESEARCH NEEDED",
+        "deadline_typical": "RESEARCH NEEDED - typically winter for summer festival",
+        "decision_makers": "RESEARCH NEEDED"
+      },
+      "stages_relevant": [
+        {
+          "name": "Main Stage",
+          "style": "Electronic, live acts"
+        },
+        {
+          "name": "Healing/Workshop Area",
+          "style": "Sound healing, yoga accompaniment, meditation"
+        }
+      ],
+      "why_perfect_fit": "German conscious scene is strong. Berlin connection valuable for European circuit. Smaller scale = better chance of acceptance for emerging artists.",
+      "similar_artists_booked": ["Handpan artists", "Live looping acts", "Sound healers"],
+      "approach_strategy": "Position as 'sunset ceremony creator' with both music performance and workshop capability. German market appreciates technical skill (live looping) + spiritual depth.",
+      "recommended_video": "Rocca di Arona (sunset) or Efthymia (healing)",
+      "ggt_appropriate": true,
+      "tier": 2,
+      "status": "prospect"
+    },
+    {
+      "id": "festival_balispirit",
+      "name": "BaliSpirit Festival",
+      "country": "Indonesia",
+      "region": "Ubud, Bali",
+      "type": "festival",
+      "segment": "yoga_wellness",
+      "vibe": ["yoga", "dance", "music", "healing", "wellness", "spirituality"],
+      "website": "https://www.balispiritfestival.com",
+      "instagram": "@balispiritfestival",
+      "typical_dates": "March/April (around spring equinox)",
+      "capacity": "~5000-7000",
+      "booking_info": {
+        "application_url": "https://www.balispiritfestival.com/apply",
+        "general_contact": "info@balispiritfestival.com",
+        "presenter_applications": "Typically opens ~6-8 months before festival",
+        "deadline_typical": "October-November for March festival",
+        "decision_makers": "Programming committee reviews all presenter/musician applications"
+      },
+      "stages_relevant": [
+        {
+          "name": "Dharma Stage",
+          "style": "Yoga, meditation, workshops",
+          "notes": "Sound healing sessions, yoga accompaniment"
+        },
+        {
+          "name": "Spirit Stage",
+          "style": "Music performances, sacred music, kirtan",
+          "notes": "RAV Vast meditation performances"
+        },
+        {
+          "name": "Night Stage",
+          "style": "World music, ecstatic dance, live performances",
+          "notes": "Evening journey sets"
+        }
+      ],
+      "why_perfect_fit": "Premier yoga festival in Asia. Sound healing is CORE to their programming. RAV Vast meditation sets perfect for multiple stages. Workshop potential (RAV Vast intro, sound meditation).",
+      "similar_artists_booked": ["Kirtan artists", "Sound healers", "Handpan players", "Ecstatic dance DJs", "World music acts"],
+      "approach_strategy": "Apply as both: 1) Sound healing practitioner for Dharma stage, 2) Musical performer for Spirit/Night stages. Mention: Villa Porta meditation residency, vibroacoustic therapy background. Festival values 'journey' narrative.",
+      "recommended_video": "Efthymia for yoga/healing stages, Rocca di Arona for evening performances",
+      "ggt_appropriate": false,
+      "tier": 1,
+      "status": "prospect",
+      "notes": "Highly competitive - apply early. Asia expansion valuable for touring circuit."
+    },
+    {
+      "id": "festival_pangonia_handpan",
+      "name": "Pangonia Handpan Festival",
+      "country": "Germany",
+      "type": "festival",
+      "segment": "handpan_specialist",
+      "vibe": ["handpan", "percussion", "community", "music", "workshops"],
+      "website": "https://www.pangonia.de",
+      "instagram": "@pangonia_festival",
+      "typical_dates": "Summer (check website for exact dates)",
+      "capacity": "~500-1000 (intimate handpan community gathering)",
+      "booking_info": {
+        "application_url": "CHECK: pangonia.de - artist/workshop submissions",
+        "general_contact": "info@pangonia.de",
+        "music_booking": "RESEARCH NEEDED - likely direct contact via website/email",
+        "deadline_typical": "RESEARCH NEEDED",
+        "decision_makers": "RESEARCH NEEDED - likely small organizing team"
+      },
+      "stages_relevant": [
+        {
+          "name": "Main Performance Area",
+          "style": "Handpan and percussion performances"
+        },
+        {
+          "name": "Workshop Tents",
+          "style": "Instrument workshops, technique sharing"
+        },
+        {
+          "name": "Jam Circles",
+          "style": "Collaborative playing, community jams"
+        }
+      ],
+      "why_perfect_fit": "Dedicated handpan/steel tongue drum festival. RAV Vast endorsed artist = credibility in this community. Live looping with RAV Vast is unique angle. Workshop potential for RAV Vast techniques.",
+      "similar_artists_booked": ["Handpan builders/players", "RAV Vast artists", "Hang players", "Percussion ensembles"],
+      "approach_strategy": "Lead with RAV Vast endorsement. Propose both: 1) Performance showcase of RAV Vast + live looping integration, 2) Workshop on live looping with steel tongue drums. This community values technique + innovation.",
+      "recommended_video": "Efthymia (RAV solo showcase) or technical looping video",
+      "ggt_appropriate": true,
+      "tier": 1,
+      "status": "prospect",
+      "notes": "Niche festival but EXCELLENT for building credibility in handpan/RAV community. Good networking for handpan festival circuit."
+    }
+  ],
+  "relatedFestivals": {
+    "handpan_circuit": [
+      {
+        "name": "Sound-Sculpture Festival",
+        "country": "Germany",
+        "website": "handpan-festival.de",
+        "notes": "Referenced in existing outreach strategy"
+      },
+      {
+        "name": "Canarias Handpan Festival",
+        "country": "Spain (Canary Islands)",
+        "website": "canariashandpanfestival.com",
+        "notes": "Referenced in existing outreach strategy"
+      },
+      {
+        "name": "GRIASDI Gathering",
+        "country": "Austria",
+        "website": "griasdi-gathering.org",
+        "notes": "Referenced in existing outreach strategy"
+      }
+    ],
+    "conscious_european": [
+      {
+        "name": "Ozora Festival (Dragon Nest stage)",
+        "country": "Hungary",
+        "website": "ozorafestival.eu",
+        "notes": "Dragon Nest = chill/healing area. Very competitive."
+      },
+      {
+        "name": "Burning Mountain",
+        "country": "Switzerland",
+        "notes": "Swiss transformational gathering"
+      },
+      {
+        "name": "Fusion Festival",
+        "country": "Germany",
+        "notes": "Large scale, very competitive applications"
+      }
+    ],
+    "asia_wellness": [
+      {
+        "name": "Wonderfruit",
+        "country": "Thailand",
+        "website": "wonderfruit.co",
+        "notes": "Referenced in existing outreach strategy. Dec/Jan dates."
+      },
+      {
+        "name": "Envision Festival",
+        "country": "Costa Rica",
+        "notes": "February, strong healing/yoga component"
+      }
+    ]
+  },
+  "applicationStrategy": {
+    "timeline": {
+      "6_months_before": "Applications typically open for major festivals",
+      "3_months_before": "Deadline for most festival artist submissions",
+      "1_month_before": "Late applications sometimes accepted for workshop/healing areas"
+    },
+    "application_tips": [
+      "Apply for healing/workshop areas first - less competitive than main stages",
+      "Emphasize unique angle: RAV Vast endorsed + vibroacoustic therapy software background",
+      "Include both performance AND workshop proposals",
+      "Use 'Who Is Flutur' video for journey narrative festivals",
+      "Use 'Efthymia' for healing/meditation focused applications",
+      "Mention Villa Porta sunset meditation residency as credential",
+      "Follow festival Instagram and engage BEFORE applying"
+    ],
+    "key_positioning": "From busking to Greece's Got Talent to 4-year sunset meditation residency - a journey of transformation through music",
+    "unique_selling_points": [
+      "RAV Vast endorsed artist",
+      "4-year sunset meditation residency at Villa Porta",
+      "Live looping one-man show (cost-effective for festivals)",
+      "Both performance and workshop capability",
+      "Software developer background in vibroacoustic therapy",
+      "Greece's Got Talent (4 YES votes) - entertainment credibility"
+    ]
+  },
+  "actionItems": [
+    "1. VERIFY all contact emails before sending - this data needs web research validation",
+    "2. Check Waking Life website for 2026 artist applications (typically open Dec/Jan)",
+    "3. Monitor Boom Festival for 2026 Liminal Village applications",
+    "4. BaliSpirit 2027 applications likely open Oct 2026",
+    "5. Research Pangonia and Evolve websites for current booking contacts",
+    "6. Follow all festival Instagram accounts and engage authentically",
+    "7. Join handpan/RAV community forums to find insider contacts"
+  ]
+}

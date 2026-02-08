@@ -1,0 +1,17 @@
+{
+  "to": "eventos@comportacafe.pt",
+  "subject": "Re: Sunset Live Music — FLUTUR",
+  "replyTo": "Patricia's message: 'Ok for a 3/4h set in summer. When will you be here?'",
+  "strategy": "Clarify 2h set (NOT 3-4h, not a DJ), confirm price, ask for specific dates, mention availability for multiple dates to justify travel",
+  "draft": "Hi Patrícia,\n\nGreat to hear! I'd love to play at Comporta Café this summer.\n\nA few details:\n- My sunset sets are typically **2 hours** — it's a live performance with instruments (RAV Vast, guitar, live looping), not a DJ set, so the energy arc is different and more intimate.\n- Fee: **€400 per set** (self-contained — I bring everything, just need a power outlet and your PA).\n- I'm planning to be in the Comporta/Alentejo area in **June**. I'm flexible on dates and happy to do **multiple sessions** if that works for you.\n\nHere's my EPK with videos and full info: https://8i8.art\n\nAnd this clip gives the best feel of what the sunset set sounds like:\nhttps://youtu.be/Ba8HiRS4hjc\n\nWhat dates work best for you in June?\n\nBest,\nAlessio / FLUTUR",
+  "notes": {
+    "price": "€400 (not €500 — beach club, not luxury hotel. Comporta Café is relaxed, not Sublime)",
+    "duration": "2h max — user explicitly said 'non faccio dj set, non faccio più di 2 ore' (corrected from Patricia's 3-4h assumption)",
+    "video": "Father Ocean highlight (Ba8HiRS4hjc) — best for beach clubs per artist-links.json",
+    "clustering": "Mentioned 'multiple sessions' to open door for multi-date booking. Also scouting nearby venues.",
+    "setup": "Self-contained pitch — key differentiator. No backline, no sound engineer.",
+    "travel_not_mentioned": "Deliberately not mentioning travel costs to venue. That's our internal calculation."
+  },
+  "created": "2026-02-08",
+  "status": "DRAFT — review before sending"
+}

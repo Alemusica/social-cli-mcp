@@ -8,9 +8,11 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { execSync } from 'child_process';
+import Surreal from 'surrealdb';
 
 const IMAGES_DIR = '/Users/alessioivoycazzaniga/Projects/social-cli-mcp/media/music/images';
 const DRY_RUN = process.argv.includes('--dry-run');
+const UPDATE_DB = process.argv.includes('--update-db');
 
 // Location mappings
 const LOCATIONS: Record<string, { lat: [number, number]; lng: [number, number]; slug: string }> = {
@@ -149,6 +151,7 @@ async function main() {
   console.log('\nRenaming files...');
   let renamed = 0;
   let errors = 0;
+  const renamedFiles: { from: string; to: string }[] = [];
 
   for (const { from, to } of renames) {
     try {
@@ -158,6 +161,7 @@ async function main() {
         continue;
       }
       fs.renameSync(from, to);
+      renamedFiles.push({ from, to });
       renamed++;
     } catch (error) {
       console.error(`❌ Error renaming ${path.basename(from)}:`, error);
@@ -166,6 +170,37 @@ async function main() {
   }
 
   console.log(`\n✅ Renamed ${renamed} photos (${errors} errors)`);
+
+  // Update database if requested
+  if (UPDATE_DB && renamedFiles.length > 0) {
+    console.log('\n🗄️  Updating database...');
+    const db = new Surreal();
+    await db.connect('http://127.0.0.1:8000');
+    await db.signin({ username: 'root', password: 'root' });
+    await db.use({ namespace: 'social', database: 'analytics' });
+
+    let dbUpdated = 0;
+    for (const { from, to } of renamedFiles) {
+      try {
+        await db.query(`
+          UPDATE content SET
+            file_path = $newPath,
+            file_name = $newName
+          WHERE file_path = $oldPath
+        `, {
+          oldPath: from,
+          newPath: to,
+          newName: path.basename(to),
+        });
+        dbUpdated++;
+      } catch (error: any) {
+        console.error(`DB update error for ${path.basename(to)}:`, error.message);
+      }
+    }
+
+    console.log(`✅ Updated ${dbUpdated} database records`);
+    await db.close();
+  }
 }
 
 main().catch(console.error);

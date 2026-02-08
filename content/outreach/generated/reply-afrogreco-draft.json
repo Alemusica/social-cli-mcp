@@ -1,0 +1,24 @@
+{
+  "id": "reply-afrogreco-2026-02-07",
+  "type": "reply",
+  "to": "entertainment@afrogrecomusic.com",
+  "replyTo": "VIKTORIA PAPADOPOULOU",
+  "status": "FINAL v3 — HUMANIZED",
+  "subject": "Re: Live Musician — Sunset Sessions & Ambient | Summer 2026",
+  "body_html": "<p>Hi Victoria,</p>\n\n<p>Thank you for getting back to me. Here's everything.</p>\n\n<p><strong>Duration</strong><br>\nStandard set is 1.5 hours, can extend to 2. Flexible based on what the venue needs.</p>\n\n<p><strong>Set structure</strong><br>\nEach set is built live — I layer instruments in real time, so the sound evolves as the evening moves. It usually starts soft (solo RAV Vast, atmospheric guitar), then the layers come in, rhythms build, and by the end it's full electronic sound that can get warm and rhythmic. I can dial it in any direction — more meditative for spa or yoga, more upbeat for poolside evenings, or a full live-looping show with visuals if the venue has DMX lighting. Basically I cover the hours where a full band is too much but silence is not enough.</p>\n\n<p>This one shows the meditative side:<br>\n<a href=\"https://youtu.be/I-lpfRHTSG4\">Efthymia — solo RAV Vast session</a></p>\n\n<p>And this is the more energetic range:<br>\n<a href=\"https://youtu.be/Ba8HiRS4hjc\">Live melodic set — sunset highlight</a></p>\n\n<p><strong>Fee</strong><br>\n€500 per set (1.5h standard). Flexible for seasonal or multi-date arrangements. Accommodation appreciated when performing away from home base.</p>\n\n<p><strong>Equipment</strong><br>\nIt's fully self-contained — 2 RAV Vasts, acoustic guitar, Ableton Push 3, drum pad, synth, all mounted on a Gibraltar rack so the stage footprint stays compact. DI-ready, plugs into any house system. No sound engineer required.</p>\n\n<p><strong>Availability</strong><br>\nAvailable for bookings May through September. I can base myself in Greece for extended periods — I have Greek roots and I'm location-independent. Open to residency blocks, happy to discuss which periods work for your calendar.</p>\n\n<p><strong>Languages</strong><br>\nEnglish, Italian, Brazilian Portuguese, basic Spanish. Four years performing for mixed European hotel guests.</p>\n\n<p><strong>Background</strong><br>\n- Four-year hotel residency on Lake Maggiore — renewed annually<br>\n- Solo main stage set at <a href=\"https://www.instagram.com/p/CusWjR1SPmy/\">Drishti Beats Festival</a> (Aspen, Colorado)<br>\n- Greece's Got Talent — 4 YES from all judges<br>\n- Greek roots (grandfather from Greece) and busking circuit in Athens — know the Greek audience firsthand</p>\n\n<p>Happy to send a promo sheet and technical rider, or jump on a quick call.</p>\n\n<p>Best,<br>\nAlessio</p>",
+  "openQuestions": [],
+  "designNotes": [
+    "FINAL v3 — humanized pass after bot-detection feedback",
+    "Removed: → arrows on video links (too designed)",
+    "Changed: 'Here are the details you asked for' → 'Here's everything' (more direct)",
+    "Changed: 30/30/30 bullet structure → flowing prose (musicians don't describe sets in perfect segments)",
+    "Changed: 'The format adapts to context' → 'I can dial it in any direction' (musician language)",
+    "Changed: 'programming calendar' → 'your calendar'",
+    "Changed: 'Ideally with accommodation included' → 'Accommodation appreciated'",
+    "Changed: Equipment from bullet list → flowing sentence (more natural, still contains all info)",
+    "Changed: video links from '→ link' to 'This one shows...' / 'And this is...' (conversational)",
+    "Kept: bold headers (Victoria needs to scan), bullet list for Background (credentials need to be findable)",
+    "Links verified 3x against artist-links.json master file"
+  ],
+  "generatedAt": "2026-02-07T16:00:00Z"
+}

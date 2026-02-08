@@ -142,6 +142,167 @@ if (ANTHROPIC_API_KEY) {
 const PROJECT_ROOT = process.cwd();
 const CONTENT_DIR = path.join(PROJECT_ROOT, 'content');
 const OUTREACH_DIR = path.join(CONTENT_DIR, 'outreach');
+const ANALYTICS_DIR = path.join(PROJECT_ROOT, 'analytics');
+
+// ============================================
+// PENDING ACTIONS TRACKING (for agents)
+// ============================================
+interface ManualAction {
+  id: string;
+  type: string;
+  venue: string;
+  website?: string;
+  phone?: string;
+  status: string;
+  priority: number;
+  createdAt: string;
+  notes?: string;
+}
+
+interface FollowUp {
+  id: string;
+  type: string;
+  dueDate: string;
+  venues: string[];
+  status: string;
+  notes?: string;
+}
+
+interface PendingActionsData {
+  lastUpdated: string;
+  manualActions: ManualAction[];
+  followUps: FollowUp[];
+  contentReminders: any[];
+}
+
+function loadPendingActionsFile(): PendingActionsData | null {
+  try {
+    const data = fs.readFileSync(path.join(ANALYTICS_DIR, 'pending-actions.json'), 'utf-8');
+    return JSON.parse(data);
+  } catch (e) {
+    return null;
+  }
+}
+
+function loadPostedTweetsIndex(): { postedTopics: any[], recentTweetIds: string[] } | null {
+  try {
+    const data = fs.readFileSync(path.join(ANALYTICS_DIR, 'posted-tweets-index.json'), 'utf-8');
+    return JSON.parse(data);
+  } catch (e) {
+    return null;
+  }
+}
+
+// Build morning briefing
+function buildMorningBriefing(): string {
+  const lines: string[] = [];
+  const today = new Date().toISOString().split('T')[0];
+
+  lines.push(`🌅 **MORNING BRIEFING - ${today}**\n`);
+
+  // Load pending actions
+  const pending = loadPendingActionsFile();
+  if (pending) {
+    const manualPending = pending.manualActions.filter(a => a.status === 'pending');
+    if (manualPending.length > 0) {
+      lines.push(`📋 **AZIONI MANUALI PENDING (${manualPending.length}):**`);
+      manualPending.sort((a, b) => a.priority - b.priority).forEach(action => {
+        const icon = action.type === 'phone_call' ? '📞' : action.type === 'form_submission' ? '📝' : '📧';
+        lines.push(`${icon} **${action.venue}**`);
+        if (action.phone) lines.push(`   Tel: ${action.phone}`);
+        if (action.website) lines.push(`   Web: ${action.website}`);
+        if (action.notes) lines.push(`   📌 ${action.notes}`);
+        lines.push('');
+      });
+    }
+
+    // Check follow-ups due today or overdue
+    const followUpsDue = pending.followUps.filter(f => {
+      if (f.status !== 'pending') return false;
+      return f.dueDate <= today;
+    });
+
+    if (followUpsDue.length > 0) {
+      lines.push(`⏰ **FOLLOW-UP SCADUTI/OGGI:**`);
+      followUpsDue.forEach(f => {
+        lines.push(`• ${f.venues.join(', ')}`);
+        lines.push(`  📅 Scadenza: ${f.dueDate}`);
+        if (f.notes) lines.push(`  📌 ${f.notes}`);
+      });
+      lines.push('');
+    }
+
+    // Upcoming follow-ups (next 7 days)
+    const upcoming = pending.followUps.filter(f => {
+      if (f.status !== 'pending') return false;
+      const dueDate = new Date(f.dueDate);
+      const todayDate = new Date(today);
+      const diffDays = Math.ceil((dueDate.getTime() - todayDate.getTime()) / (1000 * 60 * 60 * 24));
+      return diffDays > 0 && diffDays <= 7;
+    });
+
+    if (upcoming.length > 0) {
+      lines.push(`📅 **FOLLOW-UP PROSSIMI 7 GIORNI:**`);
+      upcoming.forEach(f => {
+        lines.push(`• ${f.dueDate}: ${f.venues.join(', ')}`);
+      });
+      lines.push('');
+    }
+  }
+
+  // Load posted tweets to check for gaps
+  const tweets = loadPostedTweetsIndex();
+  if (tweets) {
+    const recentTopics = tweets.postedTopics
+      .filter(t => t.lastPosted === today || t.lastPosted === new Date(Date.now() - 86400000).toISOString().split('T')[0])
+      .map(t => t.topic);
+
+    if (recentTopics.length > 0) {
+      lines.push(`🐦 **TWEET RECENTI:**`);
+      lines.push(`Topics: ${recentTopics.join(', ')}`);
+      lines.push('');
+    }
+
+    // Check for duplicates
+    const duplicates = tweets.postedTopics.filter(t => t.tweetIds && t.tweetIds.length > 1);
+    if (duplicates.length > 0) {
+      lines.push(`⚠️ **ATTENZIONE DUPLICATI:**`);
+      duplicates.forEach(d => {
+        lines.push(`• ${d.topic}: ${d.tweetIds.length} tweet`);
+      });
+      lines.push('');
+    }
+  }
+
+  // Outreach pipeline status
+  try {
+    const tracking: any[] = JSON.parse(fs.readFileSync(path.join(OUTREACH_DIR, 'tracking.json'), 'utf-8'));
+    const sent = tracking.filter((t: any) => t.status === 'sent');
+    const bounced = tracking.filter((t: any) => t.bounced);
+    const humanReplies = tracking.filter((t: any) => t.replyType === 'human');
+    const delivered = sent.length - bounced.length;
+
+    const now = new Date();
+    const overdue = sent.filter((t: any) => {
+      if (t.bounced || t.replyReceived || t.followUpSent) return false;
+      const days = Math.floor((now.getTime() - new Date(t.sentAt).getTime()) / (1000 * 60 * 60 * 24));
+      return days >= 7;
+    });
+
+    lines.push(`🎵 **OUTREACH:**`);
+    lines.push(`📧 ${sent.length} sent | ${bounced.length} bounced | ${humanReplies.length} replies`);
+    if (overdue.length > 0) {
+      lines.push(`⏰ **${overdue.length} need follow-up!**`);
+    }
+    lines.push('');
+  } catch {}
+
+  if (lines.length <= 2) {
+    lines.push('✅ Nessuna azione pending!');
+  }
+
+  return lines.join('\n');
+}
 
 // Security middleware - only allow authorized user
 bot.use(async (ctx, next) => {
@@ -296,6 +457,8 @@ Quando parli di Twitter, usa i dati live che hai (date, metriche, testo dei twee
 bot.command('start', async (ctx) => {
   await ctx.reply(`🎵 **Flutur Bot** - Social CLI MCP
 
+🌅 /morning - **BRIEFING GIORNALIERO**
+
 🔐 **Azioni Sicure (richiedono conferma):**
 /tweet <testo> - Pubblica tweet
 /instagram <url> <caption> - Post Instagram
@@ -304,7 +467,8 @@ bot.command('start', async (ctx) => {
 /pending - Azioni in attesa
 
 📊 **Status:**
-/status - Stato outreach
+/status - Pipeline outreach
+/outreach - Dettaglio reply + follow-up
 /twitter - Tweet recenti
 /venues - Lista venue
 
@@ -315,6 +479,9 @@ bot.command('start', async (ctx) => {
 
 bot.command('help', async (ctx) => {
   await ctx.reply(`📋 **Comandi disponibili:**
+
+🌅 **Daily:**
+/morning - Briefing giornaliero (azioni pending, follow-up, tweet)
 
 🔐 **Azioni Sicure (con conferma):**
 /tweet <testo> - Pubblica tweet
@@ -338,32 +505,82 @@ bot.command('help', async (ctx) => {
 - "Status Twitter dei post"`, { parse_mode: 'Markdown' });
 });
 
+// ============================================
+// MORNING BRIEFING COMMAND
+// ============================================
+bot.command('morning', async (ctx) => {
+  const briefing = buildMorningBriefing();
+  await ctx.reply(briefing, { parse_mode: 'Markdown' });
+});
+
 bot.command('status', async (ctx) => {
   try {
-    const followups = JSON.parse(fs.readFileSync(path.join(OUTREACH_DIR, 'venue-followups.json'), 'utf-8'));
-    const newVenues = JSON.parse(fs.readFileSync(path.join(OUTREACH_DIR, 'new-venues.json'), 'utf-8'));
-    const tier1 = JSON.parse(fs.readFileSync(path.join(OUTREACH_DIR, 'tier1-pending.json'), 'utf-8'));
+    const tracking: any[] = JSON.parse(fs.readFileSync(path.join(OUTREACH_DIR, 'tracking.json'), 'utf-8'));
+    const sent = tracking.filter((t: any) => t.status === 'sent');
+    const bounced = tracking.filter((t: any) => t.bounced);
+    const humanReplies = tracking.filter((t: any) => t.replyType === 'human');
+    const autoReplies = tracking.filter((t: any) => t.replyType === 'auto');
+    const delivered = sent.length - bounced.length;
 
-    const allVenues = [...followups, ...newVenues, ...tier1];
-    const sent = allVenues.filter((v: any) => v.status === 'sent').length;
-    const pending = allVenues.filter((v: any) => v.status === 'pending' || v.status === 'draft').length;
+    const now = new Date();
+    const overdue = sent.filter((t: any) => {
+      if (t.bounced || t.replyReceived || t.followUpSent) return false;
+      const days = Math.floor((now.getTime() - new Date(t.sentAt).getTime()) / (1000 * 60 * 60 * 24));
+      return days >= 7;
+    });
+    const followUpsSent = tracking.filter((t: any) => t.followUpSent);
 
-    const msg = `📊 **Status Outreach**
+    const msg = `📊 **OUTREACH PIPELINE**
 
-📧 Email inviate: **${sent}**
-⏳ Pending: **${pending}**
-📍 Totale venue: **${allVenues.length}**
+📧 Sent: **${sent.length}** | Bounced: **${bounced.length}** | Delivered: **${delivered}**
+💬 Human replies: **${humanReplies.length}** (${delivered > 0 ? ((humanReplies.length / delivered) * 100).toFixed(1) : 0}%)
+🤖 Auto-replies: **${autoReplies.length}**
+📨 Follow-ups sent: **${followUpsSent.length}**
+⏰ Overdue for follow-up: **${overdue.length}**
 
-**Breakdown:**
-• Follow-ups: ${followups.length}
-• Nuovi venue: ${newVenues.length}
-• Tier 1: ${tier1.length}
-
-📅 Data: ${new Date().toISOString().split('T')[0]}`;
+📅 ${new Date().toISOString().split('T')[0]}`;
 
     await ctx.reply(msg, { parse_mode: 'Markdown' });
   } catch (error) {
-    await ctx.reply('❌ Errore caricamento status');
+    await ctx.reply('❌ Errore caricamento status. Usa tracking.json.');
+  }
+});
+
+bot.command('outreach', async (ctx) => {
+  try {
+    const tracking: any[] = JSON.parse(fs.readFileSync(path.join(OUTREACH_DIR, 'tracking.json'), 'utf-8'));
+    const now = new Date();
+
+    const humanReplies = tracking.filter((t: any) => t.replyType === 'human');
+    const overdue = tracking.filter((t: any) => {
+      if (t.status !== 'sent' || t.bounced || t.replyReceived || t.followUpSent) return false;
+      const days = Math.floor((now.getTime() - new Date(t.sentAt).getTime()) / (1000 * 60 * 60 * 24));
+      return days >= 7;
+    });
+
+    let msg = `🎵 **OUTREACH DETAIL**\n\n`;
+
+    if (humanReplies.length > 0) {
+      msg += `🎉 **Replies:**\n`;
+      for (const r of humanReplies) {
+        msg += `• **${r.venue}** (${r.replyDate?.split('T')[0] || '?'})\n`;
+        if (r.replyPreview) msg += `  "${r.replyPreview.substring(0, 100)}"\n`;
+      }
+      msg += '\n';
+    }
+
+    if (overdue.length > 0) {
+      msg += `⏰ **Need follow-up (${overdue.length}):**\n`;
+      for (const o of overdue.slice(0, 10)) {
+        const days = Math.floor((now.getTime() - new Date(o.sentAt).getTime()) / (1000 * 60 * 60 * 24));
+        msg += `• ${o.venue} (${days}d)\n`;
+      }
+      if (overdue.length > 10) msg += `  ... +${overdue.length - 10} more\n`;
+    }
+
+    await ctx.reply(msg, { parse_mode: 'Markdown' });
+  } catch (error) {
+    await ctx.reply('❌ Errore. Run: npx tsx scripts/outreach-auto.ts report');
   }
 });
 
@@ -483,32 +700,6 @@ bot.command('twitter', async (ctx) => {
     await ctx.reply(msg, { parse_mode: 'Markdown' });
   } catch (error) {
     await ctx.reply(`❌ Errore Twitter: ${(error as Error).message}`);
-  }
-});
-
-// Free text - send to Claude
-bot.on('text', async (ctx) => {
-  const userMessage = ctx.message.text;
-
-  // Ignore commands
-  if (userMessage.startsWith('/')) return;
-
-  await ctx.reply('🤔 Sto pensando...');
-
-  try {
-    const response = await askClaude(userMessage);
-
-    // Split long messages (Telegram limit: 4096 chars)
-    if (response.length > 4000) {
-      const chunks = response.match(/.{1,4000}/gs) || [];
-      for (const chunk of chunks) {
-        await ctx.reply(chunk);
-      }
-    } else {
-      await ctx.reply(response);
-    }
-  } catch (error) {
-    await ctx.reply(`❌ Errore: ${(error as Error).message}`);
   }
 });
 
@@ -881,17 +1072,97 @@ bot.command('pending', async (ctx) => {
   await ctx.reply(msg, { parse_mode: 'Markdown' });
 });
 
+// ============================================
+// FREE TEXT - Send to Claude (MUST be last handler)
+// ============================================
+bot.on('text', async (ctx) => {
+  const userMessage = ctx.message.text;
+
+  // Ignore commands - they have their own handlers above
+  if (userMessage.startsWith('/')) return;
+
+  await ctx.reply('🤔 Sto pensando...');
+
+  try {
+    const response = await askClaude(userMessage);
+
+    // Split long messages (Telegram limit: 4096 chars)
+    if (response.length > 4000) {
+      const chunks = response.match(/.{1,4000}/gs) || [];
+      for (const chunk of chunks) {
+        await ctx.reply(chunk);
+      }
+    } else {
+      await ctx.reply(response);
+    }
+  } catch (error) {
+    await ctx.reply(`❌ Errore: ${(error as Error).message}`);
+  }
+});
+
 // Error handling
 bot.catch((err, ctx) => {
   console.error('Bot error:', err);
   ctx.reply('❌ Si è verificato un errore.');
 });
 
+// ============================================
+// AUTOMATIC MORNING NOTIFICATION
+// ============================================
+async function sendMorningNotification() {
+  if (!ALLOWED_USER_ID) {
+    console.log('⚠️ TELEGRAM_USER_ID not set - cannot send morning notification');
+    return;
+  }
+
+  try {
+    const briefing = buildMorningBriefing();
+    await bot.telegram.sendMessage(ALLOWED_USER_ID, briefing, { parse_mode: 'Markdown' });
+    console.log('✅ Morning notification sent');
+  } catch (error) {
+    console.error('❌ Failed to send morning notification:', error);
+  }
+}
+
+// Schedule morning notification at 9:00 AM
+function scheduleMorningNotification() {
+  const now = new Date();
+  const targetHour = 9; // 9:00 AM
+
+  // Calculate milliseconds until next 9:00 AM
+  let target = new Date(now);
+  target.setHours(targetHour, 0, 0, 0);
+
+  if (now >= target) {
+    // Already past 9 AM today, schedule for tomorrow
+    target.setDate(target.getDate() + 1);
+  }
+
+  const msUntilTarget = target.getTime() - now.getTime();
+  console.log(`⏰ Morning notification scheduled for ${target.toLocaleString('it-IT')}`);
+
+  // First notification
+  setTimeout(() => {
+    sendMorningNotification();
+
+    // Then repeat every 24 hours
+    setInterval(sendMorningNotification, 24 * 60 * 60 * 1000);
+  }, msUntilTarget);
+}
+
 // Start bot
-bot.launch().then(() => {
-  console.log('🤖 Telegram bot started!');
-  console.log('🔐 Security: Tweet confirmation enabled');
-  console.log('Send /start to begin');
+// Note: bot.launch() promise doesn't resolve until bot stops (Telegraf bug #1989)
+// So we log immediately and don't await
+console.log('🚀 Starting Telegram bot...');
+console.log('🤖 Bot is now running and listening for commands');
+console.log('🔐 Security: All sensitive actions require confirmation');
+console.log('📱 Send /start on Telegram to begin');
+
+bot.launch({ dropPendingUpdates: true }).then(() => {
+  // Schedule morning notification after bot is running
+  scheduleMorningNotification();
+}).catch((err) => {
+  console.error('❌ Bot launch failed:', err);
 });
 
 // Graceful shutdown

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FLUTUR — Technical Rider 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
+  @page { margin: 0; size: A4; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #000427;
+    color: #f0f0f0;
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 0;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .header {
+    background: linear-gradient(135deg, #000427 0%, #0c1033 100%);
+    padding: 28px 40px 20px;
+    border-bottom: 2px solid #d4a574;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #fff;
+  }
+  .header .subtitle {
+    font-size: 11px;
+    color: #d4a574;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .header .badge {
+    font-size: 10px;
+    color: #d4a574;
+    border: 1px solid #d4a574;
+    padding: 4px 12px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  .content { padding: 20px 40px 16px; }
+
+  /* Channel summary - the MOST IMPORTANT thing */
+  .channel-summary {
+    background: #0c1033;
+    border: 1px solid rgba(212,165,116,0.3);
+    border-radius: 4px;
+    padding: 14px 20px;
+    margin-bottom: 20px;
+  }
+  .channel-summary .label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #d4a574;
+    margin-bottom: 8px;
+  }
+  .channel-summary table { width: 100%; font-size: 12px; }
+  .channel-summary td { padding: 3px 0; color: #d4d4d4; }
+  .channel-summary td:first-child { font-weight: 500; color: #fff; width: 60px; }
+
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #d4a574;
+    margin-bottom: 8px;
+    margin-top: 18px;
+  }
+
+  table.spec { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 11px; }
+  table.spec th {
+    text-align: left;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-bottom: 1px solid rgba(212,165,116,0.3);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #d4a574;
+  }
+  table.spec td { padding: 5px 10px; border-bottom: 1px solid rgba(255,255,255,0.05); color: #d4d4d4; }
+  table.spec td strong { color: #f0f0f0; }
+
+  .note { font-size: 11px; color: #6a6a6a; font-style: italic; margin-bottom: 12px; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+  /* Signal flow */
+  .signal-flow {
+    background: #0c1033;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .flow-text { font-size: 12px; color: #d4d4d4; }
+  .flow-arrow { color: #d4a574; margin: 0 6px; }
+
+  /* Timing row */
+  .timing {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .timing-item { text-align: center; }
+  .timing-item .val { font-size: 14px; font-weight: 500; color: #fff; }
+  .timing-item .label { font-size: 10px; color: #6a6a6a; text-transform: uppercase; letter-spacing: 1px; }
+
+  ul.notes { padding-left: 16px; margin-bottom: 12px; }
+  ul.notes li { font-size: 11px; margin-bottom: 3px; color: #9a9a9a; }
+
+  .divider { border: none; border-top: 1px solid rgba(212,165,116,0.15); margin: 14px 0; }
+
+  .footer {
+    padding: 10px 40px;
+    font-size: 10px;
+    color: #6a6a6a;
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>FLUTUR &mdash; Technical Rider</h1>
+    <div class="subtitle">Solo Live Act &middot; Self-Contained &middot; 2026</div>
+  </div>
+  <div class="badge">No backline needed</div>
+</div>
+
+<div class="content">
+
+<!-- INPUT LIST — the first thing a tech director looks for -->
+<div class="channel-summary">
+  <div class="label">Input List (3 channels to house)</div>
+  <table>
+    <tr><td>CH 1</td><td>Main L (XLR, balanced, line level) &mdash; from artist interface</td></tr>
+    <tr><td>CH 2</td><td>Main R (XLR, balanced, line level) &mdash; from artist interface</td></tr>
+    <tr><td>CH 3</td><td>Vocal (XLR, dynamic mic, phantom OFF)</td></tr>
+  </table>
+</div>
+
+<div class="two-col">
+<div>
+<h2>Artist Equipment (provided)</h2>
+<table class="spec">
+  <tr><th>Item</th><th>Note</th></tr>
+  <tr><td>Gibraltar Rack</td><td>Semi-curved, 2 fan sections</td></tr>
+  <tr><td>RAV Vast &times; 2</td><td>Contact mic &rarr; interface</td></tr>
+  <tr><td>Acoustic Guitar</td><td>Pickup &rarr; interface</td></tr>
+  <tr><td>Ableton Push 3</td><td>Looping, sampling, sequencing</td></tr>
+  <tr><td>Pioneer FLX-4</td><td>DJ controller (DJ+Live mode)</td></tr>
+  <tr><td>Launchpad / Pad</td><td>Percussion, triggers</td></tr>
+  <tr><td>Audio Interface (RME)</td><td>Central mixer &rarr; stereo out</td></tr>
+  <tr><td>Vocal Mic</td><td>Dynamic, XLR</td></tr>
+  <tr><td>Own Monitor</td><td>Linear, if no venue wedge</td></tr>
+</table>
+</div>
+<div>
+<h2>Venue Requirements</h2>
+<table class="spec">
+  <tr><th>Item</th><th>Spec</th></tr>
+  <tr><td><strong>PA System</strong></td><td>Stereo, 500W+ (small) / 1kW+ (large)</td></tr>
+  <tr><td><strong>Main Input</strong></td><td>2&times; XLR balanced stereo</td></tr>
+  <tr><td><strong>Vocal CH</strong></td><td>1&times; XLR, phantom OFF</td></tr>
+  <tr><td><strong>Monitor</strong></td><td>1 wedge preferred</td></tr>
+  <tr><td><strong>Power</strong></td><td>220V, 2 outlets within 3m</td></tr>
+  <tr><td><strong>Stage</strong></td><td>2m&times;2m min, 2.5m&times;2.5m ideal</td></tr>
+  <tr><td><strong>Cover</strong></td><td>Shade for outdoor daytime</td></tr>
+</table>
+</div>
+</div>
+
+<h2>Signal Flow</h2>
+<div class="signal-flow">
+  <span class="flow-text">All instruments</span>
+  <span class="flow-arrow">&rarr;</span>
+  <span class="flow-text">Audio Interface (internal mix)</span>
+  <span class="flow-arrow">&rarr;</span>
+  <span class="flow-text">Stereo XLR L/R to house PA</span>
+  <span class="flow-text" style="display:block;margin-top:4px;">+ 1&times; Vocal XLR separate channel</span>
+</div>
+
+<h2>Timing</h2>
+<div class="timing">
+  <div class="timing-item"><div class="val">30&ndash;45 min</div><div class="label">Setup</div></div>
+  <div class="timing-item"><div class="val">15 min</div><div class="label">Soundcheck</div></div>
+  <div class="timing-item"><div class="val">60&ndash;180 min</div><div class="label">Performance</div></div>
+  <div class="timing-item"><div class="val">20 min</div><div class="label">Breakdown</div></div>
+</div>
+
+<hr class="divider">
+
+<h2>Notes</h2>
+<ul class="notes">
+  <li>No sound engineer required &mdash; artist manages own mix via interface</li>
+  <li>No backline needed &mdash; all instruments provided</li>
+  <li>Quiet setup available (electronic instruments only, no drum kit)</li>
+  <li>Electronics require shade and dry conditions for outdoor sets</li>
+  <li>Artist carries own power strip and surge protector</li>
+</ul>
+
+</div>
+
+<div class="footer">
+  <span>Alessio Cazzaniga (FLUTUR) &middot; alessio.cazzaniga87@gmail.com &middot; +39 WhatsApp</span>
+  <span>Full EPK: 8i8.art &middot; Updated Feb 2026</span>
+</div>
+
+</body>
+</html>

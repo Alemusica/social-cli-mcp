@@ -1,0 +1,58 @@
+[
+  {
+    "id": "italy-mandali-retreat",
+    "venue": "Mandali Retreat Center",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<3a24778b-922b-a49d-ab85-675aecd9b3e0@gmail.com>",
+    "timestamp": "2026-01-21T12:01:11.393Z"
+  },
+  {
+    "id": "greece-euphoria-retreat-festival",
+    "venue": "Euphoria Retreat - Wellbeing Festival",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<79764bc2-7d9d-618b-e041-39a3a88704b7@gmail.com>",
+    "timestamp": "2026-01-21T12:01:15.372Z"
+  },
+  {
+    "id": "germany-pangonia-festival",
+    "venue": "Pangonia Handpan Festival",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<38c61419-cbec-ea57-883e-67a3b54aafeb@gmail.com>",
+    "timestamp": "2026-01-21T12:01:19.297Z"
+  },
+  {
+    "id": "germany-evolve-festival",
+    "venue": "Evolve Festival",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<ecf5c0fe-46b7-8e74-0a4a-3d7004a34796@gmail.com>",
+    "timestamp": "2026-01-21T12:01:23.238Z"
+  },
+  {
+    "id": "indonesia-balispirit-festival",
+    "venue": "BaliSpirit Festival",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<5384f729-890c-109b-8e7e-14c4a4d176e7@gmail.com>",
+    "timestamp": "2026-01-21T12:01:27.237Z"
+  },
+  {
+    "id": "thailand-sunset-hill-resort",
+    "venue": "Sunset Hill Resort",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<3ab52bbb-55d6-bd20-9062-a4b25ac8e993@gmail.com>",
+    "timestamp": "2026-01-21T12:01:31.126Z"
+  },
+  {
+    "id": "portugal-shanti-space",
+    "venue": "The Shanti Space",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<55005cd5-9db5-2ce5-2da9-a2c8e9fe4474@gmail.com>",
+    "timestamp": "2026-01-21T12:01:35.006Z"
+  }
+]

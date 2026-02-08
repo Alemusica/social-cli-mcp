@@ -1,0 +1,59 @@
+{
+  "date": "2026-01-22",
+  "campaign": "Ceremonial Electronics - Priority Venues",
+  "sent": [
+    {
+      "venue": "Giardino dei Visionari",
+      "email": "Info@giardinodeivisionari.com",
+      "subject": "House of Mantra - Ceremonial Electronics Live",
+      "status": "sent",
+      "followUpDate": "2026-01-28"
+    },
+    {
+      "venue": "Ecstatic Dance Berlin",
+      "email": "ecstaticdanceberlin@gmail.com",
+      "subject": "RAV Vast Live - Opening/Cooldown/Full Journey",
+      "status": "sent",
+      "followUpDate": "2026-01-28"
+    },
+    {
+      "venue": "The Shanti Space",
+      "email": "info@theshantispace.com",
+      "subject": "Sound Journey Facilitator - RAV Vast Ceremonies",
+      "status": "sent",
+      "followUpDate": "2026-01-28"
+    },
+    {
+      "venue": "Nalu Athens",
+      "email": "info@nalu.gr",
+      "subject": "Live World Music for Sunset Sessions",
+      "status": "sent",
+      "followUpDate": "2026-01-28"
+    }
+  ],
+  "pendingManual": [
+    {
+      "venue": "ED Rotterdam",
+      "method": "website form",
+      "url": "https://ecstaticdancerotterdam.nl",
+      "status": "pending"
+    },
+    {
+      "venue": "Kumharas",
+      "method": "form + phone",
+      "url": "https://kumharas.org/en-gb/contact-page",
+      "phone": "+34 971 80 57 40",
+      "status": "pending"
+    },
+    {
+      "venue": "Sunset Ashram",
+      "method": "phone call",
+      "phone": "+34 661 347 222",
+      "status": "pending"
+    }
+  ],
+  "videos": {
+    "main": "https://www.youtube.com/watch?v=rmnShcDsBBY",
+    "secondary": "https://youtu.be/I-lpfRHTSG4"
+  }
+}

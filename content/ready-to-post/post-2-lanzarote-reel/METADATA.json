@@ -1,0 +1,15 @@
+{
+  "post_id": 2,
+  "title": "What does Lanzarote sound like?",
+  "pillar": "nature_authentic",
+  "pillar_reason": "Field recording, binaural capture, authentic sound experience",
+  "type": "reel",
+  "duration": "45-60s",
+  "priority": "HIGH",
+  "target_audience": ["sound_designers", "audio_engineers", "tech"],
+  "scheduled_day": "Friday",
+  "scheduled_time": "19:00 CET",
+  "hashtags": ["fieldrecording", "binaural", "ku100", "sounddesign", "lanzarote"],
+  "platforms": ["Instagram", "YouTube"],
+  "audio_needed": "binaural recording clip from Lanzarote"
+}

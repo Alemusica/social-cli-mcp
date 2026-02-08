@@ -1,14 +1,13 @@
 /**
  * Gmail Sender - Send emails via SMTP with App Password
  * For venue follow-ups and outreach campaigns
+ *
+ * Credentials loaded from macOS Keychain.
  */
 
 import * as nodemailer from 'nodemailer';
-import * as dotenv from 'dotenv';
 import * as fs from 'fs';
-import * as path from 'path';
-
-dotenv.config();
+import { getFromKeychain } from './core/index.js';
 
 interface EmailConfig {
   to: string;
@@ -25,14 +24,27 @@ interface VenueFollowUp {
   originalDate: string;
 }
 
+// Gmail credentials from Keychain
+let gmailUser: string | null = null;
+let gmailPass: string | null = null;
+
+// Load credentials once
+function loadGmailCredentials(): { user: string; pass: string } {
+  if (!gmailUser || !gmailPass) {
+    gmailUser = getFromKeychain('GMAIL_USER');
+    gmailPass = getFromKeychain('GMAIL_APP_PASSWORD');
+  }
+
+  if (!gmailUser || !gmailPass) {
+    throw new Error('GMAIL_USER and GMAIL_APP_PASSWORD required in Keychain. Add with: security add-generic-password -a social-cli-mcp -s social-cli-mcp -w "value" -U');
+  }
+
+  return { user: gmailUser, pass: gmailPass };
+}
+
 // Create transporter
 function createTransporter() {
-  const user = process.env.GMAIL_USER;
-  const pass = process.env.GMAIL_APP_PASSWORD;
-
-  if (!user || !pass) {
-    throw new Error('GMAIL_USER and GMAIL_APP_PASSWORD required in .env');
-  }
+  const { user, pass } = loadGmailCredentials();
 
   return nodemailer.createTransport({
     service: 'gmail',
@@ -43,10 +55,11 @@ function createTransporter() {
 // Send single email
 async function sendEmail(config: EmailConfig): Promise<boolean> {
   const transporter = createTransporter();
+  const { user } = loadGmailCredentials();
 
   try {
     const info = await transporter.sendMail({
-      from: `"Flutur" <${process.env.GMAIL_USER}>`,
+      from: `"Flutur" <${user}>`,
       to: config.to,
       subject: config.subject,
       html: config.html,

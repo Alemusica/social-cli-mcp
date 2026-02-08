@@ -1,0 +1,28 @@
+[
+  {
+    "emailId": "email:9ctwztvpmplwhexkv3eq",
+    "venue": "Giardino dei Visionari",
+    "to": "Info@giardinodeivisionari.com",
+    "venueLinked": false
+  },
+  {
+    "emailId": "email:9qlesl5x4nvcm7trcjl5",
+    "venue": "Ecstatic Dance Berlin",
+    "to": "ecstaticdanceberlin@gmail.com",
+    "venueLinked": true,
+    "venueId": "venue:8wjsinq23n7x8jhn5ol3"
+  },
+  {
+    "emailId": "email:dniuzjie9it0ldudqhkq",
+    "venue": "The Shanti Space",
+    "to": "info@theshantispace.com",
+    "venueLinked": true,
+    "venueId": "venue:3zw0btglz95a7c4a1bva"
+  },
+  {
+    "emailId": "email:u9bhea7suwluvzf58z16",
+    "venue": "Nalu Athens",
+    "to": "info@nalu.gr",
+    "venueLinked": false
+  }
+]

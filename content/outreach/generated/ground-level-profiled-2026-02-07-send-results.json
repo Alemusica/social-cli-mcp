@@ -1,0 +1,162 @@
+[
+  {
+    "id": "gl-santana-naxos",
+    "venue": "Santana Beach Club & Restaurant",
+    "to": "info@santanabeachsuites.com",
+    "status": "sent",
+    "messageId": "<438af9a0-ce52-dc28-9f52-68f8e980f31b@gmail.com>",
+    "timestamp": "2026-02-07T08:53:38.458Z"
+  },
+  {
+    "id": "gl-soros-antiparos",
+    "venue": "Soros Beach",
+    "to": "info@sorosbeach.gr",
+    "status": "sent",
+    "messageId": "<239f9445-0104-3c80-e91f-89fc71baea97@gmail.com>",
+    "timestamp": "2026-02-07T08:53:42.778Z"
+  },
+  {
+    "id": "gl-liokalyvo-crete",
+    "venue": "Liokalyvo Beach Club",
+    "to": "liokalyvo@gmail.com",
+    "status": "sent",
+    "messageId": "<607951dc-d9e2-449a-7ca7-797691f8bb8c@gmail.com>",
+    "timestamp": "2026-02-07T08:53:47.044Z"
+  },
+  {
+    "id": "gl-cretan-malia-park",
+    "venue": "Cretan Malia Park",
+    "to": "info@cretanmaliapark.gr",
+    "status": "sent",
+    "messageId": "<af375ba2-beca-1ff6-5b14-7403b3084866@gmail.com>",
+    "timestamp": "2026-02-07T08:53:51.286Z"
+  },
+  {
+    "id": "gl-ekies-halkidiki",
+    "venue": "Ekies All Senses Resort",
+    "to": "info@ekies.gr",
+    "status": "sent",
+    "messageId": "<86fedad1-6df3-8cbf-d940-29d64ceada7f@gmail.com>",
+    "timestamp": "2026-02-07T08:53:55.528Z"
+  },
+  {
+    "id": "gl-arillas-soundgarden",
+    "venue": "Arillas Soundgarden",
+    "to": "info@arillas-soundgarden.com",
+    "status": "sent",
+    "messageId": "<295038b3-28d5-f0f6-6db7-d8c2af87a7d0@gmail.com>",
+    "timestamp": "2026-02-07T08:53:59.738Z"
+  },
+  {
+    "id": "gl-casa-cook-rhodes",
+    "venue": "Casa Cook Rhodes",
+    "to": "rhodes@casacook.com",
+    "status": "sent",
+    "messageId": "<d2e1901a-f2b6-bd57-a737-7f0c5fa35b26@gmail.com>",
+    "timestamp": "2026-02-07T08:54:04.098Z"
+  },
+  {
+    "id": "gl-ohana-cadiz",
+    "venue": "Chiringuito Ohana",
+    "to": "ohanacanos@gmail.com",
+    "status": "sent",
+    "messageId": "<e0c6ccb3-4c7d-92a4-8479-5411af1583ea@gmail.com>",
+    "timestamp": "2026-02-07T08:54:08.277Z"
+  },
+  {
+    "id": "gl-laluna-cadiz",
+    "venue": "Chiringuito La Luna",
+    "to": "lalunazahara@gmail.com",
+    "status": "sent",
+    "messageId": "<1778b0aa-7899-e60a-012b-12c633c27db2@gmail.com>",
+    "timestamp": "2026-02-07T08:54:12.440Z"
+  },
+  {
+    "id": "gl-hornillero-malaga",
+    "venue": "Chiringuito El Hornillero",
+    "to": "elhornillero@gmail.com",
+    "status": "sent",
+    "messageId": "<54373c80-9ad1-1b77-c350-cca2b02e010b@gmail.com>",
+    "timestamp": "2026-02-07T08:54:17.387Z"
+  },
+  {
+    "id": "gl-dreamsea-alicante",
+    "venue": "Dreamsea Mediterranean",
+    "to": "mediterranean@dreamsea.com",
+    "status": "sent",
+    "messageId": "<4e5d43d2-b7f5-c059-2358-29bb9f9b0929@gmail.com>",
+    "timestamp": "2026-02-07T08:54:21.549Z"
+  },
+  {
+    "id": "gl-almata-costabrava",
+    "venue": "Nautic Almata Camping",
+    "to": "info@almata.com",
+    "status": "sent",
+    "messageId": "<1434b10a-421b-da93-b644-e949ca492f3f@gmail.com>",
+    "timestamp": "2026-02-07T08:54:25.847Z"
+  },
+  {
+    "id": "gl-uccellini-puglia",
+    "venue": "La Casa degli Uccellini",
+    "to": "info@lacasadegliuccellini.it",
+    "status": "sent",
+    "messageId": "<9eef4ba7-e306-123f-56ae-35fbb5752bf3@gmail.com>",
+    "timestamp": "2026-02-07T08:54:30.006Z"
+  },
+  {
+    "id": "gl-floramaria-salento",
+    "venue": "Masseria Tenuta Flora Maria",
+    "to": "info@tenutafloramaria.it",
+    "status": "sent",
+    "messageId": "<f1e43c00-cedb-2270-58d8-38911628dae6@gmail.com>",
+    "timestamp": "2026-02-07T08:54:34.253Z"
+  },
+  {
+    "id": "gl-amastuola-taranto",
+    "venue": "Masseria Amastuola",
+    "to": "info@amastuola.it",
+    "status": "sent",
+    "messageId": "<0231d52f-af77-1a43-1bf5-8b952964f77f@gmail.com>",
+    "timestamp": "2026-02-07T08:54:38.386Z"
+  },
+  {
+    "id": "gl-porticciolo-sardegna",
+    "venue": "Torre del Porticciolo Camping Village",
+    "to": "info@torredelporticciolo.it",
+    "status": "sent",
+    "messageId": "<df29fbf8-d7d2-b84e-5004-f4548f91d654@gmail.com>",
+    "timestamp": "2026-02-07T08:54:42.661Z"
+  },
+  {
+    "id": "gl-calaginepro-sardegna",
+    "venue": "Camping Cala Ginepro",
+    "to": "info@campingcalaginepro.net",
+    "status": "sent",
+    "messageId": "<3b9c3f96-79d7-0a44-a7e2-0c31cfae4030@gmail.com>",
+    "timestamp": "2026-02-07T08:54:46.831Z"
+  },
+  {
+    "id": "gl-laundry-sagres",
+    "venue": "Laundry Lounge Sagres",
+    "to": "info@laundryloungesagres.com",
+    "status": "sent",
+    "messageId": "<dbcaa0b5-906d-1ae8-c0a9-592e4ccb09a8@gmail.com>",
+    "timestamp": "2026-02-07T08:54:51.261Z"
+  },
+  {
+    "id": "gl-ohai-nazare",
+    "venue": "Ohai Nazaré Outdoor Resort",
+    "to": "nazare@ohairesorts.com",
+    "status": "sent",
+    "messageId": "<23e6178c-c731-3496-c9be-ae140282ccb4@gmail.com>",
+    "timestamp": "2026-02-07T08:54:55.557Z"
+  },
+  {
+    "id": "gl-centralpark-hvar",
+    "venue": "Central Park Club",
+    "to": "info@hotelparkhvar.com",
+    "status": "sent",
+    "messageId": "<14845072-c391-9bd7-7d8a-4f9eb81faeca@gmail.com>",
+    "timestamp": "2026-02-07T08:54:59.767Z"
+  }
+]

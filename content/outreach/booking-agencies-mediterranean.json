@@ -1,0 +1,307 @@
+{
+  "_meta": {
+    "generated": "2026-02-06",
+    "source": "Claude training data (cutoff May 2025) - NOT live web research",
+    "warning": "VERIFY ALL DATA before contacting. Websites, contacts, and commission structures may have changed. WebSearch was unavailable during generation.",
+    "search_queries_intended": [
+      "booking agency live musicians Mediterranean hotels",
+      "entertainment agency beach bars Spain Greece",
+      "live music agency resort hotels Europe summer 2025 2026",
+      "booking agent acoustic musicians ibiza costa brava",
+      "agenzie booking musicisti live hotel resort Italia",
+      "musician booking agent Croatia summer"
+    ]
+  },
+  "agencies": [
+    {
+      "name": "Soulfire Artists",
+      "location": "Ibiza, Spain",
+      "website": "https://www.soulfireartists.com",
+      "contact": "Check website for submission form",
+      "regions": ["Ibiza", "Mallorca", "Barcelona", "South of France"],
+      "venue_types": ["Beach clubs", "Boutique hotels", "Sunset bars", "Private events"],
+      "music_styles": ["Acoustic", "World music", "Ambient", "Balearic", "Live electronic"],
+      "commission_model": "Commission-based (typically 15-20%)",
+      "how_to_apply": "Website submission form with EPK, video links, availability",
+      "notes": "Strong in Balearic scene. They book live acts alongside DJs. Good fit for sunset/ambient performers.",
+      "verified": false,
+      "relevance_score": 9
+    },
+    {
+      "name": "Ibiza Music Agency (IMA)",
+      "location": "Ibiza, Spain",
+      "website": "https://www.ibizamusicagency.com",
+      "contact": "info@ibizamusicagency.com",
+      "regions": ["Ibiza", "Formentera", "Mallorca"],
+      "venue_types": ["Hotels", "Beach clubs", "Restaurants", "Private villas", "Yacht events"],
+      "music_styles": ["Acoustic", "Jazz", "Ambient", "Singer-songwriter", "World music", "DJ sets"],
+      "commission_model": "Commission-based, no upfront fees reported",
+      "how_to_apply": "Email with EPK, live video, rate card, availability calendar",
+      "notes": "One of the established agencies specifically for Ibiza hospitality circuit. They supply live music to hotels and upscale venues year-round but peak summer.",
+      "verified": false,
+      "relevance_score": 9
+    },
+    {
+      "name": "MN2S",
+      "location": "London, UK (global operations)",
+      "website": "https://www.mn2s.com",
+      "contact": "Via website booking form",
+      "regions": ["Ibiza", "Greece", "Croatia", "South of France", "Dubai", "Worldwide"],
+      "venue_types": ["Beach clubs", "Festivals", "Hotels", "Corporate events", "Residencies"],
+      "music_styles": ["DJ-heavy but also live acts", "Acoustic", "Bands", "Instrumentalists"],
+      "commission_model": "Commission-based (industry standard 15-20%)",
+      "how_to_apply": "https://mn2s.com/submit-artist/ - online submission with press kit",
+      "notes": "Large agency, primarily DJs but has a live music division. Higher threshold for acceptance. Worth trying if you have strong credentials (festivals, media).",
+      "verified": false,
+      "relevance_score": 6
+    },
+    {
+      "name": "Elastic Artists",
+      "location": "London, UK",
+      "website": "https://www.elasticartists.net",
+      "contact": "Via website",
+      "regions": ["UK", "Ibiza", "Europe", "Mediterranean summer circuit"],
+      "venue_types": ["Festivals", "Beach clubs", "Hotels", "Concert venues"],
+      "music_styles": ["Electronic-live hybrid", "Ambient", "World fusion", "Downtempo"],
+      "commission_model": "Commission-based",
+      "how_to_apply": "Email demos and EPK to booking team",
+      "notes": "Known for curating organic/electronic crossover acts. Good fit for live looping + acoustic + electronic hybrid.",
+      "verified": false,
+      "relevance_score": 7
+    },
+    {
+      "name": "Dorado Music / Jose Padilla Legacy Circuit",
+      "location": "Ibiza, Spain",
+      "website": "Search for current operators - this circuit is managed by several promoters",
+      "contact": "Research needed - network through Ibiza music community",
+      "regions": ["Ibiza", "Balearic Islands"],
+      "venue_types": ["Sunset bars", "Cafe del Mar circuit", "Hotel lounges"],
+      "music_styles": ["Balearic", "Ambient", "Acoustic", "Chillout", "World music"],
+      "commission_model": "Varies by venue/promoter",
+      "how_to_apply": "Network-based. Connect through Ibiza music community, sunset bar residency applications",
+      "notes": "Not a single agency but a circuit of sunset venues in Ibiza that book ambient/acoustic live acts. The Cafe del Mar, Kumharas, Savannah Beach Club network. Apply directly to each venue or through local promoters.",
+      "verified": false,
+      "relevance_score": 8
+    },
+    {
+      "name": "VonGold Entertainment",
+      "location": "Barcelona / Ibiza, Spain",
+      "website": "https://www.vongold.es",
+      "contact": "Check website",
+      "regions": ["Spain", "Balearic Islands", "Barcelona", "Costa Brava", "Marbella"],
+      "venue_types": ["Hotels", "Beach clubs", "Rooftop bars", "Corporate events", "Weddings"],
+      "music_styles": ["Acoustic", "Jazz", "Lounge", "Singer-songwriter", "Ambient"],
+      "commission_model": "Commission-based",
+      "how_to_apply": "Contact via website with demo material and availability",
+      "notes": "Spanish entertainment agency focused on hospitality. They supply live music to hotel chains and beach venues along Spanish coast.",
+      "verified": false,
+      "relevance_score": 8
+    },
+    {
+      "name": "Fever Entertainment / Live Music Spain",
+      "location": "Marbella, Spain",
+      "website": "Search 'live music agency Marbella' for current website",
+      "contact": "Research needed",
+      "regions": ["Costa del Sol", "Marbella", "Malaga", "Gibraltar"],
+      "venue_types": ["Beach clubs", "Hotels", "Restaurants", "Private events"],
+      "music_styles": ["Acoustic", "Jazz", "Latin", "Pop covers", "Ambient"],
+      "commission_model": "Commission-based",
+      "how_to_apply": "Email with video demos and rate card",
+      "notes": "Marbella/Costa del Sol has a dense circuit of beach clubs and hotels needing live music May-October. Multiple small agencies operate here.",
+      "verified": false,
+      "relevance_score": 7
+    },
+    {
+      "name": "Terraforma / MiSoNo Agency Network",
+      "location": "Milan, Italy",
+      "website": "https://www.terraformafestival.com (festival) - agency network varies",
+      "contact": "Research current booking contacts",
+      "regions": ["Italy", "Sardinia", "Sicily", "Lake Como", "Amalfi"],
+      "venue_types": ["Festivals", "Art spaces", "Hotels", "Cultural events"],
+      "music_styles": ["Experimental", "Ambient", "Electronic-acoustic", "World music"],
+      "commission_model": "Varies",
+      "how_to_apply": "Open call submissions for festival; agency bookings through network",
+      "notes": "Italian experimental/ambient scene hub. Not a traditional booking agency but a network that connects to Italian luxury hospitality. Good for building Italian connections.",
+      "verified": false,
+      "relevance_score": 5
+    },
+    {
+      "name": "Viva Musica Entertainment",
+      "location": "Athens, Greece",
+      "website": "Search 'viva musica entertainment Greece' or 'live music agency Athens'",
+      "contact": "Research needed",
+      "regions": ["Greece", "Mykonos", "Santorini", "Athens", "Crete", "Rhodes"],
+      "venue_types": ["Hotels", "Beach bars", "Restaurants", "Resort pools", "Private events"],
+      "music_styles": ["Acoustic", "Jazz", "World music", "Ambient", "Greek fusion"],
+      "commission_model": "Commission-based",
+      "how_to_apply": "Email with video, EPK, and summer availability",
+      "notes": "Greek islands have massive demand for live acoustic/ambient acts May-October. Multiple agencies operate. Search 'entertainment agency Mykonos' and 'live music agency Santorini' for current operators.",
+      "verified": false,
+      "relevance_score": 7
+    },
+    {
+      "name": "Domus Entertainment",
+      "location": "Greece (Athens/Mykonos)",
+      "website": "Research needed - search 'domus entertainment greece music'",
+      "contact": "Research needed",
+      "regions": ["Mykonos", "Santorini", "Paros", "Athens Riviera"],
+      "venue_types": ["Luxury hotels", "Beach clubs", "Fine dining", "Yacht events"],
+      "music_styles": ["Acoustic", "Jazz", "Ambient", "Lounge"],
+      "commission_model": "Commission-based",
+      "how_to_apply": "Network referral preferred; cold email with strong EPK and video",
+      "notes": "Greek luxury hospitality entertainment. The Mykonos/Santorini circuit is extremely lucrative but competitive. Having festival credentials (like Greece's Got Talent) is a strong opener.",
+      "verified": false,
+      "relevance_score": 8
+    },
+    {
+      "name": "Split Music Agency / Adriatic Entertainment",
+      "location": "Split, Croatia",
+      "website": "Search 'live music agency Split Croatia' or 'entertainment agency Hvar Dubrovnik'",
+      "contact": "Research needed",
+      "regions": ["Croatia", "Split", "Hvar", "Dubrovnik", "Rovinj", "Zadar"],
+      "venue_types": ["Beach bars", "Hotels", "Restaurants", "Yacht clubs", "Fortresses (Dubrovnik)"],
+      "music_styles": ["Acoustic", "Jazz", "World music", "Ambient"],
+      "commission_model": "Commission-based",
+      "how_to_apply": "Email outreach with demo material",
+      "notes": "Croatia's Adriatic coast is growing fast as a summer music destination. Hvar and Dubrovnik in particular have demand for live ambient/acoustic acts. The market is less saturated than Ibiza/Mykonos.",
+      "verified": false,
+      "relevance_score": 7
+    },
+    {
+      "name": "Lusomundo / Portuguese Entertainment Agencies",
+      "location": "Lisbon / Algarve, Portugal",
+      "website": "Search 'entertainment agency Algarve live music' or 'booking agency Portugal hotels'",
+      "contact": "Research needed",
+      "regions": ["Algarve", "Lisbon", "Porto", "Comporta", "Azores"],
+      "venue_types": ["Beach bars", "Hotels", "Resorts", "Wine estates", "Wellness retreats"],
+      "music_styles": ["Acoustic", "Fado fusion", "World music", "Ambient", "Jazz"],
+      "commission_model": "Commission-based",
+      "how_to_apply": "Email with EPK and summer availability",
+      "notes": "Portugal (especially Algarve and Comporta) is booming for wellness/ambient music. Good match for RAV Vast + sound healing positioning. Search 'Comporta entertainment' for the luxury boutique hotel circuit.",
+      "verified": false,
+      "relevance_score": 8
+    },
+    {
+      "name": "Artisti in Riviera / Riviera Music Agency",
+      "location": "Rimini / Italian Riviera, Italy",
+      "website": "Search 'agenzia spettacoli riviera romagnola' or 'entertainment agency Italian Riviera'",
+      "contact": "Research needed",
+      "regions": ["Romagna coast", "Rimini", "Riccione", "Cesenatico", "Sardinia"],
+      "venue_types": ["Beach clubs (bagni)", "Hotels", "Lidi", "Summer festivals"],
+      "music_styles": ["Acoustic", "Pop", "Jazz", "Lounge"],
+      "commission_model": "Commission-based (Italian agencies typically 15-25%)",
+      "how_to_apply": "Email or phone with demo material",
+      "notes": "The Italian beach club circuit (lidi/bagni) books enormous amounts of live music June-September. Multiple regional agencies handle this. Also search for agencies in Puglia (Salento) and Sardinia.",
+      "verified": false,
+      "relevance_score": 7
+    },
+    {
+      "name": "Soundsuit / Hotel Music Platforms",
+      "location": "Berlin, Germany (operates EU-wide)",
+      "website": "https://www.soundsuit.fm",
+      "contact": "Via platform",
+      "regions": ["Pan-European", "Mediterranean hotels"],
+      "venue_types": ["Hotels", "Restaurants", "Spas", "Retail"],
+      "music_styles": ["Background music primarily - may include live booking"],
+      "commission_model": "Platform model",
+      "how_to_apply": "Artist registration on platform",
+      "notes": "Music-as-a-service for hospitality. Primarily curated playlists but some hotel chains use platforms like this to source live acts. Worth investigating if they have a live music division.",
+      "verified": false,
+      "relevance_score": 4
+    },
+    {
+      "name": "Encore Musicians",
+      "location": "London, UK (operates across Europe)",
+      "website": "https://www.encoremusicians.com",
+      "contact": "Via platform registration",
+      "regions": ["UK", "Spain", "France", "Italy", "Greece", "Portugal"],
+      "venue_types": ["Weddings", "Hotels", "Corporate events", "Private parties"],
+      "music_styles": ["Acoustic", "Jazz", "Classical", "World music", "Ambient"],
+      "commission_model": "Commission per booking (typically 15-20%)",
+      "how_to_apply": "Create profile on platform, upload videos and set rates",
+      "notes": "Online marketplace for booking musicians. Not Mediterranean-specific but has good presence in European destination weddings and hotel events. Good for supplementary income.",
+      "verified": false,
+      "relevance_score": 6
+    },
+    {
+      "name": "Alive Network",
+      "location": "UK (operates internationally)",
+      "website": "https://www.alivenetwork.com",
+      "contact": "Artist registration on website",
+      "regions": ["UK", "Spain", "France", "Italy", "Destination events worldwide"],
+      "venue_types": ["Weddings", "Corporate", "Hotels", "Resorts", "Private events"],
+      "music_styles": ["All genres including acoustic, ambient, world music"],
+      "commission_model": "Commission per booking",
+      "how_to_apply": "Online application with video audition",
+      "notes": "Large UK-based entertainment agency with growing Mediterranean presence through destination weddings and corporate retreats.",
+      "verified": false,
+      "relevance_score": 5
+    },
+    {
+      "name": "Peligrosa / Mediterranean Music Collective",
+      "location": "Various (Spain/Greece)",
+      "website": "Research needed",
+      "contact": "Research needed",
+      "regions": ["Ibiza", "Mykonos", "Barcelona"],
+      "venue_types": ["Beach clubs", "Yoga retreats", "Wellness events"],
+      "music_styles": ["Ambient", "World music", "Healing sounds", "Acoustic"],
+      "commission_model": "Unknown",
+      "how_to_apply": "Network through wellness/yoga festival circuit",
+      "notes": "Placeholder for the growing wellness/yoga retreat circuit that books sound healers and ambient musicians. Search 'sound healing booking agency Europe' and 'yoga retreat entertainment'. This is a real and growing market segment, especially for RAV Vast/handpan players.",
+      "verified": false,
+      "relevance_score": 9
+    }
+  ],
+  "additional_search_strategies": [
+    {
+      "strategy": "Direct venue outreach via agencies",
+      "description": "Many Mediterranean venues don't use agencies - they book directly. Use Google Maps to find venues, then email entertainment directors.",
+      "search_terms": ["entertainment manager [venue name]", "live music coordinator [hotel chain]"]
+    },
+    {
+      "strategy": "Handpan/RAV Vast community networks",
+      "description": "The handpan community has its own booking networks. Other RAV Vast endorsed artists share venue contacts.",
+      "search_terms": ["handpan booking agency", "RAV Vast performers booking", "hang drum musician agency"]
+    },
+    {
+      "strategy": "Hotel chain entertainment departments",
+      "description": "Large chains like Marriott, Four Seasons, Aman, Six Senses have entertainment/experience coordinators who book directly.",
+      "contacts": [
+        "Six Senses Hotels (wellness focused - perfect for sound healing)",
+        "Aman Resorts (ambient/cultural music)",
+        "Four Seasons (lobby/pool entertainment)",
+        "Belmond (cultural programming)",
+        "W Hotels (sunset sessions)",
+        "ME by Melia (rooftop/pool acts)"
+      ]
+    },
+    {
+      "strategy": "Festival circuit as agency pipeline",
+      "description": "Playing festivals leads to agency discovery. Agencies scout at festivals.",
+      "relevant_festivals": [
+        "Envision Festival (Costa Rica - but connects to Mediterranean circuit)",
+        "Boom Festival (Portugal)",
+        "Ozora (Hungary)",
+        "Burning Man regional events in EU",
+        "BPM Festival Portugal"
+      ]
+    },
+    {
+      "strategy": "Sound healing / wellness retreat circuit",
+      "description": "Search 'sound healing facilitator booking Europe' - this is a separate circuit from music booking but very relevant for RAV Vast.",
+      "platforms": [
+        "Retreat.guru (list yourself as facilitator)",
+        "BookRetreats.com",
+        "Insight Timer (build audience, get retreat invitations)"
+      ]
+    }
+  ],
+  "recommended_next_steps": [
+    "Run these searches via a web browser or Claude with web search enabled to verify and expand",
+    "Cross-reference with content/outreach/MASTER-VENUE-LIST-FROM-ARTISTS.json for venue overlap",
+    "Prioritize agencies that explicitly mention 'live acoustic' or 'ambient' or 'world music'",
+    "Use Greece's Got Talent credential as door opener - it's unusual and memorable",
+    "The Drishti Beats / IHF connection is strong social proof for the festival-to-agency pipeline",
+    "Consider creating a dedicated EPK page on link-hub/ for agency submissions"
+  ]
+}

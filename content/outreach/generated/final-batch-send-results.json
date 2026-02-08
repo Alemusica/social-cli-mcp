@@ -1,0 +1,98 @@
+[
+  {
+    "id": "france-boma-easy-living-hotel",
+    "venue": "BOMA Easy Living Hotel",
+    "to": "seminaire@boma-hotel.com",
+    "status": "sent",
+    "messageId": "<f2224dd1-f861-c240-479d-f137e696307e@gmail.com>",
+    "timestamp": "2026-01-21T09:13:20.472Z"
+  },
+  {
+    "id": "italy-rastrello-boutique-hotel",
+    "venue": "Rastrello Boutique Hotel",
+    "to": "chiara@rastrello.com",
+    "status": "sent",
+    "messageId": "<0f982d59-c219-1f33-ee1a-275ba6ff06d0@gmail.com>",
+    "timestamp": "2026-01-21T09:13:24.780Z"
+  },
+  {
+    "id": "italy-sunset-beach-club-tropea",
+    "venue": "Sunset Beach Club Tropea",
+    "to": "booking@sunsetholidays.it",
+    "status": "sent",
+    "messageId": "<a3a8a079-868f-41bc-806e-d4ca4076c8e6@gmail.com>",
+    "timestamp": "2026-01-21T09:13:29.273Z"
+  },
+  {
+    "id": "italy-popilia-country-resort",
+    "venue": "Popilia Country Resort",
+    "to": "info@popiliaresort.it",
+    "status": "sent",
+    "messageId": "<e5a717d5-2329-1ef3-a67f-f8cd52704aee@gmail.com>",
+    "timestamp": "2026-01-21T09:13:33.623Z"
+  },
+  {
+    "id": "italy-tenuta-danesi",
+    "venue": "Tenuta Danesi",
+    "to": "info@tenutadanesimatera.it",
+    "status": "sent",
+    "messageId": "<ac076064-4660-a3e1-ef4c-1cbf105a71e0@gmail.com>",
+    "timestamp": "2026-01-21T09:13:38.314Z"
+  },
+  {
+    "id": "italy-aurora-beach-club",
+    "venue": "Aurora Beach Club",
+    "to": "info@aurorabeachclub.com",
+    "status": "sent",
+    "messageId": "<07fc013e-ad6c-f059-2c4b-1b889d3a7dac@gmail.com>",
+    "timestamp": "2026-01-21T09:13:42.617Z"
+  },
+  {
+    "id": "italy-juparana",
+    "venue": "Juparana",
+    "to": "juparanamarsala@gmail.com",
+    "status": "sent",
+    "messageId": "<7b5f9f86-baec-9929-aa48-f4e22b8dbee5@gmail.com>",
+    "timestamp": "2026-01-21T09:13:47.368Z"
+  },
+  {
+    "id": "italy-locomotiv-club",
+    "venue": "Locomotiv Club",
+    "to": "info@locomotivclub.it",
+    "status": "sent",
+    "messageId": "<e9427fae-72bf-5ed6-bc29-32f3ed05605b@gmail.com>",
+    "timestamp": "2026-01-21T09:13:52.894Z"
+  },
+  {
+    "id": "italy-estragon-club",
+    "venue": "Estragon Club",
+    "to": "lele@estragon.it",
+    "status": "sent",
+    "messageId": "<9655d995-1d30-c17a-1652-8322b315dd02@gmail.com>",
+    "timestamp": "2026-01-21T09:13:57.586Z"
+  },
+  {
+    "id": "italy-terrazza-mattuiani",
+    "venue": "Terrazza Mattuiani",
+    "to": "hoteltouring@hoteltouring.it",
+    "status": "sent",
+    "messageId": "<0aac5ed9-9a16-e53c-4931-8eb97d29230f@gmail.com>",
+    "timestamp": "2026-01-21T09:14:02.023Z"
+  },
+  {
+    "id": "portugal-se-boutique-hotel",
+    "venue": "Se Boutique Hotel",
+    "to": "info@seboutiquehotel.com",
+    "status": "sent",
+    "messageId": "<3fb1007d-6455-3ed1-887f-c331902b6856@gmail.com>",
+    "timestamp": "2026-01-21T09:14:06.745Z"
+  },
+  {
+    "id": "italy-nikki-beach",
+    "venue": "Nikki Beach",
+    "to": "entertainment@nikkibeach.com",
+    "status": "sent",
+    "messageId": "<5e845c14-5a75-5e37-f762-ea6c7a399cc5@gmail.com>",
+    "timestamp": "2026-01-21T09:14:11.214Z"
+  }
+]

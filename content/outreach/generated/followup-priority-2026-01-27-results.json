@@ -1,0 +1,37 @@
+[
+  {
+    "venue": "Scorpios",
+    "to": "bookings.mykonos@scorpios.com",
+    "status": "sent",
+    "messageId": "<d79dddc6-f908-7b62-5e11-a127035593a2@gmail.com>",
+    "timestamp": "2026-01-27T11:58:29.434Z"
+  },
+  {
+    "venue": "Borgo Egnazia",
+    "to": "info@borgoegnazia.com",
+    "status": "sent",
+    "messageId": "<9ef4c81c-af2c-3a4e-08ff-9c1f47cfba3a@gmail.com>",
+    "timestamp": "2026-01-27T11:58:32.593Z"
+  },
+  {
+    "venue": "Phi Beach",
+    "to": "booking@phibeach.com",
+    "status": "sent",
+    "messageId": "<da380dae-bfff-f797-20a3-f08ff605a48f@gmail.com>",
+    "timestamp": "2026-01-27T11:58:35.611Z"
+  },
+  {
+    "venue": "Principote",
+    "to": "info@principote.com",
+    "status": "sent",
+    "messageId": "<9e80b322-16a2-19d0-53c5-d0d8bb90b1a1@gmail.com>",
+    "timestamp": "2026-01-27T11:58:38.738Z"
+  },
+  {
+    "venue": "WooMooN / Cova Santa",
+    "to": "info@covasanta.com",
+    "status": "sent",
+    "messageId": "<9280d56b-d423-96f7-d657-38713496b92a@gmail.com>",
+    "timestamp": "2026-01-27T11:58:41.730Z"
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "originalTo": "info@nammos.gr",
+    "bounceType": "hard",
+    "reason": "Delivery Status Notification (Failure)",
+    "detectedAt": "2026-01-21T09:15:28.054Z"
+  },
+  {
+    "originalTo": "info@kaluamykonos.com",
+    "bounceType": "hard",
+    "reason": "Delivery Status Notification (Failure)",
+    "detectedAt": "2026-01-21T09:15:28.062Z"
+  },
+  {
+    "originalTo": "info@nammos.gr",
+    "bounceType": "hard",
+    "reason": "Delivery Status Notification (Failure)",
+    "detectedAt": "2026-01-21T09:15:28.075Z"
+  },
+  {
+    "originalTo": "info@kaluamykonos.com",
+    "bounceType": "hard",
+    "reason": "Delivery Status Notification (Failure)",
+    "detectedAt": "2026-01-21T09:15:28.141Z"
+  },
+  {
+    "originalTo": "info@jazzdor.com",
+    "bounceType": "hard",
+    "reason": "Delivery Status Notification (Failure)",
+    "detectedAt": "2026-01-21T09:15:28.163Z",
+    "venue": "Jazzdor"
+  },
+  {
+    "originalTo": "info@romeohotel.it",
+    "bounceType": "hard",
+    "reason": "Delivery Status Notification (Failure)",
+    "detectedAt": "2026-01-21T09:15:28.184Z",
+    "venue": "Romeo Hotel La Terrazza"
+  }
+]

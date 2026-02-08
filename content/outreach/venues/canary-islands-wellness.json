@@ -1,0 +1,306 @@
+[
+  {
+    "id": "canary_finca_argayall_la_gomera",
+    "venue": "Finca Argayall",
+    "city": "La Gomera",
+    "country": "Spain",
+    "type": "wellness_retreat",
+    "website": "https://www.argayall.com",
+    "email": "info@argayall.com",
+    "notes": "Boat-access only tropical retreat on La Gomera. YOAS Yoga Retreats. Sound healing, chakra work in afternoon sessions. Perfect for RAV Vast meditation. Remote paradise setting."
+  },
+  {
+    "id": "canary_kalima_tenerife",
+    "venue": "Kalima Retreat Tenerife",
+    "city": "Tenerife - South Coast",
+    "country": "Spain",
+    "type": "yoga_center",
+    "website": "https://www.kalimaretreat.com",
+    "email": "FIND_EMAIL_ON_WEBSITE",
+    "notes": "Yoga and wellness retreat on Tenerife's south coast. Regular yoga retreats with sound healing sessions. Mediterranean-style villa with ocean views."
+  },
+  {
+    "id": "canary_suryalila_tenerife",
+    "venue": "La Casa Shambala",
+    "city": "Tenerife - Adeje",
+    "country": "Spain",
+    "type": "retreat_center",
+    "website": "https://www.lacasashambala.com",
+    "email": "FIND_EMAIL_ON_WEBSITE",
+    "notes": "Wellness retreat center near south Tenerife. Hosts yoga retreats, meditation workshops, sound healing events. Beautiful garden setting with mountain views."
+  },
+  {
+    "id": "canary_yogacabrera_fuerteventura",
+    "venue": "Yoga Cabrera Fuerteventura",
+    "city": "Fuerteventura - Corralejo",
+    "country": "Spain",
+    "type": "yoga_center",
+    "website": "https://www.yogacabrera.com",
+    "email": "FIND_EMAIL_ON_WEBSITE",
+    "notes": "Yoga center in Corralejo. Offers yoga retreats with live music integration. Surf and yoga packages. Ocean views, perfect sunset location."
+  },
+  {
+    "id": "canary_surya_lanzarote",
+    "venue": "Surya Lanzarote",
+    "city": "Lanzarote - Famara",
+    "country": "Spain",
+    "type": "yoga_retreat",
+    "website": "https://www.suryalanzarote.com",
+    "email": "FIND_EMAIL_ON_WEBSITE",
+    "notes": "Yoga and surf retreat in Famara, Lanzarote. Sound healing workshops, meditation sessions. Desert landscape meets ocean. Volcanic island energy."
+  },
+  {
+    "id": "canary_canarisas_handpan_festival",
+    "venue": "Canarias Handpan Festival",
+    "city": "Fuerteventura",
+    "country": "Spain",
+    "type": "festival",
+    "website": "https://canariashandpanfestival.com",
+    "email": "info@canariashandpanfestival.com",
+    "notes": "Annual handpan festival in Fuerteventura. PERFECT for RAV Vast endorsed artist. Workshops, concerts, jam sessions. Community gathering for steel drum enthusiasts."
+  },
+  {
+    "id": "canary_papagayo_beach_club_tenerife",
+    "venue": "Papagayo Beach Club",
+    "city": "Tenerife - Costa Adeje",
+    "country": "Spain",
+    "type": "beach_club",
+    "website": "https://papagayobeachclub.com",
+    "email": "reservas.papagayo@gmail.com",
+    "notes": "Legendary sunset sessions every Sunday all summer. Direct beachfront setting. 10 AM breakfast bar transforms to vibrant club after sunset. Perfect for organic house transitions. Live DJ sets."
+  },
+  {
+    "id": "canary_monkey_beach_club_tenerife",
+    "venue": "Monkey Beach Club",
+    "city": "Tenerife - Costa Adeje",
+    "country": "Spain",
+    "type": "beach_club",
+    "website": "https://monkeybeachclub.com",
+    "email": "BOOKING@GRUPOMONKEY.COM",
+    "notes": "Attracts world-class international DJs. Open-air venue with stunning sea views. Famous legendary Sunday sunset sessions throughout summer. Live performers welcome."
+  },
+  {
+    "id": "canary_kaluna_beach_tenerife",
+    "venue": "Kaluna Beach Club",
+    "city": "Tenerife - Torviscas Bay",
+    "country": "Spain",
+    "type": "beach_club",
+    "website": "https://kalunabeachclub.com",
+    "email": "kalunabeachclub@gmail.com",
+    "notes": "Super chill vibe overlooking Atlantic Ocean. Beautiful sunset views. Heated infinity pool. Live DJs year-round. Private VIP cabins ideal for hybrid acts."
+  },
+  {
+    "id": "canary_fiji_beach_club_tenerife",
+    "venue": "Fiji Beach Club",
+    "city": "Tenerife - Fanabe Beach",
+    "country": "Spain",
+    "type": "beach_club",
+    "website": "https://fijibeachclubtenerife.com",
+    "email": "comercial@upfsa.net",
+    "notes": "Iconic beach club with direct sea access and Balinese beds. Famous for popular weekend parties. Perfect sunset positioning on long sandy beach. DJ sets."
+  },
+  {
+    "id": "canary_waikiki_beach_club_fuerteventura",
+    "venue": "Waikiki Beach Club",
+    "city": "Fuerteventura - Corralejo",
+    "country": "Spain",
+    "type": "beach_club",
+    "website": "FIND_WEBSITE",
+    "email": "FIND_EMAIL_VIA_PHONE",
+    "phone": "+34 928 53 56 97",
+    "notes": "One of liveliest beachfront spots in Corralejo. Open 9 PM - 6 AM. Excellent for extended sunset-into-night organic house sessions. Live entertainment and DJ sets."
+  },
+  {
+    "id": "canary_mojo_beach_club_fuerteventura",
+    "venue": "Mojo Beach Club",
+    "city": "Fuerteventura - Morro Jable",
+    "country": "Spain",
+    "type": "beach_club",
+    "website": "https://mojobeachfuerteventura.com",
+    "email": "FIND_EMAIL_ON_WEBSITE",
+    "phone": "+34 620 445 686",
+    "notes": "DJ floor for dancing with tables for relaxation. Prime beach location in Morro Jable. Perfect for hybrid acts combining lounge areas with DJ dance floor. Electronic/house music."
+  },
+  {
+    "id": "canary_loft_fuerteventura",
+    "venue": "LOFT Fuerteventura",
+    "city": "Fuerteventura - Corralejo",
+    "country": "Spain",
+    "type": "nightclub",
+    "website": "FIND_WEBSITE",
+    "email": "FIND_EMAIL_VIA_IG",
+    "notes": "Modern design with two spacious rooms directly across from Corralejo Beach. Renowned for talented DJ hosts. Quality sound systems for evening performances."
+  },
+  {
+    "id": "canary_perchel_beach_club_gran_canaria",
+    "venue": "Perchel Beach Club",
+    "city": "Gran Canaria - San Bartolome de Tirajana",
+    "country": "Spain",
+    "type": "beach_club",
+    "website": "https://perchelbeachclub.com",
+    "email": "via website form at perchelbeachclub.com",
+    "notes": "Luxury beach club with sunbeds, daybeds, Balinese loungers. Privileged sunset views over Bay of Arguineguin. Year-round operation. DJ and lounge music."
+  },
+  {
+    "id": "canary_chester_beach_club_gran_canaria",
+    "venue": "Chester Beach Club",
+    "city": "Gran Canaria - Meloneras",
+    "country": "Spain",
+    "type": "beach_club",
+    "website": "https://chestercanarias.com",
+    "email": "FIND_EMAIL_VIA_IG @chesterbeachclub",
+    "notes": "One of best parties in south Gran Canaria. Regularly organizes live music and DJ events. Upscale Meloneras area with sophisticated clientele. House music."
+  },
+  {
+    "id": "canary_amadores_beach_club_gran_canaria",
+    "venue": "Amadores Beach Club",
+    "city": "Gran Canaria - Mogan",
+    "country": "Spain",
+    "type": "beach_club",
+    "website": "https://amadoresbeachclub.com",
+    "email": "FIND_EMAIL_ON_WEBSITE",
+    "phone": "+34 928 560 072",
+    "notes": "Luxury exclusive ambiance with champagne bar. Perfect chill-out vibe for sunset sessions. Year-round perfect climate. Private cabanas ideal for hybrid performances."
+  },
+  {
+    "id": "canary_beach_bar_luca_lanzarote",
+    "venue": "Beach Bar Luca",
+    "city": "Lanzarote - Costa Teguise",
+    "country": "Spain",
+    "type": "beach_club",
+    "website": "https://beachbar-lanzarote.com",
+    "email": "via form at beachbar-lanzarote.com/contact/",
+    "notes": "Low-key early evening chilled club beats perfect for organic house. Located in Melia Salinas hotel grounds. Transitions to live music guests as night falls."
+  },
+  {
+    "id": "canary_cuatro_lunas_lanzarote",
+    "venue": "Cuatro Lunas Jazz Club",
+    "city": "Lanzarote - Playa Blanca",
+    "country": "Spain",
+    "type": "jazz_club",
+    "website": "Hotel Princesa Yaiza website",
+    "email": "FIND_EMAIL_VIA_HOTEL",
+    "phone": "+34 928 519 222 (Ext. 5122)",
+    "notes": "Luxurious jazz club setting perfect for hybrid organic house + live music acts. Sophisticated clientele appreciates nuanced, live instrumentation. Thursday-Saturday live performances."
+  },
+  {
+    "id": "canary_oceano_health_spa_tenerife",
+    "venue": "Oceano Health Spa",
+    "city": "Tenerife - Punta del Hidalgo",
+    "country": "Spain",
+    "type": "wellness_retreat",
+    "website": "https://www.oceano.de",
+    "email": "info@oceano.de",
+    "notes": "German-run wellness retreat focused on fasting, yoga, and holistic health. Sound healing sessions complement their wellness programs. Ocean cliff location. Hosts regular yoga and meditation retreats."
+  },
+  {
+    "id": "canary_yoga_finca_lanzarote",
+    "venue": "Yoga Finca Lanzarote",
+    "city": "Lanzarote - Central",
+    "country": "Spain",
+    "type": "yoga_retreat",
+    "website": "https://www.yogafincalanzarote.com",
+    "email": "FIND_EMAIL_ON_WEBSITE",
+    "notes": "Countryside yoga retreat with volcanic landscape views. Regular yoga teacher trainings and retreats. Sound healing and meditation sessions. Organic gardens."
+  },
+  {
+    "id": "canary_sunlight_retreat_fuerteventura",
+    "venue": "Sunlight Retreat",
+    "city": "Fuerteventura - Lajares",
+    "country": "Spain",
+    "type": "wellness_retreat",
+    "website": "https://www.sunlightretreat.com",
+    "email": "FIND_EMAIL_ON_WEBSITE",
+    "notes": "Wellness retreat in Lajares village. Yoga, surfing, and conscious events. Sound healing ceremonies. Desert landscape. Artist residencies possible."
+  },
+  {
+    "id": "canary_finca_de_arrieta_lanzarote",
+    "venue": "Finca de Arrieta Eco Village",
+    "city": "Lanzarote - Arrieta",
+    "country": "Spain",
+    "type": "eco_retreat",
+    "website": "https://www.fincadearrieta.com",
+    "email": "info@fincadearrieta.com",
+    "notes": "Eco-retreat with geodesic domes and yurts. Hosts conscious events, yoga retreats, sound healing ceremonies. Community gatherings. Sustainable living focus."
+  },
+  {
+    "id": "canary_abama_resort_tenerife",
+    "venue": "Abama Resort",
+    "city": "Tenerife - Guia de Isora",
+    "country": "Spain",
+    "type": "luxury_resort",
+    "website": "https://www.abamahotels.com",
+    "email": "wellness@abamahotels.com",
+    "notes": "5-star luxury resort with extensive wellness facilities. Live music events, sunset sessions at Beach Club. High-end clientele. Private events. Golf and spa."
+  },
+  {
+    "id": "canary_ritz_carlton_tenerife",
+    "venue": "The Ritz-Carlton Abama",
+    "city": "Tenerife - Guia de Isora",
+    "country": "Spain",
+    "type": "luxury_hotel",
+    "website": "https://www.ritzcarlton.com/abama",
+    "email": "FIND_EVENTS_EMAIL",
+    "notes": "Ultra-luxury resort with world-class spa. Private wellness experiences, sunset terrace events. Perfect for high-end sound healing sessions. Exclusive clientele."
+  },
+  {
+    "id": "canary_bahia_del_duque_tenerife",
+    "venue": "Gran Hotel Bahia del Duque",
+    "city": "Tenerife - Costa Adeje",
+    "country": "Spain",
+    "type": "luxury_resort",
+    "website": "https://www.bahia-duque.com",
+    "email": "eventos@bahia-duque.com",
+    "notes": "Iconic 5-star resort with extensive wellness spa. Hosts live music events, sunset sessions at beach clubs. Multiple venues within resort. High-end corporate and private events."
+  },
+  {
+    "id": "canary_hotel_jardin_tropical_tenerife",
+    "venue": "Hotel Jardin Tropical",
+    "city": "Tenerife - Costa Adeje",
+    "country": "Spain",
+    "type": "boutique_hotel",
+    "website": "https://www.jardin-tropical.com",
+    "email": "eventos@jardin-tropical.com",
+    "notes": "Boutique hotel with beautiful gardens. Sunset terrace with ocean views. Live music during dinner service. Intimate events setting. Wellness focus."
+  },
+  {
+    "id": "canary_la_palma_retreat",
+    "venue": "La Palma Retreat Center",
+    "city": "La Palma - El Paso",
+    "country": "Spain",
+    "type": "wellness_retreat",
+    "website": "FIND_WEBSITE",
+    "email": "FIND_EMAIL",
+    "notes": "Retreat center on La Palma island. Star-gazing wellness retreats (La Palma is UNESCO Starlight Reserve). Sound healing under the stars. Remote, pristine nature."
+  },
+  {
+    "id": "canary_soulful_journeys_la_palma",
+    "venue": "Soulful Journeys La Palma",
+    "city": "La Palma",
+    "country": "Spain",
+    "type": "retreat_organizer",
+    "website": "https://soulfuljourneys.es",
+    "email": "FIND_EMAIL_ON_WEBSITE",
+    "notes": "Retreat organizer on La Palma. Yoga, hiking, sound healing retreats. Works with local venues. UNESCO biosphere reserve setting. Dark sky retreats."
+  },
+  {
+    "id": "canary_taro_de_tahiche_lanzarote",
+    "venue": "Taro de Tahiche (Fundacion Cesar Manrique)",
+    "city": "Lanzarote - Tahiche",
+    "country": "Spain",
+    "type": "cultural_venue",
+    "website": "https://fcmanrique.org",
+    "email": "info@fcmanrique.org",
+    "notes": "Cultural foundation in Cesar Manrique's former home. Hosts cultural events, concerts in volcanic bubble caves. Unique acoustic setting. Artistic, conscious events."
+  },
+  {
+    "id": "canary_jardin_de_cactus_lanzarote",
+    "venue": "Jardin de Cactus",
+    "city": "Lanzarote - Guatiza",
+    "country": "Spain",
+    "type": "cultural_venue",
+    "website": "https://centrosturisticos.com",
+    "email": "FIND_EVENTS_EMAIL",
+    "notes": "Cesar Manrique-designed cactus garden. Hosts sunset concerts and cultural events. Unique volcanic amphitheater setting. Atmospheric evening performances."
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "italy-seven-rooms-villadorata",
+    "venue": "Seven Rooms Villadorata",
+    "to": "sevenrooms@villadorata.com",
+    "status": "sent",
+    "messageId": "<9c2b6dc6-43a1-c756-fb22-18b16a0f783c@gmail.com>",
+    "timestamp": "2026-01-21T09:11:21.877Z"
+  },
+  {
+    "id": "italy-camera-jazz--music-club",
+    "venue": "Camera Jazz & Music Club",
+    "to": "info@camerajazzclub.com",
+    "status": "sent",
+    "messageId": "<dc52f379-fa13-2617-e654-2ededf73a930@gmail.com>",
+    "timestamp": "2026-01-21T09:11:26.665Z"
+  },
+  {
+    "id": "italy-bravo-caffe",
+    "venue": "Bravo Caffe",
+    "to": "info@bravocaffe.it",
+    "status": "sent",
+    "messageId": "<7f9f0446-1f80-c592-30fa-8298c0090243@gmail.com>",
+    "timestamp": "2026-01-21T09:11:31.315Z"
+  },
+  {
+    "id": "italy-hotel-metropolitan-roof-garden",
+    "venue": "Hotel Metropolitan Roof Garden",
+    "to": "booking@hotelmetropolitan.com",
+    "status": "sent",
+    "messageId": "<fa418f85-6e96-df0c-b930-5c07731a153d@gmail.com>",
+    "timestamp": "2026-01-21T09:11:35.668Z"
+  },
+  {
+    "id": "italy-i-portici-hotel",
+    "venue": "I Portici Hotel",
+    "to": "reservation@iporticihotel.com",
+    "status": "sent",
+    "messageId": "<0467a567-b98d-5718-52e2-9d89fb5a23b4@gmail.com>",
+    "timestamp": "2026-01-21T09:11:40.227Z"
+  },
+  {
+    "id": "italy-grand-hotel-parkers-bidder-bar",
+    "venue": "Grand Hotel Parkers Bidder Bar",
+    "to": "info@grandhotelparkers.it",
+    "status": "sent",
+    "messageId": "<97f40314-46f3-7b66-a705-cd22ba5adc1a@gmail.com>",
+    "timestamp": "2026-01-21T09:11:44.697Z"
+  },
+  {
+    "id": "italy-romeo-hotel-la-terrazza",
+    "venue": "Romeo Hotel La Terrazza",
+    "to": "info@romeohotel.it",
+    "status": "sent",
+    "messageId": "<21b4e81b-36ae-dac5-1501-e859d9501ba3@gmail.com>",
+    "timestamp": "2026-01-21T09:11:49.139Z"
+  },
+  {
+    "id": "italy-bourbon-street-jazz-club",
+    "venue": "Bourbon Street Jazz Club",
+    "to": "drjazz@bourbonstreetclub.it",
+    "status": "sent",
+    "messageId": "<95355c7f-f016-de6f-7689-3cc995e7caa6@gmail.com>",
+    "timestamp": "2026-01-21T09:11:53.513Z"
+  },
+  {
+    "id": "italy-music-on-the-rocks",
+    "venue": "Music on the Rocks",
+    "to": "info@musicontherocks.it",
+    "status": "sent",
+    "messageId": "<37b50ffb-e6c8-b942-38f0-0138bcad26d4@gmail.com>",
+    "timestamp": "2026-01-21T09:11:57.957Z"
+  },
+  {
+    "id": "italy-la-scogliera-beach-club",
+    "venue": "La Scogliera Beach Club",
+    "to": "info@lascoglierapositano.com",
+    "status": "sent",
+    "messageId": "<9b5ed14a-4911-5d77-abfd-f72be0380eb8@gmail.com>",
+    "timestamp": "2026-01-21T09:12:02.442Z"
+  },
+  {
+    "id": "italy-conca-del-sogno",
+    "venue": "Conca del Sogno",
+    "to": "events@concadelsogno.it",
+    "status": "sent",
+    "messageId": "<f67b7838-00c8-2d4b-d029-7d64219fe5e7@gmail.com>",
+    "timestamp": "2026-01-21T09:12:06.965Z"
+  },
+  {
+    "id": "italy-ravello-festival--villa-rufolo",
+    "venue": "Ravello Festival / Villa Rufolo",
+    "to": "info@fondazioneravello.it",
+    "status": "sent",
+    "messageId": "<247d8b8d-a2ad-da7e-0b42-43af2cd45f0d@gmail.com>",
+    "timestamp": "2026-01-21T09:12:21.506Z"
+  },
+  {
+    "id": "portugal-sublime-comporta-beach-club",
+    "venue": "Sublime Comporta Beach Club",
+    "to": "groups@sublimehotels.pt",
+    "status": "sent",
+    "messageId": "<7c57b926-1880-9248-999e-d70ca96d5b21@gmail.com>",
+    "timestamp": "2026-01-21T09:12:26.438Z"
+  },
+  {
+    "id": "portugal-belmond-reids-palace",
+    "venue": "Belmond Reids Palace",
+    "to": "reservations.rds@belmond.com",
+    "status": "sent",
+    "messageId": "<303d9593-1ec8-94aa-cb68-04398563d350@gmail.com>",
+    "timestamp": "2026-01-21T09:12:30.846Z"
+  },
+  {
+    "id": "portugal-estalagem-da-ponta-do-sol",
+    "venue": "Estalagem da Ponta do Sol",
+    "to": "info@pontadosol.com",
+    "status": "sent",
+    "messageId": "<d9591cc4-c96d-c987-6175-bf6d38abe999@gmail.com>",
+    "timestamp": "2026-01-21T09:12:35.334Z"
+  },
+  {
+    "id": "usa-ophelias-electric-soapbox",
+    "venue": "Ophelia's Electric Soapbox",
+    "to": "amartin@knittingfactory.com",
+    "status": "sent",
+    "messageId": "<65b5c3a7-0ed3-1636-21a6-60eb2ec7e4e7@gmail.com>",
+    "timestamp": "2026-01-21T09:12:39.664Z"
+  },
+  {
+    "id": "france-point-ephemere",
+    "venue": "Point Ephemere",
+    "to": "communication@pointephemere.org",
+    "status": "sent",
+    "messageId": "<a7e870ca-51b9-161b-6ad2-955f05d3f53f@gmail.com>",
+    "timestamp": "2026-01-21T09:12:44.074Z"
+  },
+  {
+    "id": "france-la-petite-halle",
+    "venue": "La Petite Halle",
+    "to": "directeur@lapetitehalle.com",
+    "status": "sent",
+    "messageId": "<8fcdf624-a8a6-44c0-0108-27419873d2e3@gmail.com>",
+    "timestamp": "2026-01-21T09:12:48.628Z"
+  },
+  {
+    "id": "france-espace-django",
+    "venue": "Espace Django",
+    "to": "contact@espacedjango.eu",
+    "status": "sent",
+    "messageId": "<1d08e410-cd18-66ff-712e-683eebb42e70@gmail.com>",
+    "timestamp": "2026-01-21T09:12:53.099Z"
+  },
+  {
+    "id": "france-les-savons-dhelene",
+    "venue": "Les Savons d'Helene",
+    "to": "contact@savonsdhelene.fr",
+    "status": "sent",
+    "messageId": "<d3c692b3-f5f0-5749-ea35-4a131c0f8976@gmail.com>",
+    "timestamp": "2026-01-21T09:12:57.545Z"
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "post_id": 8,
+  "title": "Rodi - Nonno Ettore Family Story",
+  "date_created": "2026-01-25",
+  "scheduled_date": "2026-01-25",
+  "scheduled_time": "09:00-12:00 CET",
+  "day_of_week": "Saturday",
+  "platform": "instagram",
+  "format": "reel",
+  "aspect_ratio": "9:16",
+  "duration": "short (<60s)",
+  "pillar_primary": "nature_authentic",
+  "pillar_secondary": "family_storytelling",
+  "video_file": "stoneSeaShoreCloseupWaterWithSoundNice",
+  "audio": "original (waves sound)",
+  "location": "Rhodes, Greece",
+  "languages": ["italian", "greek", "english"],
+  "target_audience": "IT-GR corridor (76%)",
+  "strategic_goal": "increase_save_share_rate",
+  "emotional_tone": "nostalgic, gentle, authentic",
+  "hashtags": [
+    "#rodi",
+    "#rhodes",
+    "#ρόδος",
+    "#greece",
+    "#greekroots",
+    "#familystory",
+    "#mediterranean",
+    "#nostalgia",
+    "#flutur"
+  ],
+  "target_metrics": {
+    "saves": ">25",
+    "shares": ">15",
+    "comments": ">12",
+    "reach": ">600",
+    "completion_rate": ">70%"
+  },
+  "editorial_plan_week": 1,
+  "editorial_plan_slot": "saturday_morning_crossover"
+}

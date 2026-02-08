@@ -1,0 +1,31 @@
+POST 5: Morocco Fisherman Sunset
+=================================
+SCHEDULE: Friday 19:00 CET (week 2)
+TYPE: Single Image
+PRIORITY: MEDIUM
+
+PHOTO:
+------
+IMG_5514.HEIC
+Morocco sunset beach with fisherman silhouette - golden hour
+
+CAPTION:
+--------
+Some sunsets you photograph.
+Others photograph you.
+
+Morocco, 2022
+
+What place photographed you?
+
+HASHTAGS (copy-paste):
+----------------------
+#busker #streetmusic #ravvast #sounddesign #fieldrecording
+
+POSTING CHECKLIST:
+------------------
+[ ] Export photo at full quality
+[ ] Copy caption (added question for engagement)
+[ ] Add hashtags
+[ ] Post at 19:00 CET Friday
+[ ] Share to story

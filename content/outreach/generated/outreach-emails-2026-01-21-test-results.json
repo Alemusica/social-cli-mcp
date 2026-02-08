@@ -1,0 +1,418 @@
+[
+  {
+    "id": "france-38-riv-jazz-club",
+    "venue": "38 Riv Jazz Club",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<bed7f777-c278-00d6-5c13-6b946a69f59b@gmail.com>",
+    "timestamp": "2026-01-21T09:02:52.381Z"
+  },
+  {
+    "id": "france-blue-flamingo",
+    "venue": "Blue Flamingo",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<d9fcc10b-c6dd-9ba8-62e6-cd1eea54261d@gmail.com>",
+    "timestamp": "2026-01-21T09:02:56.574Z"
+  },
+  {
+    "id": "france-jazzdor",
+    "venue": "Jazzdor",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<d4eb2500-6e09-13e3-479c-a41330f3410c@gmail.com>",
+    "timestamp": "2026-01-21T09:03:00.675Z"
+  },
+  {
+    "id": "france-hotel-regent-petite-france",
+    "venue": "Hotel Regent Petite France",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<3d99f4b7-0498-4459-a5b3-72d764db6c01@gmail.com>",
+    "timestamp": "2026-01-21T09:03:05.070Z"
+  },
+  {
+    "id": "france-cour-du-corbeau",
+    "venue": "Cour du Corbeau",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<949cf03b-c31c-9cd2-c276-e7cba1fb4344@gmail.com>",
+    "timestamp": "2026-01-21T09:03:09.220Z"
+  },
+  {
+    "id": "greece-a-for-athens",
+    "venue": "A for Athens",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<36129f0d-5c8e-94c3-0b08-1406663e1014@gmail.com>",
+    "timestamp": "2026-01-21T09:03:13.354Z"
+  },
+  {
+    "id": "greece-scorpios",
+    "venue": "Scorpios",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<f1cb4106-7659-186d-1664-a622aceb5f6b@gmail.com>",
+    "timestamp": "2026-01-21T09:03:17.547Z"
+  },
+  {
+    "id": "greece-principote",
+    "venue": "Principote",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<907204d8-7b74-a928-8f87-386bddc77530@gmail.com>",
+    "timestamp": "2026-01-21T09:03:21.845Z"
+  },
+  {
+    "id": "italy-monastero-santa-rosa",
+    "venue": "Monastero Santa Rosa",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<04143106-3a34-d2e3-1151-a41d01cf92b2@gmail.com>",
+    "timestamp": "2026-01-21T09:03:28.747Z"
+  },
+  {
+    "id": "italy-phi-beach",
+    "venue": "Phi Beach",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<73471d7b-c039-4f67-e180-e8bfed4820b0@gmail.com>",
+    "timestamp": "2026-01-21T09:03:32.823Z"
+  },
+  {
+    "id": "italy-masseria-torre-maizza",
+    "venue": "Masseria Torre Maizza",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<23f8bf42-f4a6-233e-a727-52f36fbf16e4@gmail.com>",
+    "timestamp": "2026-01-21T09:03:36.943Z"
+  },
+  {
+    "id": "italy-borgo-egnazia",
+    "venue": "Borgo Egnazia",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<f2cd7049-8893-367d-f4a4-0f120bea2d43@gmail.com>",
+    "timestamp": "2026-01-21T09:03:41.139Z"
+  },
+  {
+    "id": "italy-filodivino-wine-resort",
+    "venue": "Filodivino Wine Resort",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<041b5028-6c4d-dd81-b317-01e9294fe672@gmail.com>",
+    "timestamp": "2026-01-21T09:03:45.126Z"
+  },
+  {
+    "id": "italy-castello-di-semivicoli",
+    "venue": "Castello di Semivicoli",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<1ffe012f-52e3-b160-dd88-089ec12bcb1e@gmail.com>",
+    "timestamp": "2026-01-21T09:03:49.157Z"
+  },
+  {
+    "id": "italy-alma-vibes-beach-lounge",
+    "venue": "Alma Vibes Beach Lounge",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<173d5e48-24c5-149f-edde-9d2d79b14ef4@gmail.com>",
+    "timestamp": "2026-01-21T09:03:53.246Z"
+  },
+  {
+    "id": "italy-capovaticano-resort",
+    "venue": "Capovaticano Resort",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<96adc750-5017-6e33-e516-a9c99ed70770@gmail.com>",
+    "timestamp": "2026-01-21T09:03:57.305Z"
+  },
+  {
+    "id": "italy-villa-paola",
+    "venue": "Villa Paola",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<db7ef352-b499-e0e7-47bd-57f6be41be19@gmail.com>",
+    "timestamp": "2026-01-21T09:04:01.325Z"
+  },
+  {
+    "id": "italy-santavenere-hotel",
+    "venue": "Santavenere Hotel",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<edd637df-fca9-213d-80c5-0d19e0822e08@gmail.com>",
+    "timestamp": "2026-01-21T09:04:05.300Z"
+  },
+  {
+    "id": "italy-locanda-don-serafino",
+    "venue": "Locanda Don Serafino",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<45964f03-3054-2bdd-4a3a-af20764e1a67@gmail.com>",
+    "timestamp": "2026-01-21T09:04:10.295Z"
+  },
+  {
+    "id": "italy-q92-noto-hotel",
+    "venue": "Q92 Noto Hotel",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<1bdb67ab-3f0d-89b2-5a1d-b98af7086f8b@gmail.com>",
+    "timestamp": "2026-01-21T09:04:15.131Z"
+  },
+  {
+    "id": "italy-seven-rooms-villadorata",
+    "venue": "Seven Rooms Villadorata",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<4dafb0f5-9a4e-e892-3a2e-fa33f8979235@gmail.com>",
+    "timestamp": "2026-01-21T09:04:19.324Z"
+  },
+  {
+    "id": "italy-camera-jazz--music-club",
+    "venue": "Camera Jazz & Music Club",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<edf78a8e-b98a-e30d-c30e-3566c723b1d8@gmail.com>",
+    "timestamp": "2026-01-21T09:04:23.518Z"
+  },
+  {
+    "id": "italy-bravo-caffe",
+    "venue": "Bravo Caffe",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<bfbd0581-6784-0604-fbec-000bfc6b3bed@gmail.com>",
+    "timestamp": "2026-01-21T09:04:27.712Z"
+  },
+  {
+    "id": "italy-hotel-metropolitan-roof-garden",
+    "venue": "Hotel Metropolitan Roof Garden",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<bf83fd06-2048-a8fa-5ac3-d84e242b5717@gmail.com>",
+    "timestamp": "2026-01-21T09:04:31.922Z"
+  },
+  {
+    "id": "italy-i-portici-hotel",
+    "venue": "I Portici Hotel",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<e4e917ae-3d55-a161-0f66-f8b2b7eb7911@gmail.com>",
+    "timestamp": "2026-01-21T09:04:36.101Z"
+  },
+  {
+    "id": "italy-grand-hotel-parkers-bidder-bar",
+    "venue": "Grand Hotel Parkers Bidder Bar",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<64d95e1e-7ce6-0bbd-bd97-eaabb1f263fa@gmail.com>",
+    "timestamp": "2026-01-21T09:04:42.911Z"
+  },
+  {
+    "id": "italy-romeo-hotel-la-terrazza",
+    "venue": "Romeo Hotel La Terrazza",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<476ea2e3-7096-69c6-2d3d-f37778b2a0d9@gmail.com>",
+    "timestamp": "2026-01-21T09:04:47.511Z"
+  },
+  {
+    "id": "italy-bourbon-street-jazz-club",
+    "venue": "Bourbon Street Jazz Club",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<14fdfa8f-e550-f0e3-4a75-a32dc44aa6bb@gmail.com>",
+    "timestamp": "2026-01-21T09:04:51.485Z"
+  },
+  {
+    "id": "italy-music-on-the-rocks",
+    "venue": "Music on the Rocks",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<7f75a4e9-77c2-d527-058f-8e89069c3793@gmail.com>",
+    "timestamp": "2026-01-21T09:04:55.700Z"
+  },
+  {
+    "id": "italy-la-scogliera-beach-club",
+    "venue": "La Scogliera Beach Club",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<af259aa2-70b8-4dc2-c3c5-f6d5e32d3c65@gmail.com>",
+    "timestamp": "2026-01-21T09:04:59.717Z"
+  },
+  {
+    "id": "italy-conca-del-sogno",
+    "venue": "Conca del Sogno",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<44709396-a81e-c805-0347-c15cd68b8fe1@gmail.com>",
+    "timestamp": "2026-01-21T09:05:10.400Z"
+  },
+  {
+    "id": "italy-ravello-festival--villa-rufolo",
+    "venue": "Ravello Festival / Villa Rufolo",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<f332e164-7542-0949-bb4a-67e62b130998@gmail.com>",
+    "timestamp": "2026-01-21T09:05:14.566Z"
+  },
+  {
+    "id": "portugal-sublime-comporta-beach-club",
+    "venue": "Sublime Comporta Beach Club",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<21da1c7a-b7a8-7181-247e-d631005333e8@gmail.com>",
+    "timestamp": "2026-01-21T09:05:18.972Z"
+  },
+  {
+    "id": "portugal-belmond-reids-palace",
+    "venue": "Belmond Reids Palace",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<a451ee73-9bad-b8f0-7acc-0400607f88b0@gmail.com>",
+    "timestamp": "2026-01-21T09:05:23.110Z"
+  },
+  {
+    "id": "portugal-estalagem-da-ponta-do-sol",
+    "venue": "Estalagem da Ponta do Sol",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<b0110a72-dfa6-ef35-7575-a14b6433fcd1@gmail.com>",
+    "timestamp": "2026-01-21T09:05:27.192Z"
+  },
+  {
+    "id": "usa-ophelias-electric-soapbox",
+    "venue": "Ophelia's Electric Soapbox",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<2fcda155-31fb-d915-8e3d-92a3160f2125@gmail.com>",
+    "timestamp": "2026-01-21T09:05:31.326Z"
+  },
+  {
+    "id": "france-point-ephemere",
+    "venue": "Point Ephemere",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<f509ff1b-441c-d84a-26c3-e0e6fb26ca03@gmail.com>",
+    "timestamp": "2026-01-21T09:05:35.403Z"
+  },
+  {
+    "id": "france-la-petite-halle",
+    "venue": "La Petite Halle",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<550739dc-2f1f-f77f-e09d-1d1d341d98bf@gmail.com>",
+    "timestamp": "2026-01-21T09:05:39.724Z"
+  },
+  {
+    "id": "france-espace-django",
+    "venue": "Espace Django",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<2262fa6f-def5-f55f-a175-6db9b81b887d@gmail.com>",
+    "timestamp": "2026-01-21T09:05:43.850Z"
+  },
+  {
+    "id": "france-les-savons-dhelene",
+    "venue": "Les Savons d'Helene",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<e3a888ba-d7ac-e61f-864b-4d5a8a18fee2@gmail.com>",
+    "timestamp": "2026-01-21T09:05:47.791Z"
+  },
+  {
+    "id": "france-boma-easy-living-hotel",
+    "venue": "BOMA Easy Living Hotel",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<c827b51c-5b45-6607-1b17-3107bea48960@gmail.com>",
+    "timestamp": "2026-01-21T09:05:51.921Z"
+  },
+  {
+    "id": "italy-rastrello-boutique-hotel",
+    "venue": "Rastrello Boutique Hotel",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<2471ab39-ac78-0743-c349-51ecd87653e3@gmail.com>",
+    "timestamp": "2026-01-21T09:05:56.101Z"
+  },
+  {
+    "id": "italy-sunset-beach-club-tropea",
+    "venue": "Sunset Beach Club Tropea",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<1c21d03e-6e60-fae3-4be2-f0e40cdf635b@gmail.com>",
+    "timestamp": "2026-01-21T09:06:00.295Z"
+  },
+  {
+    "id": "italy-popilia-country-resort",
+    "venue": "Popilia Country Resort",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<1573f7cf-bfaf-7d58-a705-35a5e190bf6e@gmail.com>",
+    "timestamp": "2026-01-21T09:06:04.514Z"
+  },
+  {
+    "id": "italy-tenuta-danesi",
+    "venue": "Tenuta Danesi",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<f8c8611a-f8b0-f4e9-fa57-6e798c93eb8a@gmail.com>",
+    "timestamp": "2026-01-21T09:06:08.589Z"
+  },
+  {
+    "id": "italy-aurora-beach-club",
+    "venue": "Aurora Beach Club",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<c9182be9-0ff9-6bb5-56fe-10b6d4e103e4@gmail.com>",
+    "timestamp": "2026-01-21T09:06:13.127Z"
+  },
+  {
+    "id": "italy-juparana",
+    "venue": "Juparana",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<70c2428b-297e-1679-24a9-42af544a6811@gmail.com>",
+    "timestamp": "2026-01-21T09:06:17.280Z"
+  },
+  {
+    "id": "italy-locomotiv-club",
+    "venue": "Locomotiv Club",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<e9a6549e-aab6-9fe9-5893-171efab9a6dd@gmail.com>",
+    "timestamp": "2026-01-21T09:06:21.471Z"
+  },
+  {
+    "id": "italy-estragon-club",
+    "venue": "Estragon Club",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<46785b8e-6906-b73a-441c-f143cdbb38d4@gmail.com>",
+    "timestamp": "2026-01-21T09:06:25.669Z"
+  },
+  {
+    "id": "italy-terrazza-mattuiani",
+    "venue": "Terrazza Mattuiani",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<268fc5a4-6f2c-6dc3-69be-432b4923d86a@gmail.com>",
+    "timestamp": "2026-01-21T09:06:29.887Z"
+  },
+  {
+    "id": "portugal-se-boutique-hotel",
+    "venue": "Se Boutique Hotel",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<785b95f0-5d20-c467-78d2-d996ea1083f6@gmail.com>",
+    "timestamp": "2026-01-21T09:06:34.053Z"
+  },
+  {
+    "id": "italy-nikki-beach",
+    "venue": "Nikki Beach",
+    "to": "flutur8i8@gmail.com",
+    "status": "sent",
+    "messageId": "<4ca9b503-7a62-1fa9-f3d5-5196dbe0804b@gmail.com>",
+    "timestamp": "2026-01-21T09:06:38.150Z"
+  }
+]

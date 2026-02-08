@@ -203,3 +203,69 @@ export interface SocialClient {
   post(options: PostOptions): Promise<PostResult>;
   testConnection(): Promise<boolean>;
 }
+
+// ─────────────────────────────────────────
+// Instagram Insights Types
+// ─────────────────────────────────────────
+
+export interface InstagramAccountInsights {
+  followerCount: number;
+  mediaCount: number;
+  // Metrics for period (day, week, days_28)
+  impressions?: number;
+  reach?: number;
+  profileViews?: number;
+  websiteClicks?: number;
+  emailContacts?: number;
+  // Follower changes
+  followerGrowth?: number;
+  period: 'day' | 'week' | 'days_28';
+}
+
+export interface InstagramMediaInsights {
+  mediaId: string;
+  mediaType: 'IMAGE' | 'VIDEO' | 'CAROUSEL_ALBUM' | 'REELS' | 'STORY';
+  timestamp: string;
+  permalink?: string;
+  // Engagement
+  likes?: number;
+  comments?: number;
+  shares?: number;
+  saved?: number;
+  // Reach
+  impressions?: number;
+  reach?: number;
+  // Reels specific
+  plays?: number;
+  totalInteractions?: number;
+  // Story specific
+  exits?: number;
+  replies?: number;
+  tapsForward?: number;
+  tapsBack?: number;
+}
+
+export interface InstagramAudienceInsights {
+  // Age and gender breakdown
+  ageGender: {
+    ageRange: string;  // e.g., "18-24", "25-34"
+    male: number;
+    female: number;
+  }[];
+  // Top cities
+  topCities: {
+    city: string;
+    count: number;
+  }[];
+  // Top countries
+  topCountries: {
+    country: string;
+    count: number;
+  }[];
+  // Online times (when followers are most active)
+  onlineFollowers?: {
+    hour: number;  // 0-23
+    day: number;   // 0-6 (Sunday-Saturday)
+    count: number;
+  }[];
+}

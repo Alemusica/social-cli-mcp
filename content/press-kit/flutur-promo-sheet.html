@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FLUTUR — Promo Sheet 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
+  @page { margin: 0; size: A4; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #000427;
+    color: #f0f0f0;
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 0;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Hero banner */
+  .hero {
+    background: linear-gradient(135deg, #000427 0%, #0c1033 100%);
+    padding: 36px 40px 28px;
+    border-bottom: 2px solid #d4a574;
+  }
+  .hero-top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #fff;
+  }
+  .hero .tagline {
+    font-size: 12px;
+    color: #d4a574;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .hero .epk-url {
+    font-size: 11px;
+    color: #d4a574;
+    text-decoration: none;
+    border: 1px solid #d4a574;
+    padding: 4px 12px;
+    border-radius: 3px;
+    margin-top: 4px;
+    display: inline-block;
+  }
+
+  /* Content area */
+  .content { padding: 24px 40px 20px; }
+
+  /* Section headings */
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #d4a574;
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+  h2:first-child { margin-top: 0; }
+
+  p, li { font-size: 12px; line-height: 1.55; color: #d4d4d4; }
+
+  .bio {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #e8e8e8;
+    margin-bottom: 20px;
+  }
+
+  /* Credentials */
+  .credentials { list-style: none; padding: 0; margin-bottom: 16px; }
+  .credentials li {
+    font-size: 12px;
+    padding: 3px 0;
+    padding-left: 14px;
+    position: relative;
+    color: #d4d4d4;
+  }
+  .credentials li::before { content: "\2014"; position: absolute; left: 0; color: #d4a574; }
+  .credentials .stat { color: #fff; font-weight: 500; }
+
+  /* Performance modes grid */
+  .modes { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+  .mode {
+    background: #0c1033;
+    border: 1px solid rgba(212,165,116,0.2);
+    padding: 14px;
+    border-radius: 4px;
+  }
+  .mode-title { font-weight: 500; font-size: 12px; color: #fff; margin-bottom: 4px; }
+  .mode-dur { font-size: 10px; color: #d4a574; margin-bottom: 4px; }
+  .mode-desc { font-size: 11px; color: #9a9a9a; }
+
+  /* Two column layout */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+
+  .videos { list-style: none; padding: 0; }
+  .videos li { font-size: 12px; padding: 3px 0; color: #d4d4d4; }
+  .videos li a { color: #d4a574; text-decoration: none; }
+
+  .details p { font-size: 12px; margin-bottom: 6px; color: #d4d4d4; }
+  .details strong { color: #f0f0f0; }
+
+  /* Divider */
+  .divider { border: none; border-top: 1px solid rgba(212,165,116,0.2); margin: 16px 0; }
+
+  /* Footer */
+  .footer {
+    padding: 12px 40px;
+    font-size: 10px;
+    color: #6a6a6a;
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero" style="position: relative; overflow: hidden; min-height: 160px;">
+  <img src="images/rocca-rav-hero.jpg" alt="FLUTUR playing RAV Vast at golden hour" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35;" />
+  <div class="hero-top" style="position: relative; z-index: 1;">
+    <div>
+      <h1>FLUTUR</h1>
+      <div class="tagline">RAV Vast &middot; Live Looping &middot; One-Man Orchestra</div>
+    </div>
+    <a href="https://8i8.art" class="epk-url">8i8.art</a>
+  </div>
+</div>
+
+<div class="content">
+
+<div class="bio">
+One-man live electronic show built in real time. FLUTUR layers RAV Vast, guitar, drums, synth, and live looping into performances that range from meditative sound journeys to high-energy electronic sets. Four years as resident sunset ceremony creator at a luxury hotel. International stage experience from Greek island busking to main stage at Drishti Beats Festival (Aspen, Colorado). Fully self-contained &mdash; no backline, no sound engineer needed.
+</div>
+
+<h2>Performance Modes</h2>
+<div class="modes">
+  <div class="mode">
+    <div class="mode-title">Sunset / Ambient</div>
+    <div class="mode-dur">60&ndash;90 min</div>
+    <div class="mode-desc">RAV Vast, guitar, meditative layering. Beach clubs, hotels, spas, yoga.</div>
+  </div>
+  <div class="mode">
+    <div class="mode-title">The Show (Full Live)</div>
+    <div class="mode-dur">60&ndash;90 min</div>
+    <div class="mode-desc">Full energy live looping &mdash; everything built real time. Festivals, concerts.</div>
+  </div>
+  <div class="mode">
+    <div class="mode-title">DJ + Live Instruments</div>
+    <div class="mode-dur">2&ndash;3 hours</div>
+    <div class="mode-desc">Curated DJ set with live instruments on top. Extended events, pool parties.</div>
+  </div>
+</div>
+
+<h2>Credentials</h2>
+<ul class="credentials">
+  <li><span class="stat">Main stage</span> at Drishti Beats Festival 2023 &mdash; Snowmass Village (Aspen), Colorado</li>
+  <li><span class="stat">Main support for IHF</span> &mdash; Coachella, Electric Forest, Lightning in a Bottle artist</li>
+  <li><span class="stat">Greece's Got Talent</span> &mdash; 4 YES votes on national television</li>
+  <li><span class="stat">4-year residency</span> at Villa Porta, Lake Maggiore &mdash; sunset ceremonies</li>
+  <li><span class="stat">Equanimous collab</span> &mdash; Kailash 2.0 (100M+ streams artist, Gravitas Recordings)</li>
+  <li><span class="stat">RAV Vast Endorsed Artist</span></li>
+</ul>
+
+<hr class="divider">
+
+<div class="two-col">
+  <div>
+    <h2>Videos</h2>
+    <ul class="videos">
+      <li><a href="https://youtu.be/I-lpfRHTSG4">Efthymia</a> &mdash; RAV Vast solo (6 min)</li>
+      <li><a href="https://youtu.be/Ba8HiRS4hjc">Sunset Session</a> &mdash; melodic house + RAV</li>
+      <li><a href="https://youtu.be/q1mTTMnQCvo">Transcendence</a> &mdash; ceremony to dance</li>
+      <li><a href="https://youtu.be/NI23tAP0c8U">Greece's Got Talent</a> &mdash; TV clip</li>
+      <li><a href="https://youtu.be/rmnShcDsBBY">Who Is Flutur</a> &mdash; EPK documentary</li>
+    </ul>
+  </div>
+  <div class="details">
+    <h2>Details</h2>
+    <p><strong>Duration:</strong> 60&ndash;180 min (format dependent)</p>
+    <p><strong>Equipment:</strong> Fully self-contained. No backline.</p>
+    <p><strong>Channels to house:</strong> 2&times; XLR stereo + 1&times; vocal</p>
+    <p><strong>Stage:</strong> 2m &times; 2m min, 2.5m &times; 2.5m ideal</p>
+    <p><strong>Languages:</strong> EN, IT, PT-BR, ES</p>
+    <p><strong>Availability:</strong> 2026 worldwide</p>
+    <p><strong>Fee:</strong> On request</p>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <span>Alessio Cazzaniga &middot; alessio.cazzaniga87@gmail.com</span>
+  <span>Full EPK: 8i8.art &middot; IG: @flutur_8</span>
+</div>
+
+</body>
+</html>

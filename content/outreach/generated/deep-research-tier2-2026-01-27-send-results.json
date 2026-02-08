@@ -1,0 +1,122 @@
+[
+  {
+    "id": "dr-euphoria-retreat",
+    "venue": "Euphoria Retreat",
+    "to": "reservations@euphoriaretreat.com",
+    "status": "sent",
+    "messageId": "<ef76ece7-a7d2-ec5f-22f0-61b54bb6eddb@gmail.com>",
+    "timestamp": "2026-01-27T12:31:53.470Z"
+  },
+  {
+    "id": "dr-pathos-sunset-lounge",
+    "venue": "Pathos Sunset Lounge",
+    "to": "info@luxurios.com",
+    "status": "sent",
+    "messageId": "<692e4b17-60ed-febb-1207-0a4411caf765@gmail.com>",
+    "timestamp": "2026-01-27T12:31:57.588Z"
+  },
+  {
+    "id": "dr-atzar-agroturismo--spa",
+    "venue": "Atzaró Agroturismo & Spa",
+    "to": "eventos@atzaro.com",
+    "status": "sent",
+    "messageId": "<ebd4d4d7-8d2f-a2d1-3d42-01e796357e16@gmail.com>",
+    "timestamp": "2026-01-27T12:32:06.213Z"
+  },
+  {
+    "id": "dr-barcelona-yoga-conference",
+    "venue": "Barcelona Yoga Conference",
+    "to": "info@barcelonayogaconference.cat",
+    "status": "sent",
+    "messageId": "<f1f9e4f9-c95b-97f5-6bd6-b94e81ce2639@gmail.com>",
+    "timestamp": "2026-01-27T12:32:10.454Z"
+  },
+  {
+    "id": "dr-sublime-comporta-beach-club",
+    "venue": "Sublime Comporta Beach Club",
+    "to": "reservations@sublimecomportabeachclub.pt",
+    "status": "sent",
+    "messageId": "<ef408fff-7f8b-63d9-b3d2-34d716107236@gmail.com>",
+    "timestamp": "2026-01-27T12:32:14.570Z"
+  },
+  {
+    "id": "dr-duna-beach-club-lagos",
+    "venue": "Duna Beach Club Lagos",
+    "to": "l.rio@tivoli-hotels.com",
+    "status": "sent",
+    "messageId": "<7f89ebc3-59ca-af72-436d-2f610ec31e70@gmail.com>",
+    "timestamp": "2026-01-27T12:32:19.088Z"
+  },
+  {
+    "id": "dr-mandali-retreat-center",
+    "venue": "Mandali Retreat Center",
+    "to": "info@mandali.org",
+    "status": "sent",
+    "messageId": "<debc197b-e8ca-0394-8e68-e7a319ade1c7@gmail.com>",
+    "timestamp": "2026-01-27T12:32:23.326Z"
+  },
+  {
+    "id": "dr-terraforma-festival",
+    "venue": "Terraforma Festival",
+    "to": "info@terraformafestival.com",
+    "status": "sent",
+    "messageId": "<3019e411-f599-c663-f13c-377393fea53a@gmail.com>",
+    "timestamp": "2026-01-27T12:32:27.584Z"
+  },
+  {
+    "id": "dr-locus-festival",
+    "venue": "Locus Festival",
+    "to": "biglietteria@bassculture.it",
+    "status": "sent",
+    "messageId": "<1991a266-021a-a8d2-9b27-47d2f53d40c1@gmail.com>",
+    "timestamp": "2026-01-27T12:32:31.734Z"
+  },
+  {
+    "id": "dr-the-yoga-barn",
+    "venue": "The Yoga Barn",
+    "to": "info@theyogabarn.com",
+    "status": "sent",
+    "messageId": "<507abf43-58b5-2438-5236-51dc66c408d0@gmail.com>",
+    "timestamp": "2026-01-27T12:32:35.757Z"
+  },
+  {
+    "id": "dr-pyramids-of-chi",
+    "venue": "Pyramids of Chi",
+    "to": "events@pyramidsofchi.com",
+    "status": "sent",
+    "messageId": "<f8514ec1-44b9-2bba-ff9f-8e892a50ead3@gmail.com>",
+    "timestamp": "2026-01-27T12:32:39.784Z"
+  },
+  {
+    "id": "dr-la-brisa",
+    "venue": "La Brisa",
+    "to": "bookings@labrisa-bali.com",
+    "status": "sent",
+    "messageId": "<9dcaf4de-06cc-3590-f705-9c427407d7c6@gmail.com>",
+    "timestamp": "2026-01-27T12:32:43.997Z"
+  },
+  {
+    "id": "dr-our-habitas-tulum",
+    "venue": "Our Habitas Tulum",
+    "to": "sales.tulum@ourhabitas.com",
+    "status": "sent",
+    "messageId": "<d84fe555-698a-4bab-6462-edafd41eae4c@gmail.com>",
+    "timestamp": "2026-01-27T12:32:47.991Z"
+  },
+  {
+    "id": "dr-nmade-temple-tulum",
+    "venue": "Nômade Temple Tulum",
+    "to": "reservations@nomadetulum.com",
+    "status": "sent",
+    "messageId": "<c4c3384c-9c8f-b61a-911d-88235efdd1a6@gmail.com>",
+    "timestamp": "2026-01-27T12:32:52.046Z"
+  },
+  {
+    "id": "dr-ahau-tulum",
+    "venue": "Ahau Tulum",
+    "to": "reservations@ahaucollection.com",
+    "status": "sent",
+    "messageId": "<b67f870d-1156-adc6-3bff-882a0aeac0e5@gmail.com>",
+    "timestamp": "2026-01-27T12:32:56.784Z"
+  }
+]

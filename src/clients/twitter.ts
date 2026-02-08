@@ -1,10 +1,15 @@
 /**
  * Twitter/X Client
  * Uses twitter-api-v2 for posting
+ *
+ * Features:
+ * - Duplicate detection before posting
+ * - Automatic post recording for future duplicate checks
  */
 
 import { TwitterApi } from 'twitter-api-v2';
 import type { PostResult, TwitterPostOptions, SocialClient, Config } from '../types.js';
+import { checkDuplicate, recordPost } from '../core/duplicate-checker.js';
 
 export class TwitterClient implements SocialClient {
   platform = 'twitter' as const;
@@ -44,7 +49,11 @@ export class TwitterClient implements SocialClient {
     }
   }
 
-  async post(options: TwitterPostOptions): Promise<PostResult> {
+  async post(options: TwitterPostOptions & {
+    skipDuplicateCheck?: boolean;
+    topic?: string;
+    topicKeywords?: string[];
+  }): Promise<PostResult> {
     if (!this.client) {
       return {
         success: false,
@@ -64,6 +73,21 @@ export class TwitterClient implements SocialClient {
       // Add link if provided
       if (options.link) {
         text += '\n\n' + options.link;
+      }
+
+      // Check for duplicates (unless it's a reply or explicitly skipped)
+      if (!options.replyToId && !options.skipDuplicateCheck) {
+        const duplicateCheck = await checkDuplicate('twitter', text, {
+          topic: options.topic,
+        });
+
+        if (duplicateCheck.isDuplicate) {
+          return {
+            success: false,
+            platform: 'twitter',
+            error: `Duplicate detected: ${duplicateCheck.reason}`,
+          };
+        }
       }
 
       // Handle media uploads
@@ -89,6 +113,16 @@ export class TwitterClient implements SocialClient {
       }
 
       const result = await this.client.v2.tweet(text, tweetOptions);
+
+      // Record the post for future duplicate checking (unless it's a reply)
+      if (!options.replyToId) {
+        await recordPost('twitter', {
+          id: result.data.id,
+          text: text,
+          topic: options.topic,
+          keywords: options.topicKeywords,
+        });
+      }
 
       return {
         success: true,
@@ -192,6 +226,21 @@ export class TwitterClient implements SocialClient {
       };
     } catch {
       return null;
+    }
+  }
+
+  /**
+   * Delete a tweet
+   */
+  async deleteTweet(tweetId: string): Promise<{ success: boolean; error?: string }> {
+    if (!this.client) {
+      return { success: false, error: 'Twitter client not configured' };
+    }
+    try {
+      await this.client.v2.deleteTweet(tweetId);
+      return { success: true };
+    } catch (error: any) {
+      return { success: false, error: error.message };
     }
   }
 }

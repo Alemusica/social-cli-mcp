@@ -1,25 +1,33 @@
 {
   "meta": {
-    "lastUpdated": "2026-01-20",
-    "totalVenues": 64,
-    "regions": ["Italy", "Greece", "Portugal", "Canary Islands", "Balearics"]
+    "lastUpdated": "2026-01-21",
+    "totalVenues": 74,
+    "regions": ["Italy", "Greece", "Portugal", "Canary Islands", "Balearics", "Germany", "Indonesia", "Hungary", "Thailand", "Austria"]
   },
   "summary": {
     "byRegion": {
       "italy": 16,
       "greece": 12,
-      "portugal": 12,
+      "portugal": 14,
       "canary_islands": 12,
-      "balearics": 12
+      "balearics": 12,
+      "germany": 3,
+      "indonesia": 1,
+      "hungary": 1,
+      "thailand": 1,
+      "austria": 1,
+      "spain_canarias": 1
     },
     "bySegment": {
       "beach_club": 48,
       "boutique_hotel": 12,
-      "wellness": 4
+      "wellness": 4,
+      "festival_transformational": 5,
+      "festival_handpan": 5
     },
     "byGgtAppropriate": {
-      "yes": 52,
-      "no": 12
+      "yes": 58,
+      "no": 16
     }
   },
   "tierOneVenues": [
@@ -107,6 +115,73 @@
     "Greece (May-September, strong Mykonos alternatives)",
     "Portugal (Comporta is hot, year-round Lisbon)",
     "Italy (Costa Smeralda June-Sept, Amalfi April-Oct)",
-    "Canary Islands (year-round, good for off-season)"
-  ]
+    "Canary Islands (year-round, good for off-season)",
+    "Festivals - Transformational (applications open winter for summer festivals)",
+    "Festivals - Handpan Circuit (RAV Vast endorsement is key credential)"
+  ],
+  "tierOneFestivals": [
+    {
+      "id": "festival_waking_life_portugal",
+      "name": "Waking Life Festival",
+      "region": "Portugal",
+      "priority": "HIGH",
+      "reason": "Transformational festival, healing area perfect for RAV Vast meditation sets",
+      "applicationWindow": "Dec/Jan for August festival",
+      "contactStatus": "NEEDS VERIFICATION"
+    },
+    {
+      "id": "festival_boom_liminal_village",
+      "name": "Boom Festival - Liminal Village",
+      "region": "Portugal",
+      "priority": "HIGHEST",
+      "reason": "Premier healing arts space at major festival. 2026 is next edition (biennial).",
+      "applicationWindow": "Late 2025 / Early 2026 for Aug 2026",
+      "contactStatus": "NEEDS VERIFICATION"
+    },
+    {
+      "id": "festival_balispirit",
+      "name": "BaliSpirit Festival",
+      "region": "Indonesia",
+      "priority": "HIGH",
+      "reason": "Premier Asia yoga festival. Sound healing is core programming.",
+      "applicationWindow": "Oct-Nov for March festival",
+      "contactStatus": "NEEDS VERIFICATION"
+    },
+    {
+      "id": "festival_pangonia_handpan",
+      "name": "Pangonia Handpan Festival",
+      "region": "Germany",
+      "priority": "HIGH",
+      "reason": "Dedicated handpan festival. RAV Vast endorsement = credibility.",
+      "applicationWindow": "Check website",
+      "contactStatus": "NEEDS VERIFICATION"
+    },
+    {
+      "id": "festival_evolve_berlin",
+      "name": "Evolve Festival",
+      "region": "Germany",
+      "priority": "MEDIUM",
+      "reason": "German conscious scene. Smaller scale = better acceptance chance.",
+      "applicationWindow": "Winter for summer festival",
+      "contactStatus": "NEEDS VERIFICATION"
+    }
+  ],
+  "festivalVideoRecommendations": {
+    "whoIsFlutur": {
+      "url": "https://youtu.be/rmnShcDsBBY",
+      "duration": "2:52",
+      "bestFor": ["transformational festivals", "journey narrative", "booking agents"],
+      "note": "Perfect for festivals that value artist story/transformation"
+    },
+    "efthymia": {
+      "url": "https://youtu.be/I-lpfRHTSG4",
+      "bestFor": ["healing areas", "Liminal Village", "sound healing stages", "yoga festivals"],
+      "note": "Use for Boom Liminal Village, BaliSpirit Dharma stage"
+    },
+    "ggt": {
+      "url": "https://youtu.be/NI23tAP0c8U",
+      "bestFor": ["main stages", "entertainment-focused festivals", "credibility"],
+      "note": "Use sparingly for festivals - better for commercial venues"
+    }
+  }
 }

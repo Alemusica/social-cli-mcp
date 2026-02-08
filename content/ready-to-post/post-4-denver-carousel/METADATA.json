@@ -1,0 +1,14 @@
+{
+  "post_id": 4,
+  "title": "Denver: Street to Stage",
+  "pillar": "live_performance",
+  "pillar_reason": "Tour life, backstage to stage journey, professional performance",
+  "type": "carousel",
+  "slides": 5,
+  "priority": "MEDIUM",
+  "target_audience": ["musicians", "djs", "tour_life"],
+  "scheduled_day": "Saturday",
+  "scheduled_time": "11:00 CET",
+  "hashtags": ["busker", "streetmusic", "ravvast", "flutur", "livemusic"],
+  "platforms": ["Instagram"]
+}

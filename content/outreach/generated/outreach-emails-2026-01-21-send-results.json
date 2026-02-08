@@ -1,0 +1,162 @@
+[
+  {
+    "id": "france-38-riv-jazz-club",
+    "venue": "38 Riv Jazz Club",
+    "to": "contact@38riv.com",
+    "status": "duplicate",
+    "error": "Already sent to contact@38riv.com today",
+    "timestamp": "2026-01-21T09:09:38.970Z"
+  },
+  {
+    "id": "france-blue-flamingo",
+    "venue": "Blue Flamingo",
+    "to": "contact@blue-flamingo.fr",
+    "status": "duplicate",
+    "error": "Already sent to contact@blue-flamingo.fr today",
+    "timestamp": "2026-01-21T09:09:42.270Z"
+  },
+  {
+    "id": "france-jazzdor",
+    "venue": "Jazzdor",
+    "to": "info@jazzdor.com",
+    "status": "duplicate",
+    "error": "Already sent to info@jazzdor.com today",
+    "timestamp": "2026-01-21T09:09:45.586Z"
+  },
+  {
+    "id": "france-hotel-regent-petite-france",
+    "venue": "Hotel Regent Petite France",
+    "to": "seminaire@regent-petite-france.com",
+    "status": "duplicate",
+    "error": "Already sent to seminaire@regent-petite-france.com today",
+    "timestamp": "2026-01-21T09:09:48.840Z"
+  },
+  {
+    "id": "france-cour-du-corbeau",
+    "venue": "Cour du Corbeau",
+    "to": "info@cour-corbeau.com",
+    "status": "duplicate",
+    "error": "Already sent to info@cour-corbeau.com today",
+    "timestamp": "2026-01-21T09:09:52.074Z"
+  },
+  {
+    "id": "greece-a-for-athens",
+    "venue": "A for Athens",
+    "to": "info@aforathens.com",
+    "status": "duplicate",
+    "error": "Already sent to info@aforathens.com today",
+    "timestamp": "2026-01-21T09:09:55.378Z"
+  },
+  {
+    "id": "greece-scorpios",
+    "venue": "Scorpios",
+    "to": "bookings.mykonos@scorpios.com",
+    "status": "duplicate",
+    "error": "Already sent to bookings.mykonos@scorpios.com today",
+    "timestamp": "2026-01-21T09:09:58.697Z"
+  },
+  {
+    "id": "greece-principote",
+    "venue": "Principote",
+    "to": "info@principote.com",
+    "status": "duplicate",
+    "error": "Already sent to info@principote.com today",
+    "timestamp": "2026-01-21T09:10:01.958Z"
+  },
+  {
+    "id": "italy-monastero-santa-rosa",
+    "venue": "Monastero Santa Rosa",
+    "to": "info@monasterosantarosa.com",
+    "status": "duplicate",
+    "error": "Already sent to info@monasterosantarosa.com today",
+    "timestamp": "2026-01-21T09:10:05.178Z"
+  },
+  {
+    "id": "italy-phi-beach",
+    "venue": "Phi Beach",
+    "to": "booking@phibeach.com",
+    "status": "duplicate",
+    "error": "Already sent to booking@phibeach.com today",
+    "timestamp": "2026-01-21T09:10:08.482Z"
+  },
+  {
+    "id": "italy-masseria-torre-maizza",
+    "venue": "Masseria Torre Maizza",
+    "to": "events.torremaizza@roccofortehotels.com",
+    "status": "duplicate",
+    "error": "Already sent to events.torremaizza@roccofortehotels.com today",
+    "timestamp": "2026-01-21T09:10:11.797Z"
+  },
+  {
+    "id": "italy-borgo-egnazia",
+    "venue": "Borgo Egnazia",
+    "to": "info@borgoegnazia.com",
+    "status": "duplicate",
+    "error": "Already sent to info@borgoegnazia.com today",
+    "timestamp": "2026-01-21T09:10:15.042Z"
+  },
+  {
+    "id": "italy-filodivino-wine-resort",
+    "venue": "Filodivino Wine Resort",
+    "to": "info@filodivino.it",
+    "status": "duplicate",
+    "error": "Already sent to info@filodivino.it today",
+    "timestamp": "2026-01-21T09:10:18.269Z"
+  },
+  {
+    "id": "italy-castello-di-semivicoli",
+    "venue": "Castello di Semivicoli",
+    "to": "info@castellodisemivicoli.it",
+    "status": "duplicate",
+    "error": "Already sent to info@castellodisemivicoli.it today",
+    "timestamp": "2026-01-21T09:10:21.591Z"
+  },
+  {
+    "id": "italy-alma-vibes-beach-lounge",
+    "venue": "Alma Vibes Beach Lounge",
+    "to": "beach@almavibes.it",
+    "status": "duplicate",
+    "error": "Already sent to beach@almavibes.it today",
+    "timestamp": "2026-01-21T09:10:24.894Z"
+  },
+  {
+    "id": "italy-capovaticano-resort",
+    "venue": "Capovaticano Resort",
+    "to": "info@capovaticanoresort.it",
+    "status": "duplicate",
+    "error": "Already sent to info@capovaticanoresort.it today",
+    "timestamp": "2026-01-21T09:10:28.177Z"
+  },
+  {
+    "id": "italy-villa-paola",
+    "venue": "Villa Paola",
+    "to": "info@villapaolatropea.it",
+    "status": "duplicate",
+    "error": "Already sent to info@villapaolatropea.it today",
+    "timestamp": "2026-01-21T09:10:31.418Z"
+  },
+  {
+    "id": "italy-santavenere-hotel",
+    "venue": "Santavenere Hotel",
+    "to": "info@santavenere.it",
+    "status": "duplicate",
+    "error": "Already sent to info@santavenere.it today",
+    "timestamp": "2026-01-21T09:10:34.698Z"
+  },
+  {
+    "id": "italy-locanda-don-serafino",
+    "venue": "Locanda Don Serafino",
+    "to": "info@locandadonserafino.it",
+    "status": "duplicate",
+    "error": "Already sent to info@locandadonserafino.it today",
+    "timestamp": "2026-01-21T09:10:38.002Z"
+  },
+  {
+    "id": "italy-q92-noto-hotel",
+    "venue": "Q92 Noto Hotel",
+    "to": "info@q92notohotel.it",
+    "status": "duplicate",
+    "error": "Already sent to info@q92notohotel.it today",
+    "timestamp": "2026-01-21T09:10:41.262Z"
+  }
+]

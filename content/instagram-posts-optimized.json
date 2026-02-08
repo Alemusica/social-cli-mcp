@@ -1,0 +1,450 @@
+{
+  "version": 4,
+  "created": "2026-01-20",
+  "status": "ready_to_post",
+  "algorithm_notes": {
+    "source": "Instagram Algorithm 2026 research",
+    "key_factors": [
+      "watch_time",
+      "sends_shares",
+      "saves",
+      "3-5_hashtags_max"
+    ],
+    "optimal_reels": "30-90 seconds",
+    "hook_critical": "first 3 seconds = 60%+ retention needed"
+  },
+  "posts": [
+    {
+      "id": 1,
+      "title": "€30 to National TV",
+      "type": "carousel",
+      "slides": 6,
+      "priority": "HIGH",
+      "target_audience": [
+        "travel",
+        "music",
+        "inspiration"
+      ],
+      "photos_needed": [
+        {
+          "slide": 1,
+          "file": "new foto to classify/IMG_7851 2.HEIC",
+          "description": "Selfie with Rav Vast and Greek village backdrop Astypalea (COVER)"
+        },
+        {
+          "slide": 2,
+          "file": "new foto to classify/IMG_7878 2.HEIC",
+          "description": "Tips with handwritten thank you note - THE €30 PROOF - emotional highlight"
+        },
+        {
+          "slide": 3,
+          "file": "new foto to classify/IMG_9779 2.JPG",
+          "description": "Busking with guitar on Astypalea rooftop - white Greek houses"
+        },
+        {
+          "slide": 4,
+          "file": "new foto to classify/IMG_7753.HEIC",
+          "description": "Dynamic live guitar performance with microphone - intense busking"
+        },
+        {
+          "slide": 5,
+          "file": "new foto to classify/IMG_1701 2.HEIC",
+          "description": "Acropolis illuminated at night - Athens GGT journey"
+        },
+        {
+          "slide": 6,
+          "file": "new foto to classify/GGT.png",
+          "description": "Greece's Got Talent performance on stage with Rav Vast and guitar"
+        }
+      ],
+      "story_context": {
+        "location": "Astypalea, Dodecanese Islands → Athens",
+        "period": "July-October 2021",
+        "journey": "Started with €30, busked for 5 months, discovered by Alexandra, got 4 ΝΑΙ on Greece's Got Talent",
+        "outcome": "Became Rav Vast endorser after returning from Greece"
+      },
+      "action_required": "Grab screenshot from GGT YouTube video at moment of 4 yes votes",
+      "caption": "This is why I believe in the long game.\n\n5 months of €0 income.\nSleeping in hostels.\nPlaying for tips that barely covered dinner.\n\nThen one person believed.\n\nAlexandra, if you're reading this — you changed everything.\n\nWhat's your \"Alexandra moment\"? The person who believed before anyone else?",
+      "hashtags": [
+        "#flutur",
+        "#busker",
+        "#streetmusic",
+        "#ravvast",
+        "#fieldrecording"
+      ],
+      "best_time": "18:00 CET Monday",
+      "optimization": {
+        "hashtag_reasoning": [
+          "🧪 TEST #flutur (score: 412)",
+          "✅ KEEP #busker (score: 5736)",
+          "❓ UNKNOWN #greecegottalent (no analysis data)",
+          "✅ KEEP #streetmusic (score: 2259)",
+          "✅ KEEP #ravvast (score: 3790)",
+          "➕ ADD #fieldrecording (top performer: 4724)"
+        ],
+        "caption_tips": [
+          "💡 For Carousels: Hint at swiping (→ or \"swipe\")"
+        ],
+        "optimized_at": "2026-01-21T09:17:41.379Z"
+      }
+    },
+    {
+      "id": 2,
+      "title": "What does Lanzarote sound like?",
+      "type": "reel",
+      "duration": "45-60s",
+      "priority": "HIGH",
+      "target_audience": [
+        "sound_designers",
+        "audio_engineers",
+        "tech"
+      ],
+      "photos_needed": [
+        {
+          "scene": "setup",
+          "file": "IMG_2980.HEIC",
+          "description": "KU100 binaural microphone close-up on Greek coast"
+        },
+        {
+          "scene": "landscape",
+          "file": "IMG_1047.JPG",
+          "description": "Lanzarote Timanfaya volcanic landscape - Mars on Earth"
+        },
+        {
+          "scene": "artistic",
+          "file": "IMG_1006.JPG",
+          "description": "Lanzarote volcanic crater dramatic texture"
+        }
+      ],
+      "caption": "Field recording isn't about pressing record.\nIt's about listening first.\n\nGear: Neumann KU100 binaural head\nLocation: Timanfaya, Lanzarote\nWhat you hear: Exactly what I heard standing there.\n\nDrop a location you want me to capture next.\nBest suggestion gets featured in my next post.",
+      "hashtags": [
+        "#fieldrecording",
+        "#binaural",
+        "#sounddesign",
+        "#lanzarote",
+        "#busker"
+      ],
+      "best_time": "19:00 CET Friday",
+      "audio_needed": "binaural recording clip from Lanzarote",
+      "optimization": {
+        "hashtag_reasoning": [
+          "✅ KEEP #fieldrecording (score: 4724)",
+          "✅ KEEP #binaural (score: 3631)",
+          "❓ UNKNOWN #ku100 (no analysis data)",
+          "✅ KEEP #sounddesign (score: 2339)",
+          "✅ KEEP #lanzarote (score: 2347)",
+          "➕ ADD #busker (top performer: 5736)"
+        ],
+        "caption_tips": [
+          "💡 Add a question to encourage comments"
+        ],
+        "optimized_at": "2026-01-21T09:17:41.380Z"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Kids and the Rav Vast",
+      "type": "single",
+      "priority": "HIGH",
+      "target_audience": [
+        "community",
+        "education",
+        "emotional"
+      ],
+      "photos_needed": [
+        {
+          "file": "IMG_5028.HEIC",
+          "description": "Kids gathered around Rav Vast during busking",
+          "PRIVACY_NOTE": "MUST BLUR FACES - minors require consent per GDPR"
+        }
+      ],
+      "alternative_photo": {
+        "file": "new foto to classify/IMG_7757.HEIC",
+        "description": "Child's drawing of Rav Vast and guitar - only hands visible, NO FACES",
+        "note": "PRIVACY SAFE - no face blur needed, shows impact without showing minors' faces"
+      },
+      "caption": "This moment.\n\nNo followers. No algorithm. No strategy.\nJust kids who'd never seen a Rav Vast,\ngathered around to touch the sounds.\n\nOne asked: \"Is it magic?\"\n\nI said: \"Kind of, yeah.\"\n\nThese are the moments the metrics don't capture.\nThe ones that remind you why you started.\n\nWhen did music last feel like magic for you?",
+      "hashtags": [
+        "#ravvast",
+        "#streetmusic",
+        "#flutur",
+        "#busking",
+        "#busker"
+      ],
+      "best_time": "12:00 CET Wednesday",
+      "optimization": {
+        "hashtag_reasoning": [
+          "✅ KEEP #ravvast (score: 3790)",
+          "✅ KEEP #streetmusic (score: 2259)",
+          "❓ UNKNOWN #musicismagic (no analysis data)",
+          "🧪 TEST #flutur (score: 412)",
+          "🧪 TEST #busking (score: 1047)",
+          "➕ ADD #busker (top performer: 5736)"
+        ],
+        "caption_tips": [
+          "💡 Add a call-to-action (ask for saves, shares, or comments)"
+        ],
+        "optimized_at": "2026-01-21T09:17:41.380Z"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Denver: Street to Stage",
+      "type": "carousel",
+      "slides": 5,
+      "priority": "MEDIUM",
+      "target_audience": [
+        "musicians",
+        "djs",
+        "tour_life"
+      ],
+      "photos_needed": [
+        {
+          "slide": 1,
+          "file": "IMG_8617.heic",
+          "description": "Denver colorful street art parking structure with snow"
+        },
+        {
+          "slide": 2,
+          "file": "IMG_8625.HEIC",
+          "description": "Denver backstage with flight cases and purple lighting"
+        },
+        {
+          "slide": 3,
+          "file": "IMG_8632.HEIC",
+          "description": "Denver backstage equipment setup purple lighting"
+        },
+        {
+          "slide": 4,
+          "file": "DSC00325.jpg",
+          "description": "Live performance on stage with keyboards purple lighting"
+        },
+        {
+          "slide": 5,
+          "file": "IMG_8524.HEIC",
+          "description": "Denver night flight arrival city lights"
+        }
+      ],
+      "caption": "January 2023. Denver tour.\n\nTwo years earlier I was busking for dinner money.\nNow I was playing for people who flew in to hear the same sounds.\n\nThe music didn't change.\nThe story did.\n\nVareseNews wrote about it: \"From street music on Lake Maggiore to Denver concerts.\"\n(link in bio)\n\nWhere should the next tour stop?",
+      "hashtags": [
+        "#flutur",
+        "#busker",
+        "#fieldrecording",
+        "#ravvast",
+        "#binaural"
+      ],
+      "best_time": "11:00 CET Saturday",
+      "optimization": {
+        "hashtag_reasoning": [
+          "❓ UNKNOWN #ontour (no analysis data)",
+          "❓ UNKNOWN #denver (no analysis data)",
+          "🧪 TEST #flutur (score: 412)",
+          "❓ UNKNOWN #djlife (no analysis data)",
+          "❓ UNKNOWN #livemusic (no analysis data)",
+          "➕ ADD #busker (top performer: 5736)",
+          "➕ ADD #fieldrecording (top performer: 4724)",
+          "➕ ADD #ravvast (top performer: 3790)",
+          "➕ ADD #binaural (top performer: 3631)"
+        ],
+        "caption_tips": [
+          "💡 For Carousels: Hint at swiping (→ or \"swipe\")"
+        ],
+        "optimized_at": "2026-01-21T09:17:41.380Z"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Morocco Fisherman Sunset",
+      "type": "single",
+      "priority": "MEDIUM",
+      "target_audience": [
+        "travel",
+        "photography",
+        "landscape"
+      ],
+      "photos_needed": [
+        {
+          "file": "IMG_5514.HEIC",
+          "description": "Morocco sunset beach with fisherman silhouette - golden hour"
+        }
+      ],
+      "caption": "Some sunsets you photograph.\nOthers photograph you.\n\nMorocco, 2022",
+      "hashtags": [
+        "#busker",
+        "#fieldrecording",
+        "#ravvast",
+        "#binaural",
+        "#steeldrum"
+      ],
+      "best_time": "19:00 CET Friday",
+      "optimization": {
+        "hashtag_reasoning": [
+          "❓ UNKNOWN #morocco (no analysis data)",
+          "❓ UNKNOWN #goldenhour (no analysis data)",
+          "❓ UNKNOWN #sunsetlovers (no analysis data)",
+          "❓ UNKNOWN #travelphotography (no analysis data)",
+          "➕ ADD #busker (top performer: 5736)",
+          "➕ ADD #fieldrecording (top performer: 4724)",
+          "➕ ADD #ravvast (top performer: 3790)",
+          "➕ ADD #binaural (top performer: 3631)",
+          "➕ ADD #steeldrum (top performer: 2432)"
+        ],
+        "caption_tips": [
+          "💡 Add a question to encourage comments",
+          "💡 Add a call-to-action (ask for saves, shares, or comments)"
+        ],
+        "optimized_at": "2026-01-21T09:17:41.380Z"
+      }
+    }
+  ],
+  "week1_schedule": {
+    "monday_18": {
+      "post_id": 1,
+      "title": "€30 Story Carousel"
+    },
+    "wednesday_12": {
+      "post_id": 3,
+      "title": "Kids Handpan (blur faces first!)"
+    },
+    "friday_19": {
+      "post_id": 2,
+      "title": "Lanzarote Sound Reel"
+    },
+    "saturday_11": {
+      "post_id": 4,
+      "title": "Denver Tour Carousel"
+    }
+  },
+  "privacy_compliance": {
+    "minors_in_photos": [
+      "IMG_5028.HEIC",
+      "IMG_9284.HEIC",
+      "IMG_9289.HEIC"
+    ],
+    "action_required": "Blur faces using ImageMagick or Photoshop before posting",
+    "legal_basis": "GDPR Art. 8, Italian Privacy Code Art. 96 - images of minors require parental consent or face obscuring"
+  },
+  "photo_file_mapping": {
+    "field_recording": [
+      "IMG_2999.HEIC",
+      "IMG_2981.HEIC",
+      "IMG_2776.HEIC",
+      "IMG_2980.HEIC",
+      "IMG_2971.HEIC",
+      "IMG_3002.HEIC",
+      "IMG_2986.HEIC"
+    ],
+    "sunset": [
+      "IMG_2371.HEIC",
+      "IMG_5514.HEIC",
+      "IMG_2384.HEIC",
+      "IMG_2377.HEIC",
+      "IMG_1384.HEIC",
+      "IMG_5948.heic",
+      "IMG_2375.HEIC",
+      "IMG_5949.HEIC",
+      "IMG_5956.HEIC",
+      "DSC_0513.jpg",
+      "IMG_1055.HEIC"
+    ],
+    "busking": [
+      "IMG_3379.HEIC",
+      "IMG_5056.HEIC",
+      "IMG_2662",
+      "IMG_4274.HEIC",
+      "IMG_5028.HEIC",
+      "IMG_9284.HEIC",
+      "IMG_9289.HEIC"
+    ],
+    "busking_ggt_2021": [
+      "new foto to classify/IMG_9779 2.JPG",
+      "new foto to classify/IMG_7959 2.JPG",
+      "new foto to classify/IMG_7775 2.HEIC",
+      "new foto to classify/IMG_7753.HEIC",
+      "new foto to classify/IMG_7878 2.HEIC",
+      "new foto to classify/IMG_7851 2.HEIC"
+    ],
+    "artistic_greece_2021": [
+      "new foto to classify/6CB1E7EB-C063-4415-A315-800BB7921070 2.JPG",
+      "new foto to classify/798BCFEF-1AE2-4DD4-839D-71F2BC78D91F 2.JPG",
+      "new foto to classify/B9D97FA9-8AFC-46F1-A2F1-3137BF38B562.JPG",
+      "new foto to classify/4B08F44C-EB58-4F0B-9A99-E502EC2EE065 2.JPG"
+    ],
+    "tour": [
+      "IMG_8524.HEIC",
+      "DSC00325.jpg",
+      "IMG_1030.HEIC",
+      "IMG_8504.HEIC",
+      "IMG_8625.HEIC",
+      "IMG_8632.HEIC"
+    ],
+    "landscape_lanzarote": [
+      "IMG_0845.HEIC",
+      "IMG_0797.HEIC",
+      "IMG_1047.JPG",
+      "IMG_1006.JPG",
+      "IMG_0790.HEIC",
+      "IMG_1068.JPG"
+    ],
+    "landscape_athens": [
+      "new foto to classify/IMG_1701 2.HEIC"
+    ]
+  },
+  "future_posts": [
+    {
+      "id": 6,
+      "title": "Greek Church Artistic Series",
+      "type": "carousel",
+      "slides": 4,
+      "priority": "MEDIUM",
+      "target_audience": [
+        "photography",
+        "travel",
+        "artistic"
+      ],
+      "photos_needed": [
+        {
+          "slide": 1,
+          "file": "new foto to classify/6CB1E7EB-C063-4415-A315-800BB7921070 2.JPG",
+          "description": "Silhouette playing guitar at blue hour - COVER"
+        },
+        {
+          "slide": 2,
+          "file": "new foto to classify/798BCFEF-1AE2-4DD4-839D-71F2BC78D91F 2.JPG",
+          "description": "Portrait with Greek church bell tower"
+        },
+        {
+          "slide": 3,
+          "file": "new foto to classify/B9D97FA9-8AFC-46F1-A2F1-3137BF38B562.JPG",
+          "description": "Sitting on church rooftop with red fabric"
+        },
+        {
+          "slide": 4,
+          "file": "new foto to classify/4B08F44C-EB58-4F0B-9A99-E502EC2EE065 2.JPG",
+          "description": "Dramatic red cape with Greek sea"
+        }
+      ],
+      "caption": "Between the white and the blue.\n\nAstypalea taught me to slow down.\nTo find the shot in the silence.\nTo let the moment find me.\n\nSometimes the best photos happen\nwhen you stop looking for them.",
+      "hashtags": [
+        "#astypalea",
+        "#greekislands",
+        "#bluehour",
+        "#travelphotography",
+        "#dodecanese"
+      ],
+      "best_time": "19:00 CET Sunday"
+    }
+  ],
+  "optimization_summary": {
+    "optimized_at": "2026-01-21T09:17:41.381Z",
+    "hashtags_analyzed": 18,
+    "posts_optimized": 5,
+    "top_hashtags": [
+      "#busker",
+      "#fieldrecording",
+      "#ravvast",
+      "#binaural",
+      "#steeldrum"
+    ]
+  }
+}

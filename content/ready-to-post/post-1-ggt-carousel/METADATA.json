@@ -1,0 +1,14 @@
+{
+  "post_id": 1,
+  "title": "€30 to National TV",
+  "pillar": "nature_authentic",
+  "pillar_reason": "Authentic journey story, transformation narrative, throwback to roots",
+  "type": "carousel",
+  "slides": 6,
+  "priority": "HIGH",
+  "target_audience": ["travel", "music", "inspiration"],
+  "scheduled_day": "Monday",
+  "scheduled_time": "18:00 CET",
+  "hashtags": ["busker", "streetmusic", "ravvast", "flutur", "fieldrecording"],
+  "platforms": ["Instagram"]
+}

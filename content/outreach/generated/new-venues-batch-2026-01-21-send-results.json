@@ -1,0 +1,58 @@
+[
+  {
+    "id": "indonesia-laughing-buddha-bar",
+    "venue": "Laughing Buddha Bar",
+    "to": "info@laughingbuddhabali.com",
+    "status": "sent",
+    "messageId": "<ad78706d-1ba9-1bbe-04b1-d482984f402d@gmail.com>",
+    "timestamp": "2026-01-21T09:41:52.665Z"
+  },
+  {
+    "id": "germany-prachtwerk",
+    "venue": "Prachtwerk",
+    "to": "info@prachtwerkberlin.com",
+    "status": "sent",
+    "messageId": "<62f6433a-471f-ed09-1174-a48ee9a35eb2@gmail.com>",
+    "timestamp": "2026-01-21T09:41:57.545Z"
+  },
+  {
+    "id": "germany-donau115",
+    "venue": "donau115",
+    "to": "info@donau115.de",
+    "status": "sent",
+    "messageId": "<3482dcc1-8e27-5c99-bf4e-7a78d1e5f859@gmail.com>",
+    "timestamp": "2026-01-21T09:42:03.532Z"
+  },
+  {
+    "id": "germany-bar-neiro",
+    "venue": "Bar Neiro",
+    "to": "reservations@barneiro.com",
+    "status": "sent",
+    "messageId": "<1334ce5e-f6ab-8006-be46-473423ca90ec@gmail.com>",
+    "timestamp": "2026-01-21T09:42:08.470Z"
+  },
+  {
+    "id": "morocco-taros",
+    "venue": "Taros",
+    "to": "taros.essaouira@gmail.com",
+    "status": "sent",
+    "messageId": "<22b07ac0-29c5-5af0-0ba1-db3ac5588d7e@gmail.com>",
+    "timestamp": "2026-01-21T09:42:13.276Z"
+  },
+  {
+    "id": "spain-babylon-beach",
+    "venue": "Babylon Beach",
+    "to": "info@babylonbeachbar.com",
+    "status": "sent",
+    "messageId": "<22a8ec51-2122-0d95-630c-67534551e869@gmail.com>",
+    "timestamp": "2026-01-21T09:42:18.445Z"
+  },
+  {
+    "id": "spain-cova-santa-woomoon",
+    "venue": "WooMooN / Cova Santa",
+    "to": "info@covasanta.com",
+    "status": "sent",
+    "messageId": "<7fa0185d-eef3-ded7-fd26-fdf22d2f28af@gmail.com>",
+    "timestamp": "2026-01-21T09:42:23.256Z"
+  }
+]

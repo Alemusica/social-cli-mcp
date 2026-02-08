@@ -1,0 +1,90 @@
+{
+  "lastUpdated": "2026-01-27T14:00:00Z",
+  "manualActions": [
+    {
+      "id": "outreach-ed-rotterdam",
+      "type": "form_submission",
+      "venue": "Ecstatic Dance Rotterdam",
+      "website": "ecstaticdancerotterdam.nl",
+      "status": "pending",
+      "priority": 1,
+      "createdAt": "2026-01-22",
+      "notes": "Submit contact form with email content from priority-emails-final-2026-01-22.json"
+    },
+    {
+      "id": "outreach-kumharas",
+      "type": "form_and_call",
+      "venue": "Kumharas",
+      "website": "kumharas.org/en-gb/contact-page",
+      "phone": "+34 971 80 57 40",
+      "status": "pending",
+      "priority": 2,
+      "createdAt": "2026-01-22",
+      "notes": "Submit form AND call - word of mouth venue, off-season is best"
+    },
+    {
+      "id": "outreach-sunset-ashram",
+      "type": "phone_call",
+      "venue": "Sunset Ashram",
+      "phone": "+34 661 347 222",
+      "status": "pending",
+      "priority": 3,
+      "createdAt": "2026-01-22",
+      "notes": "Phone call only - emphasize artistic freedom, live looping"
+    },
+    {
+      "id": "dr-instagram-batch-1",
+      "type": "instagram_dm",
+      "batch": "Deep Research 2026-01-27",
+      "venues": [
+        { "name": "Alemagou Beach Bar", "ig": "@alemagou_mykonos", "country": "Greece" },
+        { "name": "Colibri Spirit Festival", "ig": "@colibrispirit.festival", "country": "Greece" },
+        { "name": "Harmony Ios", "ig": "@harmonyios", "country": "Greece" },
+        { "name": "Monastiri Beach Club", "ig": "@monastiri_paros", "country": "Greece" },
+        { "name": "Las Dalias / Akasha", "ig": "@akashaibiza", "country": "Spain" },
+        { "name": "Ecstatic Dance Ibiza Tribe", "ig": "@ecstaticdanceibizaisland", "country": "Spain" },
+        { "name": "Awaken Barcelona", "ig": "@letawaken", "country": "Spain" },
+        { "name": "Akasha New Earth Haven", "ig": "@akashaubud", "country": "Indonesia" },
+        { "name": "Single Fin", "ig": "@singlefinbali", "country": "Indonesia" }
+      ],
+      "status": "pending",
+      "priority": 4,
+      "createdAt": "2026-01-27",
+      "notes": "Instagram DMs for venues without email. Use same pitch template."
+    },
+    {
+      "id": "dr-forms-batch-1",
+      "type": "form_submission",
+      "batch": "Deep Research 2026-01-27 - Priority Forms",
+      "venues": [
+        { "name": "Zazala Beach Bar", "website": "zazala.gr", "country": "Greece" },
+        { "name": "Cova Santa (WooMooN)", "website": "covasanta.com", "country": "Spain", "tier": 3 },
+        { "name": "BaliSpirit Festival", "website": "balispiritfestival.com", "country": "Indonesia", "tier": 2 },
+        { "name": "Wonderfruit Festival", "website": "wonderfruit.co", "country": "Thailand", "tier": 3 },
+        { "name": "FINNS Beach Club", "website": "finnsbeachclub.com", "country": "Indonesia", "tier": 3 },
+        { "name": "Sundays Beach Club", "website": "sundaysbeachclub.com", "country": "Indonesia" },
+        { "name": "Papaya Playa Project", "website": "papayaplayaproject.com", "country": "Mexico", "tier": 3 }
+      ],
+      "status": "pending",
+      "priority": 5,
+      "createdAt": "2026-01-27",
+      "notes": "Priority form submissions - top venues"
+    }
+  ],
+  "followUps": [
+    {
+      "id": "followup-batch-2026-01-22",
+      "type": "email_followup",
+      "dueDate": "2026-01-28",
+      "venues": [
+        "Giardino dei Visionari",
+        "Ecstatic Dance Berlin",
+        "The Shanti Space",
+        "Nalu Athens"
+      ],
+      "status": "pending",
+      "notes": "Check inbox for responses, send follow-up if no reply"
+    }
+  ],
+  "contentReminders": []
+}

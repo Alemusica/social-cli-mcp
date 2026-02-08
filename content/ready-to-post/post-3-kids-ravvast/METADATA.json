@@ -1,0 +1,14 @@
+{
+  "post_id": 3,
+  "title": "Kids and the Rav Vast",
+  "pillar": "live_performance",
+  "pillar_reason": "Busking moment, community interaction, RAV Vast performance",
+  "type": "single",
+  "priority": "HIGH",
+  "target_audience": ["community", "education", "emotional"],
+  "scheduled_day": "Wednesday",
+  "scheduled_time": "12:00 CET",
+  "hashtags": ["ravvast", "streetmusic", "busker", "flutur", "busking"],
+  "platforms": ["Instagram"],
+  "privacy_note": "MUST BLUR FACES - minors require consent per GDPR"
+}
