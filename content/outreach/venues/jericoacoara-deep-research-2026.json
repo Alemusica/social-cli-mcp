@@ -1,0 +1,76 @@
+[
+  {
+    "name": "Duna do Pôr do Sol",
+    "location": "Jericoacoara, Ceará",
+    "country": "Brazil",
+    "category": "beach_venue",
+    "sub_category": "sunset_spot",
+    "notes": "Iconic sunset dune — live music sessions at golden hour. Tourist hub, high foot traffic.",
+    "live_music_details": "Sunset performances, acoustic sets, drum circles. Artists play informally."
+  },
+  {
+    "name": "Café Gourmet de Jeri",
+    "location": "Rua Principal, Jericoacoara",
+    "country": "Brazil",
+    "category": "restaurant_bar",
+    "sub_category": "cafe_music",
+    "notes": "Popular café on main street with live music evenings. Bohemian vibe.",
+    "live_music_details": "Acoustic sets, Brazilian MPB, occasional international artists."
+  },
+  {
+    "name": "Pousada Jeriba",
+    "location": "Jericoacoara, Ceará",
+    "country": "Brazil",
+    "category": "hotel",
+    "sub_category": "pousada",
+    "website": "https://www.pousadajeriba.com.br",
+    "notes": "Mid-range pousada with events area. Pool parties and live sessions.",
+    "live_music_details": "Pool sessions, sunset events, occasional live acts."
+  },
+  {
+    "name": "Bugaloo Beach Bar",
+    "location": "Praia de Jericoacoara",
+    "country": "Brazil",
+    "category": "beach_club",
+    "sub_category": "beach_bar",
+    "notes": "Beachfront bar with DJ and live music. Electronic and acoustic mix.",
+    "live_music_details": "DJ sets, live electronic, sunset sessions on the beach."
+  },
+  {
+    "name": "Carcará Ecofestival",
+    "location": "Near Jericoacoara",
+    "country": "Brazil",
+    "category": "festival",
+    "sub_category": "eco_festival",
+    "notes": "Annual eco-festival near Jeri. Music, yoga, sustainability. Boutique 500-1000 capacity.",
+    "live_music_details": "Multiple stages, electronic and world music, sound healing workshops."
+  },
+  {
+    "name": "Vila Kalango",
+    "location": "Jericoacoara, Ceará",
+    "country": "Brazil",
+    "category": "hotel",
+    "sub_category": "boutique_hotel",
+    "website": "https://www.vilakalango.com.br",
+    "notes": "Upscale boutique hotel. Wellness + events. Could host sound journeys.",
+    "live_music_details": "Occasional live music events, wellness retreat programming."
+  },
+  {
+    "name": "Alchymist Beach Club",
+    "location": "Praia de Jericoacoara",
+    "country": "Brazil",
+    "category": "beach_club",
+    "sub_category": "luxury_beach",
+    "notes": "Higher-end beach club. International crowd. Electronic music focused.",
+    "live_music_details": "DJ residencies, guest artists, beach parties."
+  },
+  {
+    "name": "Tattoo Bar Jeri",
+    "location": "Rua das Dunas, Jericoacoara",
+    "country": "Brazil",
+    "category": "bar",
+    "sub_category": "nightlife",
+    "notes": "Popular nightlife spot. Reggae, forró, live music.",
+    "live_music_details": "Live bands most nights. Reggae, forró, rock. Open mic occasionally."
+  }
+]

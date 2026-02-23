@@ -492,6 +492,143 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
     },
   });
 
+  // ═══════════════════════════════════════════════════════════════
+  // FLUTUR OPERATING SYSTEM: Calendar, Tour, Content
+  // ═══════════════════════════════════════════════════════════════
+
+  tools.push({
+    name: 'get_calendar',
+    description: 'Get availability calendar for a date range. Shows committed gigs, holds, and blackout dates.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        start_date: { type: 'string', description: 'Start date YYYY-MM-DD (default: today)' },
+        end_date: { type: 'string', description: 'End date YYYY-MM-DD (default: +90 days)' },
+      },
+    },
+  });
+
+  tools.push({
+    name: 'get_open_slots',
+    description: 'Get available (free) dates for a given month. Any date not in DB = free.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        month: { type: 'number', description: 'Month (1-12)' },
+        year: { type: 'number', description: 'Year (default: 2026)' },
+      },
+      required: ['month'],
+    },
+  });
+
+  tools.push({
+    name: 'book_gig',
+    description: 'Book a gig — creates committed availability + gig record. Checks for conflicts first.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        date: { type: 'string', description: 'Gig date YYYY-MM-DD' },
+        venue: { type: 'string', description: 'Venue name' },
+        market: { type: 'string', description: 'Country/market (e.g. "Greece")' },
+        fee: { type: 'number', description: 'Fee amount in EUR' },
+        notes: { type: 'string', description: 'Additional notes' },
+      },
+      required: ['date', 'venue', 'market'],
+    },
+  });
+
+  tools.push({
+    name: 'hold_dates',
+    description: 'Hold dates for tour planning. Does not commit — just reserves for evaluation.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        dates: { type: 'array', items: { type: 'string' }, description: 'Array of dates YYYY-MM-DD' },
+        market: { type: 'string', description: 'Market/country for the hold' },
+        notes: { type: 'string', description: 'Reason for hold' },
+      },
+      required: ['dates', 'market'],
+    },
+  });
+
+  tools.push({
+    name: 'propose_tour',
+    description: 'Generate a tour proposal for a country: date window, logistics, venue stats, break-even analysis.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        country: { type: 'string', description: 'Target country (e.g. "Greece", "Portugal")' },
+        month: { type: 'number', description: 'Target month (1-12, default: 7)' },
+        year: { type: 'number', description: 'Year (default: 2026)' },
+        days: { type: 'number', description: 'Tour length in days (default: 5)' },
+      },
+      required: ['country'],
+    },
+  });
+
+  tools.push({
+    name: 'summer_tour_plan',
+    description: 'Auto-generate all Sat-Thu tour windows between VP Fridays (Jul-Aug). Shows available windows respecting residency.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        year: { type: 'number', description: 'Year (default: 2026)' },
+      },
+    },
+  });
+
+  tools.push({
+    name: 'compare_regions',
+    description: 'Compare all regions by feasibility: venue count, costs, break-even, no-flight countries. Ranked by viability.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        month: { type: 'number', description: 'Target month for comparison' },
+        year: { type: 'number', description: 'Year (default: 2026)' },
+      },
+    },
+  });
+
+  tools.push({
+    name: 'outreach_plan',
+    description: 'Generate prioritized outreach batches linked to tour windows. Shows uncontacted venues by country and send-by deadlines.',
+    inputSchema: {
+      type: 'object',
+      properties: {},
+    },
+  });
+
+  tools.push({
+    name: 'weekly_content_plan',
+    description: 'Generate content plan for the week: gig-driven tasks, pillar balance, suggestions.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        week_start: { type: 'string', description: 'Week start date YYYY-MM-DD (default: this Monday)' },
+      },
+    },
+  });
+
+  tools.push({
+    name: 'content_tasks',
+    description: 'Get content creation tasks (gig-related: soundcheck reel, venue photo, performance snippet, post-gig caption).',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        status: { type: 'string', enum: ['pending', 'captured', 'editing', 'published'], description: 'Filter by task status' },
+      },
+    },
+  });
+
+  tools.push({
+    name: 'flutur_dashboard',
+    description: 'Full FLUTUR OS dashboard: calendar, tours, outreach, content, economics. One-shot view of everything.',
+    inputSchema: {
+      type: 'object',
+      properties: {},
+    },
+  });
+
   return { tools };
 });
 
@@ -1143,6 +1280,239 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             text: JSON.stringify(status, null, 2),
           }],
         };
+      }
+
+      // ═══════════════════════════════════════════════════════════
+      // FLUTUR OPERATING SYSTEM HANDLERS
+      // ═══════════════════════════════════════════════════════════
+
+      case 'get_calendar': {
+        const { getAvailability, getUpcomingCommitments } = await import('./calendar/calendar-engine.js');
+        const startDate = (args.start_date as string) || new Date().toISOString().split('T')[0];
+        const endDate = (args.end_date as string) || new Date(Date.now() + 90 * 86400000).toISOString().split('T')[0];
+
+        const records = await getAvailability(startDate, endDate);
+        const upcoming = await getUpcomingCommitments(10);
+
+        return { content: [{ type: 'text', text: JSON.stringify({
+          range: { start: startDate, end: endDate },
+          committed: records.filter(r => r.status === 'committed'),
+          holds: records.filter(r => r.status === 'hold'),
+          blackout: records.filter(r => r.status === 'blackout'),
+          upcoming,
+        }, null, 2) }] };
+      }
+
+      case 'get_open_slots': {
+        const { getOpenSlots } = await import('./calendar/calendar-engine.js');
+        const month = args.month as number;
+        const year = (args.year as number) || 2026;
+
+        const slots = await getOpenSlots(month, year);
+
+        return { content: [{ type: 'text', text: JSON.stringify({
+          month,
+          year,
+          openDays: slots.length,
+          slots: slots.map(s => ({ date: s.date, day: s.day_of_week })),
+        }, null, 2) }] };
+      }
+
+      case 'book_gig': {
+        const { bookGig } = await import('./calendar/calendar-engine.js');
+
+        const result = await bookGig({
+          date: args.date as string,
+          venue: args.venue as string,
+          market: args.market as string,
+          fee: args.fee as number | undefined,
+          notes: args.notes as string | undefined,
+        });
+
+        return { content: [{ type: 'text', text: JSON.stringify({
+          success: true,
+          date: args.date,
+          venue: args.venue,
+          availability: result.availability,
+          gig: result.gig,
+        }, null, 2) }] };
+      }
+
+      case 'hold_dates': {
+        const { holdDates } = await import('./calendar/calendar-engine.js');
+
+        const result = await holdDates(
+          args.dates as string[],
+          args.market as string,
+          args.notes as string | undefined,
+        );
+
+        return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
+      }
+
+      case 'propose_tour': {
+        const { proposeTour } = await import('./calendar/tour-planner.js');
+
+        const proposal = await proposeTour(
+          args.country as string,
+          args.month as number | undefined,
+          (args.year as number) || 2026,
+          (args.days as number) || 5,
+        );
+
+        if (!proposal) {
+          return { content: [{ type: 'text', text: JSON.stringify({
+            error: `Not enough open dates for ${args.country} in month ${args.month || 7}`,
+          }) }], isError: true };
+        }
+
+        return { content: [{ type: 'text', text: JSON.stringify({
+          country: proposal.country,
+          window: proposal.window,
+          feasibility: proposal.feasibility,
+          breakEvenGigs: proposal.breakEvenGigs,
+          estimatedCost: proposal.estimatedTotalCost,
+          venueStats: proposal.venueStats,
+          recommendation: proposal.recommendation,
+          logistics: {
+            travelRequired: proposal.logistics.travelRequired,
+            flight: proposal.logistics.estimatedFlightCost,
+            accommodation: proposal.logistics.estimatedAccommodation,
+            equipment: proposal.logistics.equipmentNotes,
+          },
+        }, null, 2) }] };
+      }
+
+      case 'summer_tour_plan': {
+        const { proposeSummerTours } = await import('./calendar/tour-planner.js');
+        const year = (args.year as number) || 2026;
+
+        const windows = await proposeSummerTours(year);
+
+        return { content: [{ type: 'text', text: JSON.stringify({
+          year,
+          windowCount: windows.length,
+          windows: windows.map(w => ({
+            start: w.startDate,
+            end: w.endDate,
+            days: w.days,
+            context: w.context,
+          })),
+          note: windows.length === 0 ? 'No VP Fridays seeded. Run: npx tsx scripts/seed-calendar.ts' : undefined,
+        }, null, 2) }] };
+      }
+
+      case 'compare_regions': {
+        const { compareRegions } = await import('./calendar/tour-planner.js');
+
+        const regions = await compareRegions(
+          args.month as number | undefined,
+          (args.year as number) || 2026,
+        );
+
+        return { content: [{ type: 'text', text: JSON.stringify({
+          count: regions.length,
+          regions: regions.map(r => ({
+            country: r.country,
+            venues: r.venueCount,
+            uncontactedWithEmail: r.uncontactedWithEmail,
+            costMax: r.totalCostMax,
+            breakEvenGigs: r.breakEvenGigs,
+            feasibility: r.feasibility,
+            noFlight: r.noFlight,
+          })),
+        }, null, 2) }] };
+      }
+
+      case 'outreach_plan': {
+        const { getUncontactedByCountry } = await import('./outreach/outreach-scheduler.js');
+
+        const byCountry = await getUncontactedByCountry();
+        const entries = Object.entries(byCountry)
+          .filter(([, s]) => s.withEmail > 0)
+          .sort((a, b) => b[1].withEmail - a[1].withEmail);
+
+        let totalUncontacted = 0;
+        const countries = entries.map(([country, stats]) => {
+          totalUncontacted += stats.withEmail;
+          return { country, ...stats };
+        });
+
+        return { content: [{ type: 'text', text: JSON.stringify({
+          totalUncontactedWithEmail: totalUncontacted,
+          byCountry: countries,
+        }, null, 2) }] };
+      }
+
+      case 'weekly_content_plan': {
+        const { generateWeeklyPlan } = await import('./content/content-orchestrator.js');
+
+        const plan = await generateWeeklyPlan(args.week_start as string | undefined);
+
+        return { content: [{ type: 'text', text: JSON.stringify({
+          week: { start: plan.weekStart, end: plan.weekEnd },
+          gigs: plan.gigs,
+          tasks: plan.tasks,
+          pillarBalance: plan.pillarBalance,
+          suggestions: plan.suggestions,
+        }, null, 2) }] };
+      }
+
+      case 'content_tasks': {
+        const { getContentTasks } = await import('./content/content-orchestrator.js');
+
+        const tasks = await getContentTasks(args.status as any);
+
+        return { content: [{ type: 'text', text: JSON.stringify({
+          count: tasks.length,
+          tasks,
+        }, null, 2) }] };
+      }
+
+      case 'flutur_dashboard': {
+        // Collect all dashboard data
+        const { getUpcomingCommitments, getOpenSlots } = await import('./calendar/calendar-engine.js');
+        const { compareRegions } = await import('./calendar/tour-planner.js');
+        const { getUncontactedByCountry } = await import('./outreach/outreach-scheduler.js');
+
+        const dashboard: any = {};
+
+        // Calendar
+        dashboard.upcoming = await getUpcomingCommitments(10);
+
+        // Open slots this & next month
+        const now = new Date();
+        const m = now.getMonth() + 1;
+        const y = now.getFullYear();
+        dashboard.openSlotsThisMonth = (await getOpenSlots(m, y)).length;
+        dashboard.openSlotsNextMonth = (await getOpenSlots(m === 12 ? 1 : m + 1, m === 12 ? y + 1 : y)).length;
+
+        // Regions
+        dashboard.regions = (await compareRegions()).map(r => ({
+          country: r.country, venues: r.venueCount, uncontacted: r.uncontactedWithEmail,
+          costMax: r.totalCostMax, feasibility: r.feasibility,
+        }));
+
+        // Outreach stats
+        const db = await getDb();
+        const [emailCt] = await db.query('SELECT count() FROM email GROUP ALL');
+        const [replyCt] = await db.query('SELECT count() FROM email WHERE reply_received = true GROUP ALL');
+        const [venueCt] = await db.query('SELECT count() FROM venue GROUP ALL');
+        dashboard.outreach = {
+          venues: (venueCt as any[])?.[0]?.count ?? 0,
+          emailsSent: (emailCt as any[])?.[0]?.count ?? 0,
+          replies: (replyCt as any[])?.[0]?.count ?? 0,
+        };
+
+        // Uncontacted
+        const byCountry = await getUncontactedByCountry();
+        dashboard.uncontacted = Object.entries(byCountry)
+          .filter(([, s]) => s.withEmail > 0)
+          .map(([c, s]) => ({ country: c, withEmail: s.withEmail }))
+          .sort((a, b) => b.withEmail - a.withEmail)
+          .slice(0, 10);
+
+        return { content: [{ type: 'text', text: JSON.stringify(dashboard, null, 2) }] };
       }
 
       default:

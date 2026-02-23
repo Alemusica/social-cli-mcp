@@ -256,3 +256,70 @@ export {
   type ConversationBriefing,
   type EventType,
 } from '../agents/intelligence-router.js';
+
+// Calendar Engine (availability, booking, scheduling)
+export {
+  calendarEngine,
+  seedVillaPortaFridays,
+  getAvailability,
+  getOpenSlots,
+  bookGig,
+  holdDates,
+  releaseDates,
+  checkConflicts,
+  getUpcomingCommitments,
+  type AvailabilityStatus,
+  type CommitmentType,
+  type AvailabilityRecord,
+  type DateSlot,
+  type BookGigInput,
+  type ConflictResult,
+} from '../calendar/calendar-engine.js';
+
+// Tour Planner (tour proposals, summer windows, region comparison)
+export {
+  tourPlanner,
+  proposeTour,
+  proposeSummerTours,
+  proposeWinterTour,
+  compareRegions,
+  type TourProposal,
+  type TourWindow,
+  type RegionComparison,
+} from '../calendar/tour-planner.js';
+
+// Outreach Scheduler (tour→outreach pipeline bridge)
+export {
+  outreachScheduler,
+  getUncontactedByCountry,
+  generateOutreachPlan,
+  createBatchFromPlan,
+  type OutreachPlan,
+  type OutreachBatch,
+  type CountryStats,
+} from '../outreach/outreach-scheduler.js';
+
+// Content Orchestrator (gig-driven content planning)
+export {
+  contentOrchestrator,
+  generateWeeklyPlan,
+  generateGigContentTasks,
+  getContentTasks,
+  markTaskCaptured,
+  type ContentTask,
+  type ContentTaskStatus,
+  type WeeklyContentPlan,
+} from '../content/content-orchestrator.js';
+
+// Logistics Briefing (cost estimates, cluster analysis)
+export {
+  buildLogisticsBriefing,
+  buildClusterBriefing,
+  getRegionCosts,
+  costByRegion,
+  HOME_BASE,
+  NO_FLIGHT_COUNTRIES,
+  type LogisticsBriefing as LogisticsBriefingData,
+  type ClusterBriefing as ClusterBriefingData,
+  type RegionCosts,
+} from '../outreach/logistics-briefing.js';
