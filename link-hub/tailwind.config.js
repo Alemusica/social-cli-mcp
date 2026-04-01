@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 
 /**
- * Typography based on best practices:
- * - Body: 17-18px for readability
- * - Line height: 1.5-1.6 for body, 1.2-1.35 for headings
- * - Line length: 50-75 characters (max-w-prose = 65ch)
- * - Contrast: 4.5:1 minimum (WCAG AA)
+ * FLUTUR EPK — Swiss Typography + Golden Ratio
+ * Design spec: design.md v1.0
  *
- * PHI (Golden Ratio) spacing: 8, 13, 21, 34, 55, 89
+ * Type scale: phi-derived (÷1.618)
+ * Spacing: PHI tokens (8, 13, 21, 34, 55, 89)
+ * Colors: unified gold #d4a574, warm white #f5f0eb
+ * Borders: radius 0 everywhere
  */
 
 module.exports = {
@@ -17,44 +17,45 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Dark navy theme — brand color #000427
-        background: '#000427',
-        'bg-dark': '#000427',
-        'bg-medium': '#0c1033',
-        'bg-light': '#161a3d',
-        'bg-elevated': '#1e2247',
+        // Backgrounds — Warm Charcoal (zero saturated blue)
+        background: '#1c1917',
+        'bg-deep': '#151210',
+        'bg-medium': '#252220',
+        'bg-elevated': '#302c28',
 
-        // Warm accent
-        'accent-gold': '#d4a574',
-        'accent-warm': '#c49a6c',
+        // Accent — ONE gold token
+        gold: '#d4a574',
+        'gold-dim': 'rgba(212, 165, 116, 0.30)',
+        'gold-faint': 'rgba(212, 165, 116, 0.15)',
+        'gold-ghost': 'rgba(212, 165, 116, 0.05)',
 
-        // Text colors with proper contrast ratios
-        'text-primary': '#f8f8f8',      // ~17:1 contrast
-        'text-secondary': '#d4d4d4',    // ~12:1 contrast
-        'text-muted': '#9a9a9a',        // ~6:1 contrast (AA compliant)
-        'text-subtle': '#6a6a6a',       // ~3.5:1 (for decorative only)
+        // Text — warm white, not pure
+        'text-primary': '#f5f0eb',
+        'text-secondary': '#b5b0aa',
+        'text-tertiary': '#918c86',
 
-        // Borders
-        'border-subtle': 'rgba(255,255,255,0.08)',
-        'border-medium': 'rgba(255,255,255,0.12)',
+        // Rules (lines)
+        rule: 'rgba(212, 165, 116, 0.20)',
+
+        // Borders — warm-shifted
+        'border-subtle': 'rgba(245, 240, 235, 0.06)',
+        'border-medium': 'rgba(245, 240, 235, 0.10)',
+
+        // Selection
+        selection: 'rgba(212, 165, 116, 0.3)',
       },
 
-      // Typography scale optimized for readability
+      // Typography scale — phi-derived from base 16px
       fontSize: {
-        // Small UI text
-        'xs': ['12px', { lineHeight: '1.5', letterSpacing: '0.01em' }],
-        'sm': ['14px', { lineHeight: '1.5', letterSpacing: '0.005em' }],
-
-        // Body text - larger for readability
-        'base': ['17px', { lineHeight: '1.6', letterSpacing: '0' }],
-        'lg': ['18px', { lineHeight: '1.6', letterSpacing: '-0.005em' }],
-
-        // Headings - tighter line heights
-        'xl': ['20px', { lineHeight: '1.4', letterSpacing: '-0.01em' }],
-        '2xl': ['24px', { lineHeight: '1.35', letterSpacing: '-0.015em' }],
-        '3xl': ['30px', { lineHeight: '1.3', letterSpacing: '-0.02em' }],
-        '4xl': ['36px', { lineHeight: '1.2', letterSpacing: '-0.025em' }],
-        '5xl': ['48px', { lineHeight: '1.15', letterSpacing: '-0.03em' }],
+        'micro': ['10px', { lineHeight: '1.4', letterSpacing: '0.12em', fontWeight: '500' }],
+        'caption': ['12px', { lineHeight: '1.4', letterSpacing: '0.08em', fontWeight: '500' }],
+        'body-sm': ['14px', { lineHeight: '1.6', letterSpacing: '0' }],
+        'body': ['16px', { lineHeight: '1.6', letterSpacing: '0' }],
+        'body-lg': ['18px', { lineHeight: '1.6', letterSpacing: '0' }],
+        'heading-2': ['20px', { lineHeight: '1.3', letterSpacing: '-0.01em' }],
+        'heading-1': ['26px', { lineHeight: '1.2', letterSpacing: '-0.015em' }],
+        'display': ['42px', { lineHeight: '1.1', letterSpacing: '0.02em' }],
+        'display-xl': ['68px', { lineHeight: '1.1', letterSpacing: '0.03em' }],
       },
 
       // PHI-based spacing
@@ -67,7 +68,7 @@ module.exports = {
         'phi-2xl': '89px',
       },
 
-      // Max width for optimal line length (50-75 chars)
+      // Max width for optimal line length
       maxWidth: {
         'prose': '65ch',
         'prose-narrow': '50ch',
@@ -75,19 +76,9 @@ module.exports = {
       },
 
       fontFamily: {
-        sans: [
-          'Inter',
-          '-apple-system',
-          'BlinkMacSystemFont',
-          'Segoe UI',
-          'system-ui',
-          'sans-serif',
-        ],
-        display: [
-          'Playfair Display',
-          'Georgia',
-          'serif',
-        ],
+        display: ['var(--font-display-serif)'],
+        body: ['var(--font-body)'],
+        mono: ['var(--font-mono)'],
       },
 
       fontWeight: {
@@ -95,22 +86,26 @@ module.exports = {
         normal: '400',
         medium: '500',
         semibold: '600',
+        bold: '700',
       },
 
+      // Sharp edges — no rounded corners
       borderRadius: {
-        'sm': '4px',
-        'md': '8px',
-        'lg': '12px',
-        'xl': '16px',
+        'none': '0',
+        'sm': '0',
+        'md': '0',
+        'lg': '0',
+        'xl': '0',
+        'DEFAULT': '0',
+        'full': '0',
       },
 
       transitionTimingFunction: {
-        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+        'swiss': 'ease-out',
       },
 
       transitionDuration: {
         '200': '200ms',
-        '300': '300ms',
       },
     },
   },
