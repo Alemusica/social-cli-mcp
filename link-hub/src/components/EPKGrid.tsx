@@ -13,6 +13,12 @@ import {
   MUSIC_LINKS,
 } from '@/lib/artist-config';
 
+import { NpCard } from './NpCard';
+import { NpQuote } from './NpQuote';
+import { NpGrid } from './NpGrid';
+import { NpLink } from './NpLink';
+import { NpVideoCard } from './NpVideoCard';
+
 export function EPKGrid() {
   return (
     <div className="newspaper">
@@ -32,33 +38,20 @@ export function EPKGrid() {
       </div>
 
       {/* ═══ Zone 1 — Intro ═══ */}
-      <div className="np-zone">
-        <div className="np-article">
-          <div className="np-headline">
-            <span className="np-title">From silence, layer by layer</span>
-            <span className="np-meta">by {ARTIST.fullName.toUpperCase()}</span>
-          </div>
+      <NpGrid>
+        <NpCard title="From silence, layer by layer" meta={`by ${ARTIST.fullName.toUpperCase()}`}>
           <p>{ARTIST.shortBio}</p>
           <p>Every performance starts from silence. Voice, guitar, RAV Vast, drum pad, synth — each layer is a clone, built live in real time.</p>
-        </div>
+        </NpCard>
 
-        <div className="np-article">
-          <div className="np-headline">
-            <a href={`https://youtube.com/watch?v=${VIDEOS.items[0].youtubeId}`} target="_blank" rel="noopener noreferrer">
-              <span className="np-title">The Sound</span>
-              <span className="np-meta">{VIDEOS.items[0].duration} — Watch on YouTube</span>
-            </a>
-          </div>
-          <figure className="np-figure">
-            <img className="np-media" src={PHOTOS[0].src} alt={PHOTOS[0].alt} />
-            <figcaption className="np-figcaption">{PHOTOS[0].location}</figcaption>
-          </figure>
-        </div>
+        <NpCard
+          title="The Sound"
+          meta={`${VIDEOS.items[0].duration} — Watch on YouTube`}
+          href={`https://youtube.com/watch?v=${VIDEOS.items[0].youtubeId}`}
+          image={{ src: PHOTOS[0].src, alt: PHOTOS[0].alt, caption: PHOTOS[0].location }}
+        />
 
-        <div className="np-article">
-          <div className="np-headline">
-            <span className="np-title">Credentials</span>
-          </div>
+        <NpCard title="Credentials">
           {CREDENTIALS.map((cred, i) => (
             <p key={i} className="np-cred-line">
               <strong>{cred.text}</strong>
@@ -66,26 +59,23 @@ export function EPKGrid() {
               <small>{cred.year}</small>
             </p>
           ))}
-        </div>
-      </div>
+        </NpCard>
+      </NpGrid>
 
       {/* ═══ Quote 1 ═══ */}
-      <blockquote className="np-citation">
-        &ldquo;{TESTIMONIALS[0].quote}&rdquo;
-        <cite className="np-cite">— {TESTIMONIALS[0].name}, {TESTIMONIALS[0].role}</cite>
-      </blockquote>
+      <NpQuote
+        quote={TESTIMONIALS[0].quote}
+        name={TESTIMONIALS[0].name}
+        role={TESTIMONIALS[0].role}
+      />
 
       {/* ═══ Zone 2 — Show + Setup + Press ═══ */}
-      <div className="np-zone">
-        <div className="np-article">
-          <div className="np-headline">
-            <span className="np-title">The Show</span>
-            <span className="np-meta">Full live — one-man orchestra</span>
-          </div>
-          <figure className="np-figure">
-            <img className="np-media" src={PHOTOS[1].src} alt={PHOTOS[1].alt} />
-            <figcaption className="np-figcaption">{PHOTOS[1].location}</figcaption>
-          </figure>
+      <NpGrid>
+        <NpCard
+          title="The Show"
+          meta="Full live — one-man orchestra"
+          image={{ src: PHOTOS[1].src, alt: PHOTOS[1].alt, caption: PHOTOS[1].location }}
+        >
           <p>{PERFORMANCE_MODES[1].description}</p>
           <div className="np-formats">
             {PERFORMANCE_MODES.map((mode) => (
@@ -96,58 +86,52 @@ export function EPKGrid() {
               </div>
             ))}
           </div>
-        </div>
+        </NpCard>
 
-        <div className="np-article">
-          <div className="np-headline">
-            <span className="np-title">The Setup</span>
-            <span className="np-meta">{TECH_RIDER.headline}</span>
-          </div>
-          <figure className="np-figure">
-            <img className="np-media" src={PHOTOS[2].src} alt={PHOTOS[2].alt} />
-            <figcaption className="np-figcaption">{PHOTOS[2].location}</figcaption>
-          </figure>
+        <NpCard
+          title="The Setup"
+          meta={TECH_RIDER.headline}
+          image={{ src: PHOTOS[2].src, alt: PHOTOS[2].alt, caption: PHOTOS[2].location }}
+        >
           <p>Signal: {TECH_RIDER.signalFlow}</p>
           <p>Setup {TECH_RIDER.setup} · Soundcheck {TECH_RIDER.soundcheck} · Breakdown {TECH_RIDER.breakdown}</p>
-          <div className="np-button">
-            <a href={TECH_RIDER.downloadUrl} download>Download Tech Rider PDF</a>
-          </div>
-        </div>
+          <NpLink href={TECH_RIDER.downloadUrl} download variant="button">
+            Download Tech Rider PDF
+          </NpLink>
+        </NpCard>
 
-        <div className="np-article">
-          <div className="np-headline">
-            <span className="np-title">Press</span>
-          </div>
+        <NpCard title="Press">
           {PRESS.filter(p => p.hasLink).map((p, i) => (
             <p key={i}>
-              <a href={p.url} target="_blank" rel="noopener noreferrer" className="np-press-link">
+              <NpLink href={p.url} external variant="press">
                 &ldquo;{p.quote}&rdquo;
-              </a>
+              </NpLink>
               <br />
               <small>{p.outlet} — {p.date}</small>
             </p>
           ))}
-        </div>
-      </div>
+        </NpCard>
+      </NpGrid>
 
       {/* ═══ Quote 2 ═══ */}
-      <blockquote className="np-citation">
-        &ldquo;{TESTIMONIALS[1].quote}&rdquo;
-        <cite className="np-cite">— {TESTIMONIALS[1].name}, {TESTIMONIALS[1].role}</cite>
-      </blockquote>
+      <NpQuote
+        quote={TESTIMONIALS[1].quote}
+        name={TESTIMONIALS[1].name}
+        role={TESTIMONIALS[1].role}
+      />
 
       {/* ═══ Zone 3 — Watch ═══ */}
-      <div className="np-zone">
+      <NpGrid>
         {VIDEOS.items.filter(v => v.youtubeId).slice(0, 5).map((v) => (
-          <div key={v.id} className="np-article">
-            <a href={`https://youtube.com/watch?v=${v.youtubeId}`} target="_blank" rel="noopener noreferrer" className="np-press-link">
-              {v.title}
-            </a>
-            <br />
-            <small>{v.subtitle} — {v.duration}</small>
-          </div>
+          <NpVideoCard
+            key={v.id}
+            youtubeId={v.youtubeId}
+            title={v.title}
+            subtitle={v.subtitle}
+            duration={v.duration}
+          />
         ))}
-      </div>
+      </NpGrid>
 
       {/* ═══ Book — full width CTA ═══ */}
       <div className="np-cta">
@@ -158,16 +142,23 @@ export function EPKGrid() {
         <div className="np-cta-grid">
           <div>
             <p>
-              <a href={`mailto:${ARTIST.bookingEmail}?subject=Booking Inquiry — FLUTUR 2026`} className="np-press-link">{ARTIST.bookingEmail}</a>
+              <NpLink
+                href={`mailto:${ARTIST.bookingEmail}?subject=Booking Inquiry — FLUTUR 2026`}
+                variant="press"
+              >
+                {ARTIST.bookingEmail}
+              </NpLink>
             </p>
             <p>
-              <a href={ARTIST.whatsapp} target="_blank" rel="noopener noreferrer" className="np-press-link">WhatsApp</a>
+              <NpLink href={ARTIST.whatsapp} external variant="press">
+                WhatsApp
+              </NpLink>
             </p>
           </div>
           <div>
-            <div className="np-button">
-              <a href={TECH_RIDER.promoUrl} download>Download Promo Sheet</a>
-            </div>
+            <NpLink href={TECH_RIDER.promoUrl} download variant="button">
+              Download Promo Sheet
+            </NpLink>
           </div>
         </div>
       </div>
@@ -175,11 +166,15 @@ export function EPKGrid() {
       {/* ═══ Footer ═══ */}
       <div className="np-footer">
         {SOCIAL_LINKS.map((link) => (
-          <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" className="np-footer-link">{link.name}</a>
+          <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" className="np-footer-link">
+            {link.name}
+          </a>
         ))}
         <span className="np-footer-sep">·</span>
         {MUSIC_LINKS.map((link) => (
-          <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" className="np-footer-link">{link.name}</a>
+          <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" className="np-footer-link">
+            {link.name}
+          </a>
         ))}
       </div>
     </div>
