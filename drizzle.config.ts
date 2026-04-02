@@ -5,6 +5,6 @@ export default defineConfig({
   schema: "./src/db/schema.ts",
   out: "./src/db/migrations",
   dbCredentials: {
-    url: process.env.DATABASE_URL || "postgresql://flutur:dev@localhost:5432/flutur_dev",
+    url: process.env.DATABASE_URL || "postgresql://flutur:dev@localhost:5433/flutur_dev",
   },
 });
