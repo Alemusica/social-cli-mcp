@@ -1,29 +1,24 @@
-FROM node:20-alpine
-
+FROM node:22-slim AS builder
 WORKDIR /app
-
-# Copy package files
-COPY package*.json ./
-COPY tsconfig.json ./
-
-# Install ALL dependencies (need devDeps for build)
+COPY package.json package-lock.json ./
 RUN npm ci
-
-# Copy source
-COPY src/ ./src/
-
-# Build TypeScript
+COPY tsconfig.json drizzle.config.ts ./
+COPY src/ src/
 RUN npm run build
+RUN npm ci --omit=dev
 
-# Prune dev dependencies
-RUN npm prune --production
+FROM node:22-slim
+WORKDIR /app
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json .
 
-# Environment
 ENV NODE_ENV=production
+RUN addgroup --system mcp && adduser --system --ingroup mcp mcp
+USER mcp
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD node -e "console.log('healthy')" || exit 1
+EXPOSE 3000
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
+  CMD curl -f http://localhost:3000/health || exit 1
 
-# Run the bot
-CMD ["node", "dist/telegram-bot.js"]
+ENTRYPOINT ["node", "dist/server/index.js"]
