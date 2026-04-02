@@ -1,4 +1,5 @@
 // src/server/index.ts
+import * as Sentry from "@sentry/node";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { loadCredentialsToEnv } from "../config/credentials.js";
@@ -17,6 +18,12 @@ const log = createLogger("mcp-server");
 async function main() {
   // Load credentials
   loadCredentialsToEnv();
+
+  // Sentry monitoring (opt-in via SENTRY_DSN env var)
+  if (process.env.SENTRY_DSN) {
+    Sentry.init({ dsn: process.env.SENTRY_DSN });
+    log.info("Sentry initialized");
+  }
 
   const server = new McpServer({
     name: "flutur-ops",
