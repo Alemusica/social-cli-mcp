@@ -11,7 +11,7 @@
 import { TwitterApi } from 'twitter-api-v2';
 import { createLogger } from '../../lib/logger.js';
 import type { PostResult, TwitterPostOptions, SocialClient, Config } from '../../types.js';
-import { checkDuplicate, recordPost } from '../../core/duplicate-checker.js';
+import { checkDuplicate, recordPost } from '../content/duplicate-checker.js';
 
 const log = createLogger('twitter');
 

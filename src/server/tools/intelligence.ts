@@ -70,7 +70,7 @@ export function registerIntelligenceTools(server: McpServer) {
     {
       days: z.number().optional().default(7).describe("How many days back to scan"),
       domain_to_venue: z
-        .record(z.string())
+        .record(z.string(), z.string())
         .optional()
         .default({})
         .describe("Map of email domain to venue name, e.g. {villaportarelais.com: 'Villa Porta'}"),

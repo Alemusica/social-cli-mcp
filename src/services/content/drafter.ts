@@ -17,7 +17,7 @@ import {
   getPillarHashtags,
   determinePillarFromContent,
   type PillarKey,
-} from "../../core/pillar-helpers.js";
+} from "./pillars.js";
 import { createLogger } from "../../lib/logger.js";
 
 const log = createLogger("content-drafter");
