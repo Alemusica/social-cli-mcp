@@ -4,10 +4,13 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { loadCredentialsToEnv } from "../config/credentials.js";
 import { createLogger } from "../lib/logger.js";
 
-// Tool registrations (added in subsequent tasks)
-// import { registerPostingTools } from "./tools/posting.js";
-// import { registerOutreachTools } from "./tools/outreach.js";
 import { registerSystemTools } from "./tools/system.js";
+import { registerPostingTools } from "./tools/posting.js";
+import { registerOutreachTools } from "./tools/outreach.js";
+import { registerAnalyticsTools } from "./tools/analytics.js";
+import { registerContentTools } from "./tools/content.js";
+import { registerCalendarTools } from "./tools/calendar.js";
+import { registerIntelligenceTools } from "./tools/intelligence.js";
 
 const log = createLogger("mcp-server");
 
@@ -22,12 +25,12 @@ async function main() {
 
   // Register tools
   registerSystemTools(server);
-  // registerPostingTools(server);  // uncomment as migrated
-  // registerOutreachTools(server);
-  // registerAnalyticsTools(server);
-  // registerContentTools(server);
-  // registerCalendarTools(server);
-  // registerIntelligenceTools(server);
+  registerPostingTools(server);
+  registerOutreachTools(server);
+  registerAnalyticsTools(server);
+  registerContentTools(server);
+  registerCalendarTools(server);
+  registerIntelligenceTools(server);
 
   // Transport selection
   if (process.env.MCP_TRANSPORT === "http") {
