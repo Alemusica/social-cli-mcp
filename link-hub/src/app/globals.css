@@ -26,7 +26,7 @@
   --epk-text-tertiary: #918c86;
 
   /* Rules */
-  --epk-rule: rgba(212, 165, 116, 0.20);
+  --epk-rule: rgba(212, 165, 116, 0.40);
   --epk-rule-weight: 1px;
 
   /* Borders — warm-shifted */
@@ -44,13 +44,13 @@
   --np-space-xl: clamp(26px, 1.625rem + 0.71vw, 34px);
   --np-space-2xl: clamp(42px, 2.625rem + 1.16vw, 55px);
 
-  /* Typography — perfect fourth scale (×1.333) from 16px base */
-  --np-type-xs: 11px;      /* meta, captions */
-  --np-type-sm: 15px;      /* base — body text */
-  --np-type-md: 20px;      /* ×1.333 — subtitle */
-  --np-type-lg: 26px;      /* ×1.333² — section title, quotes */
-  --np-type-xl: 35px;      /* ×1.333³ — display/masthead min */
-  --np-type-2xl: 46px;     /* ×1.333⁴ — masthead max */
+  /* Typography — perfect fourth scale (×1.333) from 16px base, tuned for serif */
+  --np-type-xs: 12px;      /* meta, captions */
+  --np-type-sm: 16px;      /* base — body text */
+  --np-type-md: 21px;      /* ×1.333 — subtitle */
+  --np-type-lg: 28px;      /* ×1.333² — section title, quotes */
+  --np-type-xl: 37px;      /* ×1.333³ — display/masthead min */
+  --np-type-2xl: 50px;     /* ×1.333⁴ — masthead max */
 
   /* Line heights — tight everywhere, newspaper density */
   --np-leading-tight: 1.1;
@@ -68,7 +68,7 @@
 
   /* Fonts — set by next/font */
   --font-display-serif: 'Playfair Display', Georgia, serif;
-  --font-body: 'Space Grotesk', -apple-system, 'Helvetica Neue', sans-serif;
+  --font-body: 'Newsreader', Georgia, 'Times New Roman', serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 }
 
@@ -301,31 +301,29 @@ select:focus-visible {
   border-top: 1px solid var(--epk-rule);
   padding: var(--np-space-sm) 0;
   margin-top: var(--np-space-md);
-  font-weight: 500;
+  font-weight: 400;
   font-size: 0.750rem;
   font-family: var(--font-body);
   letter-spacing: 0.06em;
   color: var(--epk-text-tertiary);
 }
 
-/* ─── Grid zones — SILO: gap IS the rule, background bleeds through ─── */
+/* ─── Grid zones — SILO pattern: gap + background bleed ─── */
 .np-zone {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--np-space-md);
+  gap: 1px;
+  background: var(--epk-rule);
   margin-bottom: var(--np-space-lg);
+}
+.np-zone > * {
+  background: var(--epk-bg-primary);
+  padding: var(--np-space-sm);
 }
 
 @media screen and (min-width: 768px) {
   .np-zone {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 1px;
-    row-gap: 1px;
-    background: var(--epk-rule);
-  }
-  .np-zone > * {
-    background: var(--epk-bg-primary);
-    padding: var(--np-space-md);
   }
 }
 
@@ -338,6 +336,26 @@ select:focus-visible {
 @media screen and (max-width: 767px) {
   .np-weather { display: none; }
   .np-masthead { font-size: 3rem; }
+}
+
+/* ─── 2-column zone variant (Setup + Press, etc.) ─── */
+@media screen and (min-width: 1100px) {
+  .np-zone.np-zone-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ─── Section label — newspaper zone header ─── */
+.np-section-label {
+  font-size: var(--np-type-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--np-tracking-wide);
+  color: var(--epk-text-primary);
+  display: block;
+  margin-bottom: var(--np-space-lg);
+  padding: var(--np-space-sm) 0;
+  border-top: 2px solid var(--epk-text-primary);
+  border-bottom: 1px solid var(--epk-rule);
 }
 
 /* ─── Article blocks ─── */
@@ -353,6 +371,25 @@ select:focus-visible {
   font-size: var(--np-type-xs);
   font-family: var(--font-body);
   letter-spacing: 0.02em;
+}
+
+/* ─── Feature article — SILO pattern: photo inline left, text right ─── */
+.np-card-feature {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--np-space-md);
+}
+@media screen and (min-width: 600px) {
+  .np-card-feature {
+    grid-template-columns: 280px 1fr;
+  }
+  .np-card-feature .np-figure {
+    aspect-ratio: 1;
+    margin: 0;
+  }
+  .np-card-feature .np-headline {
+    margin-bottom: var(--np-space-xs);
+  }
 }
 
 /* ─── 3-level heading hierarchy ─── */
@@ -372,12 +409,12 @@ select:focus-visible {
 
 /* Level 1 — Section title (×1.333²) */
 .np-title {
-  font-weight: 500;
+  font-weight: 400;
   font-size: var(--np-type-lg);
   text-transform: uppercase;
   display: block;
   line-height: var(--np-leading-tight);
-  letter-spacing: var(--np-tracking-normal);
+  letter-spacing: 0.02em;
   color: var(--epk-text-primary);
 }
 
@@ -394,7 +431,7 @@ select:focus-visible {
 
 /* Level 3 — Metadata (base / 1.333) */
 .np-meta {
-  font-weight: 500;
+  font-weight: 400;
   font-size: var(--np-type-xs);
   display: block;
   letter-spacing: var(--np-tracking-wide);
@@ -425,7 +462,7 @@ select:focus-visible {
   font-family: var(--font-body);
   font-size: 6em;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   position: absolute;
   left: -4px;
   top: -8px;
@@ -463,15 +500,15 @@ select:focus-visible {
   aspect-ratio: 16/9;
   background: var(--epk-bg-medium);
 }
-/* Base image/video — grayscale layer, consistent frame */
+/* Base image/video — newspaper editorial treatment (sepia + grayscale + multiply) */
 .np-media {
-  filter: grayscale(100%) contrast(1);
-  opacity: 0.8;
+  filter: sepia(60%) grayscale(80%) contrast(1) opacity(0.85);
+  mix-blend-mode: multiply;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: filter 0.5s ease-out, opacity 0.5s ease-out;
+  transition: filter 0.5s ease-out, opacity 0.5s ease-out, mix-blend-mode 0.5s;
   animation: np-img-entrance 0.9s cubic-bezier(0.76, 0, 0.24, 1) both;
 }
 /* Color overlay — revealed via clip-path on hover (ui-blocks pattern) */
@@ -485,33 +522,60 @@ select:focus-visible {
   pointer-events: none;
 }
 .np-figure:hover .np-media {
-  filter: grayscale(0%) contrast(1);
-  opacity: 1;
+  filter: sepia(0%) grayscale(0%) contrast(1) opacity(1);
+  mix-blend-mode: normal;
 }
 /* Video in cards — same filter treatment as images */
 video.np-media {
   object-fit: cover;
 }
-/* YouTube embed — inline autoplay, grayscale newspaper treatment */
-.np-embed {
+/* YouTube player — click to unlock audio, hover to fade volume */
+.np-yt-player {
   position: relative;
   aspect-ratio: 16/9;
   overflow: hidden;
+  cursor: pointer;
   margin: 0 0 var(--np-space-md);
+  background: var(--epk-bg-medium);
 }
-.np-media-embed {
+.np-yt-player iframe {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   border: 0;
+  pointer-events: none;
   filter: grayscale(100%) contrast(1) opacity(0.8);
   transition: filter 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+}
+/* Overlay blocks all YouTube UI hover states */
+.np-yt-player::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+.np-yt-player:hover iframe {
+  filter: grayscale(0%) contrast(1) opacity(1);
+}
+/* "Click for sound" hint */
+.np-yt-hint {
+  position: absolute;
+  bottom: var(--np-space-sm);
+  left: var(--np-space-sm);
+  z-index: 3;
+  font-size: var(--np-type-xs);
+  font-family: var(--font-body);
+  color: var(--epk-text-primary);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2px 8px;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transition: opacity 0.3s;
   pointer-events: none;
 }
-.np-embed:hover .np-media-embed {
-  filter: grayscale(0%) contrast(1) opacity(1);
-  pointer-events: auto;
+.np-yt-player:hover .np-yt-hint {
+  opacity: 1;
 }
 
 /* Stagger entrance per zone position */
@@ -575,7 +639,7 @@ video.np-media {
   z-index: 2;
 }
 .np-video-title {
-  font-weight: 500;
+  font-weight: 400;
   font-size: var(--np-type-sm);
   color: var(--epk-gold);
   display: block;
@@ -733,7 +797,7 @@ video.np-media {
 .np-cred-item strong {
   color: var(--epk-text-primary);
   font-size: var(--np-type-sm);
-  font-weight: 500;
+  font-weight: 400;
 }
 .np-cred-item small {
   color: var(--epk-text-tertiary);
@@ -802,23 +866,26 @@ video.np-media {
   color: var(--epk-text-tertiary);
 }
 
-/* ─── GalleryCard — horizontal scroll reel (Every Layout: Reel) ─── */
+/* ─── GalleryCard — horizontal reel (Every Layout: Reel pattern) ─── */
 .np-card-gallery {
-  grid-column: 1 / -1;
+  border-top: 1px solid var(--epk-rule);
+  padding-top: var(--np-space-md);
+  margin-bottom: var(--np-space-lg);
+  overflow: hidden;
 }
 .np-gallery-reel {
   display: flex;
-  gap: var(--np-space-md);
+  gap: 1px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: var(--np-space-sm);
 }
 .np-gallery-item {
   flex: 0 0 auto;
-  width: clamp(200px, 30vw, 380px);
+  width: clamp(180px, 25vw, 320px);
   scroll-snap-align: start;
   aspect-ratio: 3/4;
+  margin: 0;
 }
 
 /* ─── Full-width elements outside grid ─── */

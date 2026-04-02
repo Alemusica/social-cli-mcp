@@ -1,5 +1,7 @@
 'use client';
 
+import { YouTubePlayer } from './YouTubePlayer';
+
 export interface NpMedia {
   src: string;
   alt: string;
@@ -27,18 +29,11 @@ export function NpFigure({ media, frame = 'default' }: NpFigureProps) {
 
   if (mediaType === 'youtube' && media.youtubeId) {
     return (
-      <div className={`np-figure np-embed ${extraClass}`.trim()}>
-        <iframe
-          className="np-media-embed"
-          src={`https://www.youtube.com/embed/${media.youtubeId}?autoplay=1&mute=1&loop=1&playlist=${media.youtubeId}&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1`}
-          allow="autoplay; encrypted-media"
-          loading="lazy"
-          title={media.alt}
-        />
-        {media.caption && (
-          <figcaption className="np-figcaption">{media.caption}</figcaption>
-        )}
-      </div>
+      <YouTubePlayer
+        youtubeId={media.youtubeId}
+        title={media.alt}
+        caption={media.caption}
+      />
     );
   }
 

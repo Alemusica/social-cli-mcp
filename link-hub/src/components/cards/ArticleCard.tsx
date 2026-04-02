@@ -11,15 +11,28 @@ interface ArticleCardProps {
   subtitle?: string;
   href?: string;
   media?: NpMedia;
+  feature?: boolean;
+  bar?: string[];
   children?: ReactNode;
 }
 
-export function ArticleCard({ title, meta, subtitle, href, media, children }: ArticleCardProps) {
+export function ArticleCard({ title, meta, subtitle, href, media, feature, bar, children }: ArticleCardProps) {
+  const cls = feature ? 'np-article np-card-feature' : 'np-article np-card-article';
+
   return (
-    <article className="np-article np-card-article">
-      <NpHeadline title={title} meta={meta} subtitle={subtitle} href={href} />
+    <article className={cls}>
       {media && <NpFigure media={media} />}
-      {children && <div className="np-body">{children}</div>}
+      <div>
+        <NpHeadline title={title} meta={meta} subtitle={subtitle} href={href} />
+        {children && <div className="np-body">{children}</div>}
+        {bar && bar.length > 0 && (
+          <div className="np-bar">
+            {bar.map((item, i) => (
+              <span key={i} className="np-bar-item">{item}</span>
+            ))}
+          </div>
+        )}
+      </div>
     </article>
   );
 }

@@ -1,22 +1,32 @@
 import type { Metadata } from 'next';
-import { Space_Grotesk, IBM_Plex_Mono, Playfair_Display } from 'next/font/google';
+import {
+  Space_Grotesk,
+  IBM_Plex_Mono,
+  Playfair_Display,
+  Inter,
+  DM_Sans,
+  Instrument_Serif,
+  Newsreader,
+  Cormorant_Garamond,
+} from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 import { ARTIST, CREDENTIALS } from '@/lib/artist-config';
 import { LenisProvider } from '@/providers/LenisProvider';
+import { FontToggle } from '@/components/FontToggle';
 
 // Font loading via next/font — no Google CDN @import
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-body',
+  weight: ['400'],
+  variable: '--font-space-grotesk',
   display: 'swap',
 });
 
 const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
-  weight: ['400', '700', '900'],
+  weight: ['400', '900'],
   style: ['normal', 'italic'],
   variable: '--font-display-serif',
   display: 'swap',
@@ -24,8 +34,45 @@ const playfairDisplay = Playfair_Display({
 
 const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],
-  weight: ['400', '500'],
+  weight: ['400'],
   variable: '--font-mono',
+  display: 'swap',
+});
+
+// ─── Font toggle candidates ───
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-dm-sans',
+  display: 'swap',
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-instrument-serif',
+  display: 'swap',
+});
+
+const newsreader = Newsreader({
+  subsets: ['latin'],
+  weight: ['400'],
+  style: ['normal', 'italic'],
+  variable: '--font-body',
+  display: 'swap',
+});
+
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-cormorant',
   display: 'swap',
 });
 
@@ -83,7 +130,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${playfairDisplay.variable} ${ibmPlexMono.variable}`}
+      className={`${spaceGrotesk.variable} ${playfairDisplay.variable} ${ibmPlexMono.variable} ${inter.variable} ${dmSans.variable} ${instrumentSerif.variable} ${newsreader.variable} ${cormorantGaramond.variable}`}
     >
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -100,6 +147,7 @@ export default function RootLayout({
         <LenisProvider>
           {children}
         </LenisProvider>
+        <FontToggle />
         <Analytics />
         <SpeedInsights />
       </body>

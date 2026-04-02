@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // Static export for Vercel/Netlify
+  output: 'export',
   images: {
-    unoptimized: true, // Required for static export
+    // Required for static export — images pre-optimized as WebP in /images/optimized/
+    unoptimized: true,
   },
 };
 

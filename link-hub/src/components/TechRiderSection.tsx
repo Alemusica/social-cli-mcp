@@ -1,104 +1,164 @@
+'use client';
+
+import { useRef, useState, useCallback } from 'react';
+import gsap from 'gsap';
 import { TECH_RIDER } from '@/lib/artist-config';
 
-export default function TechRiderSection() {
+export function TechnicalRider() {
+  const expandedRef = useRef(false);
+  const [ariaExpanded, setAriaExpanded] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const iconRef = useRef<HTMLSpanElement>(null);
+
+  const toggle = useCallback(() => {
+    const content = contentRef.current;
+    const icon = iconRef.current;
+    if (!content || !icon) return;
+
+    const isExpanded = expandedRef.current;
+
+    if (!isExpanded) {
+      // Expand — measure real content height, animate to it
+      const autoHeight = content.scrollHeight;
+      gsap.to(content, {
+        height: autoHeight,
+        opacity: 1,
+        duration: 0.6,
+        ease: 'power2.out',
+        onComplete: () => { gsap.set(content, { height: 'auto', overflow: 'visible' }); },
+      });
+      gsap.to(icon, { rotation: 45, duration: 0.3, ease: 'power2.out' });
+    } else {
+      // Collapse — lock overflow first, then shrink
+      gsap.set(content, { overflow: 'hidden' });
+      gsap.to(content, {
+        height: 0,
+        opacity: 0,
+        duration: 0.4,
+        ease: 'power2.inOut',
+      });
+      gsap.to(icon, { rotation: 0, duration: 0.3, ease: 'power2.out' });
+    }
+
+    expandedRef.current = !isExpanded;
+    setAriaExpanded(!isExpanded);
+  }, []);
+
   return (
-    <section id="tech" className="px-6 py-phi-2xl">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl font-display font-light tracking-wide text-text-primary mb-phi-lg text-center">
-          Technical Rider
-        </h2>
+    <section id="tech" className="px-phi-md md:px-phi-xl py-phi-2xl">
+      <div className="rule mb-phi-xl" />
 
-        {/* Self-contained badge */}
-        <div className="flex justify-center mb-phi-lg">
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-accent-gold/40 bg-bg-light">
-            <svg className="w-4 h-4 text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-            <span className="text-sm font-medium text-text-primary">{TECH_RIDER.headline}</span>
+      <div className="max-w-5xl mx-auto">
+        {/* Header row — clickable to expand/collapse */}
+        <button
+          onClick={toggle}
+          className="w-full text-left flex items-start justify-between gap-phi-md group"
+          aria-expanded={ariaExpanded}
+          aria-controls="tech-rider-content"
+        >
+          <div>
+            <p className="font-mono text-micro uppercase text-gold tracking-[0.12em] mb-phi-sm">
+              TECHNICAL
+            </p>
+            <h2 className="font-display text-display font-bold text-text-primary tracking-[0.02em]">
+              TECH RIDER
+            </h2>
           </div>
-        </div>
-
-        {/* Two columns: Artist equipment + Venue needs */}
-        <div className="grid md:grid-cols-2 gap-6 mb-phi-lg">
-          {/* Artist equipment */}
-          <div className="bg-bg-medium rounded-lg overflow-hidden">
-            <div className="px-5 py-3 border-b border-white/5">
-              <h3 className="text-xs font-medium tracking-[0.15em] uppercase text-text-muted">
-                Artist Equipment (provided)
-              </h3>
-            </div>
-            <div className="divide-y divide-white/5">
-              {TECH_RIDER.artistEquipment.map((eq) => (
-                <div key={eq.item} className="px-5 py-2.5">
-                  <span className="text-sm font-medium">{eq.item}</span>
-                  <span className="text-xs text-text-muted ml-2">{eq.note}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Venue requirements */}
-          <div className="bg-bg-medium rounded-lg overflow-hidden">
-            <div className="px-5 py-3 border-b border-white/5">
-              <h3 className="text-xs font-medium tracking-[0.15em] uppercase text-text-muted">
-                Venue Requirements
-              </h3>
-            </div>
-            <div className="divide-y divide-white/5">
-              {TECH_RIDER.venueNeeds.map((need) => (
-                <div key={need.item} className="px-5 py-2.5">
-                  <span className="text-sm font-medium">{need.item}</span>
-                  <span className="text-xs text-text-muted ml-2">{need.spec}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Signal flow */}
-        <div className="bg-bg-medium rounded-lg px-5 py-4 mb-phi-lg text-center">
-          <p className="text-xs font-medium tracking-[0.15em] uppercase text-text-muted mb-2">Signal Flow</p>
-          <p className="text-sm text-text-secondary">{TECH_RIDER.signalFlow}</p>
-        </div>
-
-        {/* Timing */}
-        <div className="grid grid-cols-3 gap-4 mb-phi-lg">
-          <div className="text-center">
-            <p className="text-lg font-medium">{TECH_RIDER.setup}</p>
-            <p className="text-xs text-text-muted">Setup</p>
-          </div>
-          <div className="text-center">
-            <p className="text-lg font-medium">{TECH_RIDER.soundcheck}</p>
-            <p className="text-xs text-text-muted">Soundcheck</p>
-          </div>
-          <div className="text-center">
-            <p className="text-lg font-medium">{TECH_RIDER.breakdown}</p>
-            <p className="text-xs text-text-muted">Breakdown</p>
-          </div>
-        </div>
-
-        {/* Download buttons */}
-        <div className="flex justify-center gap-4">
-          <a
-            href={TECH_RIDER.downloadUrl}
-            download
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-accent-gold/30 hover:bg-accent-gold/5 transition-colors text-sm text-accent-gold"
+          <span
+            ref={iconRef}
+            className="text-gold text-heading-1 font-display leading-none mt-phi-lg select-none"
+            aria-hidden="true"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3M6 20h12" />
-            </svg>
-            Download Tech Rider
-          </a>
-          <a
-            href={TECH_RIDER.promoUrl}
-            download
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-accent-gold/30 hover:bg-accent-gold/5 transition-colors text-sm text-accent-gold"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3M6 20h12" />
-            </svg>
-            Download Promo Sheet
-          </a>
+            +
+          </span>
+        </button>
+
+        {/* Headline — always visible */}
+        <p className="font-body text-body-lg text-text-secondary mt-phi-md max-w-prose">
+          {TECH_RIDER.headline}
+        </p>
+
+        {/* Collapsible content — GSAP height tween, not CSS max-height */}
+        <div
+          ref={contentRef}
+          id="tech-rider-content"
+          style={{ height: 0, opacity: 0, overflow: 'hidden' }}
+        >
+          <div className="pt-phi-xl">
+            {/* Two columns: equipment + venue needs */}
+            <div className="grid md:grid-cols-2 gap-phi-lg">
+              {/* Artist Equipment */}
+              <div>
+                <p className="font-mono text-caption uppercase text-gold tracking-[0.08em] mb-phi-sm">
+                  Artist Equipment
+                </p>
+                <div className="rule mb-phi-sm" />
+                <div className="space-y-0">
+                  {TECH_RIDER.artistEquipment.map((eq) => (
+                    <div key={eq.item} className="py-phi-xs border-b border-rule">
+                      <span className="font-mono text-caption text-text-primary">{eq.item}</span>
+                      <span className="font-mono text-caption text-text-tertiary ml-phi-sm">{eq.note}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Venue Requirements */}
+              <div>
+                <p className="font-mono text-caption uppercase text-gold tracking-[0.08em] mb-phi-sm">
+                  Venue Requirements
+                </p>
+                <div className="rule mb-phi-sm" />
+                <div className="space-y-0">
+                  {TECH_RIDER.venueNeeds.map((need) => (
+                    <div key={need.item} className="py-phi-xs border-b border-rule">
+                      <span className="font-mono text-caption text-text-primary">{need.item}</span>
+                      <span className="font-mono text-caption text-text-tertiary ml-phi-sm">{need.spec}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Signal flow */}
+            <div className="rule my-phi-lg" />
+            <div>
+              <p className="font-mono text-caption uppercase text-gold tracking-[0.08em] mb-phi-xs">
+                Signal Flow
+              </p>
+              <p className="font-mono text-caption text-text-secondary">
+                {TECH_RIDER.signalFlow}
+              </p>
+            </div>
+
+            {/* Timing */}
+            <div className="rule my-phi-lg" />
+            <div className="flex gap-phi-xl">
+              <div>
+                <p className="font-mono text-caption text-text-tertiary uppercase">Setup</p>
+                <p className="font-mono text-caption text-text-primary">{TECH_RIDER.setup}</p>
+              </div>
+              <div>
+                <p className="font-mono text-caption text-text-tertiary uppercase">Soundcheck</p>
+                <p className="font-mono text-caption text-text-primary">{TECH_RIDER.soundcheck}</p>
+              </div>
+              <div>
+                <p className="font-mono text-caption text-text-tertiary uppercase">Breakdown</p>
+                <p className="font-mono text-caption text-text-primary">{TECH_RIDER.breakdown}</p>
+              </div>
+            </div>
+
+            {/* PDF download */}
+            <div className="rule my-phi-lg" />
+            <a
+              href={TECH_RIDER.downloadUrl}
+              download
+              className="btn-primary inline-flex items-center gap-phi-sm"
+              aria-label="Download tech rider PDF"
+            >
+              DOWNLOAD TECH RIDER PDF
+            </a>
+          </div>
         </div>
       </div>
     </section>

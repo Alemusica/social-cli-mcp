@@ -45,14 +45,14 @@ export function EPKGrid() {
         </div>
       </div>
 
-      {/* ═══ Zone 1 — Intro ═══ */}
+      {/* ═══ Zone 1 — Intro (3 cards, no empty cells) ═══ */}
       <NpGrid>
         <ArticleCard
           title="From silence, layer by layer"
           meta={`by ${ARTIST.fullName.toUpperCase()}`}
+          bar={['LIVE LOOPING', 'ONE-MAN ORCHESTRA', 'SELF-CONTAINED']}
         >
           <p>{ARTIST.shortBio}</p>
-          <p>Every performance starts from silence. Voice, guitar, RAV Vast, drum pad, synth — each layer is a clone, built live in real time.</p>
         </ArticleCard>
 
         <ArticleCard
@@ -66,6 +66,7 @@ export function EPKGrid() {
             type: 'youtube',
             youtubeId: VIDEOS.items[0].youtubeId,
           }}
+          bar={['RAV VAST', 'LIVE LOOPING', VIDEOS.items[0].duration]}
         />
 
         <CredentialCard
@@ -95,15 +96,15 @@ export function EPKGrid() {
                   ? { src: PHOTOS[0].src, alt: PHOTOS[0].alt, caption: PHOTOS[0].location }
                   : { src: PHOTOS[2].src, alt: PHOTOS[2].alt, caption: PHOTOS[2].location }
             }
+            bar={[mode.duration, ...mode.bestFor.slice(0, 2)]}
           >
             <p>{mode.description}</p>
-            <p><small>{mode.bestFor.join(' · ')}</small></p>
           </ArticleCard>
         ))}
       </NpGrid>
 
       {/* ═══ Zone 3 — Setup + Press ═══ */}
-      <NpGrid>
+      <NpGrid cols={2}>
         <TechCard
           title="The Setup"
           meta={TECH_RIDER.headline}
@@ -137,7 +138,8 @@ export function EPKGrid() {
         role={TESTIMONIALS[1].role}
       />
 
-      {/* ═══ Zone 4 — Watch (3 feature videos, newspaper articles) ═══ */}
+      {/* ═══ Zone 4 — Moments (3 feature videos, newspaper articles) ═══ */}
+      <div className="np-section-label">Moments</div>
       <NpGrid>
         {VIDEOS.items.filter(v => v.youtubeId).slice(0, 3).map((v) => (
           <ArticleCard
