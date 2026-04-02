@@ -1,10 +1,13 @@
-# v7.0 | flutur-cc | 2026-02-07
+# v8.0 | flutur-cc | 2026-04-02
 
 ## GRAFO
 
-S.1 "SurrealDB" :graph @localhost:8000 ns=social db=analytics root/root
-  .schema → src/db/schema.surql
-  .fn → {outreach_status, data_freshness, top_hashtags, daily_analytics, recent_correlations}
+S.1 "Neon PostgreSQL" :rdbms+vector @localhost:5433 (Docker pgvector/pg16) | Neon in prod
+  .schema → src/db/schema.ts (Drizzle ORM, 27 tables + 3 junction + pgvector)
+  .migrations → src/db/migrations/ (drizzle-kit generate/push)
+  .client → src/db/client.ts (node-postgres pool + withTenant RLS)
+  .multi-tenant → tenant_id + RLS policies (FORCE ROW LEVEL SECURITY)
+  .backup → scripts/backup.sh (daily 4AM launchd, 30-day rotation)
 
 S.2 "Supabase" :storage+ai | file storage + Claude Vision labeling
   .schema → supabase/migrations/001_photos_schema.sql
@@ -12,7 +15,7 @@ S.2 "Supabase" :storage+ai | file storage + Claude Vision labeling
   .sync → npx tsx scripts/sync-supabase-photos.ts [import|label|sync|status]
 
 S.3 "Keychain" :credentials service="social-cli-mcp"
-  .api → src/core/credentials.ts | getFromKeychain() setInKeychain()
+  .api → src/config/credentials.ts | getFromKeychain() setInKeychain() loadCredentialsToEnv()
   .ok = {Twitter, Instagram, Gmail, Telegram, Anthropic}
   .setup = {YouTube, Supabase}
   .missing = {LinkedIn, TikTok}
@@ -55,9 +58,9 @@ M.6 contentDrafter :interview | NON inventa, chiede
   .styles = {storytelling, minimal, poetic, educational, bridge}
   .guard = "Cosa NON devo inventare?"
 M.7 email-guard :safety fail-CLOSED
-  .limit = 25/day
-  .log → logs/send-log.json (append-only)
-  → gmail-sender → S.1:email →sent_to→ venue
+  .limit = 55/day
+  .log → S.1:send_log table (Drizzle)
+  → gmail-sender → S.1:email (venueId FK)
 M.8 duplicateChecker :auto
   | exact + 70% similarity + topic cooldown 7d
   .track → {analytics/posted-tweets-index.json, analytics/posted-instagram-index.json}
@@ -92,25 +95,32 @@ M.13 intelligenceRouter :orchestrator | event→action dispatcher
   | Conversation dept: thread status, suggested next action
 ```
 
-BARREL: src/core/index.ts ⊃ {bootstrap, db, credentials, M.1–M.13, pillarHelpers}
+BARREL (v8): src/services/ ⊃ {platform/, outreach/, analytics/, content/, calendar/, memory/}
+MCP SERVER: src/server/index.ts → src/server/tools/*.ts (7 domain files)
+TELEGRAM: src/server/telegram.ts (thin client calling services)
+OLD BARREL: src/core/index.ts (DEPRECATED — kept for reference during migration)
 
 ## FONTI CANONICHE (ρ→0)
 
 | Dato | Fonte | σ |
 |------|-------|---|
-| Schema DB | src/db/schema.surql | σ₀ |
-| Tipi TS | src/analytics/types.ts + src/types.ts | σ₀ |
-| API surface | src/core/index.ts | σ₀ |
+| Schema DB | src/db/schema.ts (Drizzle) | σ₀ |
+| Migrations | src/db/migrations/*.sql | σ₀ |
+| DB Client + RLS | src/db/client.ts (withTenant) | σ₀ |
+| Tipi TS | inferred from src/db/schema.ts | σ₀ |
+| API surface | src/server/index.ts → src/server/tools/*.ts | σ₀ |
+| Services | src/services/{platform,outreach,analytics,content,calendar,memory}/ | σ₀ |
 | Artist links | content/artist-links.json | σ₀ |
 | Agent arch | src/agents/ARCHITECTURE.md | σ₀ |
 | Strategy | content/STRATEGY_2026.md | σ₀ |
-| Story store | src/db/story-store.ts | σ₀ |
-| Research store | src/db/research-store.ts | σ₀ |
-| Memory types | src/agents/memory/types.ts | σ₀ |
-| Gmail reader | src/clients/gmail-reader.ts | σ₀ |
-| Conversation store | src/outreach/conversation-store.ts | σ₀ |
-| Auth system | docs/AUTH_SYSTEM.md | σ₀ |
-| Intelligence router | src/agents/intelligence-router.ts | σ₀ |
+| Email guard | src/lib/email-guard.ts | σ₀ |
+| Logger | src/lib/logger.ts | σ₀ |
+| Credentials | src/config/credentials.ts | σ₀ |
+| Tenant config | src/config/tenant.ts | σ₀ |
+| Auth middleware | src/server/middleware/auth.ts | σ₀ |
+| Telegram bot | src/server/telegram.ts | σ₀ |
+| Venue categorization | src/analysis/venue-categorization.ts | σ₀ |
+| Portugal deep research | content/outreach/venues/comporta-cluster-deep-research-2026-02-08.json | σ₀ |
 
 σ₀ = fonte canonica altrove, non ripetuto qui.
 Questo file: solo σ₁ (struttura) + σ₂ (vincoli irriducibili).
@@ -141,6 +151,41 @@ Multi-agent: Task tool parallelo per task composti.
 FLUTUR = IL PONTE musica↔tech
 "Dal sunrise in Grecia al codice AI — layer su layer"
 σ₂ LIVE ACT non producer | 683 monthly Spotify | focus performance
+σ₂ NOT A DJ. PERFORMER. Rockstar che fa un set elettronico. MAI suggerire "DJ hybrid" o estendere oltre 2h.
+
+### Performance (σ₂ HARD RULES)
+σ₂ MAX 2h qualsiasi contesto. 1.5h sweet spot. Villa Porta 3h = compromesso odiato. Denver = 1h.
+σ₂ MAI scusarsi per la durata. "A FLUTUR set IS 2 hours" — dato di fatto, non limitazione.
+σ₂ MAI dire "I can only do 2h". Dire "My set is 2 hours — like a concert act."
+σ₂ Backing tracks + live instruments = il suo formato. NON è DJing. È performance con tela sonora.
+
+### 3 Performance Tiers (1 brand, 3 prodotti)
+
+| Tier | Nome | Contesto | Durata | Fee | Video | Credential lead |
+|------|------|----------|--------|-----|-------|-----------------|
+| A | The Show | music venue, festival, concert | 1-1.5h | €600-1200 | GGT / Who Is Flutur | Drishti Beats main stage |
+| B | Sunset Session | beach club, hotel, rooftop | 1.5-2h | €400-800 | Father Ocean highlight | Villa Porta 4y |
+| C | Sound Journey | wellness, retreat, ceremony | 1-2h | €300-600 | Efthymia | RAV Vast endorsed |
+
+### Duration Framing (σ₂ per contesto)
+Beach club: "You wouldn't book a rockstar for 4h. Headline slot. Your house DJ handles before/after."
+Wellness: "Sound journeys are 1-2h — grounding, journey, integration. Longer = lose the container."
+Hotel: "Curated experience with beginning, climax, resolution — like a film, not a playlist."
+Price: €400/2h = €200/ora. DJ €400/4h = €100/ora. Il doppio al minuto perché è live.
+
+### Credential Map (σ₂ — cosa enfatizzare per chi)
+
+| Venue type | Lead | Supporting | Video | MAI menzionare |
+|------------|------|-----------|-------|----------------|
+| Beach club | Villa Porta 4y | GGT text, self-contained | Father Ocean HL | Sound healing, endorsed |
+| Rooftop | Villa Porta 4y | GGT text, Maggiore | Father Ocean HL | Wellness, ceremony |
+| Hotel luxury | Villa Porta 4y | Self-contained | Father Ocean HL | Busking, street origins |
+| Music venue (bar/club) | Villa Porta 4y + Drishti Beats | GGT text, YMH Denver | Father Ocean HL | Wellness, healing, Efthymia |
+| Music venue (acoustic/listening) | Villa Porta 4y | RAV Vast endorsed, GGT text | Transcendence | DJ energy, electronic |
+| Concert venue (sala) | Drishti Beats + GGT text | Villa Porta, YMH Denver | Transcendence | Wellness, healing |
+| Wellness/retreat | RAV Vast endorsed | 4y facilitating | Efthymia | GGT (troppo mainstream), DJ energy |
+| Ecstatic dance | RAV Vast solo | 4y ceremony | Transcendence | GGT, luxury |
+| Agency | Full package | Tutto | Who Is Flutur | Niente — mostra versatilità |
 
 ### Credentials (σ₂)
 GGT 4 YES | Villa Porta 4y | RAV Vast Endorsed
@@ -153,6 +198,7 @@ Sunset ceremonies luxury hospitality
 min = Voce + Chitarra + RAV Vast + Looper
 full = one-man orchestra (+ Elettrica + Drum Pad + Haken Continuum + Push 3)
 σ₂ self-contained: no backline, no sound engineer
+σ₂ "one-person show" o "self-contained" — MAI "one-man band" (suona scrappy) o "solo artist" (suona stripped)
 Sound healing: self-taught, 4y luxury hotels, NON certificato
 
 ### Positioning (σ₂)
@@ -189,17 +235,38 @@ Parallel paths (tech + music) → Saturday crossover | Mon=setup Sat=payoff
 
 ## OUTREACH (σ₂ vincoli)
 
+σ₂ MAI mandare email senza preview + approvazione esplicita di Alessio.
+Workflow: genera batch → mostra preview (venue, categorie, video, body) → Alessio approva/modifica → SOLO ALLORA manda.
+Eccezione: morning-check LEGGE inbox, non manda.
+
 Phase1 cold OK: jazz, small hotels, rooftop
 Phase2 cold+warm: beach lounges, wellness
 σ₂ Phase3 NO cold: premium clubs (Scorpios), luxury (Borgo Egnazia), major festivals
 
-### Video Assets → reply rate
-V.1 efthymia             wellness/spa    10% σ₂ BEST
-V.2 rocca-transcendence  jazz/music      —
-V.3 rocca-father-ocean   beach clubs     —
-V.4 rocca-chase-the-sun  italian beach   0% rethink
-V.5 who-is-flutur        festivals/press —
-σ₂ DO NOT USE: rocca-full-set
+### Video Assets → venue type mapping (σ₂ — REVISED 2026-02-10)
+V.3 father-ocean-HL      **PRIMARY COLD EMAIL VIDEO** | beach club/hotel/rooftop/music venue/bar
+                         σ₂ Default per OGNI cold email. Impatto immediato, mostra il prodotto sul floor.
+V.2 transcendence        ecstatic dance / concert venue / acoustic venue | mostra range RAV→house (3min)
+V.1 efthymia             **SECOND CONTACT / warm leads ONLY** | 6min troppo lungo per cold
+                         Cold OK SOLO per: wellness/retreat/ceremony + venue tipo Jericoacoara (bohemian/spiritual)
+                         σ₂ MAI come cold email lead per music venue, bar, club, hotel generico
+                         "Jericoacoara test": venue bohemian/spirituale/alternativa → Efthymia OK. Altrimenti → Father Ocean HL.
+V.4 father-ocean-FULL    warm leads, second contact    — | Tier B follow-up
+V.5 who-is-flutur        agency/press/festival         — | Tier A
+V.6 ggt-clip             **MAI LINKARE COME VIDEO.** Solo testo nel body: "Greece's Got Talent — 4 YES"
+                         σ₂ TV cut ha sacrificato la performance. 1:30 non mostra profondità reale.
+V.7 sunset-session       luxury venue                  — | Tier B luxury
+σ₂ DO NOT USE: rocca-full-set, rocca-chase-the-sun (0% reply)
+σ₂ LEZIONE 2026-02-10: Efthymia è trascendentale ma non mostra "il prodotto sul floor".
+   Father Ocean HL mostra esattamente cosa ottieni prenotando Flutur. Efthymia mostra chi è Flutur.
+
+### Categorizzazione Venue (σ₂ — LEZIONE 2026-02-08)
+σ₂ MAI categorizzare per solo nome o category field. SEMPRE usare live_music_details.
+Pesi: live_music_details=10, previous_artists=7-9, notes=6, name=6-8, category=5
+Se confidence < 60% → flag per review manuale.
+Se venue ha "sound healing|sound journey|handpan|meditation|breathwork|yoga" → Tier C (Sound Journey) + Efthymia
+Se venue ha "ecstatic dance|conscious gathering" → festival_set + Transcendence
+ERRORE PRECEDENTE: 5 venue wellness ricevettero Father Ocean invece di Efthymia (2026-02-08, Portugal batch).
 
 ---
 
