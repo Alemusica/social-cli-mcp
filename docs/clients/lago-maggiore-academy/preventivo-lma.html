@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta — Lago Maggiore Academy</title>
+    <style>
+        /* ══════════════════════════════════════════════════════════════
+           SWISS TYPOGRAPHIC SYSTEM — v4 (reviewed)
+           Grid: 12-column, φ-derived spacing
+           Type: DM Sans (primary, cross-platform) / Helvetica Neue (fallback Mac)
+           Color: near-black + single warm accent (WCAG AA compliant)
+
+           Cognitive frameworks applied:
+           — F-Pattern: key info anchored top-left, scannable left edge
+           — Inverted Pyramid: conclusion → detail in every section
+           — Signal-to-Noise: every word carries information
+           — Anchoring: value before price
+           — Progressive Disclosure: overview → detail → notes
+           — Dual Coding: typography IS the visual layer
+           ══════════════════════════════════════════════════════════════ */
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap');
+
+        :root {
+            /* Fibonacci spacing */
+            --s-0: 5px;
+            --s-1: 8px;
+            --s-2: 13px;
+            --s-3: 21px;
+            --s-4: 34px;
+            --s-5: 55px;
+            --s-6: 89px;
+
+            /* Swiss type scale — ratio 1.333, base raised for print/60+ reader */
+            --t-xs: 11px;
+            --t-sm: 12.5px;
+            --t-base: 14.5px;
+            --t-md: 16px;
+            --t-lg: 21px;
+            --t-xl: 28px;
+            --t-2xl: 37px;
+
+            /* Ink — near-black, no pure black */
+            --ink: #191919;
+            --ink-70: #4a4a4a;
+            --ink-40: #666666;        /* was #8c8c8c — WCAG AA fix: 5.74:1 on white */
+            --ink-20: #c8c8c8;
+            --ink-08: #ebebeb;
+            --ink-04: #f5f5f5;
+            --paper: #ffffff;
+
+            /* Single accent — warm terracotta, darkened for text AA compliance */
+            --warm: #935a35;          /* was #b87348 — WCAG AA fix: 5.59:1 on white */
+            --warm-deco: #b87348;     /* original value, decorative only (sidebar, borders) */
+            --warm-soft: #faf4ef;
+            --warm-muted: #d4a882;
+
+            /* Line heights */
+            --lh-tight: 1.2;
+            --lh-base: 1.55;         /* was 1.5 — improved for print readability */
+            --lh-loose: 1.7;
+        }
+
+        *, *::before, *::after {
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+
+        @page { size: A4; margin: 0; }
+
+        html {
+            font-size: var(--t-base);
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        body {
+            font-family: 'DM Sans', 'Helvetica Neue', 'Helvetica', system-ui, sans-serif;
+            font-weight: 400;
+            line-height: var(--lh-base);
+            color: var(--ink);
+            background: var(--paper);
+            width: 210mm;
+            margin: 0 auto;
+        }
+
+        /* ─── PAGE LAYOUT ─── */
+        .page {
+            position: relative;
+            min-height: 297mm;
+            padding: var(--s-4) var(--s-5) var(--s-5) var(--s-5);
+            page-break-after: always;
+            break-after: page;
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+            break-after: auto;
+        }
+
+        /* ─── SIDEBAR ACCENT (decorative — uses warm-deco for visual weight) ─── */
+        .page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: var(--warm-deco);
+        }
+
+        /* ─── HEADER ─── */
+        .header {
+            margin-bottom: var(--s-4);   /* was --s-5 (55px) — tighter to recover vertical space */
+        }
+
+        .header-label {
+            font-size: var(--t-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--warm);
+            margin-bottom: var(--s-1);
+        }
+
+        .header-title {
+            font-size: var(--t-2xl);
+            font-weight: 300;
+            letter-spacing: -0.01em;
+            line-height: var(--lh-tight);
+            color: var(--ink);
+        }
+
+        .header-subtitle {
+            font-size: var(--t-md);
+            font-weight: 400;
+            color: var(--ink-40);
+            margin-top: var(--s-1);
+        }
+
+        /* ─── META ROW ─── */
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--s-4);
+            padding-bottom: var(--s-3);
+            border-bottom: 1px solid var(--ink-08);
+        }
+
+        .meta-group { }
+
+        .meta-label {
+            font-size: var(--t-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--ink-40);
+            margin-bottom: var(--s-0);   /* was 3px — aligned to Fibonacci */
+        }
+
+        .meta-value {
+            font-size: var(--t-md);
+            font-weight: 500;
+            color: var(--ink);
+        }
+
+        .meta-sub {
+            font-size: var(--t-sm);
+            color: var(--ink-40);
+            font-weight: 400;
+        }
+
+        .meta-right { text-align: right; }
+
+        /* ─── INTRO (Inverted Pyramid: conclusion first) ─── */
+        .intro {
+            font-size: var(--t-md);
+            line-height: var(--lh-loose);
+            color: var(--ink-70);
+            margin-bottom: var(--s-4);
+            max-width: 85%;
+        }
+
+        /* ─── SECTION ─── */
+        .section {
+            margin-bottom: var(--s-5);
+        }
+
+        /* SILO pattern: borders as structural rhythm between sections */
+        .section + .section {
+            padding-top: var(--s-4);
+            border-top: 1px solid var(--ink-08);
+        }
+
+        .section-number {
+            font-size: var(--t-xl);     /* was --t-2xl — now subordinate to page title */
+            font-weight: 300;
+            color: var(--ink-20);
+            line-height: 1;
+            margin-bottom: var(--s-0);
+        }
+
+        .section-title {
+            font-size: var(--t-lg);
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: var(--s-1);
+            line-height: var(--lh-tight);
+        }
+
+        .section-lead {
+            font-size: var(--t-base);
+            color: var(--ink-70);
+            margin-bottom: var(--s-4);
+            line-height: var(--lh-base);
+        }
+
+        /* ─── ITEM LIST (Chunked, max 5 per group) ─── */
+        .items {
+            margin-bottom: var(--s-3);
+        }
+
+        .item-group-label {
+            font-size: var(--t-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--warm);
+            margin-bottom: var(--s-2);
+            margin-top: var(--s-5);
+        }
+
+        .item-group-label:first-child {
+            margin-top: 0;
+        }
+
+        .item {
+            display: grid;
+            grid-template-columns: var(--s-4) 1fr;
+            gap: 0;
+            margin-bottom: var(--s-3);
+            align-items: baseline;
+        }
+
+        .item-marker {
+            font-size: var(--t-sm);
+            color: var(--ink-20);
+            font-weight: 400;
+        }
+
+        .item-text {
+            font-size: var(--t-base);
+            color: var(--ink-70);
+            line-height: var(--lh-base);
+        }
+
+        .item-text strong {
+            font-weight: 500;
+            color: var(--ink);
+        }
+
+        /* ─── PRICE TAG ─── */
+        .price {
+            display: inline-flex;
+            align-items: baseline;
+            gap: var(--s-1);
+            margin-top: var(--s-4);
+        }
+
+        .price-amount {
+            font-size: var(--t-xl);
+            font-weight: 300;
+            color: var(--ink);
+        }
+
+        .price-period {
+            font-size: var(--t-sm);
+            font-weight: 600;           /* was 500 — more visible distinction UNA TANTUM vs AL MESE */
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ink-70);        /* was --ink-40 — darker for critical info */
+        }
+
+        /* ─── NOTE (Progressive Disclosure — secondary info) ─── */
+        .note {
+            padding: var(--s-3);
+            background: var(--ink-04);
+            border-left: 2px solid var(--ink-08);
+            margin-top: var(--s-3);
+            margin-bottom: var(--s-2);
+        }
+
+        .note p {
+            font-size: var(--t-sm);
+            color: var(--ink-70);        /* was --ink-40 — WCAG fix: 8.86:1 on white */
+            line-height: var(--lh-base);
+        }
+
+        /* ─── ACCENT NOTE ─── */
+        .accent-note {
+            padding: var(--s-3);
+            background: var(--warm-soft);
+            border-left: 2px solid var(--warm-deco);
+            margin-top: var(--s-3);
+            margin-bottom: var(--s-2);
+        }
+
+        .accent-note p {
+            font-size: var(--t-base);
+            color: var(--ink-70);
+            line-height: var(--lh-base);
+        }
+
+        .accent-note strong {
+            font-weight: 500;
+            color: var(--ink);
+        }
+
+        /* ─── RECAP TABLE (Anchoring: value column before price) ─── */
+        .divider-label {
+            font-size: var(--t-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--warm);
+            margin-top: var(--s-5);
+            padding-top: var(--s-3);
+            border-top: 1px solid var(--ink-08);
+            margin-bottom: var(--s-3);
+        }
+
+        .recap {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: var(--t-base);
+        }
+
+        /* Recap table in page 3 gets visual emphasis */
+        .recap-highlight {
+            border-left: 3px solid var(--ink);
+            padding-left: var(--s-3);
+        }
+
+        .recap th {
+            font-size: var(--t-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ink-40);
+            text-align: left;
+            padding: var(--s-1) 0;
+            border-bottom: 2px solid var(--ink);
+        }
+
+        .recap th:last-child { text-align: right; }
+
+        .recap td {
+            padding: var(--s-3) 0;
+            border-bottom: 1px solid var(--ink-08);
+            color: var(--ink-70);
+            vertical-align: baseline;
+        }
+
+        .recap td:first-child {
+            font-weight: 500;
+            color: var(--ink);
+            width: 30%;
+        }
+
+        .recap td:last-child {
+            text-align: right;
+            white-space: nowrap;
+            font-weight: 500;
+            color: var(--ink);
+        }
+
+        .recap .tag {
+            display: inline-block;
+            font-size: var(--t-sm);     /* was --t-xs — bigger for print legibility */
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 3px 8px;           /* was 2px 6px */
+            border-radius: 2px;
+            margin-left: var(--s-1);
+        }
+
+        .tag-once { background: var(--warm-soft); color: var(--warm); }
+        .tag-month { background: #e8f5e9; color: #2e7d32; }
+        .tag-client { background: var(--ink-04); color: var(--ink-40); }
+
+        /* ─── EXPANSION GRID ─── */
+        .exp-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--s-3);
+            margin-top: var(--s-3);
+        }
+
+        .exp-cat {
+            font-size: var(--t-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--ink-40);
+            margin-bottom: var(--s-1);
+        }
+
+        .exp-list {
+            list-style: none;
+        }
+
+        .exp-list li {
+            font-size: var(--t-sm);
+            color: var(--ink-40);
+            line-height: var(--lh-base);
+            padding-left: var(--s-2);
+            position: relative;
+            margin-bottom: var(--s-0);   /* was 3px — aligned to Fibonacci */
+        }
+
+        .exp-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 1px;
+            background: var(--ink-20);
+        }
+
+        /* ─── FOOTER ─── */
+        .footer {
+            position: absolute;
+            bottom: var(--s-4);
+            left: var(--s-5);
+            right: var(--s-5);
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding-top: var(--s-2);
+            border-top: 1px solid var(--ink-08);
+        }
+
+        .footer-left {
+            font-size: var(--t-xs);
+            color: var(--ink-20);
+            letter-spacing: 0.15em;
+            font-weight: 300;
+        }
+
+        .footer-right {
+            font-size: var(--t-xs);
+            color: var(--ink-40);
+        }
+
+        /* ─── CTA BLOCK ─── */
+        .cta {
+            margin-top: var(--s-5);
+            padding: var(--s-4) var(--s-3);
+            background: var(--warm-soft);
+            border-left: 3px solid var(--warm-deco);
+        }
+
+        .cta-title {
+            font-size: var(--t-md);
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: var(--s-1);
+        }
+
+        .cta p {
+            font-size: var(--t-base);
+            color: var(--ink-70);
+            line-height: var(--lh-base);
+        }
+
+        .cta strong {
+            font-weight: 500;
+            color: var(--ink);
+        }
+
+        @media print {
+            body { width: auto; }
+            .page {
+                padding: 20mm 20mm 25mm 25mm;   /* more left margin for sidebar */
+            }
+            .page::before {
+                left: 12mm;                       /* inside printable area */
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .accent-note {
+                background: #f0e0d0;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .note {
+                background: #e8e8e8;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .tag-once {
+                background: #e8d5c5;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .tag-month {
+                background: #c8e6c9;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .tag-client {
+                background: #d5d5d5;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .cta {
+                background: #f0e0d0;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE 1 — ANALISI                                           -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page">
+
+    <header class="header">
+        <p class="header-label">Proposta</p>
+        <h1 class="header-title">Lago Maggiore Academy</h1>
+        <p class="header-subtitle">Comunicazione digitale e presenza online</p>
+    </header>
+
+    <div class="meta">
+        <div class="meta-group">
+            <p class="meta-label">Da</p>
+            <p class="meta-value">Alessio Cazzaniga</p>
+            <p class="meta-sub">alessio.cazzaniga87@gmail.com</p>
+        </div>
+        <div class="meta-group meta-right">
+            <p class="meta-label">Per</p>
+            <p class="meta-value">Guerino Molle</p>
+            <p class="meta-sub">1 aprile 2026</p>
+        </div>
+    </div>
+
+    <!-- Inverted Pyramid: conclusion first -->
+    <p class="intro">
+        Prima di parlare di cosa fare, guardiamo insieme dove siete oggi.
+        Ho analizzato nel dettaglio i vostri contenuti e quelli delle realtà vicine
+        — numeri, tipologia, coinvolgimento per ogni post.
+        Le basi ci sono, e chi vi segue è molto più attivo della media.
+        Ma la frequenza e la varietà non vi danno ancora la visibilità che meritate.
+    </p>
+
+    <!-- ─── DOVE SIETE OGGI ─── -->
+    <div class="section">
+        <p class="section-number">—</p>
+        <h2 class="section-title">Dove siete oggi</h2>
+        <p class="section-lead">
+            Instagram attivo con 220 follower e 16 contenuti.
+            Branding blu riconoscibile e contenuti puliti.
+            Il dato importante: chi vi segue interagisce molto.
+            Baveno Stresa ha 6.000 follower e prende 75 like a post.
+            Voi ne avete 220 e ne prendete 53 — la vostra community è reale.
+        </p>
+        <div class="items">
+            <div class="item"><span class="item-marker">—</span><span class="item-text"><strong>I video funzionano</strong> — i 3 reel pubblicati (Baschirotto, Di Mario, Pisacane) prendono il 49% di like in più delle foto. Ma sono solo 3 su 16 contenuti</span></div>
+            <div class="item"><span class="item-marker">—</span><span class="item-text"><strong>L'asset più forte non è ancora raccontato</strong> — il percorso di Coach Molle, primo allenatore di un giocatore della Nazionale, non è ancora online</span></div>
+            <div class="item"><span class="item-marker">—</span><span class="item-text"><strong>Nessun sito web, nessun Google Business</strong> — chi vi cerca non vi trova, né su Google né su Maps</span></div>
+            <div class="item"><span class="item-marker">—</span><span class="item-text"><strong>Nessuna pagina Facebook</strong> — manca il canale dove i genitori passano più tempo</span></div>
+            <div class="item"><span class="item-marker">—</span><span class="item-text"><strong>2 post al mese</strong> — non bastano per l'algoritmo Instagram. Serve almeno triplicare</span></div>
+        </div>
+    </div>
+
+    <!-- ─── IL TERRITORIO ─── -->
+    <div class="section">
+        <p class="section-number">—</p>
+        <h2 class="section-title">Il territorio</h2>
+        <p class="section-lead">
+            Ho guardato le realtà calcistiche giovanili della zona.
+            Il contesto è più favorevole di quanto sembri.
+        </p>
+
+        <table class="recap" style="margin-bottom: var(--s-3);">
+            <thead>
+                <tr>
+                    <th>Realtà</th>
+                    <th>Follower IG</th>
+                    <th>Situazione</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Baveno Stresa SG</td>
+                    <td>6.051 follower · ~75 like a post</td>
+                    <td>~60 post/mese — solo foto, risultati e formazioni. Zero video</td>
+                </tr>
+                <tr>
+                    <td>Verbania Calcio</td>
+                    <td>3.160 follower</td>
+                    <td style="color: var(--warm); font-weight: 500;">Giovanili sospese da febbraio 2026</td>
+                </tr>
+                <tr>
+                    <td>Cannobiese 1906</td>
+                    <td>1.292 follower</td>
+                    <td>Vostro partner — pubblico già attivo</td>
+                </tr>
+                <tr>
+                    <td>Lago Maggiore Academy</td>
+                    <td>220 follower · ~53 like a post</td>
+                    <td>Chi vi segue, vi segue davvero</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="accent-note">
+            <p>Il settore giovanile del Verbania Calcio è fermo
+            per un conflitto con il Comune sugli impianti di Renco e Possaccio.
+            <strong>Centinaia di famiglie sono senza un'alternativa strutturata.</strong>
+            L'Academy lavora in strutture indipendenti.
+            Questo vi mette in una posizione di vantaggio.</p>
+        </div>
+    </div>
+
+    <!-- ─── LE OPPORTUNITÀ ─── -->
+    <div class="section">
+        <p class="section-number">—</p>
+        <h2 class="section-title">Le opportunità</h2>
+        <p class="section-lead">
+            Ho analizzato i contenuti di tutte le realtà della zona.
+            Tutti pubblicano la stessa cosa — risultati, formazioni, convocazioni.
+            Nessuno fa video, nessuno racconta cosa succede in allenamento,
+            nessuno parla ai genitori.
+            La barra qualitativa è bassa ovunque.
+            Partire adesso con un lavoro strutturato
+            vi mette davanti a tutti.
+        </p>
+        <div class="items">
+            <div class="item"><span class="item-marker">01</span><span class="item-text"><strong>Più video</strong> — i vostri reel prendono il 49% di like in più delle foto. Nessun competitor ne fa. Vantaggio immediato</span></div>
+            <div class="item"><span class="item-marker">02</span><span class="item-text"><strong>Valorizzare l'esperienza del Coach</strong> — chi cerca una scuola calcio e scopre il percorso di Molle, sceglie voi</span></div>
+            <div class="item"><span class="item-marker">03</span><span class="item-text"><strong>Parlare alle famiglie</strong> — nessun competitor produce contenuti pensati per chi decide: i genitori</span></div>
+            <div class="item"><span class="item-marker">04</span><span class="item-text"><strong>Essere trovabili</strong> — sito web + Google Business = esistere quando qualcuno cerca "scuola calcio Verbania"</span></div>
+            <div class="item"><span class="item-marker">05</span><span class="item-text"><strong>Collaborare con la Cannobiese</strong> — 1.292 follower del vostro partner, pronti per contenuti condivisi</span></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <span class="footer-left">φ = 1.618</span>
+        <span class="footer-right">Proposta &middot; Lago Maggiore Academy &middot; pag. 1/3</span>
+    </footer>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE 2 — PROPOSTA                                          -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page">
+
+    <header class="header">
+        <p class="header-label">La proposta</p>
+        <h2 class="header-title">Cosa facciamo insieme</h2>
+    </header>
+
+    <!-- Inverted Pyramid: conclusion first -->
+    <p class="intro">
+        Vi costruiamo la presenza online completa: sito, canali social,
+        e un sistema per capire cosa funziona.
+        Non è solo pubblicazione di contenuti —
+        è l'infrastruttura su cui cresce l'Academy.
+    </p>
+
+    <!-- ─── FASE 0 — INCONTRI ─── -->
+    <div class="section">
+        <p class="section-number">00</p>
+        <h2 class="section-title">Incontri preliminari</h2>
+        <p class="section-lead">
+            Prima di costruire qualsiasi cosa, serve capire bene.
+            Due–tre incontri con la dirigenza per:
+        </p>
+        <div class="items">
+            <div class="item"><span class="item-marker">—</span><span class="item-text">Analizzare la comunicazione attuale e i contenuti pubblicati</span></div>
+            <div class="item"><span class="item-marker">—</span><span class="item-text">Definire gli obiettivi concreti: iscrizioni, visibilità, sponsor</span></div>
+            <div class="item"><span class="item-marker">—</span><span class="item-text">Capire quali materiali l'Academy può fornire (foto, video, storie)</span></div>
+            <div class="item"><span class="item-marker">—</span><span class="item-text">Stabilire il calendario dei prossimi mesi: eventi, camp, tornei</span></div>
+        </div>
+        <div class="note">
+            <p>Gli incontri sono inclusi. Servono a noi per lavorare bene
+            e a voi per sapere esattamente cosa aspettarvi.</p>
+        </div>
+    </div>
+
+    <!-- ─── FASE 1 — AVVIAMENTO ─── -->
+    <div class="section">
+        <p class="section-number">01</p>
+        <h2 class="section-title">Avviamento</h2>
+        <p class="section-lead">
+            Sito web, identità visiva, strumenti di analisi.
+            Le fondamenta su cui appoggiare tutto il resto.
+        </p>
+
+        <p class="item-group-label">Sito web</p>
+        <div class="items">
+            <div class="item"><span class="item-marker">—</span><span class="item-text"><strong>Landing page</strong> con presentazione Academy, staff, programmi, contatti</span></div>
+            <div class="item"><span class="item-marker">—</span><span class="item-text"><strong>Struttura che guida all'azione</strong> — ogni pagina porta verso un passo concreto: chiedere informazioni o prenotare una prova gratuita</span></div>
+            <div class="item"><span class="item-marker">—</span><span class="item-text"><strong>Risposte automatiche per i genitori</strong> — sezione domande frequenti su costi, orari, età, sedi</span></div>
+            <div class="item"><span class="item-marker">—</span><span class="item-text"><strong>Sezione sponsor</strong> con visibilità loghi e link ai partner</span></div>
+            <div class="item"><span class="item-marker">—</span><span class="item-text"><strong>Monitoraggio visite</strong> — sapere quante persone visitano il sito e quali pagine guardano di più</span></div>
+        </div>
+
+        <p class="item-group-label">Identità digitale</p>
+        <div class="items">
+            <div class="item"><span class="item-marker">—</span><span class="item-text"><strong>Stile grafico uniforme</strong> — stessi colori e formato su tutti i profili</span></div>
+            <div class="item"><span class="item-marker">—</span><span class="item-text"><strong>Profilo Google Business</strong> — comparire quando cercano "scuola calcio Verbania"</span></div>
+            <div class="item"><span class="item-marker">—</span><span class="item-text"><strong>Parole chiave (#hashtag)</strong> scelte per farvi trovare nella zona Lago Maggiore</span></div>
+            <div class="item"><span class="item-marker">—</span><span class="item-text"><strong>Risposte pronte</strong> per le domande più frequenti + affiancamento a chi gestisce i messaggi</span></div>
+        </div>
+
+        <!-- Anchoring: value shown, then price -->
+        <div class="price">
+            <span class="price-amount">350€</span>
+            <span class="price-period">una tantum</span>
+        </div>
+    </div>
+
+    <!-- ─── FASE 2 — GESTIONE MENSILE ─── -->
+    <div class="section">
+        <p class="section-number">02</p>
+        <h2 class="section-title">Gestione mensile</h2>
+        <p class="section-lead">
+            Pubblicazione costante, calendario dei contenuti condiviso, risultati misurati.
+            Ogni mese ricevete un report con numeri reali: cosa ha funzionato,
+            cosa no, e cosa cambiamo.
+            Il materiale fotografico e video lo fornite voi — noi curiamo il resto.
+        </p>
+
+        <p class="item-group-label">Contenuti</p>
+        <div class="items">
+            <div class="item"><span class="item-marker">—</span><span class="item-text"><strong>2–3 post Instagram</strong> a settimana — testo, hashtag, programmazione</span></div>
+            <div class="item"><span class="item-marker">—</span><span class="item-text"><strong>1–2 post Facebook</strong> a settimana — canale istituzionale e sponsor</span></div>
+            <div class="item"><span class="item-marker">—</span><span class="item-text"><strong>Calendario dei contenuti</strong> condiviso in anticipo ogni mese</span></div>
+        </div>
+
+        <p class="item-group-label">Analisi</p>
+        <div class="items">
+            <div class="item"><span class="item-marker">—</span><span class="item-text"><strong>Report mensile</strong> — vi diciamo cosa ha funzionato e cosa cambiamo il mese dopo</span></div>
+            <div class="item"><span class="item-marker">—</span><span class="item-text"><strong>Manutenzione sito</strong> — aggiornamenti testi, foto, date, prezzi</span></div>
+        </div>
+
+        <div class="price">
+            <span class="price-amount">350€</span>
+            <span class="price-period">al mese</span>
+        </div>
+
+        <div class="note">
+            <p>La manutenzione copre aggiornamenti ordinari.
+            Se serve aggiungere pagine nuove o cambiare la struttura del sito, ci mettiamo d'accordo prima.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <span class="footer-left">φ = 1.618</span>
+        <span class="footer-right">Proposta &middot; Lago Maggiore Academy &middot; pag. 2/3</span>
+    </footer>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE 3                                                     -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page">
+
+    <!-- ─── DA SAPERE ─── -->
+    <div class="section">
+        <p class="section-number">03</p>
+        <h2 class="section-title">Da sapere</h2>
+
+        <p class="item-group-label">Materiale foto e video</p>
+        <p class="section-lead">
+            Foto e video vengono forniti dall'Academy.
+            Noi scriviamo i testi, scegliamo gli hashtag e pubblichiamo — non facciamo le riprese.
+            Per video professionali possiamo coinvolgere un videomaker dedicato, con costi a parte.
+        </p>
+
+        <p class="item-group-label">Editing e montaggio</p>
+        <p class="section-lead">
+            Non inclusi. Quando serviranno, troveremo insieme la soluzione.
+        </p>
+
+        <p class="item-group-label">Messaggi e commenti</p>
+        <p class="section-lead">
+            La gestione diretta resta in capo all'Academy.
+            Forniamo template pronti e formazione iniziale.
+        </p>
+
+        <p class="item-group-label">Dominio</p>
+        <p class="section-lead">
+            Registrato a nome dell'Academy (~15€/anno). Hosting incluso nel servizio.
+        </p>
+
+        <div class="accent-note">
+            <p>Per massimizzare la visibilità, specialmente nella fase iniziale,
+            consigliamo un <strong>budget pubblicitario di 50–100€ al mese</strong>
+            per promozioni mirate alla zona Lago Maggiore.
+            Il budget è a carico dell'Academy — vi guidiamo nell'utilizzo.</p>
+        </div>
+    </div>
+
+    <!-- ─── RIEPILOGO ─── -->
+    <p class="divider-label">Riepilogo</p>
+
+    <table class="recap recap-highlight">
+        <thead>
+            <tr>
+                <th>Voce</th>
+                <th>Include</th>
+                <th>Importo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Avviamento</td>
+                <td>Sito, identità digitale, Google Business, analisi, formazione</td>
+                <td>350€ <span class="tag tag-once">una tantum</span></td>
+            </tr>
+            <tr>
+                <td>Gestione mensile</td>
+                <td>Contenuti IG + FB, calendario, report, manutenzione sito</td>
+                <td>350€ <span class="tag tag-month">al mese</span></td>
+            </tr>
+            <tr>
+                <td>Budget ads</td>
+                <td>Promozioni mirate Instagram e Facebook</td>
+                <td>50–100€ <span class="tag tag-client">a carico academy</span></td>
+            </tr>
+            <tr>
+                <td>Dominio</td>
+                <td>Registrazione annuale, intestato all'Academy</td>
+                <td>~15€ <span class="tag tag-client">a carico academy</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="note" style="margin-top: var(--s-3);">
+        <p>Nessun vincolo di durata. Si lavora insieme finché ha senso per entrambi.</p>
+    </div>
+
+    <!-- ─── SVILUPPI FUTURI ─── -->
+    <p class="divider-label">Sviluppi futuri</p>
+
+    <p class="section-lead">
+        Quando l'Academy cresce, possiamo aggiungere servizi senza ripartire da zero.
+        Ogni servizio aggiuntivo si attiva solo se ne avete bisogno,
+        con costi concordati in anticipo.
+    </p>
+
+    <div class="exp-grid">
+        <div>
+            <p class="exp-cat">Social e contenuti</p>
+            <ul class="exp-list">
+                <li>Canale TikTok</li>
+                <li>Campagne pubblicitarie</li>
+                <li>Produzione video</li>
+                <li>Email e newsletter</li>
+            </ul>
+        </div>
+        <div>
+            <p class="exp-cat">Sponsor</p>
+            <ul class="exp-list">
+                <li>Ricerca e contatto sponsor</li>
+                <li>Materiali di presentazione</li>
+                <li>Report per sponsor</li>
+            </ul>
+        </div>
+        <div>
+            <p class="exp-cat">Strumenti</p>
+            <ul class="exp-list">
+                <li>Gestione iscrizioni online</li>
+                <li>Comunicazioni ai genitori</li>
+                <li>Pannello con i numeri aggiornati</li>
+            </ul>
+        </div>
+        <div>
+            <p class="exp-cat">Analisi avanzata</p>
+            <ul class="exp-list">
+                <li>Report stagionale con strategia</li>
+                <li>Monitoraggio competitor continuativo</li>
+                <li>Misurare quanti contatti diventano iscritti</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ─── CTA ─── -->
+    <div class="cta">
+        <p class="cta-title">Prossimo passo</p>
+        <p>
+            Se la proposta vi convince, il passo successivo è un incontro
+            per definire tempi e materiali.
+            I tempi di avviamento sono di circa due settimane dall'inizio.
+            <strong>Nei primi tre mesi l'obiettivo è: sito online, profilo Google attivo,
+            frequenza social raddoppiata, e i primi dati su cosa funziona.</strong>
+        </p>
+        <p style="margin-top: var(--s-1);">
+            Scrivetemi — alessio.cazzaniga87@gmail.com · +39 351 698 6198
+        </p>
+    </div>
+
+    <footer class="footer">
+        <span class="footer-left">φ = 1.618</span>
+        <span class="footer-right">Proposta &middot; Lago Maggiore Academy &middot; pag. 3/3</span>
+    </footer>
+</div>
+
+</body>
+</html>
