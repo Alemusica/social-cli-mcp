@@ -23,7 +23,7 @@ import type {
   InstagramAccountInsights,
   InstagramMediaInsights,
   InstagramAudienceInsights
-} from '../../types.js';
+} from '../../types/index.js';
 import { checkDuplicate, recordPost } from '../content/duplicate-checker.js';
 
 const log = createLogger('instagram');

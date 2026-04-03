@@ -13,7 +13,7 @@
 
 import * as fs from 'fs';
 import { createLogger } from '../../lib/logger.js';
-import type { PostResult, YouTubePostOptions, SocialClient, Config } from '../../types.js';
+import type { PostResult, YouTubePostOptions, SocialClient, Config } from '../../types/index.js';
 
 const log = createLogger('youtube');
 

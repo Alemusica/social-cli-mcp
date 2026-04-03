@@ -23,7 +23,7 @@ import type {
   CorrelationEvent,
   CorrelationSignal,
   DailyDigest,
-} from "../../analytics/types.js";
+} from "../../types/analytics.js";
 
 const log = createLogger("analytics-correlator");
 

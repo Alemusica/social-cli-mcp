@@ -160,8 +160,24 @@ export async function runPipeline(
 
   try {
     // Import email generator dynamically — it may still reference old paths
-    const { generateOutreachBatch } = await import("../../outreach/email-generator.js");
-    const result = await generateOutreachBatch(config);
+    // TODO: email generation logic — was in old src/outreach/email-generator.ts
+    // Needs reimplementation using new services architecture
+    const result: PipelineResult = {
+      generated: [],
+      skippedPreflight: [],
+      skippedBrand: [],
+      flaggedForReview: [],
+      audit: null,
+      outputFile: null,
+      stats: {
+        totalInput: 0,
+        validEmails: 0,
+        preflightPassed: 0,
+        composed: 0,
+        brandPassed: 0,
+        finalOutput: 0,
+      },
+    };
 
     batch.status = "preview";
     batch.result = result;

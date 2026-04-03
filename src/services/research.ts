@@ -7,7 +7,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
-import type { MarketResearch, Vertical, Platform } from '../types.js';
+import type { MarketResearch, Vertical, Platform } from '../types/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

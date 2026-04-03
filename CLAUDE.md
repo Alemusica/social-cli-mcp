@@ -1,4 +1,4 @@
-# v8.0 | flutur-cc | 2026-04-02
+# v9.0 | flutur-cc | 2026-04-03
 
 ## GRAFO
 
@@ -11,7 +11,6 @@ S.1 "Neon PostgreSQL" :rdbms+vector @localhost:5433 (Docker pgvector/pg16) | Neo
 
 S.2 "Supabase" :storage+ai | file storage + Claude Vision labeling
   .schema → supabase/migrations/001_photos_schema.sql
-  .client → src/db/supabase-client.ts
   .sync → npx tsx scripts/sync-supabase-photos.ts [import|label|sync|status]
 
 S.3 "Keychain" :credentials service="social-cli-mcp"
@@ -95,10 +94,10 @@ M.13 intelligenceRouter :orchestrator | event→action dispatcher
   | Conversation dept: thread status, suggested next action
 ```
 
-BARREL (v8): src/services/ ⊃ {platform/, outreach/, analytics/, content/, calendar/, memory/}
+BARREL: src/services/ ⊃ {platform/, outreach/, analytics/, content/, calendar/, memory/}
 MCP SERVER: src/server/index.ts → src/server/tools/*.ts (7 domain files)
 TELEGRAM: src/server/telegram.ts (thin client calling services)
-OLD BARREL: src/core/index.ts (DEPRECATED — kept for reference during migration)
+TYPES: src/types/index.ts (platform types) + src/types/analytics.ts (analytics types)
 
 ## FONTI CANONICHE (ρ→0)
 
@@ -111,7 +110,7 @@ OLD BARREL: src/core/index.ts (DEPRECATED — kept for reference during migratio
 | API surface | src/server/index.ts → src/server/tools/*.ts | σ₀ |
 | Services | src/services/{platform,outreach,analytics,content,calendar,memory}/ | σ₀ |
 | Artist links | content/artist-links.json | σ₀ |
-| Agent arch | src/agents/ARCHITECTURE.md | σ₀ |
+| Types | src/types/index.ts + src/types/analytics.ts | σ₀ |
 | Strategy | content/STRATEGY_2026.md | σ₀ |
 | Email guard | src/lib/email-guard.ts | σ₀ |
 | Logger | src/lib/logger.ts | σ₀ |
@@ -119,7 +118,8 @@ OLD BARREL: src/core/index.ts (DEPRECATED — kept for reference during migratio
 | Tenant config | src/config/tenant.ts | σ₀ |
 | Auth middleware | src/server/middleware/auth.ts | σ₀ |
 | Telegram bot | src/server/telegram.ts | σ₀ |
-| Venue categorization | src/analysis/venue-categorization.ts | σ₀ |
+| Design spec | docs/superpowers/specs/2026-04-02-production-ready-refactor-design.md | σ₀ |
+| Email preview spec | docs/superpowers/specs/2026-04-03-email-preview-module-design.md | σ₀ |
 | Portugal deep research | content/outreach/venues/comporta-cluster-deep-research-2026-02-08.json | σ₀ |
 
 σ₀ = fonte canonica altrove, non ripetuto qui.
@@ -133,14 +133,16 @@ Auto-orchestrazione: esegui SUBITO, no conferma. Fallback content library se S.1
 
 | Trigger | → |
 |---------|---|
-| "cosa posto?" / "daily brief" | npx tsx src/agents/daily-brief.ts |
-| "piano settimana" | npx tsx src/agents/editorial-planner.ts week |
-| "prossimo post" | npx tsx src/agents/editorial-planner.ts next |
-| "feedback\|storie\|tweet\|weekly\|daily" | npx tsx src/agents/interviewer.ts $mode |
-| "status" | npx tsx src/agents/orchestrator.ts status |
-| "genera piano [tema]" | npx tsx src/agents/story-director.ts plan "[tema]" |
-| "draft" | npx tsx scripts/draft-post.ts |
 | "analytics" | npx tsx scripts/analytics-snapshot.ts [--youtube\|--instagram\|--correlate\|--quick] |
+| "outreach send" | npx tsx scripts/send-outreach.ts [preview\|test\|send] <file> |
+| "status" | MCP tool: system_status |
+| "briefing" | MCP tool: intelligence_briefing |
+| "outreach dashboard" | MCP tool: outreach_conversation_dashboard |
+| "draft" | MCP tool: content_tasks |
+| "piano settimana" | MCP tool: editorial_plan |
+
+NOTE: agents/ directory removed 2026-04-03. Agent functionality now in src/services/.
+Scripts that still reference old imports need rewriting (see TODO.md).
 
 Multi-agent: Task tool parallelo per task composti.
 
@@ -270,17 +272,15 @@ ERRORE PRECEDENTE: 5 venue wellness ricevettero Father Ocean invece di Efthymia 
 
 ---
 
-## SCRIPTS → RELAZIONI
+## SCRIPTS
 
-X.1 send-outreach.ts      → M.7 → gmail-sender → S.1:email (max 20/batch)
-X.2 analytics-snapshot.ts  → {M.1,M.2} → persistence → M.3
-X.3 morning-check.ts       → Gmail API → classify → persist(dedup) → M.13(auto-briefing) → S.1 → Telegram (launchd 8:30)
-X.4 youtube-oauth-setup.ts → browser OAuth → S.3 (3 keys)
-X.5 draft-post.ts          → M.6 → S.1:post_draft
-X.6 sync-supabase.ts       → S.2 ↔ S.1:content
-X.7 archive-insights.ts    → M.4 → S.1:audience_snapshot
-X.8 editorial-briefing.ts  → M.5 (corridor analysis)
-X.9 software-strategy.ts   → E.2 [pitch|targets|github|roadmap|thread]
+X.1 send-outreach.ts        → services/outreach/pipeline → lib/email-guard → S.1:email (max 20/batch) ⚠️ NEEDS REWRITE
+X.2 analytics-snapshot.ts   → services/analytics/ → S.1 ⚠️ NEEDS REWRITE
+X.3 migrate-from-surreal.ts → SurrealDB HTTP → Drizzle/Neon (one-shot)
+X.4 youtube-oauth-setup.ts  → browser OAuth → S.3 (3 keys)
+X.5 sync-supabase-photos.ts → S.2 ↔ S.1:content
+X.6 memory-context.ts       → services/memory/ ⚠️ NEEDS REWRITE
+X.7 backup.sh               → pg_dump → gzip → R2 (launchd 4AM)
 
 ## OBJECTIVES 2026
 1. LIVE ACT (Primary): booking costante, gig/mese, inquiry rate
@@ -289,4 +289,4 @@ X.9 software-strategy.ts   → E.2 [pitch|targets|github|roadmap|thread]
 
 ## CONTENT WORKFLOW
 States: PLAN → ANALYZE → OPTIMIZE → POST → MONITOR → LEARN
-npx tsx src/digital-department/workflow.ts [status|next]
+Via MCP tools: content_tasks, editorial_plan, post_twitter, post_instagram, post_all

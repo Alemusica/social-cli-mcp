@@ -18,7 +18,7 @@ import type {
   YouTubeChannelSnapshot,
   YouTubeGeoView,
   YouTubeVideoSnapshot,
-} from "../../analytics/types.js";
+} from "../../types/analytics.js";
 
 const log = createLogger("analytics-youtube");
 
