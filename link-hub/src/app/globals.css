@@ -26,7 +26,7 @@
   --epk-text-tertiary: #918c86;
 
   /* Rules */
-  --epk-rule: rgba(212, 165, 116, 0.20);
+  --epk-rule: rgba(212, 165, 116, 0.40);
   --epk-rule-weight: 1px;
 
   /* Borders — warm-shifted */
@@ -36,21 +36,21 @@
   /* Selection */
   --epk-selection: rgba(212, 165, 116, 0.3);
 
-  /* Spacing — phi-based scale */
+  /* Spacing — phi-based scale, fluid (320→1440px viewports) */
   --np-space-xs: 4px;
-  --np-space-sm: 8px;
-  --np-space-md: 13px;
-  --np-space-lg: 21px;
-  --np-space-xl: 34px;
-  --np-space-2xl: 55px;
+  --np-space-sm: clamp(6px, 0.375rem + 0.18vw, 8px);
+  --np-space-md: clamp(10px, 0.625rem + 0.27vw, 13px);
+  --np-space-lg: clamp(16px, 1rem + 0.45vw, 21px);
+  --np-space-xl: clamp(26px, 1.625rem + 0.71vw, 34px);
+  --np-space-2xl: clamp(42px, 2.625rem + 1.16vw, 55px);
 
-  /* Typography — perfect fourth scale (×1.333) from 16px base */
-  --np-type-xs: 11px;      /* meta, captions */
-  --np-type-sm: 15px;      /* base — body text */
-  --np-type-md: 20px;      /* ×1.333 — subtitle */
-  --np-type-lg: 26px;      /* ×1.333² — section title, quotes */
-  --np-type-xl: 35px;      /* ×1.333³ — display/masthead min */
-  --np-type-2xl: 46px;     /* ×1.333⁴ — masthead max */
+  /* Typography — perfect fourth scale (×1.333) from 16px base, tuned for serif */
+  --np-type-xs: 12px;      /* meta, captions */
+  --np-type-sm: 16px;      /* base — body text */
+  --np-type-md: 21px;      /* ×1.333 — subtitle */
+  --np-type-lg: 28px;      /* ×1.333² — section title, quotes */
+  --np-type-xl: 37px;      /* ×1.333³ — display/masthead min */
+  --np-type-2xl: 50px;     /* ×1.333⁴ — masthead max */
 
   /* Line heights — tight everywhere, newspaper density */
   --np-leading-tight: 1.1;
@@ -68,7 +68,7 @@
 
   /* Fonts — set by next/font */
   --font-display-serif: 'Playfair Display', Georgia, serif;
-  --font-body: 'Space Grotesk', -apple-system, 'Helvetica Neue', sans-serif;
+  --font-body: 'Newsreader', Georgia, 'Times New Roman', serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 }
 
@@ -101,7 +101,7 @@ body {
   color: var(--epk-bg-primary);
   padding: 8px 16px;
   z-index: 100;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -146,7 +146,7 @@ body {
   border: 1px solid var(--epk-gold);
   background: transparent;
   color: var(--epk-gold);
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -162,7 +162,7 @@ body {
 
 .btn-secondary {
   color: var(--epk-gold);
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 12px;
   letter-spacing: 0.08em;
   text-decoration: none;
@@ -290,7 +290,7 @@ select:focus-visible {
   padding: var(--np-space-sm) var(--np-space-md);
   line-height: 1.4;
   font-size: 0.750rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   color: var(--epk-text-tertiary);
   text-align: right;
 }
@@ -301,26 +301,29 @@ select:focus-visible {
   border-top: 1px solid var(--epk-rule);
   padding: var(--np-space-sm) 0;
   margin-top: var(--np-space-md);
-  font-weight: 500;
+  font-weight: 400;
   font-size: 0.750rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   letter-spacing: 0.06em;
   color: var(--epk-text-tertiary);
 }
 
-/* ─── Grid zones — deterministic column placement ─── */
+/* ─── Grid zones — SILO pattern: gap + background bleed ─── */
 .np-zone {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--np-space-lg);
-  margin-bottom: var(--np-space-xl);
+  gap: 1px;
+  background: var(--epk-rule);
+  margin-bottom: var(--np-space-lg);
+}
+.np-zone > * {
+  background: var(--epk-bg-primary);
+  padding: var(--np-space-sm);
 }
 
 @media screen and (min-width: 768px) {
   .np-zone {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: var(--np-space-xl);
-    row-gap: var(--np-space-lg);
   }
 }
 
@@ -335,27 +338,24 @@ select:focus-visible {
   .np-masthead { font-size: 3rem; }
 }
 
-/* Column rules via borders on non-first grid children */
-@media screen and (min-width: 768px) {
-  .np-zone > * {
-    padding-left: 21px;
-    border-left: 2px solid var(--epk-rule);
-  }
-  .np-zone > *:first-child,
-  .np-zone > *:nth-child(2n+1) {
-    padding-left: 0;
-    border-left: none;
+/* ─── 2-column zone variant (Setup + Press, etc.) ─── */
+@media screen and (min-width: 1100px) {
+  .np-zone.np-zone-2 {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-@media screen and (min-width: 1100px) {
-  .np-zone > *:nth-child(2n+1) {
-    padding-left: 21px;
-    border-left: 2px solid var(--epk-rule);
-  }
-  .np-zone > *:nth-child(3n+1) {
-    padding-left: 0;
-    border-left: none;
-  }
+
+/* ─── Section label — newspaper zone header ─── */
+.np-section-label {
+  font-size: var(--np-type-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--np-tracking-wide);
+  color: var(--epk-text-primary);
+  display: block;
+  margin-bottom: var(--np-space-lg);
+  padding: var(--np-space-sm) 0;
+  border-top: 2px solid var(--epk-text-primary);
+  border-bottom: 1px solid var(--epk-rule);
 }
 
 /* ─── Article blocks ─── */
@@ -369,8 +369,27 @@ select:focus-visible {
 .np-article small {
   color: var(--epk-text-tertiary);
   font-size: var(--np-type-xs);
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   letter-spacing: 0.02em;
+}
+
+/* ─── Feature article — SILO pattern: photo inline left, text right ─── */
+.np-card-feature {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--np-space-md);
+}
+@media screen and (min-width: 600px) {
+  .np-card-feature {
+    grid-template-columns: 280px 1fr;
+  }
+  .np-card-feature .np-figure {
+    aspect-ratio: 1;
+    margin: 0;
+  }
+  .np-card-feature .np-headline {
+    margin-bottom: var(--np-space-xs);
+  }
 }
 
 /* ─── 3-level heading hierarchy ─── */
@@ -390,12 +409,12 @@ select:focus-visible {
 
 /* Level 1 — Section title (×1.333²) */
 .np-title {
-  font-weight: 700;
+  font-weight: 400;
   font-size: var(--np-type-lg);
   text-transform: uppercase;
   display: block;
   line-height: var(--np-leading-tight);
-  letter-spacing: var(--np-tracking-tight);
+  letter-spacing: 0.02em;
   color: var(--epk-text-primary);
 }
 
@@ -412,19 +431,19 @@ select:focus-visible {
 
 /* Level 3 — Metadata (base / 1.333) */
 .np-meta {
-  font-weight: 500;
+  font-weight: 400;
   font-size: var(--np-type-xs);
   display: block;
   letter-spacing: var(--np-tracking-wide);
   text-transform: uppercase;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   color: var(--epk-text-tertiary);
   margin-top: var(--np-space-xs);
 }
 
 /* ─── Pull quote — decorative quotation mark, gist-derived ─── */
 .np-citation {
-  font-family: var(--font-display-serif);
+  font-family: var(--font-body);
   font-size: var(--np-type-lg);
   line-height: 1.3;
   text-align: left;
@@ -432,20 +451,21 @@ select:focus-visible {
   font-style: italic;
   display: block;
   position: relative;
-  margin: var(--np-space-2xl) 0;
-  padding: var(--np-space-xl) 0 var(--np-space-xl) var(--np-space-xl);
-  border-top: 2px dotted var(--epk-rule);
-  border-bottom: 2px dotted var(--epk-rule);
+  margin: var(--np-space-xl) 0;
+  padding: var(--np-space-lg) 0 var(--np-space-lg) var(--np-space-xl);
+  border-top: 1px solid var(--epk-rule);
+  border-bottom: 1px solid var(--epk-rule);
   color: var(--epk-text-primary);
 }
 .np-citation::before {
   content: "\201C";
-  font-family: var(--font-display-serif);
-  font-size: 8em;
+  font-family: var(--font-body);
+  font-size: 6em;
   font-style: normal;
+  font-weight: 400;
   position: absolute;
-  left: -8px;
-  top: -10px;
+  left: -4px;
+  top: -8px;
   color: var(--epk-gold-dim);
   line-height: 1;
   pointer-events: none;
@@ -454,7 +474,7 @@ select:focus-visible {
   display: block;
   font-size: var(--np-type-xs);
   font-style: normal;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   color: var(--epk-text-tertiary);
   margin-top: var(--np-space-sm);
   letter-spacing: var(--np-tracking-wide);
@@ -471,23 +491,93 @@ select:focus-visible {
   line-height: var(--np-leading-normal);
 }
 
-/* ─── Images — grayscale entrance, color on hover ─── */
+/* ─── Images — uniform frame + grayscale entrance ─── */
 .np-figure {
   margin: 0 0 var(--np-space-md);
   cursor: pointer;
   overflow: hidden;
+  position: relative;
+  aspect-ratio: 16/9;
+  background: var(--epk-bg-medium);
 }
+/* Base image/video — newspaper editorial treatment (sepia + grayscale + multiply) */
 .np-media {
-  filter: grayscale(100%) opacity(0.8);
-  transition: filter 0.5s ease-out;
+  filter: sepia(60%) grayscale(80%) contrast(1) opacity(0.85);
+  mix-blend-mode: multiply;
   width: 100%;
-  height: auto;
-  animation: np-img-entrance 0.9s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.5s ease-out, opacity 0.5s ease-out, mix-blend-mode 0.5s;
+  animation: np-img-entrance 0.9s cubic-bezier(0.76, 0, 0.24, 1) both;
 }
-.np-figure:hover .np-media,
-.np-media:hover {
-  filter: grayscale(0%) opacity(1);
+/* Color overlay — revealed via clip-path on hover (ui-blocks pattern) */
+.np-figure::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  clip-path: polygon(0 100%, 0 100%, 0 100%, 0 100%);
+  transition: clip-path 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+  pointer-events: none;
 }
+.np-figure:hover .np-media {
+  filter: sepia(0%) grayscale(0%) contrast(1) opacity(1);
+  mix-blend-mode: normal;
+}
+/* Video in cards — same filter treatment as images */
+video.np-media {
+  object-fit: cover;
+}
+/* YouTube player — click to unlock audio, hover to fade volume */
+.np-yt-player {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 0 var(--np-space-md);
+  background: var(--epk-bg-medium);
+}
+.np-yt-player iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: none;
+  filter: grayscale(100%) contrast(1) opacity(0.8);
+  transition: filter 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+}
+/* Overlay blocks all YouTube UI hover states */
+.np-yt-player::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+.np-yt-player:hover iframe {
+  filter: grayscale(0%) contrast(1) opacity(1);
+}
+/* "Click for sound" hint */
+.np-yt-hint {
+  position: absolute;
+  bottom: var(--np-space-sm);
+  left: var(--np-space-sm);
+  z-index: 3;
+  font-size: var(--np-type-xs);
+  font-family: var(--font-body);
+  color: var(--epk-text-primary);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2px 8px;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.np-yt-player:hover .np-yt-hint {
+  opacity: 1;
+}
+
 /* Stagger entrance per zone position */
 .np-zone > *:nth-child(1) .np-media { animation-delay: 0s; }
 .np-zone > *:nth-child(2) .np-media { animation-delay: 0.15s; }
@@ -495,11 +585,11 @@ select:focus-visible {
 
 @keyframes np-img-entrance {
   0% {
-    filter: grayscale(100%) opacity(0);
+    opacity: 0;
     transform: scale(1.05) translateY(8px);
   }
   100% {
-    filter: grayscale(100%) opacity(0.8);
+    opacity: 0.8;
     transform: scale(1) translateY(0);
   }
 }
@@ -513,6 +603,54 @@ select:focus-visible {
   margin-top: 2px;
 }
 
+/* ─── Frame primitives — consistent aspect ratios (Every Layout) ─── */
+.np-frame {
+  aspect-ratio: var(--frame-ratio, 16/9);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.np-frame > img,
+.np-frame > video {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+.np-frame-portrait { --frame-ratio: 3/4; }
+.np-frame-golden { --frame-ratio: 1.618/1; }
+.np-frame-cinema { --frame-ratio: 2.35/1; }
+
+/* ─── Video card — frame + overlay duration badge ─── */
+.np-video-card .np-figure {
+  position: relative;
+}
+.np-video-duration {
+  position: absolute;
+  bottom: var(--np-space-sm);
+  right: var(--np-space-sm);
+  background: rgba(0, 0, 0, 0.75);
+  color: var(--epk-text-primary);
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  padding: 2px 6px;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+  z-index: 2;
+}
+.np-video-title {
+  font-weight: 400;
+  font-size: var(--np-type-sm);
+  color: var(--epk-gold);
+  display: block;
+  line-height: var(--np-leading-tight);
+  transition: color 200ms;
+}
+.np-video-title:hover { color: var(--epk-text-primary); }
+.np-video-card .np-headline {
+  margin-top: var(--np-space-sm);
+}
+
 /* ─── Formats list ─── */
 .np-formats { margin-bottom: var(--np-space-md); }
 .np-format-line {
@@ -521,7 +659,7 @@ select:focus-visible {
   font-size: var(--np-type-sm);
 }
 .np-format-line strong { color: var(--epk-text-primary); }
-.np-format-line small { color: var(--epk-text-tertiary); font-size: var(--np-type-xs); font-family: var(--font-mono); }
+.np-format-line small { color: var(--epk-text-tertiary); font-size: var(--np-type-xs); font-family: var(--font-body); }
 
 /* ─── Credentials ─── */
 .np-cred-line {
@@ -551,7 +689,7 @@ select:focus-visible {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   transition: background 200ms, color 200ms;
 }
 .np-button a:hover {
@@ -597,7 +735,7 @@ select:focus-visible {
   color: var(--epk-text-tertiary);
   text-decoration: none;
   font-size: 0.750rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   letter-spacing: 0.04em;
   margin: 0 var(--np-space-sm);
   transition: color 200ms;
@@ -606,4 +744,154 @@ select:focus-visible {
 .np-footer-sep {
   color: var(--epk-text-tertiary);
   margin: 0 var(--np-space-xs);
+}
+
+/* ─── Metadata bar — horizontal strip (SILO pattern: TYPE | DATE | AUTHOR) ─── */
+.np-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--np-space-sm);
+  padding: var(--np-space-xs) 0;
+  border-top: 1px solid var(--epk-rule);
+  margin-top: var(--np-space-md);
+  font-family: var(--font-body);
+  font-size: var(--np-type-xs);
+  letter-spacing: var(--np-tracking-wide);
+  text-transform: uppercase;
+  color: var(--epk-text-tertiary);
+}
+.np-bar-item { white-space: nowrap; }
+.np-bar-item + .np-bar-item::before {
+  content: '|';
+  margin-right: var(--np-space-sm);
+  opacity: 0.4;
+}
+.np-bar-label { margin-right: 0.3em; }
+.np-bar-value { color: var(--epk-text-secondary); }
+
+/* ─── Body prose — used by ArticleCard children ─── */
+.np-body {
+  max-inline-size: var(--np-prose-width);
+}
+.np-body p {
+  margin-top: 0;
+  margin-bottom: var(--np-space-sm);
+  font-size: var(--np-type-sm);
+  line-height: var(--np-leading-normal);
+}
+
+/* ─── CredentialCard — compact vertical list (SILO: PALMARES) ─── */
+.np-cred-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.np-cred-item {
+  padding: var(--np-space-xs) 0;
+  border-bottom: 1px solid var(--epk-border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--np-space-md);
+}
+.np-cred-item strong {
+  color: var(--epk-text-primary);
+  font-size: var(--np-type-sm);
+  font-weight: 400;
+}
+.np-cred-item small {
+  color: var(--epk-text-tertiary);
+  font-size: var(--np-type-xs);
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.np-cred-highlight strong {
+  color: var(--epk-gold);
+}
+
+/* ─── PressCard — italic quotes + outlet attribution ─── */
+.np-press-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--np-space-md);
+}
+.np-press-item {
+  padding-bottom: var(--np-space-sm);
+  border-bottom: 1px solid var(--epk-border-subtle);
+}
+.np-press-item:last-child { border-bottom: none; }
+.np-press-text {
+  font-style: italic;
+  color: var(--epk-text-secondary);
+}
+.np-press-item small {
+  display: block;
+  margin-top: 2px;
+  color: var(--epk-text-tertiary);
+  font-size: var(--np-type-xs);
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+}
+
+/* ─── TechCard — key:value pairs, monospace (SILO: Stats/System Card) ─── */
+.np-tech-list {
+  margin: 0;
+}
+.np-tech-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--np-space-xs) 0;
+  border-bottom: 1px solid var(--epk-border-subtle);
+  gap: var(--np-space-md);
+}
+.np-tech-row dt {
+  color: var(--epk-text-secondary);
+  font-size: var(--np-type-sm);
+  font-weight: 400;
+}
+.np-tech-row dd {
+  margin: 0;
+  color: var(--epk-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--np-type-xs);
+  text-align: right;
+  white-space: nowrap;
+}
+.np-tech-footnote {
+  margin-top: var(--np-space-sm);
+  font-size: var(--np-type-xs);
+  font-family: var(--font-body);
+  color: var(--epk-text-tertiary);
+}
+
+/* ─── GalleryCard — horizontal reel (Every Layout: Reel pattern) ─── */
+.np-card-gallery {
+  border-top: 1px solid var(--epk-rule);
+  padding-top: var(--np-space-md);
+  margin-bottom: var(--np-space-lg);
+  overflow: hidden;
+}
+.np-gallery-reel {
+  display: flex;
+  gap: 1px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.np-gallery-item {
+  flex: 0 0 auto;
+  width: clamp(180px, 25vw, 320px);
+  scroll-snap-align: start;
+  aspect-ratio: 3/4;
+  margin: 0;
+}
+
+/* ─── Full-width elements outside grid ─── */
+.np-card-quote,
+.np-card-cta,
+.np-card-footer,
+.np-card-gallery {
+  background: var(--epk-bg-primary);
 }

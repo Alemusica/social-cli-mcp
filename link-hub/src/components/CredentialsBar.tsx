@@ -1,51 +1,41 @@
 import { CREDENTIALS } from '@/lib/artist-config';
 
-export default function CredentialsBar() {
+interface Credential {
+  text: string;
+  year: string;
+  highlight: boolean;
+}
+
+export function CredentialsBar() {
+  const items = CREDENTIALS.filter((c: Credential) => c.highlight);
+  // Duplicate for seamless loop: keyframe translates -50%, so 2× content = one full cycle
+  const tickerItems = [...items, ...items];
+
   return (
-    <section id="credentials" className="px-6 py-phi-xl bg-bg-medium">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-2xl font-display font-light tracking-wide text-text-primary mb-phi-md text-center">
-          Credentials
-        </h2>
+    <section
+      id="credentials"
+      className="w-full overflow-hidden"
+      aria-label="Credentials and achievements"
+    >
+      {/* Top ruled line */}
+      <div className="rule" />
 
-        {/* Desktop: grid, Mobile: scroll */}
-        <div className="hidden md:grid md:grid-cols-4 gap-3">
-          {CREDENTIALS.map((cred, i) => (
-            <div
+      <div className="py-phi-sm">
+        <div className="flex animate-marquee">
+          {tickerItems.map((cred: Credential, i: number) => (
+            <span
               key={i}
-              className={`px-4 py-3 rounded-lg border text-center ${
-                cred.highlight
-                  ? 'border-accent-gold/30 bg-bg-light'
-                  : 'border-white/10 bg-bg-light'
-              }`}
+              className="shrink-0 px-phi-lg font-display text-display text-gold whitespace-nowrap uppercase tracking-[0.02em]"
             >
-              <p className={`text-sm font-medium ${cred.highlight ? 'text-text-primary' : 'text-text-primary'}`}>
-                {cred.text}
-              </p>
-              <p className="text-xs text-text-muted mt-1">{cred.year}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Mobile: horizontal scroll */}
-        <div className="flex md:hidden gap-3 overflow-x-auto pb-2 -mx-6 px-6 no-scrollbar">
-          {CREDENTIALS.map((cred, i) => (
-            <div
-              key={i}
-              className={`flex-none px-4 py-3 rounded-lg border min-w-[200px] ${
-                cred.highlight
-                  ? 'border-accent-gold/30 bg-bg-light'
-                  : 'border-white/10 bg-bg-light'
-              }`}
-            >
-              <p className={`text-sm font-medium ${cred.highlight ? 'text-text-primary' : 'text-text-primary'}`}>
-                {cred.text}
-              </p>
-              <p className="text-xs text-text-muted mt-1">{cred.year}</p>
-            </div>
+              {cred.text} {cred.year}
+              <span className="text-gold/50"> — </span>
+            </span>
           ))}
         </div>
       </div>
+
+      {/* Bottom ruled line */}
+      <div className="rule" />
     </section>
   );
 }

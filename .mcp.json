@@ -9,6 +9,14 @@
         "SURREALDB_USER": "root",
         "SURREALDB_PASS": "root"
       }
+    },
+    "flutur-ops": {
+      "command": "npx",
+      "args": ["tsx", "src/server/index.ts"],
+      "env": {
+        "DEFAULT_TENANT": "flutur",
+        "NODE_NO_WARNINGS": "1"
+      }
     }
   }
 }
